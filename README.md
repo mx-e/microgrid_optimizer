@@ -291,6 +291,8 @@ Various sensitivity analyses have shown that as far as electricity is concerned,
 
 
  //TODO investigate IES software for modelling building demand profiles 
+ 
+ 
 -------
 
  **Paper name:** 
