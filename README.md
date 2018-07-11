@@ -191,6 +191,8 @@ Perhaps the most important resource not considered here is that of load, as load
 This model adds additional constraints to those currently existing in the literature in that it explicitly defines the amount of time per year that the microgrid would be expected to operate in “islanded” mode
 
 Finally, the differing optimal operation schedules between grid-connected and islanded systems were presented, pointing out that the islanded microgrid represents a far more constrained system and therefore exhibits a more complex cost-optimal dispatch schedule. Observation of participants’ operating schedules indicates that cooperative action rather than pure self interest provides the best economic outcome for the microgrid, indicating that development of a fair settlement system between microgrid participants should be developed. Game theory provides the necessary tools to carry out such an analysis.
+
+
 -------
 
 **Paper name:** 
@@ -233,6 +235,8 @@ In the optimisation problem, the following data are given:
  So as to minimise the total annualised cost
 
  example contains 5 nodes, 24 timeslices
+
+
 -------
 
 **Paper name:** 
@@ -287,6 +291,8 @@ Various sensitivity analyses have shown that as far as electricity is concerned,
 
 
  //TODO investigate IES software for modelling building demand profiles 
+ 
+ 
 -------
 
  **Paper name:** 
@@ -389,7 +395,7 @@ Mostly Campuses, Military Installations, Public Institutions but increasingly al
 
 -------
 
-**Paper name:** 
+**Paper name:** //TODO find Schill Zerrahn demand side paper 
 
 **Focus / Key Aspects examined** 
 
