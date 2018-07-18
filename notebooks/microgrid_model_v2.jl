@@ -1,5 +1,6 @@
 using JuMP
 using Cbc
+using JSON
 include("./microgrid_utils.jl")
 importall MicrogridUtils
 
@@ -287,3 +288,83 @@ println("----------------------")
 println("")
 
 println("Objective value: ", getobjectivevalue(m))
+
+output_data = Dict(
+    "N" => N, 
+    "T" => T,
+    "investment" => [
+        Dict(
+            "key" => "Solar PV",
+            "value" => getvalue(cp_pv)
+        ),
+        Dict(
+            "key" => "CHP",
+            "value" => getvalue(cp_chp)
+        ),
+        Dict(
+            "kex" => "Gas Digester",
+            "value" => getvalue(cp_digester)
+        ),
+        Dict(
+            "key" => "Li-Ion Battery",
+            "value" => getvalue(cp_li_ion)
+        ),
+        Dict(
+            "key" => "Gas Storage",
+            "value" => getvalue(cp_gas_st)
+        )
+    ],
+    "supply" => []
+)
+
+for i in [1:N]
+    retval = [
+        Dict(
+            "key" => "Grid Consumption", 
+            "value" => getvalue(sgr)[i,:],
+            "type" => "positive"
+        ),
+        Dict(
+            "key" => "PV-Production",
+            "value" => getvalue(spv)[i,:],
+            "type" => "positive"
+        ),
+        Dict(
+            "key" => "CHP-Production",
+            "value" => getvalue(s_chp)[i,:],
+            "type" => "positive"
+        ),
+        Dict(
+            "key" => "Shifted Consumption",
+            "value" => getvalue(ssc)[i,:],
+            "type" => "positive"
+        ),
+        Dict(
+            "key" => "Omitted Consumption",
+            "value" => getvalue(snc)[i,:],
+            "type" => "positive"
+        ),
+        Dict(
+            "key" => "From Battery",
+            "value" => getvalue(s_f_li)[i,:],
+            "type" => "positive"
+        ),
+        Dict(
+            "key" => "Grid Feed-In",
+            "value" => getvalue(stg)[i,:],
+            "type" => "negative"
+        ),
+        Dict(
+            "key" => "To Battery",
+            "value" => getvalue(s_t_li)[i,:],
+            "type" => "negative"
+        )
+    ]
+    push!(output_data["supply"], retval)
+end 
+
+json_string = JSON.json(output_data)
+
+open("./output.json", "w") do f
+    write(f, json_string)
+end
