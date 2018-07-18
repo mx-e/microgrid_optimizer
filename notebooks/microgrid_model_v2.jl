@@ -84,6 +84,9 @@ fit = [0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02]
 #purchase price for grid electricity for each timestep t 
 gec = [0.1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,2,2,2]
 
+#gas_price per KWh
+gas_price = 0.001
+
 #-------------------------------
 #---------VARIABLES-------------
 #-------------------------------
@@ -111,6 +114,9 @@ gec = [0.1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,2,2,2]
 
 # Gas Imports 
 @variable(m, gas_import[1:N, 1:T] >= 0)
+
+# Gas Production
+@variable(m, gas_prod[1:N, 1:T] >= 0)
 
 #----------STORAGE--------------
 # To Gas Storage 
@@ -171,13 +177,20 @@ gec = [0.1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,2,2,2]
 
 #Gas Use Constraint
 @constraint(m, chp_cap[i=1:N, t=1:T], s_chp[i,t] <= cp_chp[i])
-@constraint(m, chp_max_prod[i=N, t=1:T], s_chp[i,t] <= efficiency_chp * sum(s_t_gst[i,u] for u=1:t) - sum(s_f_gst[i,u] for u=1:t-1))
+@constraint(m, chp_max_prod[i=1:N, t=1:T], s_chp[i,t] == efficiency_chp * s_f_gst[i,t])
+@constraint(m, gas_use_constraint[i=1:N, t=1:T], s_f_gst[i,t] == s_chp[i,t] * (1/efficiency_chp))
+@constraint(m, gas_storage_balance[i=1:N, t=1:T], s_f_gst[i,t] <= sum(s_t_gst[i,u] for u=1:t) - sum(s_f_gst[i,u] for u=1:t-1))
+@constraint(m, gas_to_storage_const[i=1:N, t=1:T], s_t_gst[i,t] == gas_import[i,t] + gas_prod[i,t])
 
 #Gas Constraint
-@constraint(m, gas_import_cons[i=1:N, t=1:T], gas_import[i,t] <= (t%720 == 0 ? cp_gas_st - (sum(s_t_gst[i,u] for u=1:t) - sum(s_f_gst[i,u] for u=1:t-1)) : 0))
+@constraint(m, gas_import_cons[i=1:N, t=1:T; t%720 == 1], gas_import[i,t] <= (cp_gas_st[i] - sum(s_t_gst[i,u] for u=1:t) + sum(s_f_gst[i,u] for u=1:t-1)))
+@constraint(m, gas_import_only_montly[i=1:N, t=1:T, t%720 != 1], gas_import[i,t] == 0)
 
+#Gas Digester Constraints
+@constraint(m, gas_prod_const[i=1:N,t=1:T], gas_prod[i,t] <= cp_digester[i])
 
-
+#Maximum Feed-In Constraint
+@constraint(m, feed_in_const[i=1:N, t=1:T], stg[i,t] <= 10.)
 
 
 #-------------------------------
@@ -186,11 +199,22 @@ gec = [0.1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,2,2,2]
 
 @objective(m, Min, sum(
     capex_pv * cp_pv[i] + 
-    capex_li_ion * cp_li_ion[i]
+    capex_li_ion * cp_li_ion[i] +
     capex_chp * cp_chp[i] +
-    capex_gas_st * cp_gas_st[i]
+    capex_gas_st * cp_gas_st[i] +
+    capex_digester * cp_digester[i] +
+    T / 24 * (
+        opex_fix_pv * cp_pv[i] +
+        opex_fix_li_ion * cp_li_ion[i] + 
+        opex_fix_chp * cp_chp[i] + 
+        opex_fix_gas_st * cp_gas_st[i] +
+        opex_fix_digester * cp_digester[i]
+    )
     for i= 1:N) + 
     sum(
+        sum(gas_price * gas_import[i,t] for i=1:N) + 
+        sum(opex_var_chp * s_chp[i,t] for i=1:N) +
+        sum(opex_var_li_ion * s_t_li[i,t] for i=1:N) +
         sum(gec[t]*sgr[i,t] for i=1:N) + 
         sum(ncc[i]*snc[i,t] for i=1:N) + 
         sum(scc[i]*ssc[i,t] for i=1:N) -
@@ -216,6 +240,8 @@ println("CHP: ")
 println(getvalue(cp_chp))
 println("GAS STORAGE:")
 println(getvalue(cp_gas_st))
+println("GAS DIGESTER:")
+println(getvalue(cp_digester))
 
 println("----------------------")
 
@@ -249,6 +275,10 @@ println("----------------------")
 
 println("Battery Levels:")
 println(map((i -> (sum(getvalue(s_t_li[i,t]) for t=1:T) - (1/efficiency_li_ion) * sum(getvalue(s_f_li[i,t]) for t=1:T))), [1:N]))
+println("----------------------")
+
+println("Gas Storage Levels: ")
+println(map((i -> (sum(getvalue(s_t_gst[i,t]) for t=1:T) - sum(getvalue(s_f_gst[i,t]) for t=1:T))), [1:N]))
 println("----------------------")
 
 println("Shifted Consumption: ")
