@@ -1,18 +1,23 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import {json} from './data.js'
+import SupplyGraph from './Components/SupplyGraph'
 
 class App extends Component {
+  constructor(){
+    super()
+    this.data = JSON.parse(json)
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Microgrid Optimizer</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="row">
+          <SupplyGraph data={this.data.supply} id={1}/>
+        </div>
       </div>
     );
   }
