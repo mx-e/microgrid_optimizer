@@ -26,3 +26,13 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.row{
+  height: 30vh;
+}
+
+.graphholder{
+  width: 100%;
+  height: 100%;
+}
+
