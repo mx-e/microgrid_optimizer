@@ -6,15 +6,19 @@ importall MicrogridUtils
 
 m = Model(solver = CbcSolver())
 
+f = open("input.json")
+
+input_data = JSON.parse(f)
+close(f)
 #-------------------------------
 #---------SET-PARAMETERS--------
 #-------------------------------
 
 #number of households
-N = 2
+N = input_data["N"]
 
 #number of timeslices in hours
-T = 12
+T = input_data["T"]
 
 #-----BEHAVIOURAL VARIABLES----
 #non-consumption price for households
@@ -24,7 +28,7 @@ ncc = [0.8, 1.2]
 scc = [0.3, 0.5]
 
 #household demand 
-demand = [1 1 3 3 4 4 2 2 4 3 2 2; 1 2 4 1 6 2 5 4 2 5 1 6]
+demand = array_of_arrays_to_matrix(input_data["demand"], N, T)
 
 #-----ENVIRONMENTAL FACTORS-----
 #capacity factor of solar pv
@@ -36,14 +40,14 @@ cap_fr = [0,0,0.1,0.2,0.3,0.4,0.4,0.4,0.4,0.3,0.2,0.1]
 capex_pv = adjust_capex(1169., 20, T)
 
 #opex fix in € / KW * day
-opex_fix_pv = 17.6 / 365.25
+opex_fix_pv = 17.6 / 365
 
 #- - - - Li-Ion-Battery - - - -
 #capex of battery storage € / KWh
 capex_li_ion = adjust_capex(300., 15, T)
 
 #opex fix in € / KWh * day 
-opex_fix_li_ion = 9. / 365.25
+opex_fix_li_ion = 9. / 365
 
 #opex variable in € / KWh 
 opex_var_li_ion = 0.0002
@@ -56,7 +60,7 @@ efficiency_li_ion = 0.9
 capex_chp = adjust_capex(429., 20, T)
 
 #opex fix CHP in € / KW * day
-opex_fix_chp = 17.2 / 365.25
+opex_fix_chp = 17.2 / 365
 
 #opex variable in € / KWh
 opex_var_chp = 0.001
@@ -69,7 +73,7 @@ efficiency_chp = 0.344
 capex_digester = adjust_capex(731.0, 20, T)
 
 #opex fix of biogas digester in € / KW * day
-opex_fix_digester = 29.2 / 365.25
+opex_fix_digester = 29.2 / 365
 
 #- - - - - Gas Storage - - - - -
 #capex of gas storage in € / KWh 
@@ -88,12 +92,18 @@ gec = [0.1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,2,2,2]
 #gas_price per KWh
 gas_price = 0.001
 
+#yearly discount rate
+discount_rate_yearly = 0.04
+discount_rate = compute_hourly_discount(discount_rate_yearly)
+
 #-------------------------------
 #---------VARIABLES-------------
 #-------------------------------
 
 # Trade between households
-@variable(m, tr[1:N,1:N,1:T] >= 0)
+@variable(m, tr_from[1:N,1:T] >= 0)
+@variable(m, tr_to[1:N,1:T] >= 0)
+
 
 # Non-Consumption
 @variable(m, snc[1:N,1:T] >= 0)
@@ -159,13 +169,11 @@ gas_price = 0.001
 #Supply Demand Constraint
 @constraint(m, demand_constr[i=1:N, t=1:T],
     demand[i,t] == snc[i,t] + spv[i,t] + sgr[i,t] + s_chp[i,t]
-    - stg[i,t] + sum(tr[i,j,t] for j=1:N) - sum(tr[j,i,t] for j=1:N) 
+    - stg[i,t] + tr_to[i,t] - tr_from[i,t]
     + s_f_li[i,t] - s_t_li[i,t] + ssc[i,t] - ssc[i,t-1])
 
 #Trade Constraints
-@constraint(m, trade_constr[t=1:T], sum(sum(tr[N+1-i,j,t] for i=1:j)for j=1:N) - sum(sum(tr[i,j,t] for i=1:j)for j=1:N) == 0)
-@constraint(m, no_self_trade[i=1:N,t=1:T], tr[i,i,t] == 0)
-
+@constraint(m, trade_constr[t=1:T], sum(tr_from[i,t] for i=1:N) == sum(tr_to[i,t] for i=1:N))
 
 #Shifted Consumption Constraint
 @constraint(m, shift_constr[i=1:N], ssc[i,T] == 0)
@@ -185,7 +193,7 @@ gas_price = 0.001
 
 #Gas Constraint
 @constraint(m, gas_import_cons[i=1:N, t=1:T; t%720 == 1], gas_import[i,t] <= (cp_gas_st[i] - sum(s_t_gst[i,u] for u=1:t) + sum(s_f_gst[i,u] for u=1:t-1)))
-@constraint(m, gas_import_only_montly[i=1:N, t=1:T, t%720 != 1], gas_import[i,t] == 0)
+@constraint(m, gas_import_only_monthly[i=1:N, t=1:T, t%720 != 1], gas_import[i,t] == 0)
 
 #Gas Digester Constraints
 @constraint(m, gas_prod_const[i=1:N,t=1:T], gas_prod[i,t] <= cp_digester[i])
@@ -198,31 +206,34 @@ gas_price = 0.001
 #-----------OBJECTIVE-----------
 #-------------------------------
 
+function calculate_opex_fix(i) 
+    1 / 24 * (
+    opex_fix_pv * cp_pv[i] +
+    opex_fix_li_ion * cp_li_ion[i] + 
+    opex_fix_chp * cp_chp[i] + 
+    opex_fix_gas_st * cp_gas_st[i] +
+    opex_fix_digester * cp_digester[i]
+)
+end
+
 @objective(m, Min, sum(
     capex_pv * cp_pv[i] + 
     capex_li_ion * cp_li_ion[i] +
     capex_chp * cp_chp[i] +
     capex_gas_st * cp_gas_st[i] +
-    capex_digester * cp_digester[i] +
-    T / 24 * (
-        opex_fix_pv * cp_pv[i] +
-        opex_fix_li_ion * cp_li_ion[i] + 
-        opex_fix_chp * cp_chp[i] + 
-        opex_fix_gas_st * cp_gas_st[i] +
-        opex_fix_digester * cp_digester[i]
-    )
+    capex_digester * cp_digester[i]
     for i= 1:N) + 
     sum(
-        sum(gas_price * gas_import[i,t] for i=1:N) + 
+        ((sum(gas_price * gas_import[i,t] for i=1:N) + 
         sum(opex_var_chp * s_chp[i,t] for i=1:N) +
         sum(opex_var_li_ion * s_t_li[i,t] for i=1:N) +
         sum(gec[t]*sgr[i,t] for i=1:N) + 
         sum(ncc[i]*snc[i,t] for i=1:N) + 
         sum(scc[i]*ssc[i,t] for i=1:N) -
-        sum(fit[t]*stg[i,t] for i=1:N) for t=1:T
+        sum(fit[t]*stg[i,t] for i=1:N) + 
+        sum(calculate_opex_fix(i) for i=1:N)) / (1+discount_rate)^t) for t=1:T
     )
 )
-
 
 #-------------------------------
 #------------SOLUTION-----------
@@ -262,8 +273,12 @@ println("Grid-Feed-In: ")
 println(getvalue(stg))
 println("----------------------")
 
-println("Trade: ")
-println(getvalue(tr))
+println("Trade From: ")
+println(getvalue(tr_from))
+println("----------------------")
+
+println("Trade To: ")
+println(getvalue(tr_to))
 println("----------------------")
 
 println("From Battery: ")
@@ -272,6 +287,14 @@ println("----------------------")
 
 println("To Battery: ")
 println(getvalue(s_t_li))
+println("----------------------")
+
+println("From Gas Storage: ")
+println(getvalue(s_f_gst))
+println("----------------------")
+
+println("To Gas Storage: ")
+println(getvalue(s_t_gst))
 println("----------------------")
 
 println("Battery Levels:")
@@ -295,23 +318,28 @@ output_data = Dict(
     "investment" => [
         Dict(
             "key" => "Solar PV",
-            "value" => getvalue(cp_pv)
+            "value" => getvalue(cp_pv),
+            "type" => "generation"
         ),
         Dict(
             "key" => "CHP",
-            "value" => getvalue(cp_chp)
+            "value" => getvalue(cp_chp),
+            "type" => "generation"
         ),
         Dict(
-            "kex" => "Gas Digester",
-            "value" => getvalue(cp_digester)
+            "key" => "Gas Digester",
+            "value" => getvalue(cp_digester),
+            "type" => "other"
         ),
         Dict(
             "key" => "Li-Ion Battery",
-            "value" => getvalue(cp_li_ion)
+            "value" => getvalue(cp_li_ion),
+            "type" => "storage"
         ),
         Dict(
             "key" => "Gas Storage",
-            "value" => getvalue(cp_gas_st)
+            "value" => getvalue(cp_gas_st),
+            "type" => "storage"
         )
     ],
     "supply" => []
@@ -358,9 +386,19 @@ for i in [1:N]
             "key" => "To Battery",
             "value" => getvalue(s_t_li)[i,:],
             "type" => "negative"
+        ),
+        Dict(
+            "key" => "To Trade",
+            "value" => getvalue(tr_to)[i,:],
+            "type" => "negative"
+        ),
+        Dict(
+            "key" => "From Trade",
+            "value" => getvalue(tr_from)[i,:],
+            "type" => "positive"
         )
     ]
-    push!(output_data["supply"], retval)
+    output_data["supply"] = retval
 end 
 
 json_string = JSON.json(output_data)
