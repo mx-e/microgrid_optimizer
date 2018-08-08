@@ -1,0 +1,19 @@
+.Header {
+    position: relative;
+    background: darkgrey;
+    height: 100px;
+    width: 100vw;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Results div:nth-child(2), .Results div:nth-child(3) {
+    width: 80vw;
+    margin-left: 10vw;
+}
+
+.Results p {
+    text-align: center;
+}

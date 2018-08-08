@@ -6,7 +6,7 @@ importall MicrogridUtils
 
 m = Model(solver = CbcSolver())
 
-f = open("input.json")
+f = open("./input.json")
 
 input_data = JSON.parse(f)
 close(f)

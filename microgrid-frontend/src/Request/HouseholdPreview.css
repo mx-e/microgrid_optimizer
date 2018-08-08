@@ -1,0 +1,33 @@
+.Households {
+    position: relative;
+    min-width: 350px;
+    background: lightpink;
+    height: 250px;
+    transition: all 100ms linear;
+}
+
+.Households svg {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 20px;
+    width: 20px;
+    fill: rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.Households svg:hover {
+    fill: rgba(0,0,0,0.6)
+}
+
+
+
+.Add {
+    min-width: 350px;
+    background: lightgrey;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

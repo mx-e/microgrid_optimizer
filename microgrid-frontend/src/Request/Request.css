@@ -1,0 +1,50 @@
+.Request {
+    position: relative;
+}
+
+.TopBar {
+    position: relative;
+    background: #b0b0b0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Subheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.Subheader button {
+    position: relative;
+    height: 30px;
+    width: 100px;
+    outline: none;
+    border: 1px black solid;
+}
+
+.Request button {
+    position: absolute;
+}
+
+.HouseholdsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.BottomBar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.BottomBar button {
+    right: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%)
+}

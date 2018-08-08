@@ -3,6 +3,7 @@ const MongoClient    = require('mongodb').MongoClient
 const bodyParser     = require('body-parser')
 const app            = express()
 const shell          = require('shelljs')
+var fs               = require("fs");
 
 require('./app/routes')(app, {})
 
@@ -17,5 +18,14 @@ app.listen(port, () => {
 app.post('/notes', (req, res) => {
   // You'll create your note here.
   console.log(req.body)
-  res.send('Hello')
+
+  const dir = __dirname
+
+  console.log('Starting Shell Script...')
+  shell.exec('./get_output.sh ' + dir + '/../model/' )
+
+  const contents = fs.readFileSync("output.json")
+  const data = JSON.parse(contents)
+  console.log('Sent Model Results!')
+  res.send(data)
 });
