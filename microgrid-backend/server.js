@@ -2,6 +2,7 @@ const express        = require('express')
 const MongoClient    = require('mongodb').MongoClient
 const bodyParser     = require('body-parser')
 const app            = express()
+const shell          = require('shelljs')
 
 require('./app/routes')(app, {})
 
