@@ -1,6 +1,14 @@
+export const TYPE = Object.freeze({
+  ADD_HOUSEHOLD: new String('ADD_HOUSEHOLD'),
+  INIT: new String('INIT'),
+  DEL_HOUSHOLD: new String('DEL_HOUSEHOLD'),
+  SEND_REQUEST: new String('SEND_REQUEST')
+})
+
+
 const initialQuery = () => {
   return {
-    type: 'INIT',
+    type: TYPE.INIT,
     result: {
 
       "T"
@@ -68,14 +76,18 @@ const initialQuery = () => {
 
 export const addVanillaHousehold = () => {
   return {
-    type: 'ADD_HOUSEHOLD'
+    type: TYPE.ADD_HOUSEHOLD
   }
 }
 
 
 export const deleteHousehold = (id) => {
   return {
-    type: 'DEL_HOUSEHOLD',
+    type: TYPE.DEL_HOUSHOLD,
     id: id
   }
 }
+
+export const sendRequest = () => ({
+  type: TYPE.SEND_REQUEST
+})

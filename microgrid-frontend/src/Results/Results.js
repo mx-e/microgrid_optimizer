@@ -1,5 +1,6 @@
 import React from 'react'
 import './Results.css'
+import SupplyGraph from "../SupplyGraph/SupplyGraph";
 
 const results = (props) => {
   const calcBannerHeight = window.innerHeight * 0.18 + 'px'
@@ -13,7 +14,9 @@ const results = (props) => {
           <h3>Results</h3>
         </div>
       </div>
-      <div style={{marginTop: calcMargin, height: calcHeight, background: 'lightcoral'}}>box1</div>
+      <div style={{marginTop: calcMargin, height: calcHeight, background: 'lightcoral'}}>
+        <SupplyGraph/>
+      </div>
       <div style={{marginBottom: calcMargin, marginTop: calcMargin, height: calcHeight, background: 'lightgreen'}}>box2</div>
       <p>Copyright © 2018 Maximilian Eißler</p>
     </div>

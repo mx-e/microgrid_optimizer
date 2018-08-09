@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import HouseholdPreview from './HouseholdPreview'
 import './Request.css'
-import {addVanillaHousehold, deleteHousehold} from "../store/action"
+import {addVanillaHousehold, deleteHousehold, sendRequest} from "../store/action"
 
 class Request extends React.Component {
   render(){
@@ -16,7 +16,7 @@ class Request extends React.Component {
         </div>
         <div className="Subheader" style={{margin: paddingBox + 'px '  + (paddingBox * 2) + 'px' +  ' 0 ' + (paddingBox * 2) + 'px'}}>
           <h2>Households:</h2>
-          <button style={{position: 'relative'}}>Calculate</button>
+          <button style={{position: 'relative'}} onClick={this.props.requestModel}>Calculate</button>
         </div>
         <div style={{paddingLeft: paddingBox, paddingRight: paddingBox + 'px'}} className="HouseholdsWrapper" >
           {households}
@@ -38,7 +38,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     addNewHousehold: () => dispatch(addVanillaHousehold()),
-    deleteHousehold: (id) => dispatch(deleteHousehold(id))
+    deleteHousehold: (id) => dispatch(deleteHousehold(id)),
+    requestModel: () => dispatch(sendRequest())
   }
 }
 
