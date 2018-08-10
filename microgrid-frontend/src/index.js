@@ -26,9 +26,9 @@ ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
       <Switch>
-        <Route path={'/result'} component={Result}/>
-        <Route path={'/request'} component={NewRequest}/>
-        <Route path={'/newHousehold'} component={NewHousehold}/>
+        <Route exact path={'/result'} component={Result}/>
+        <Route exact path={'/request'} component={NewRequest}/>
+        <Route exact path={'/newHousehold'} component={NewHousehold}/>
       </Switch>
     </Provider>
   </BrowserRouter>

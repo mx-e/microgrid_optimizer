@@ -1,3 +1,6 @@
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
+
 .Header {
     position: relative;
     background: darkgrey;
@@ -16,4 +19,11 @@
 
 .Results p {
     text-align: center;
+}
+
+#supplyGraphContainer, #investmentArcContainer{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

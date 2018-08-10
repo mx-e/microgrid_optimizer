@@ -14,6 +14,12 @@ import {
 import './SupplyGraph.css'
 
 class SupplyGraph extends React.Component{
+  constructor(props) {
+    super(props);
+    this.fullHeight = document.getElementById(this.props.containerId).offsetHeight
+    this.fullWidth = document.getElementById(this.props.containerId).offsetWidth
+  }
+
 
   getColors(n) {
     const colors = ["#a6cee3","#1f78b4","#b2df8a","#33a02c",
@@ -26,11 +32,11 @@ class SupplyGraph extends React.Component{
 
   setScales(width, height) {
     this.x = d3ScaleLinear()
-      .domain([0,this.props.dataLength-1])
-      .range([this.margin.left, width]);
+      .domain([0,this.props.dataLength])
+      .range([this.margin.left*1.5, width]);
 
     this.y = d3ScaleLinear()
-      .domain([-2,5])
+      .domain([-5,10])
       .range([height, this.margin.bottom]);
 
     this.xAxis = d3AxisB(this.x)
@@ -40,17 +46,17 @@ class SupplyGraph extends React.Component{
   renderAxis() {
     this.svg.append("g")
       .attr("class", "x axis")
-      .attr("transform", "translate(0," + this.height + ")")
+      .attr("transform", "translate("+ 0 +"," + (this.height + this.margin.top) + ")")
       .call(this.xAxis).append("text")
-      .attr("x", 350)
-      .attr("y", 36)
+      .attr("x",(this.margin.left + (this.width)/2) + 'px')
+      .attr("y", 30 + 'px')
       .attr("fill", "#000")
       .text("Hour of Time")
       .style("font-weight", "bold")
 
     this.svg.append("g")
       .attr("class", "y axis")
-      .attr("transform", "translate("+ (this.margin.left) + ",0)")
+      .attr("transform", "translate("+ this.margin.left*1.5 + ","+ this.margin.top+")")
       .call(this.yAxis)
       .append("text")
       .attr("transform", "rotate(-90)")
@@ -63,28 +69,28 @@ class SupplyGraph extends React.Component{
   }
 
   getArrayPosition(x_pos){
-    return (Math.floor(this.x.invert(x_pos)))
+    return (Math.floor(this.x.invert(x_pos-((window.innerWidth - this.fullWidth)/2))))
   }
 
 
 
   componentDidMount() {
-    this.margin = {top: 20, right: 80, bottom: 50, left: 80}
-    this.width = window.innerWidth - this.margin.left - this.margin.right
-    this.height = 500 - this.margin.top - this.margin.bottom
+    this.margin = {top: 20, right: 80, bottom: 50, left: 100}
+    this.width = this.fullWidth - this.margin.left - this.margin.right
+    this.height = this.fullHeight - this.margin.top - this.margin.bottom
 
     this.svg = d3Select('#graphContainer'+this.props.id)
       .append('svg')
-      .attr('width', window.innerWidth)
-      .attr('height', 500)
+      .attr('width', this.fullWidth)
+      .attr('height', this.fullHeight)
 
     this.setScales(this.width, this.height)
 
     const positiveData = []
     const negativeData = []
 
-    const negativeSeries = this.props.data[0].filter(d => d.type === 'negative')
-    const positiveSeries = this.props.data[0].filter(d => d.type === 'positive')
+    const negativeSeries = this.props.data.filter(d => d.type === 'negative')
+    const positiveSeries = this.props.data.filter(d => d.type === 'positive')
 
     this.nodeID = this.props.id-1
 

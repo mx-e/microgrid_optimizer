@@ -1,26 +1,60 @@
 import React from 'react'
 import './Results.css'
 import SupplyGraph from "../SupplyGraph/SupplyGraph";
+import connect from "react-redux/es/connect/connect";
+import {Spinner} from '@blueprintjs/core'
 
-const results = (props) => {
-  const calcBannerHeight = window.innerHeight * 0.18 + 'px'
-  const calcTopBarHeight = window.innerHeight * 0.07 +'px'
-  const calcHeight = window.innerHeight*0.34 + 'px'
-  const calcMargin = window.innerHeight*0.035 + 'px'
-  return (
-    <div className="Results">
-      <div style={{height: calcBannerHeight}}  >
-        <div style={{height: calcTopBarHeight}} className="Header">
-          <h3>Results</h3>
+class Results extends React.Component{
+
+
+
+  render(){
+    const calcBannerHeight = window.innerHeight * 0.18 + 'px'
+    const calcTopBarHeight = window.innerHeight * 0.07 +'px'
+    const calcHeight = window.innerHeight*0.34 + 'px'
+    const calcMargin = window.innerHeight*0.035 + 'px'
+
+
+    const supplyGraphProps = {
+      data: this.props.result ? this.props.result.supply : null,
+      id: 1,
+      dataLength: this.props.result ? this.props.result.T : null,
+      containerId: 'supplyGraphContainer'
+    }
+
+
+    return (
+      <div className="Results">
+        <div style={{height: calcBannerHeight}}  >
+          <div style={{height: calcTopBarHeight}} className="Header">
+            <h3>Results</h3>
+          </div>
         </div>
+        <div id={'supplyGraphContainer'} style={{marginTop: calcMargin, height: calcHeight, background: 'lightgray'}}>
+          {this.props.result &&
+          <SupplyGraph {...supplyGraphProps} />
+          }
+          {this.props.requestPending &&
+          <Spinner size={150}/>
+          }
+        </div>
+        <div id={'investmentArcContainer'} style={{marginBottom: calcMargin, marginTop: calcMargin, height: calcHeight, background: 'lightgray'}}>
+          {this.props.requestPending &&
+          <Spinner size={150}/>
+          }
+        </div>
+        <p>Copyright © 2018 Maximilian Eißler</p>
       </div>
-      <div style={{marginTop: calcMargin, height: calcHeight, background: 'lightcoral'}}>
-        <SupplyGraph/>
-      </div>
-      <div style={{marginBottom: calcMargin, marginTop: calcMargin, height: calcHeight, background: 'lightgreen'}}>box2</div>
-      <p>Copyright © 2018 Maximilian Eißler</p>
-    </div>
-  )
+    )
+  }
 }
 
-export default results
+const mapStateToProps = state => {
+  return {
+    result: state.result,
+    requestPending: state.requestPending
+  }
+}
+
+
+export default connect(mapStateToProps)(Results)

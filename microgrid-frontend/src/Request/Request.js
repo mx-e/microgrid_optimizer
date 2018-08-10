@@ -5,6 +5,10 @@ import './Request.css'
 import {addVanillaHousehold, deleteHousehold, sendRequest} from "../store/action"
 
 class Request extends React.Component {
+  handleCalculate = () => {
+    this.props.history.push('/result')
+    this.props.requestModel()
+  }
   render(){
     const topBarHeight = window.innerHeight * 0.07 +'px'
     const paddingBox = window.innerWidth * 0.02
@@ -16,7 +20,7 @@ class Request extends React.Component {
         </div>
         <div className="Subheader" style={{margin: paddingBox + 'px '  + (paddingBox * 2) + 'px' +  ' 0 ' + (paddingBox * 2) + 'px'}}>
           <h2>Households:</h2>
-          <button style={{position: 'relative'}} onClick={this.props.requestModel}>Calculate</button>
+          <button style={{position: 'relative'}} onClick={this.handleCalculate}>Calculate</button>
         </div>
         <div style={{paddingLeft: paddingBox, paddingRight: paddingBox + 'px'}} className="HouseholdsWrapper" >
           {households}

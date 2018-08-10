@@ -1,4 +1,9 @@
-import {TYPE} from '../store/action'
+import {
+  abortPending,
+  dataRequestPending,
+  TYPE,
+  updateData
+} from '../store/action'
 import {requestInstance} from '../index'
 
 const dataRequests = store => next => action => {
@@ -12,15 +17,17 @@ const dataRequests = store => next => action => {
 
 const requestModelData = (state, dispatch) => {
   console.log('sending request...')
+  dispatch(dataRequestPending())
   requestInstance.post('/modelrequest', {
     test: 'testtest'
   })
     .then(function (response) {
-      console.log(response);
+      dispatch(updateData(response.data))
     })
     .catch(function (error) {
+      dispatch(abortPending())
       console.log(error);
-    });
+    })
 }
 
 export default dataRequests
