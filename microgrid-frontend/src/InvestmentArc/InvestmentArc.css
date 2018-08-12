@@ -1,16 +1,14 @@
-.idContainer{
-    border-radius: 100%;
-    background: black;
-    color: white;
-    position: absolute;
-    width: 3vw;
-    height: 3vw;
-    margin-top: 20px;
-    margin-left: 20px;
-    text-align: center;
+.arcContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-.id{
-    padding-top: 0.4vw;
-    font-size: 1.8vw;
+canvas{
+    display: inline-flex;
+}
+
+.canvasContainer{
+    display: inline-flex;
 }

@@ -46,7 +46,7 @@ class SupplyGraph extends React.Component{
   renderAxis() {
     this.svg.append("g")
       .attr("class", "x axis")
-      .attr("transform", "translate("+ 0 +"," + (this.height + this.margin.top) + ")")
+      .attr("transform", "translate("+ 0 +"," + (this.height) + ")")
       .call(this.xAxis).append("text")
       .attr("x",(this.margin.left + (this.width)/2) + 'px')
       .attr("y", 30 + 'px')
@@ -56,7 +56,7 @@ class SupplyGraph extends React.Component{
 
     this.svg.append("g")
       .attr("class", "y axis")
-      .attr("transform", "translate("+ this.margin.left*1.5 + ","+ this.margin.top+")")
+      .attr("transform", "translate("+ this.margin.left*1.5 + ","+ 0 +")")
       .call(this.yAxis)
       .append("text")
       .attr("transform", "rotate(-90)")

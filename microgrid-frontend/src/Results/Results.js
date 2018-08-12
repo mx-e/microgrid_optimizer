@@ -3,9 +3,9 @@ import './Results.css'
 import SupplyGraph from "../SupplyGraph/SupplyGraph";
 import connect from "react-redux/es/connect/connect";
 import {Spinner} from '@blueprintjs/core'
+import InvestmentArc from "../InvestmentArc/InvestmentArc";
 
 class Results extends React.Component{
-
 
 
   render(){
@@ -22,6 +22,12 @@ class Results extends React.Component{
       containerId: 'supplyGraphContainer'
     }
 
+    const investmentArcProps = {
+      data: this.props.result ? this.props.result.investment : null,
+      id: 1,
+      containerId: 'investmentArcContainer'
+    }
+
 
     return (
       <div className="Results">
@@ -35,12 +41,15 @@ class Results extends React.Component{
           <SupplyGraph {...supplyGraphProps} />
           }
           {this.props.requestPending &&
-          <Spinner size={150}/>
+          <Spinner size={50}/>
           }
         </div>
         <div id={'investmentArcContainer'} style={{marginBottom: calcMargin, marginTop: calcMargin, height: calcHeight, background: 'lightgray'}}>
           {this.props.requestPending &&
-          <Spinner size={150}/>
+          <Spinner size={50}/>
+          }
+          {this.props.result &&
+          <InvestmentArc {...investmentArcProps}/>
           }
         </div>
         <p>Copyright © 2018 Maximilian Eißler</p>

@@ -1,45 +1,55 @@
 import React from 'react'
+import Chart from 'chart.js'
+import './InvestmentArc.css'
 
 class InvestmentArc extends React.Component {
+  constructor(props) {
+    super(props)
+    console.log(props)
+    const generationInvestment = {key: 'Generation', value: props.data.filter(d => d.type === 'generation')}
+    const storageInvestment = {key: 'Storage', value: props.data.filter(d => d.type === 'storage')}
+    const otherInvestment = {key: 'Other', value: props.data.filter(d => d.type === 'other')}
+
+    this.arcSets = [generationInvestment, storageInvestment, otherInvestment]
+  }
   componentDidMount() {
-    console.log(this.props.data)
 
-
+    this.arcSets.forEach(set => {
+      const cfx = 'arcChart' + this.props.id + set.key
+      const data = {
+        datasets: [
+          {
+            label: set.key,
+            data: set.value.map(d => d.value[this.props.id - 1])
+          }
+        ],
+        labels: set.value.map(d => d.key)
+      }
+      new Chart(cfx, {
+        type: 'doughnut',
+        data: data,
+        options: {
+          title: {
+            display: true,
+            text: set.key
+          }
+        }
+      })
+    })
   }
 
-
-
-
-
   render() {
+    const padding = 40
+    const chartsHeight = document.getElementById(this.props.containerId).offsetHeight
+    const chartsWidth = document.getElementById(this.props.containerId).offsetWidth / 3
 
-    const cfx = document.getElementById('arcChart' + this.props.id)
-
-    const data = {
-      datasets: [{
-        data: [10,20,30]
-      }],
-      labels: [
-        'vmskf',
-        'cnneun',
-        'denne'
-      ],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)'
-      ]
-    }
-
-
-
-    return(
-      <div className={'arcContainer'} id={'arcContainer'+this.props.id}>
-        <canvas id={'arcChart' + this.props.id} width="400" height="400"></canvas>
-        <div className={'idContainer'}><div className={'id'}>{this.props.id}</div></div>
+    return (
+      <div className={'arcContainer'} id={'arcContainer'+this.props.id} style={{width: chartsWidth*3, height: chartsHeight}}>
+        {this.arcSets.map(set =>
+        <div className={'canvasContainer'} style={{width: chartsWidth-padding, height: chartsHeight-padding, marginLeft: 0, marginRight: 0}}>
+          <canvas key={set.key} id={'arcChart' + this.props.id + set.key} width={chartsWidth-padding} height={chartsHeight-padding}></canvas>
+        </div>
+        )}
       </div>
     )
   }
