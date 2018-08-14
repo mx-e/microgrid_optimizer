@@ -79,20 +79,41 @@ class SupplyGraph extends React.Component{
     this.width = this.fullWidth - this.margin.left - this.margin.right
     this.height = this.fullHeight - this.margin.top - this.margin.bottom
 
-    this.svg = d3Select('#graphContainer'+this.props.id)
+    this.svg = d3Select('#graphContainer')
       .append('svg')
       .attr('width', this.fullWidth)
       .attr('height', this.fullHeight)
 
-    this.setScales(this.width, this.height)
+    this.tooltipDiv = d3Select("body").append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0);
 
+    this.setScales(this.width, this.height)
+    this.computeAreaChart()
+    this.renderAxis()
+  }
+
+  componentDidUpdate() {
+    this.margin = {top: 20, right: 80, bottom: 50, left: 100}
+    this.width = this.fullWidth - this.margin.left - this.margin.right
+    this.height = this.fullHeight - this.margin.top - this.margin.bottom
+
+    this.svg = d3Select('#graphContainer')
+      .attr('width', this.fullWidth)
+      .attr('height', this.fullHeight)
+
+    this.setScales(this.width, this.height)
+    this.computeAreaChart()
+  }
+
+  computeAreaChart() {
     const positiveData = []
     const negativeData = []
 
     const negativeSeries = this.props.data.filter(d => d.type === 'negative')
     const positiveSeries = this.props.data.filter(d => d.type === 'positive')
 
-    this.nodeID = this.props.id-1
+    this.nodeID = this.props.id
 
     for(let i = 0; i < this.props.dataLength; i++){
       let positiveDatum = {}
@@ -122,10 +143,6 @@ class SupplyGraph extends React.Component{
       .order(stackOrderNone)
       .offset(stackOffsetNone)
 
-    const div = d3Select("body").append("div")
-      .attr("class", "tooltip")
-      .style("opacity", 0);
-
     const area = d3Area()
       .x( (d,i) => this.x(i))
       .y0( d => this.y(d[0]))
@@ -136,39 +153,60 @@ class SupplyGraph extends React.Component{
 
     const series = positiveStack(positiveData).concat(negativeStack(negativeData))
 
-    this.svg.selectAll("path")
-      .data(series)
-      .enter().append("path")
+    this.svg.selectAll(".area").data(series).exit().remove()
+    this.svg.selectAll(".area").data(series)
+      .attr("class", "area")
       .attr("d", area)
       .attr("fill", () => z(Math.random()))
       .on("mouseover", d => {
-        div.transition()
+        this.tooltipDiv.transition()
           .duration(200)
           .style("opacity", .9);
-        div.html((d.key) + "<br/>"  + Math.round(d[this.getArrayPosition(d3Event.pageX)].data[d.key]*100)/100)
+        this.tooltipDiv.html((d.key) + "<br/>"  + Math.round(d[this.getArrayPosition(d3Event.pageX)].data[d.key]*100)/100)
           .style("left", (d3Event.pageX+ 20) + "px")
           .style("top", (d3Event.pageY - 28) + "px")
       })
       .on("mousemove", d => {
-        div.html((d.key) + "<br/>"  + Math.round(d[this.getArrayPosition(d3Event.pageX)].data[d.key]*100)/100)
+        this.tooltipDiv.html((d.key) + "<br/>"  + Math.round(d[this.getArrayPosition(d3Event.pageX)].data[d.key]*100)/100)
           .style("left", (d3Event.pageX + 20) + "px")
           .style("top", (d3Event.pageY - 28) + "px")
       })
       .on("mouseout", () => {
-        div.transition()
+        this.tooltipDiv.transition()
           .duration(500)
           .style("opacity", 0);
-      });
+      })
 
-    this.renderAxis()
-
-
-
+    this.svg.selectAll("path")
+      .data(series)
+      .enter().append("path")
+      .attr("class", "area")
+      .attr("d", area)
+      .attr("fill", () => z(Math.random()))
+      .on("mouseover", d => {
+        this.tooltipDiv.transition()
+          .duration(200)
+          .style("opacity", .9);
+        this.tooltipDiv.html((d.key) + "<br/>"  + Math.round(d[this.getArrayPosition(d3Event.pageX)].data[d.key]*100)/100)
+          .style("left", (d3Event.pageX+ 20) + "px")
+          .style("top", (d3Event.pageY - 28) + "px")
+      })
+      .on("mousemove", d => {
+        this.tooltipDiv.html((d.key) + "<br/>"  + Math.round(d[this.getArrayPosition(d3Event.pageX)].data[d.key]*100)/100)
+          .style("left", (d3Event.pageX + 20) + "px")
+          .style("top", (d3Event.pageY - 28) + "px")
+      })
+      .on("mouseout", () => {
+        this.tooltipDiv.transition()
+          .duration(500)
+          .style("opacity", 0);
+      })
   }
+
   render() {
     return(
-      <div className={'graphContainer'} id={'graphContainer'+this.props.id}>
-        <div className={'idContainer'}><div className={'id'}>{this.props.id}</div></div>
+      <div className={'graphContainer'} id={'graphContainer'}>
+        <div className={'idContainer'}><div className={'id'}>{this.props.id + 1}</div></div>
       </div>
     )
   }
