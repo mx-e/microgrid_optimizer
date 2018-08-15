@@ -22,14 +22,19 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   console.log('ACTION: ' + action.type, action)
   switch(action.type) {
-    case TYPE.INIT:
-      return Object.assign({}, state ,{result: action.result})
     case TYPE.ADD_HOUSEHOLD:
       const newHouseholds = state.households.concat([{id: state.id_counter, isVanilla: true}])
       return Object.assign({}, state, {households: newHouseholds, id_counter: state.id_counter+1})
     case TYPE.DEL_HOUSHOLD:
       const newHouseholds2 = state.households.filter(f => f.id !== action.id)
       return Object.assign({}, state, {households: newHouseholds2})
+    case TYPE.EDIT_HOUSEHOLD:
+      return Object.assign({}, state, {currentlyEditedId: action.payload})
+    case TYPE.SAVE_HOUSEHOLD:
+      return Object.assign({}, state, {
+        currentlyEditedId: null,
+        households: state.households.map(h => h.id = state.currentlyEditedId ? action.payload : h)
+      })
     case TYPE.DATA_REQUEST_PENDING:
       return Object.assign({}, state, {
         requestPending: true

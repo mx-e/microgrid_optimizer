@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import HouseholdPreview from './HouseholdPreview'
 import './Request.css'
-import {addVanillaHousehold, deleteHousehold, sendRequest} from "../store/action"
+import {addVanillaHousehold, deleteHousehold, sendRequest, editHousehold} from "../store/action"
 
 class Request extends React.Component {
   handleCalculate = () => {
@@ -12,7 +12,18 @@ class Request extends React.Component {
   render(){
     const topBarHeight = window.innerHeight * 0.07 +'px'
     const paddingBox = window.innerWidth * 0.02
-    const households = this.props.households.map((h, key) => <HouseholdPreview deleteHouse={this.props.deleteHousehold} key={key} household={h}/>)
+    const households = this.props.households.map((h, key) =>
+      <HouseholdPreview
+        deleteHouse={this.props.deleteHousehold}
+        editHouse={
+          () => {
+            this.props.editHousehold
+            this.props.history.push('/newHousehold')
+          }
+        }
+        key={key}
+        household={h}
+      />)
     return(
       <div className="Request">
         <div className="TopBar" style={{height: topBarHeight}}>
@@ -43,6 +54,9 @@ const mapDispatchToProps = dispatch => {
   return {
     addNewHousehold: () => dispatch(addVanillaHousehold()),
     deleteHousehold: (id) => dispatch(deleteHousehold(id)),
+    editHousehold: (id) => {
+      dispatch(editHousehold(id))
+    },
     requestModel: () => dispatch(sendRequest())
   }
 }

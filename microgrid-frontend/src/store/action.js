@@ -1,6 +1,8 @@
 export const TYPE = Object.freeze({
   ADD_HOUSEHOLD: new String('ADD_HOUSEHOLD'),
   DEL_HOUSHOLD: new String('DEL_HOUSEHOLD'),
+  EDIT_HOUSEHOLD: new String('EDIT_HOUSEHOLD'),
+  SAVE_HOUSEHOLD: new String('SAVE_HOUSEHOLD'),
   SEND_REQUEST: new String('SEND_REQUEST'),
   UPDATE_DATA: new String('UPDATE_DATA'),
   DATA_REQUEST_PENDING: new String('DATA_REQUEST_PENDING'),
@@ -19,6 +21,16 @@ export const deleteHousehold = (id) => {
     id: id
   }
 }
+
+export const editHousehold = (id) => ({
+  type: TYPE.EDIT_HOUSEHOLD,
+  payload: id
+})
+
+export const saveHousehold = (household) => ({
+  type: TYPE.SAVE_HOUSEHOLD,
+  payload: household
+})
 
 export const sendRequest = () => ({
   type: TYPE.SEND_REQUEST

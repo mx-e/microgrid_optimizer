@@ -2,8 +2,8 @@ import React, {Component} from 'react'
 import './NewHousehold.css'
 import {connect} from 'react-redux'
 import DemandPreview from './DemandPreview'
+import {saveHousehold} from "../store/action";
 
-const dummyPresets = ['No Preset', 'Normal Households', 'TP Shortage', 'Apocalypse', 'Free Energy']
 class NewHousehold extends Component {
     constructor(props) {
       super(props)
@@ -52,8 +52,8 @@ class NewHousehold extends Component {
             background: key % 2 === 1 ? '#D3D3D3' : 'white',
             transform: this.state.selectExpand ? 'translateY(' + 100*(key+1) + '%)' : 'none',
             borderLeft: 'solid 1px black',
-            borderBottom: key+1 === dummyPresets.length ? 'solid 1px black' : 'none',
-            transition: 'all linear ' + (!this.state.selectExpand ? 100*(dummyPresets.length - key) : 100*(key+1)) + 'ms'
+            borderBottom: key+1 === this.props.presets.length ? 'solid 1px black' : 'none',
+            transition: 'all linear ' + (!this.state.selectExpand ? 100*(this.props.presets.length - key) : 100*(key+1)) + 'ms'
           }}
           key={key}>
           {pre.title}
@@ -89,7 +89,11 @@ class NewHousehold extends Component {
               <DemandPreview data={this.state.currentInput.demandSpringFall} title={'Spring / Fall'} theme={'#20B2AA'}/>
             </div>
           </div>
-            <button id={'saveChangesButton'}> SAVE </button>
+            <button id={'saveChangesButton'}
+                    onClick={ () => {
+                      this.props.saveHousehold(this.state.currentInput)
+                      this.props.history.push('/request')
+                    }}> SAVE </button>
           </div>
         )
     }
@@ -98,8 +102,13 @@ class NewHousehold extends Component {
 const mapStateToProps = state => {
   return {
     presets: state.householdPresets
-
   }
 }
 
-export default connect(mapStateToProps)(NewHousehold)
+const mapDispatchToProps = dispatch => ({
+  saveHousehold: (household) => dispatch(saveHousehold(household))
+})
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewHousehold)

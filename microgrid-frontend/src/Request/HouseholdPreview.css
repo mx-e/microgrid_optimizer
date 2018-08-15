@@ -1,7 +1,6 @@
 .Households {
     position: relative;
     min-width: 350px;
-    background: lightpink;
     height: 250px;
     transition: all 100ms linear;
 }
@@ -20,6 +19,12 @@
     fill: rgba(0,0,0,0.6)
 }
 
+.Households svg:nth-child(2){
+    right: 35px;
+    height: 25px;
+    width: 25px;
+    top: 7px;
+}
 
 
 .Add {
