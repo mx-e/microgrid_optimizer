@@ -16,26 +16,26 @@
     grid-column: 2 / 3;
     display: flex;
     flex-direction: column;
-
 }
 
 .Results p {
     text-align: center;
 }
 
-#supplyGraphContainer, #investmentArcContainer{
+#supplyGraphContainer, #investmentArcContainer {
     flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
-.resultsGrid{
+.resultsGrid {
     display: grid;
     grid-template-columns: auto 80vw auto;
     width: 100vw;
 }
-.cycleForward{
+.cycleForward {
     grid-column: 3 / 4 ;
 }
 
@@ -49,4 +49,85 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.idContainer{
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    margin-top: 40px;
+}
+
+.idCircle{
+    display: inline-block;
+    border-radius: 100%;
+    background: black;
+    color: white;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+}
+
+.generalResults{
+    margin-top: 3vh;
+    background-color: lightgray;
+    width: 80vw;
+    margin-left: 10vw;
+    height: 80px;
+    position: relative;
+}
+
+.boxHeader{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.id{
+    padding-top: 5px;
+    font-size: 20px;
+}
+
+.generalResultsContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.generalInformationPiece{
+    display: inline-flex;
+    margin-left: 20px;
+    margin-top: 35px;
+}
+
+.generalInformationKey{
+    background-color: darkgrey;
+    color: black;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 4px 0 0 4px;
+    font-weight:bold;
+    font-size: 16px;
+}
+
+.generalInformationValue {
+    background-color: white;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 0 4px 4px 0;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.idHeader{
+    font-size: medium;
+    font-weight: bold;
 }

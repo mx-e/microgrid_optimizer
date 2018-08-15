@@ -1,0 +1,11 @@
+.graphContainer{
+    height: 100%;
+}
+.tooltip{
+    position: absolute;
+    pointer-events: none;
+    background: darkgray;
+    padding: 5px;
+    border-radius: 5px;
+}
+

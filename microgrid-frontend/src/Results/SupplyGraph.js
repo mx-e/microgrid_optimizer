@@ -9,7 +9,8 @@ import {
   interpolateCool as d3InterpolateCool,
   stackOrderNone,
   stackOffsetNone,
-  event as d3Event
+  event as d3Event,
+  easeLinear as d3EaseLinear
 } from 'd3'
 import './SupplyGraph.css'
 
@@ -156,8 +157,6 @@ class SupplyGraph extends React.Component{
     this.svg.selectAll(".area").data(series).exit().remove()
     this.svg.selectAll(".area").data(series)
       .attr("class", "area")
-      .attr("d", area)
-      .attr("fill", () => z(Math.random()))
       .on("mouseover", d => {
         this.tooltipDiv.transition()
           .duration(200)
@@ -176,13 +175,16 @@ class SupplyGraph extends React.Component{
           .duration(500)
           .style("opacity", 0);
       })
+      .transition()
+      .duration(300)
+      .ease(d3EaseLinear)
+      .attr("d", area)
+      .attr("fill", () => z(Math.random()))
 
     this.svg.selectAll("path")
       .data(series)
       .enter().append("path")
       .attr("class", "area")
-      .attr("d", area)
-      .attr("fill", () => z(Math.random()))
       .on("mouseover", d => {
         this.tooltipDiv.transition()
           .duration(200)
@@ -201,12 +203,16 @@ class SupplyGraph extends React.Component{
           .duration(500)
           .style("opacity", 0);
       })
+      .transition()
+      .duration(300)
+      .ease(d3EaseLinear)
+      .attr("d", area)
+      .attr("fill", () => z(Math.random()))
   }
 
   render() {
     return(
       <div className={'graphContainer'} id={'graphContainer'}>
-        <div className={'idContainer'}><div className={'id'}>{this.props.id + 1}</div></div>
       </div>
     )
   }

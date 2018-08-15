@@ -3,7 +3,16 @@ import {TYPE} from './action'
 const initialState = {
   result: null,
   households: [],
-  requestPending: false
+  requestPending: false,
+
+  householdPresets: [
+    {
+      title: 'Single Family Home',
+      demandWinter:[1,1,1,2,2,2,3,4.5,4,3.5,3,2,1.5,1.5,1.5,3,4.5,3,3,2.5,2,2,1.5,1],
+      demandSummer:[1,1,1,2,2,2,3,4.5,4,3.5,3,2,1.5,1.5,1.5,3,4.5,3,3,2.5,2,2,1.5,1],
+      demandSpringFall:[1,1,1,2,2,2,3,4.5,4,3.5,3,2,1.5,1.5,1.5,3,4.5,3,3,2.5,2,2,1.5,1]
+  }
+  ]
 }
 
 

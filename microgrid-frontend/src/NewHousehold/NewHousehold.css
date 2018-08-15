@@ -1,3 +1,6 @@
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
+
 .NewHousehold {
     display: grid;
     grid-template-columns: repeat(100, 1%);
@@ -76,7 +79,7 @@
 
 .InputBox input, .InputBox p{
     margin: 0;
-    width: 40%;
+    width: 45%;
     padding: 5px 5px 5px 5px;
     font-size: 20px;
 }
@@ -85,19 +88,25 @@
 
 .Summer {
     grid-area: 3 / 1 / span 1 / span 33;
-    background: lightsalmon;
 }
 
 /* Winter */
 
 .Winter {
     grid-area: 3 / 34 / span 1 / span 34;
-    background: lightskyblue;
 }
 
 /* Spring/Fall */
 
 .Fall {
     grid-area: 3 / 68 / span 1 / span 33;
-    background: lightseagreen;
+}
+
+#saveChangesButton{
+    margin-left: 20px;
+    margin-top: 20px;
+    height: 30px;
+    width: 100px;
+    outline: none;
+    border: 1px black solid;
 }

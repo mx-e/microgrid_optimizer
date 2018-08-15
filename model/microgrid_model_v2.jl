@@ -313,6 +313,7 @@ println("")
 println("Objective value: ", getobjectivevalue(m))
 
 output_data = Dict(
+    "Objective" => getobjectivevalue(m),
     "N" => N, 
     "T" => T,
     "investment" => [
