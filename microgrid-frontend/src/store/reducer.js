@@ -2,8 +2,11 @@ import {TYPE} from './action'
 
 const initialState = {
   result: null,
-  households: [],
   requestPending: false,
+
+  id_counter: 1,
+  households: [],
+  currentlyEditedId: null,
 
   householdPresets: [
     {
@@ -22,8 +25,8 @@ const reducer = (state = initialState, action) => {
     case TYPE.INIT:
       return Object.assign({}, state ,{result: action.result})
     case TYPE.ADD_HOUSEHOLD:
-      const newHouseholds = state.households.concat([{id: state.households.length}])
-      return Object.assign({}, state, {households: newHouseholds})
+      const newHouseholds = state.households.concat([{id: state.id_counter, isVanilla: true}])
+      return Object.assign({}, state, {households: newHouseholds, id_counter: state.id_counter+1})
     case TYPE.DEL_HOUSHOLD:
       const newHouseholds2 = state.households.filter(f => f.id !== action.id)
       return Object.assign({}, state, {households: newHouseholds2})

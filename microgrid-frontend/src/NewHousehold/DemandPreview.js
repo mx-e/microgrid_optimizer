@@ -20,8 +20,9 @@ class DemandPreview extends React.Component{
       options: {
         scales:{
           yAxes: [{
-            scaleLabel:{
-            }
+            ticks: {
+              min: 0
+            },
           }],
         }
       }

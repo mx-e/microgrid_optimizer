@@ -22,6 +22,17 @@ class NewHousehold extends Component {
         selectExpand: false}
     }
 
+    onValueUpdate(inputField, event) {
+      const newValue = event.target.value
+      this.setState(state => Object.assign({}, state, {
+        currentInput: Object.assign({}, state.currentInput, {
+          name: inputField === 1 ? newValue : state.currentInput.name,
+          totalPower: inputField === 2 ? newValue : state.currentInput.totalPower,
+          hourlyVariance: inputField === 3 ? newValue : state.currentInput.hourlyVariance
+        })
+      }))
+    }
+
 
     render(){
       const gridHeight = window.innerHeight * 0.6 + 'px'
@@ -50,7 +61,7 @@ class NewHousehold extends Component {
         return(
           <div>
             <div style={{height: gridHeight}} className="NewHousehold">
-            <h2>New Household</h2>
+            <h2>{this.state.currentInput.name ? this.state.currentInput.name : 'New Household'}</h2>
             <div className="Select" >
               <svg onClick={() => this.setState({selectExpand: true})} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 129 129'>
                 <path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z'
@@ -61,11 +72,11 @@ class NewHousehold extends Component {
             </div>
             <div className="InputBox">
               <p>Name</p>
-              <input type="text"/>
+              <input onChange={event => this.onValueUpdate(1, event)} type="text"/>
               <p>Yearly Energy Consumption</p>
-              <input type="text"/>
+              <input onChange={event => this.onValueUpdate(2, event)} type="text"/>
               <p>Hourly Demand Variance</p>
-              <input type="text"/>
+              <input onChange={event => this.onValueUpdate(3, event)} type="text"/>
             </div>
             <div className="FutureInputBox"></div>
             <div className="Summer">
