@@ -1,6 +1,6 @@
 export const TYPE = Object.freeze({
   ADD_HOUSEHOLD: new String('ADD_HOUSEHOLD'),
-  DEL_HOUSHOLD: new String('DEL_HOUSEHOLD'),
+  DEL_HOUSEHOLD: new String('DEL_HOUSEHOLD'),
   EDIT_HOUSEHOLD: new String('EDIT_HOUSEHOLD'),
   SAVE_HOUSEHOLD: new String('SAVE_HOUSEHOLD'),
   SEND_REQUEST: new String('SEND_REQUEST'),
@@ -17,7 +17,7 @@ export const addVanillaHousehold = () => {
 
 export const deleteHousehold = (id) => {
   return {
-    type: TYPE.DEL_HOUSHOLD,
+    type: TYPE.DEL_HOUSEHOLD,
     id: id
   }
 }

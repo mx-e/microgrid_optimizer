@@ -91,7 +91,8 @@ class NewHousehold extends Component {
           </div>
             <button id={'saveChangesButton'}
                     onClick={ () => {
-                      this.props.saveHousehold(this.state.currentInput)
+                      const newHouseholdData = Object.assign({}, this.state.currentInput,{id: this.props.currentlyEditedId})
+                      this.props.saveHousehold(newHouseholdData)
                       this.props.history.push('/request')
                     }}> SAVE </button>
           </div>
@@ -101,7 +102,8 @@ class NewHousehold extends Component {
 
 const mapStateToProps = state => {
   return {
-    presets: state.householdPresets
+    presets: state.householdPresets,
+    currentlyEditedId: state.currentlyEditedId
   }
 }
 

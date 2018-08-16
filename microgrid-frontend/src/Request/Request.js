@@ -16,8 +16,8 @@ class Request extends React.Component {
       <HouseholdPreview
         deleteHouse={this.props.deleteHousehold}
         editHouse={
-          () => {
-            this.props.editHousehold
+          (id) => {
+            this.props.editHousehold(id)
             this.props.history.push('/newHousehold')
           }
         }
@@ -54,9 +54,7 @@ const mapDispatchToProps = dispatch => {
   return {
     addNewHousehold: () => dispatch(addVanillaHousehold()),
     deleteHousehold: (id) => dispatch(deleteHousehold(id)),
-    editHousehold: (id) => {
-      dispatch(editHousehold(id))
-    },
+    editHousehold: (id) => dispatch(editHousehold(id)),
     requestModel: () => dispatch(sendRequest())
   }
 }

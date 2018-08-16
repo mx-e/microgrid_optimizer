@@ -4,6 +4,7 @@ import Chart from 'chart.js'
 
 class DemandPreview extends React.Component{
 
+
   renderChart(){
      this.chart = new Chart(('chart' + this.props.title), {
       type: 'line',
@@ -18,12 +19,20 @@ class DemandPreview extends React.Component{
         labels: this.props.data.map((d,i) => (i + ':00 h'))
       },
       options: {
+        legend: {
+          display: !this.props.minimalMode
+        },
+        elements: { point: { radius: this.props.minimalMode ? 0 : 2} },
         scales:{
           yAxes: [{
             ticks: {
-              min: 0
+              min: 0,
+              display: !this.props.minimalMode
             },
           }],
+          xAxes:[{
+            display: !this.props.minimalMode
+          }]
         }
       }
 
@@ -55,7 +64,7 @@ class DemandPreview extends React.Component{
   render(){
     return(
       <div>
-        <canvas id={'chart' + this.props.title} height={130} width={250}></canvas>
+        <canvas id={'chart' + this.props.title} height={this.props.minimalMode ? 100 : 150}></canvas>
       </div>
     )
   }

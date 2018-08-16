@@ -1,5 +1,6 @@
 import React from 'react'
 import './HouseholdPreview.css'
+import DemandPreview from "../NewHousehold/DemandPreview";
 
 const householdPreview = (props) => {
   const calcWidth = window.innerWidth*0.28 + 'px'
@@ -16,13 +17,22 @@ const householdPreview = (props) => {
   if(!props.household.name){
     Preview = (
       <div className={'emptyPreview'}>
-        <h3>Generic New Houshold</h3>
-        <h4>Edit for Preview</h4>
+        <h3>Generic New Household</h3>
+        <h4><b id={'editText'} onClick={() => props.editHouse(props.household.id)}>Edit</b> for Preview</h4>
       </div>
     )
   }else{
     Preview = (
-      <div className={'previwContainer'}></div>
+      <div className={'previewContainer'}>
+        <div className={'previewData'}>
+          <h3 style={{marginBotttom: 2 + 'px'}}>{props.household.name}</h3>
+          <p><b>Yearly Electricity Demand: </b>{props.household.totalPower}</p>
+          <p><b>Hourly Variance: </b>{props.household.hourlyVariance}</p>
+        </div>
+        <div className={'previewChartContainer'}>
+          <DemandPreview data={props.household.demandSpringFall} title={'Demand' + props.household.id} theme={'#2e2e2e'} minimalMode={true}/>
+        </div>
+      </div>
     )
   }
 
@@ -72,8 +82,8 @@ const householdPreview = (props) => {
   return(
     <div style={{width: calcWidth, margin: calcMargin + 'px', backgroundColor: props.household.name ? 'lightgray' : 'lightpink'}} className="Households">
       {Preview}
-      {delSvg}
       {editSvg}
+      {delSvg}
     </div>
   )
 }
