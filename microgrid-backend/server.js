@@ -9,7 +9,7 @@ require('./app/routes')(app, {})
 
 const port = 8000;
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ extended: true }));
 
 app.use( function(req, res, next) {
   // Website you wish to allow to connect
@@ -27,6 +27,7 @@ app.listen(port, () => {
 app.post('/modelrequest', (req, res) => {
   // You'll create your note here.
   console.log(req.body)
+  const demandData = generateDemandData(req.body)
 
   const dir = __dirname
 
@@ -37,4 +38,14 @@ app.post('/modelrequest', (req, res) => {
   const data = JSON.parse(contents)
   console.log('Sent Model Results!')
   res.send(data)
-});
+})
+
+const generateDemandData = (request) => {
+  if(request.T = 24){
+    
+  }else if(request.T = (24*30)){
+
+  }else{
+
+  }
+}
