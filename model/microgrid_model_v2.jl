@@ -22,17 +22,17 @@ T = input_data["T"]
 
 #-----BEHAVIOURAL VARIABLES----
 #non-consumption price for households
-ncc = [0.8, 1.2]
+ncc = input_data["ncc"]
 
 #shifted consumption prices for households
-scc = [0.3, 0.5]
+scc = input_data["scc"]
 
 #household demand 
 demand = array_of_arrays_to_matrix(input_data["demand"], N, T)
 
 #-----ENVIRONMENTAL FACTORS-----
 #capacity factor of solar pv
-cap_fr = [0,0,0.1,0.2,0.3,0.4,0.4,0.4,0.4,0.3,0.2,0.1]
+cap_fr = input_data["pv_cap_fr"]
 
 #------INVESTMENT-OPTIONS------
 #- - - - - - PV - - - - - - - -
@@ -84,10 +84,10 @@ opex_fix_gas_st = 0.001
 
 #-----OTHER ECONOMIC FACTORS-----
 #feed in tariff for main grid for each timestep t 
-fit = [0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02]
+fit = input_data["fit"]
 
 #purchase price for grid electricity for each timestep t 
-gec = [0.1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,2,2,2]
+gec = input_data["gec"]
 
 #gas_price per KWh
 gas_price = 0.001
