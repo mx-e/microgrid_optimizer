@@ -149,10 +149,11 @@ class SupplyGraph extends React.Component{
       .y0( d => this.y(d[0]))
       .y1( d => this.y(d[1]))
 
+    let series = positiveStack(positiveData).concat(negativeStack(negativeData))
 
-    const z = d3InterpolateCool;
-
-    const series = positiveStack(positiveData).concat(negativeStack(negativeData))
+    const positiveDatasets = positiveSeries.length
+    positiveSeries.forEach((d,i) => series[i].color = d.color)
+    negativeSeries.forEach((d,i) => series[i+positiveDatasets].color = d.color)
 
     this.svg.selectAll(".area").data(series).exit().remove()
     this.svg.selectAll(".area").data(series)
@@ -179,7 +180,7 @@ class SupplyGraph extends React.Component{
       .duration(300)
       .ease(d3EaseLinear)
       .attr("d", area)
-      .attr("fill", () => z(Math.random()))
+      .attr("fill", (d) => d.color)
 
     this.svg.selectAll("path")
       .data(series)
@@ -207,7 +208,7 @@ class SupplyGraph extends React.Component{
       .duration(300)
       .ease(d3EaseLinear)
       .attr("d", area)
-      .attr("fill", () => z(Math.random()))
+      .attr("fill", (d) => d.color)
   }
 
   render() {

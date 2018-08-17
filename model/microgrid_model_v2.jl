@@ -320,27 +320,32 @@ output_data = Dict(
         Dict(
             "key" => "Solar PV",
             "value" => getvalue(cp_pv),
-            "type" => "generation"
+            "type" => "generation",
+            "color" => "#ffeb3b"
         ),
         Dict(
             "key" => "CHP",
             "value" => getvalue(cp_chp),
-            "type" => "generation"
+            "type" => "generation",
+            "color" => "#e54213"
         ),
         Dict(
             "key" => "Gas Digester",
             "value" => getvalue(cp_digester),
-            "type" => "other"
+            "type" => "other",
+            "color" => "#24693d"
         ),
         Dict(
             "key" => "Li-Ion Battery",
             "value" => getvalue(cp_li_ion),
-            "type" => "storage"
+            "type" => "storage",
+            "color" => "#8e8eb5"
         ),
         Dict(
             "key" => "Gas Storage",
             "value" => getvalue(cp_gas_st),
-            "type" => "storage"
+            "type" => "storage",
+            "color" => "#ae123a"
         )
     ],
     "supply" => []
@@ -351,52 +356,62 @@ for i in [1:N]
         Dict(
             "key" => "Grid Consumption", 
             "value" => getvalue(sgr)[i,:],
-            "type" => "positive"
+            "type" => "positive",
+            "color" => "#b7c7cf"
         ),
         Dict(
             "key" => "PV-Production",
             "value" => getvalue(spv)[i,:],
-            "type" => "positive"
+            "type" => "positive",
+            "color" => "#ffeb3b"
         ),
         Dict(
             "key" => "CHP-Production",
             "value" => getvalue(s_chp)[i,:],
-            "type" => "positive"
+            "type" => "positive",
+            "color" => "#e54213"
         ),
         Dict(
             "key" => "Shifted Consumption",
             "value" => getvalue(ssc)[i,:],
-            "type" => "positive"
+            "type" => "positive",
+            "color" => "#00726c"
         ),
         Dict(
             "key" => "Omitted Consumption",
             "value" => getvalue(snc)[i,:],
-            "type" => "positive"
+            "type" => "positive",
+            "color" => "#71c9c1"
         ),
         Dict(
             "key" => "From Battery",
             "value" => getvalue(s_f_li)[i,:],
-            "type" => "positive"
+            "type" => "positive",
+            "color" => "#8e8eb5"
         ),
         Dict(
             "key" => "Grid Feed-In",
             "value" => getvalue(stg)[i,:],
-            "type" => "negative"
+            "type" => "negative",
+            "color" => "#a2b0b8"
         ),
         Dict(
             "key" => "To Battery",
             "value" => getvalue(s_t_li)[i,:],
-            "type" => "negative"
+            "type" => "negative",
+            "color" => "#727397"
         ),
         Dict(
             "key" => "To Trade",
             "value" => getvalue(tr_to)[i,:],
-            "type" => "negative"
+            "type" => "negative",
+            "color" => "#9526b7"
         ),
         Dict(
             "key" => "From Trade",
             "value" => getvalue(tr_from)[i,:],
-            "type" => "positive"
+            "type" => "positive",
+            "color" => "#77209b"
         )
     ]
     output_data["supply"] = retval

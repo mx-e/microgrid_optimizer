@@ -2,7 +2,9 @@ import React, {Component} from 'react'
 import './NewHousehold.css'
 import {connect} from 'react-redux'
 import DemandPreview from './DemandPreview'
-import {saveHousehold} from "../store/action";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {saveHousehold} from '../store/action'
 
 class NewHousehold extends Component {
     constructor(props) {
@@ -12,13 +14,18 @@ class NewHousehold extends Component {
           title:'No Preset',
           demandWinter:[],
           demandSummer:[],
-          demandSpringFall:[]
+          demandSpringFall:[],
         },
-        currentInput: {
-          demandWinter: Array.apply(null, Array(24)).map(Number.prototype.valueOf,0),
-          demandSummer: Array.apply(null, Array(24)).map(Number.prototype.valueOf,0),
-          demandSpringFall: Array.apply(null, Array(24)).map(Number.prototype.valueOf,0)
-        },
+        currentInput: (!props.currentlyEditedHousehold || props.currentlyEditedHousehold.isVanilla
+          ? {
+            demandWinter: Array.apply(null, Array(24)).map(Number.prototype.valueOf,0),
+            demandSummer: Array.apply(null, Array(24)).map(Number.prototype.valueOf,0),
+            demandSpringFall: Array.apply(null, Array(24)).map(Number.prototype.valueOf,0),
+            name: '',
+            totalPower: '',
+            hourlyVariance: '',
+          }
+          : props.currentlyEditedHousehold),
         selectExpand: false}
     }
 
@@ -72,11 +79,11 @@ class NewHousehold extends Component {
             </div>
             <div className="InputBox">
               <p>Name</p>
-              <input onChange={event => this.onValueUpdate(1, event)} type="text"/>
+              <input onChange={event => this.onValueUpdate(1, event)} type="text" value={this.state.currentInput.name}/>
               <p>Yearly Energy Consumption</p>
-              <input onChange={event => this.onValueUpdate(2, event)} type="text"/>
+              <input onChange={event => this.onValueUpdate(2, event)} type="number" value={this.state.currentInput.totalPower}/>
               <p>Hourly Demand Variance</p>
-              <input onChange={event => this.onValueUpdate(3, event)} type="text"/>
+              <input onChange={event => this.onValueUpdate(3, event)} type="number" value={this.state.currentInput.hourlyVariance}/>
             </div>
             <div className="FutureInputBox"></div>
             <div className="Summer">
@@ -91,19 +98,34 @@ class NewHousehold extends Component {
           </div>
             <button id={'saveChangesButton'}
                     onClick={ () => {
-                      const newHouseholdData = Object.assign({}, this.state.currentInput,{id: this.props.currentlyEditedId})
-                      this.props.saveHousehold(newHouseholdData)
-                      this.props.history.push('/request')
-                    }}> SAVE </button>
+                      if(this.state.currentInput.name && this.state.currentInput.totalPower){
+                        const newHouseholdData = Object.assign({}, this.state.currentInput,{id: this.props.currentlyEditedId})
+                        this.props.saveHousehold(newHouseholdData)
+                        this.props.history.push('/request')
+                      } else {
+                        saveErrorMessage()
+                      }
+                    }}>
+              SAVE
+            </button>
+            <ToastContainer/>
           </div>
         )
     }
 }
 
+const saveErrorMessage = () => {
+  toast.error("'Name' and 'Yearly Energy Consumption' are required fields!", {
+    position: toast.POSITION.TOP_CENTER
+  })
+}
+
+
 const mapStateToProps = state => {
   return {
     presets: state.householdPresets,
-    currentlyEditedId: state.currentlyEditedId
+    currentlyEditedId: state.currentlyEditedId,
+    currentlyEditedHousehold: state.households.find(household => household.id === state.currentlyEditedId)
   }
 }
 

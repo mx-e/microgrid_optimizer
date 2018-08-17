@@ -18,6 +18,7 @@ class InvestmentArc extends React.Component {
   }
 
   renderArcs () {
+    console.log(this.arcSets)
     this.charts = []
     this.arcSets.forEach(set => {
       const cfx = 'arcChart' + this.props.id + set.key
@@ -25,7 +26,8 @@ class InvestmentArc extends React.Component {
         datasets: [
           {
             label: set.key,
-            data: set.value.map(d => d.value[this.props.id])
+            data: set.value.map(d => d.value[this.props.id]),
+            backgroundColor: set.value.map(d => d.color)
           }
         ],
         labels: set.value.map(d => d.key)
