@@ -1,0 +1,17 @@
+[0] Config.pm:354> INFO - This is Biber 2.7
+[0] Config.pm:357> INFO - Logfile is '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.blg'
+[43] biber-darwin:303> INFO - === Sat Sep 29, 2018, 10:59:23
+[67] Biber.pm:359> INFO - Reading '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.bcf'
+[160] Biber.pm:835> INFO - Found 3 citekeys in bib section 0
+[174] Biber.pm:3670> INFO - Processing section 0
+[186] Biber.pm:3840> INFO - Looking for bibtex format file '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/literatur.bib' for section 0
+[190] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
+[200] bibtex.pm:1292> INFO - Found BibTeX data source '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/literatur.bib'
+[230] Utils.pm:164> WARN - ISBN '978-1-4614-0236-7 978-1-4614-0237-4' in entry 'birge_introduction_2011' is invalid - run biber with '--validate_datamodel' for details.
+[244] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[244] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[244] Biber.pm:3499> INFO - Sorting list 'nyt/global/' of type 'entry' with scheme 'nyt' and locale 'en-US'
+[244] Biber.pm:3505> INFO - No sort tailoring available for locale 'en-US'
+[248] bbl.pm:608> INFO - Writing '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.bbl' with encoding 'UTF-8'
+[249] bbl.pm:712> INFO - Output to /Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.bbl
+[249] Biber.pm:109> INFO - WARNINGS: 1

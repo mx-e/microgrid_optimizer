@@ -1,0 +1,34 @@
+\select@language {english}
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline List of Figures}{v}{section*.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline List of Tables}{vi}{section*.5}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1}Subsection}{1}{subsection.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.1.1}Subsubsection}{1}{subsubsection.1.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Second chapter}{2}{section.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1}Exemplary Table}{2}{subsection.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}Exemplary Figure}{2}{subsection.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline References}{3}{section*.8}
