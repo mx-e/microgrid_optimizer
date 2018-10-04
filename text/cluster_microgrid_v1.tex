@@ -33,6 +33,7 @@
 \usepackage{xcolor}
 \usepackage{datetime}
 \usepackage{dcolumn}
+\usepackage{todonotes}
 
 %%% Anpassung des Formats %%%
 \RedeclareSectionCommand[
@@ -188,22 +189,16 @@
 % *************************************
 
 %%% Titelseite %%%
-\newcommand{\autor}{Author 1} 		% Name des Autors
-\newcommand{\matriculation}{xxxxxx} 
-\newcommand{\mailaddress}{xxxxx@campus.tu-berlin.de}
-\newcommand{\autorzwei}{Author 2}
-\newcommand{\matriculationzwei}{xxxxxx} 
-\newcommand{\mailaddresszwei}{xxxxx@campus.tu-berlin.de}
-\newcommand{\autordrei}{Author 3}
-\newcommand{\matriculationdrei}{xxxxxx} 
-\newcommand{\mailaddressdrei}{xxxxx@campus.tu-berlin.de}
+\newcommand{\autor}{Maximilian Eißler} 		% Name des Autors
+\newcommand{\matriculation}{374881} 
+\newcommand{\mailaddress}{eissler@campus.tu-berlin.de}
 
-\newcommand{\betreuer}{Prof. Dr. Christian von Hirschhausen} 		% Namen der Betreuer
-\newcommand{\betreuerzwei}{Second supervisor}
+\newcommand{\betreuer}{Dr. Pao-Yu Oei} 		% Namen der Betreuer
+\newcommand{\betreuerzwei}{Thorsten Burandt}
                       
                   
 %\newcommand{\datum}{\selectlanguage{ngerman}\today}
-\newcommand{\engdate}{\selectlanguage{english}April 20, 2018}
+\newcommand{\engdate}{\selectlanguage{english}\today}
 
 %%% Glossar und Abkürzungsverzeichnis %%% 
 \usepackage[acronym,
@@ -254,7 +249,7 @@
 		%\vspace*{\fill}
 		\begin{center}
 			%\Large{\textbf{\textsc{\doctitle}}}\\
-			\Large{\textbf{Course}}\\
+			\Large{\textbf{Bachelorarbeit}}\\
             \LARGE{\textbf{Title}}\\[2ex]
             \Large{\textbf{Subtitle}}
             
@@ -283,8 +278,6 @@
 			\normalsize
 			Author(s): \\
 			\autor \, (\matriculation) - \mailaddress \\
-			\autorzwei \, (\matriculation) - \mailaddress \\
-			\autordrei \, (\matriculation) - \mailaddress \\
             \vfill
 			Supervisors:\\\betreuer	\\
 			\betreuerzwei
@@ -326,14 +319,6 @@
 			\begin{minipage}[t]{0.3\textwidth}
 				\rule[-0.2cm]{4.5cm}{0.5pt} \\
 				\textsc{\autor}
-			\end{minipage}
-			\begin{minipage}[t]{0.3\textwidth}
-				\rule[-0.2cm]{4.5cm}{0.5pt} \\
-				\textsc{\autorzwei}
-			\end{minipage}
-			\begin{minipage}[t]{0.3\textwidth}
-				\rule[-0.2cm]{4.5cm}{0.5pt} \\
-				\textsc{\autordrei}
 			\end{minipage}
 		\end{center}
 	
@@ -400,8 +385,43 @@
 	\pagenumbering{arabic}						% beginne mit "normaler" Nummerierung
 	
 % ***********************************************************************************
+% CHEATSHEET
+% Acronyms: \gls{tso}; \gls{gams}
+%
+%Chicago (author-date) citation style is used.\\
+%In-text citation:
+%\citet{abrell_integrating_2015} employed...
+%
+%Other forms of citation:
+%.... (see \citealt{birge_introduction_2011})
+%Please maintain a consistent table style (booktabs). For convenience, feel free to use a \href{https://www.tablesgenerator.com/}{TeX table generator}.
+%\begin{table}[H]
+%	\centering
+%	\caption{An exemplary table}
+%	\begin{tabular}{lll}
+%		\hline
+%		\textbf{First Column}		   & \textbf{Second Column}     & \textbf{Third Column}       \\ \hline
+%		First Row                      & information     			& information     \\
+%		Second Row                     & information     			& information     \\
+%		Third Row					   & information     			& information     \\ \hline
+%	\end{tabular}
+%\end{table}
+%\begin{flushleft}
+%	\quad\quad\footnotesize{Source: Based on \citet{leuthold_large-scale_2012}.}
+%\end{flushleft}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=\textwidth]{pictures/wind_turbine.png}
+%	\caption{An exemplary figure}
+%	\label{wind_turbine}
+%	\flushleft\quad\quad\footnotesize{Source: Own illustration.}
+%\end{figure}	
+% ***********************************************************************************
+	
+% ***********************************************************************************
 % Beginn des eigenstaendigen Teils
 % ***********************************************************************************
+
 \selectlanguage{english}
 
 
@@ -409,60 +429,75 @@
 %\include{files/Introduction}					% include statt input ermöglicht Arbeit mit \includeonly{} und fügt Seitenumbruch vor section ein
 
 \section{Introduction}
-\textbf{WICHTIG:}
+In this document the topic, motivation and approach of my bachelor’s thesis shall be outlined. The aim is to give the reader an idea of what I try to accomplish with the choice of topic and methods, as well as a look at the first iteration of the mathematical model I am aiming to build.
+
+\subsection{Motivation}
+As the technological requirements for a decentralized energy system increasingly mature, the importance of understanding smaller units within the electricity system grows. There is a possibility of increasing reliance on small, partially autonomous grid units (microgrids) in the future. This calls for a better understanding of how such systems might operate. Especially the possible efficiency gains over a centralised system and the circumstances on which these efficiency gains might depend should be of interest to science and will be the focus of thesis.
+
+\subsection{Research Question}
+In my thesis I want to create a model of a small electricity grid with a single point of access to the main grid. The microgrid will contain 25 households of different types that will aim to reduce their total electricity costs. To attain this goal there will be two possible courses of action available: 
+	\begin{enumerate}
+	\item First, the option to invest in electricity generation and storage facilities, in this case only solar pv and battery storage. 
+	\item Secondly, the possibility of unrestricted trade within the microgrid, meaning there will be no variable transaction costs, as they would usually occur in the form of fees and levies on electricity being transferred.		
+	\end{enumerate}
+	The aim of this approach is to determine the cost-saving potential in comparison to pure electricity consumption from the main grid in subject to the characteristics of the main parameter types to this model, which are:
+	\begin{enumerate}
+	\item The environmental conditions, primarily pertaining to the availability of renewable resources - in this case, solar irradiation - as well as temperature and changing seasonal energy demand.
+	\item The 'behaviour' of the participants in this microgrid, primarily their willingness to shift or avoid loads depending on the current price of electricity within the microgrid or the main grid.
+	\item The price of power from the main grid as a function of the time of day and  season, as well as the price of power generated by the households themselves.
+	\end{enumerate}
+
+\subsection{Methods}
+	To model the outlined situation I want to use the computational modelling language 'Julia' and construct a linear optimisation model which can be solved with it. The goal is to minimise the cost of electricity for the households in the microgrid. It is notable at this point, that the non-consumption of electricity as well as the delay of consumption will be seen as a cost to the actor forgoing her demand. There will be an investment opportunity at the beginning of the examined timeframe of 20 years. The number of timeslices considered in the optimisation will be depending on performance of the model and can therefore not be determined yet. \\
+	As a case study for this thesis I want to apply the model to the example of a community in Northrhine-Westfalia. With environmental variables set, I will then construct a number of scenarios with variations in electricity price and actor behaviour parameters. \\
+	Another goal of this project is to make this a functional piece of research by reducing performance requirements as far as possible and creating an intuitive user interface that enables the user to 'play' with different scenarios. I prefer this approach over a few detailed and rigid scenarios because the future external factors are presently highly uncertain, which drives me to the conviction that an understanding of the dynamics involved in the examined system is of greater value than an exact solution to an unlikely scenario.
+	
+\subsection{Expected Results}
+The result should be a tool that enables an intuitive understanding of the characteristics and the potentials of microgrids, even to non-economists. I intend an exemplary application of the model to the case of a Northrhine-Westfalian community. From this application I expect an insight into the efficiency gains achievable by microgrids in the German context. Also the required external factors for these efficiency gains to materialise should become evident. Under the right conditions I expect a double digit percentage drop in electricity costs compared to a purely consumption-based system. I hope to arrive at practical conclusions regarding present use cases for microgrids and required future regulation.
+\newpage
+
+\section{Literature Review}
+In this section I shall attempt to give an overview over the current status quo regarding the optimizaton of microgrids and more especially the tools available to do so. I will pursue  this by answering a number of broad question, which I think are crucial regarding my subject. The procedure will be structured by utilizing a consistent and reproducible methodology described in detail below. In addition to scientific literature other sources will also be taken into account at my discrection if they are neccessary or helpful in answering a question.
+
+\subsection{Key Questions}
+This literature review will attempt to answer the following key questions in the context of my subject:
 \begin{enumerate}
-	\item Mehrmals kompilieren!
-	\item Biber benutzen.
-	\item Glossary (F9) ausführen. [Achtung: makeglossaries benötigt Perl]
-	\item MikTeX regelmäßig updaten!
+	\item What are the most eminent scientific standards for modelling a microgrid allocation and dispatch?
+	\item What is usually within the scope of such a model (what types of generation assets, only electricity or also thermal energy and so on)? 
+	\item What are the common methods used to determine some of the key variables required in such a model such as interest rates, CAPEX and OPEX of assets and so on?
+	\item What are the most commonly used (commercial) tools for optimizing a microgrid? Are there any free or open source solutions? 
+\end{enumerate} 
+
+\subsection{Methodology}
+To arrive at a dataset of scientific literature that is reproducible I use the methodology described in \todo{add reference to papers here}:
+
+\begin{enumerate}
+	\item Define a search string
+	\item Choose scientific databases to which to apply that search string
+	\item Due to the possibly large amount of papers brought up by this kind of search I am only considering the 100 most relevant papers from each database.
+	\item Define keywords, which have to occur in the abstracts of the publications. All publications that lack a keyword are discarded.
+	\item Define Inclusion as well as Exclusion criteria. A publication must satisfy all inclusion criteria as well as none of the exclusion criteria to be included in the literature review.
 \end{enumerate}
+Due to the nature of some of the questions I am trying to answer in my literature review it is additionally necessary to include further non-scientific sources at my discretion.
+The search strings, used databases, as well as the dataset of literature at each step will be included in the appendix. \todo{include info and datasets in the appendix}
+
+\subsection{Descriptive Analysis}
 
 
-\subsection{Subsection}
-Acronyms: \gls{tso}; \gls{gams}
+\subsection{Literature Overview}
 
-\subsubsection{Subsubsection}
-Chicago (author-date) citation style is used.\\
-In-text citation:
-\citet{abrell_integrating_2015} employed...
-
-Other forms of citation:
-.... (see \citealt{birge_introduction_2011})
 
 \newpage
-
-\chead{\textit{Second chapter}}  			% definiere Kopfzeile
-\section{Second chapter}
-
-\subsection{Exemplary Table}\label{ex_table}
-Please maintain a consistent table style (booktabs). For convenience, feel free to use a \href{https://www.tablesgenerator.com/}{TeX table generator}.
-\begin{table}[H]
-	\centering
-	\caption{An exemplary table}
-	\begin{tabular}{lll}
-		\hline
-		\textbf{First Column}		   & \textbf{Second Column}     & \textbf{Third Column}       \\ \hline
-		First Row                      & information     			& information     \\
-		Second Row                     & information     			& information     \\
-		Third Row					   & information     			& information     \\ \hline
-	\end{tabular}
-\end{table}
-\begin{flushleft}
-	\quad\quad\footnotesize{Source: Based on \citet{leuthold_large-scale_2012}.}
-\end{flushleft}
-
-
-\subsection{Exemplary Figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{pictures/wind_turbine.png}
-	\caption{An exemplary figure}
-	\label{wind_turbine}
-	\flushleft\quad\quad\footnotesize{Source: Own illustration.}
-\end{figure}	
-
 \newpage
+
+\section{Appendix}
+\subsection{Literature Review}
+The used search String was:  [microgrid AND (optimization OR opimisation) AND linear programming]
+\\
+The used databases are ScienceDirect, IEEE Xplore and Google Scholar.
+\\
+The original dataset consistet of 300 publication of which 276 remained after duplicates where merged.
+\\
 
 % weitere Dokumente einfügen mit den gleichen zwei Befehlen
 
