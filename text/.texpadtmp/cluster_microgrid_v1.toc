@@ -37,8 +37,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3}Descriptive Analysis}{4}{subsection.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4}Literature Overview}{4}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.4}Literature Overview}{5}{subsection.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Appendix}{5}{section.3}
+\contentsline {section}{\numberline {3}Appendix}{6}{section.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Literature Review}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.1}Literature Review}{6}{subsection.3.1}

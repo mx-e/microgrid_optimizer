@@ -482,6 +482,17 @@ Due to the nature of some of the questions I am trying to answer in my literatur
 The search strings, used databases, as well as the dataset of literature at each step will be included in the appendix. \todo{include info and datasets in the appendix}
 
 \subsection{Descriptive Analysis}
+After filtering the original dataset of 275 unique publications in the way described in the last chapter, I arrive at a set of 61 publications. The publication year, as can be observed in Figure 1 is for most publications quite recently: 27 out of 61 papers were published 2017 and after. This could indicate a rising interest in the subject, but is probably at least partly due to the way the different search engines employed compute relevancy.  
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{pictures/Figure_1.png}
+	\caption{Results of an automated Descriptive Analysis}
+	\label{descriptive_anaylsis_results}
+	\flushleft\quad\quad\footnotesize{Source: Own illustration.}
+\end{figure}	
+Looking at the keywords used to describe the publication shows that, unsurprisingly, the most often occuring keywords are the ones used in conducting the search: 'linear programming', 'microgrids' and 'optimization'. 'distributed energy generation' and 'distributed energy resources'are mentioned 37 times, 'batteries' and 'energy storage' a total of 28 times, and 'renewable energy sources' and 'generators' a total of 16 times. This illustrates the focus on decentralized energy sources and storage, more specifically renewables and small scale combined heat and power generation that prevails throughout the literature.
+\\
+The publication chart is not very enlightening. This is due to the fact 28 out of 61 publications are conference papers which either appear under others because there is only one instance of that particular conference or unknown. From a more general point of view though almost all papers are published either by Elsevier or IEEE, with very few exceptions.
 
 
 \subsection{Literature Overview}
@@ -496,8 +507,29 @@ The used search String was:  [microgrid AND (optimization OR opimisation) AND li
 \\
 The used databases are ScienceDirect, IEEE Xplore and Google Scholar.
 \\
-The original dataset consistet of 300 publication of which 276 remained after duplicates where merged.
+The original dataset consistet of 300 publication of which 275 remained after duplicates where merged.
 \\
+The search string for the Abstract Keyword Search was [(microgrid OR micro-grid OR off-grid) AND (optimization OR optimisation OR optimise OR optimal OR optimally) AND (linear programming OR linear program OR mixed integer)
+\\
+After the abstract keyword search was conducted 106 publications remained.
+\\
+The inclusion criteria were:
+\begin{enumerate}
+	\item An optimization model is employed.
+	\item There is some discussion about the design of the model.
+	\item The objective of the model is the optimization of design or dispatch of a single microgrid.
+	\item There is some sort of case study conducted.
+\end{enumerate}
+The exclusion criteria were:
+\begin{enumerate}
+	\item The publication is not in English language.
+	\item The full text is not obtainable for this author with reasonable effort.
+	\item The publication is a Work-In-Progress / Conference Paper version of a publication published in a journal and also included in this dataset.
+	\item The mathematical model designed is non-linear.
+	\item The mathematical model designed only considers a specific aspect of dispatch or design, not the entirety.
+	\item The mathematical model is mostly focused on heat generation/distribution rather than electricity.
+\end{enumerate}
+After the filtering by inclusion and exclusion criteria 61 publications remained.
 
 % weitere Dokumente einfügen mit den gleichen zwei Befehlen
 
