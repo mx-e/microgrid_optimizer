@@ -133,7 +133,7 @@
             sorting=nyt					
 			]{biblatex}
 
-\addbibresource{literatur.bib}
+\addbibresource{microgrid_literature.bib}}
 \usepackage{breakcites}
 
 \DeclareNameAlias{author}{last-first}				
@@ -496,9 +496,48 @@ The publication chart is not very enlightening. This is due to the fact 28 out o
 
 
 \subsection{Literature Overview}
+The first question in need of an answer in approaching the problem of optimizing a microgrids design and dispatch is the question of the modelling approach itself. Although the dataset of literature derived from the methodology described in 2.2 is biased towards Linear Programming, which was one of the search and filter criteria, it contains multiple employed methodologies. For example \cite{7975049} employ both a Mixed Integer Linear Programming (MILP) model as well as a Genetic Algorithm (GA) and comes to the conclusion that while both deliver accurate and robust results the MILP model is faster. \cite{NEMATI2018944} mostly concur. While the results of the GA were better in two scenarios, it was outperformed by the MILP model in the remaining three.
+A key problem of MILP however seems to be its deterministic nature, which anticipates perfect knowledge of all the parameters involved. Especially for optimisation problems regarding a short timeframe, such as day-ahead scheduling this is a significant problem, since actual parameters may be different. Several methods addressing this problem can be found in literature. 
+
+--rolling horizon\\
+--robust optimization\\
+--stochatic progrmming\\
+--parametric programming\\\\
+
+------scope
+
+--microgrid definition\\  
+--islanded versus grid-bound\\
+--pure dispatch vs allocation and dispatch\\
+--types of generation (dispatchable and non-dispatchable, electric vs thermal)\\
+--types of storage (electric vs thermal)\\
+--topology included\\
+--power quality included\\
+--demand response included (controllable vs flexible vs critical loads)\\
+--duration and stepsize of case studies\\\\
+
+
+------parameters
+
+--papers with parameters vs papers without\\
+--usual breakdown of cost variables\\
+--irridiation and other weather data\\
+--load data\\
+--other parameters\\\\
+
+------commonly used tools
+
+--commercial tools such as DER-CAM and HOMER \\
+--solvers (CPLEX etc.)\\
+--modelling languages (MATLAB, GAMS etc.)\\
+-- open source tools (github reference) but none with interface\\
+
+
+
 
 
 \newpage
+-
 \newpage
 
 \section{Appendix}
@@ -529,13 +568,13 @@ The exclusion criteria were:
 	\item The mathematical model designed only considers a specific aspect of dispatch or design, not the entirety.
 	\item The mathematical model is mostly focused on heat generation/distribution rather than electricity.
 \end{enumerate}
-After the filtering by inclusion and exclusion criteria 61 publications remained.
+After the filtering by inclusion and exclusion criteria 58 publications remained.
 
 % weitere Dokumente einfügen mit den gleichen zwei Befehlen
 
 %\nocite{*}									% gibt zum Testen des Literaturverzeichnisses alle Bibeinträge aus
 \chead{\textit{References}}				    % siehe oben 
-\renewcommand\refname{References}			% in Literaturverzeichnis umbenennen
+\renewcommand\refname{Literature}			% in Literaturverzeichnis umbenennen
 \printbibliography
 %[heading=bibintoc]
 \end{document}

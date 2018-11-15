@@ -82,7 +82,7 @@
       <file>cluster_microgrid_v1.bcf</file>
     </requires>
     <requires type="editable">
-      <file>literatur.bib</file>
+      <file>microgrid_literature.bib</file>
     </requires>
   </external>
 </requests>

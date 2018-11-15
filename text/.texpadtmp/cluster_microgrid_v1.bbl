@@ -16,5 +16,95 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \sortlist[entry]{nyt/global/}
+    \entry{7975049}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=a6a898305cdd7e5986a7abab204580ff}{%
+           family={Lázár},
+           familyi={L\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=630b6e21d7dc99bfc7ce40e7710a1dd5}{%
+           family={Petreuş},
+           familyi={P\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=260dc93146fd8d78a92ce5a9c8f0a30d}{%
+           family={Etz},
+           familyi={E\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=33849607061335b8e0e368a898819a9e}{%
+           family={Pătărău},
+           familyi={P\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{2a11a16a8566ed09aceb58c80d592f02}
+      \strng{fullhash}{0cf89c2c6b4cc463ee58f555b57f6fe5}
+      \strng{authornamehash}{2a11a16a8566ed09aceb58c80d592f02}
+      \strng{authorfullhash}{0cf89c2c6b4cc463ee58f555b57f6fe5}
+      \field{sortinit}{L}
+      \field{sortinithash}{7bba64db83423e3c29ad597f3b682cf3}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{To achieve optimal energy generation for different renewable energy resources and to control the charging and discharging functions of energy storage system by minimizing the operation cost and by satisfying the electricity demand is a seriously challenging optimization problem. The aim of the Virtual Power Producer (VPP) is to ensure the optimal scheduling of the connected units in the Islanded Smart Microgrid. It is necessary to examine the scheduling problem using different approaches, since different methods can give different solutions. This paper surveys the Mixed-Integer Programming (MILP) and the Genetic Algorithm (GA) methods used in the field focusing on energy management. The optimization issue is examined using the presented methods. The results are summarized and compared by a Graphical User Interface (GUI). The proposed methods guarantee a reliability and quality solution of the minimum operational cost's problem. The results presented in this paper might be valuable for future research in energy management systems.}
+      \field{booktitle}{2017 {{International Conference}} on {{Optimization}} of {{Electrical}} and {{Electronic Equipment}} ({{OPTIM}}) 2017 {{Intl Aegean Conference}} on {{Electrical Machines}} and {{Power Electronics}} ({{ACEMP}})}
+      \field{month}{5}
+      \field{note}{ISSN:}
+      \field{title}{Minimization of Operational Cost for an {{Islanded Microgrid}} Using a Real Coded {{Genetic Algorithm}} and a {{Mixed Integer}} Linear {{Programming}} Method}
+      \field{year}{2017}
+      \field{pages}{693\bibrangedash 698}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/OPTIM.2017.7975049
+      \endverb
+      \keyw{distributed power generation,Microgrids,Batteries,renewable energy resources,power generation economics,Generators,energy management systems,smart power grids,power generation scheduling,genetic algorithms,power generation reliability,Sociology,integer programming,linear programming,Genetic algorithms,graphical user interfaces,MILP,electricity demand,mixed integer linear programming method,optimal scheduling,energy storage system,Optimal scheduling,graphical user interface,GUI,islanded smart microgrid,optimal energy generation,real coded genetic algorithm,virtual power producer,VPP}
+    \endentry
+    \entry{NEMATI2018944}{article}{}
+      \name{author}{3}{}{%
+        {{hash=d8acdc44d7ebb093df25a5cdb262e1df}{%
+           family={Nemati},
+           familyi={N\bibinitperiod},
+           given={Mohsen},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d80f7d8c34c0856e00fa15e123d2634d}{%
+           family={Braun},
+           familyi={B\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4d219be9ae1739573beed46ada799b56}{%
+           family={Tenbohlen},
+           familyi={T\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{354695db2faffab355a9214c4ebb39aa}
+      \strng{fullhash}{54beacb0df489a98334eda2b04a4fae3}
+      \strng{authornamehash}{354695db2faffab355a9214c4ebb39aa}
+      \strng{authorfullhash}{54beacb0df489a98334eda2b04a4fae3}
+      \field{sortinit}{N}
+      \field{sortinithash}{1163c28585427c673ad5a010cbf82f52}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Energy Management System (EMS) applications of modern power networks like microgrids have to respond to a number of stringent challenges due to current energy revolution. Optimal resource dispatch tasks must be handled with specific regard to the addition of new resource types and the adoption of novel modeling considerations. In addition, due to the comprehensive changes concerning the multi cell grid structure, new policies should be fulfilled via microgrids' EMS. At the same time achieving a variety of (conflicting) goals in different microgrids requires a universal and a multi criteria optimization tool. Few of recent works in this area have considered the different perspectives of network operation with high amount of constraints and decision criteria. In this paper two dispatch-optimizers for a centralized EMS (CEMS) as a universal tool are introduced. An improved real-coded genetic algorithm and an enhanced mixed integer linear programming (MILP) based method have been developed to schedule the unit commitment and economic dispatch of microgrid units. In the proposed methods, network restrictions like voltages and equipment loadings and unit constraints have been considered. The adopted genetic algorithm features a highly flexible set of sub-functions, intelligent convergence behavior, as well as diversified searching approaches and penalty methods for constraint violations. Moreover, a novel method has been introduced to deal with the limitations of the MILP algorithm for handling the non-linear network topology constraints. A new aging model of a Lithium-Ion battery based on an event-driven aging behavior has been introduced. Ultimately, the developed GA-based and MILP-based optimizers have been applied to a test microgrid model under different operation policies, and the functionality of each method has been evaluated and compared together.}
+      \field{issn}{0306-2619}
+      \field{journaltitle}{Applied Energy}
+      \field{title}{Optimization of Unit Commitment and Economic Dispatch in Microgrids Based on Genetic Algorithm and Mixed Integer Linear Programming}
+      \field{volume}{210}
+      \field{year}{2018}
+      \field{pages}{944\bibrangedash 963}
+      \range{pages}{20}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.apenergy.2017.07.007
+      \endverb
+      \keyw{Microgrids,Mixed integer linear programming,Economic dispatch,Genetic algorithm,Unit commitment}
+    \endentry
+  \endsortlist
+\endrefsection
 \endinput
 
