@@ -19,6 +19,513 @@
 
 \refsection{0}
   \sortlist[entry]{nyt/global/}
+    \entry{amrollahi2017techno}{article}{}
+      \name{author}{2}{}{%
+        {{hash=0cf969297f2c2b197a288da88fdbdd5a}{%
+           family={Amrollahi},
+           familyi={A\bibinitperiod},
+           given={Mohammad\bibnamedelima Hossein},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=cea61764503d9470b2aae2753e5f7fe1}{%
+           family={Bathaee},
+           familyi={B\bibinitperiod},
+           given={Seyyed\bibnamedelimb Mohammad\bibnamedelima Taghi},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{45e5c526053568f36a63ba1dfe2631f5}
+      \strng{fullhash}{45e5c526053568f36a63ba1dfe2631f5}
+      \strng{authornamehash}{45e5c526053568f36a63ba1dfe2631f5}
+      \strng{authorfullhash}{45e5c526053568f36a63ba1dfe2631f5}
+      \field{sortinit}{A}
+      \field{sortinithash}{3248043b5fe8d0a34dab5ab6b8d4309b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Applied Energy}
+      \field{title}{Techno-Economic Optimization of Hybrid Photovoltaic/Wind Generation Together with Energy Storage System in a Stand-Alone Micro-Grid Subjected to Demand Response}
+      \field{volume}{202}
+      \field{year}{2017}
+      \field{pages}{66\bibrangedash 77}
+      \range{pages}{12}
+    \endentry
+    \entry{7399422}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4c42ebf921d12661dcdfbae6066a4652}{%
+           family={Atia},
+           familyi={A\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=4dd98feb109af698f43d414d426692ad}{%
+           family={Yamada},
+           familyi={Y\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{6ea5d136d8dd04df4a9568f93059a995}
+      \strng{fullhash}{6ea5d136d8dd04df4a9568f93059a995}
+      \strng{authornamehash}{6ea5d136d8dd04df4a9568f93059a995}
+      \strng{authorfullhash}{6ea5d136d8dd04df4a9568f93059a995}
+      \field{sortinit}{A}
+      \field{sortinithash}{3248043b5fe8d0a34dab5ab6b8d4309b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Accelerated development of eco-friendly technologies such as renewable energy, smart grids, and electric transportation will shape the future of electric power generation and supply. Accordingly, the power consumption characteristics of modern power systems are designed to be more flexible, which impact the system sizing. However, integrating these considerations into the design stage can be complex. Under these terms, this paper presents a novel model based on mixed integer linear programming for the optimization of a hybrid renewable energy system with a battery energy storage system in residential microgrids in which the demand response of available controllable appliances is coherently considered in the proposed optimization problem with reduced calculation burdens. The model takes into account the intrinsic stochastic behavior of renewable energy and the uncertainty involving electric load prediction, and thus proper stochastic models are considered. This paper investigates the effect of load flexibility on the component sizing of the system for a residential microgrid in Okinawa. Also under consideration are different operation scenarios emulating technical limitations and several uncertainty levels.}
+      \field{issn}{1949-3053}
+      \field{journaltitle}{IEEE Transactions on Smart Grid}
+      \field{month}{5}
+      \field{number}{3}
+      \field{title}{Sizing and {{Analysis}} of {{Renewable Energy}} and {{Battery Systems}} in {{Residential Microgrids}}}
+      \field{volume}{7}
+      \field{year}{2016}
+      \field{pages}{1204\bibrangedash 1213}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/TSG.2016.2519541
+      \endverb
+      \keyw{performance analysis,distributed power generation,Microgrids,Renewable energy sources,renewable energy sources,Batteries,microgrids,power systems,demand side management,smart power grids,demand response,Optimization,residential microgrids,Home appliances,battery storage plants,smart grids,Load modeling,battery energy storage system,Stochastic processes,integer programming,linear programming,hybrid power systems,mixed integer linear programming,load forecasting,Design optimization,battery systems,eco-friendly technologies,electric load prediction,electric power generation,electric transportation,hybrid renewable energy system,load flexibility,Okinawa}
+    \endentry
+    \entry{7972908}{article}{}
+      \name{author}{7}{}{%
+        {{hash=9be4d62c296f903e9a24a63cbbdb61c6}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=444cdd8cbaa0f0f4cebd3219ee77fa19}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=262394c964914c2a67b690bd67fde298}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=444cdd8cbaa0f0f4cebd3219ee77fa19}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=29bdd03a757ee4168cad6d145c3f26ac}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=1338f11dc7c99abb1ba2f3b1f109e3c3}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=95a281ba3b1fbf7b222b10f7711f11b0}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{335e2b88cba92dc9be4e6403bde063df}
+      \strng{fullhash}{0e1aceaf53ace27affc179237ee910c2}
+      \strng{authornamehash}{335e2b88cba92dc9be4e6403bde063df}
+      \strng{authorfullhash}{0e1aceaf53ace27affc179237ee910c2}
+      \field{sortinit}{C}
+      \field{sortinithash}{095692fd22cc3c74d7fe223d02314dbd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper presents a multiobjective optimization method to jointly optimize the planning and operation of a grid-tied microgrid (MG) with various distributed generation sources such as wind turbine and photovoltaic arrays with the assistance of demand side management. In order to explore the economy and demand variety, the problem is formulated as a double-objective optimization to minimize the total annual cost and to maximize the customer satisfaction. To solve the multiobjective optimization problem, a fuzzy satisfaction-maximizing method is adopted to convert the original problem into a single objective optimization problem and a mixed integer linear programming algorithm is then used to solve the problem. To verify the proposed solution, various case studies have been carried out and compared. The results show that the proposed method is effective in minimizing the cost of an MG without sacrificing the satisfaction of customers.}
+      \field{issn}{1949-3029}
+      \field{journaltitle}{IEEE Transactions on Sustainable Energy}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Optimal {{Sizing}} for {{Grid}}-{{Tied Microgrids With Consideration}} of {{Joint Optimization}} of {{Planning}} and {{Operation}}}
+      \field{volume}{9}
+      \field{year}{2018}
+      \field{pages}{237\bibrangedash 248}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1109/TSTE.2017.2724583
+      \endverb
+      \keyw{distributed power generation,Microgrids,Batteries,microgrid,demand side management,Planning,integer programming,linear programming,power generation planning,wind turbine,Genetic algorithms,multi-objective optimization,Customer satisfaction,Demand side management,distributed generation sources,fuzzy satisfaction-maximizing,fuzzy satisfaction-maximizing method,mixed integer linear programming algorithm,multiobjective optimization method,Optimization methods,photovoltaic arrays,planning and operation optimization}
+    \endentry
+    \entry{costa2014mixed}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c4a9df21e6a51f62e722825cafafcdc9}{%
+           family={Costa},
+           familyi={C\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0523121bfa4934c420720b9dc3a1ed8e}{%
+           family={Fichera},
+           familyi={F\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{9fb8abbebc358629d9bd74aa4328c6a1}
+      \strng{fullhash}{9fb8abbebc358629d9bd74aa4328c6a1}
+      \strng{authornamehash}{9fb8abbebc358629d9bd74aa4328c6a1}
+      \strng{authorfullhash}{9fb8abbebc358629d9bd74aa4328c6a1}
+      \field{sortinit}{C}
+      \field{sortinithash}{095692fd22cc3c74d7fe223d02314dbd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Applied Thermal Engineering}
+      \field{number}{2}
+      \field{title}{A Mixed-Integer Linear Programming ({{MILP}}) Model for the Evaluation of {{CHP}} System in the Context of Hospital Structures}
+      \field{volume}{71}
+      \field{year}{2014}
+      \field{pages}{921\bibrangedash 929}
+      \range{pages}{9}
+    \endentry
+    \entry{CRAPARO2017135}{article}{}
+      \name{author}{3}{}{%
+        {{hash=88272f0e82c8385af92b6dda63dbb3ef}{%
+           family={Craparo},
+           familyi={C\bibinitperiod},
+           given={Emily},
+           giveni={E\bibinitperiod}}}%
+        {{hash=ab1396c77e0a8a9ae71d9d75dea66406}{%
+           family={Karatas},
+           familyi={K\bibinitperiod},
+           given={Mumtaz},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d1b22a4ac0a1844ad06ee205cadcf87a}{%
+           family={Singham},
+           familyi={S\bibinitperiod},
+           given={Dashi\bibnamedelima I.},
+           giveni={D\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \strng{namehash}{4cd52fdf6acb4f2a43f506248401c0d1}
+      \strng{fullhash}{f24879ba60f4a05cc37c3107abc436e0}
+      \strng{authornamehash}{4cd52fdf6acb4f2a43f506248401c0d1}
+      \strng{authorfullhash}{f24879ba60f4a05cc37c3107abc436e0}
+      \field{sortinit}{C}
+      \field{sortinithash}{095692fd22cc3c74d7fe223d02314dbd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Hybrid microgrids that use renewable energy sources can improve energy security and islanding time while reducing costs. One potential beneficiary of these systems is the U.S. military, which can seek to improve energy security when operating in isolated areas by using a microgrid rather than relying on a fragile (or nonexistent) commercial network. Renewable energy sources can be intermittent and unpredictable, making it difficult to plan operations of a microgrid. We describe a scenario-robust mixed-integer linear program designed to utilize ensemble weather forecasts to improve the performance of a hybrid microgrid containing both renewable and traditional power sources. We exercise our model to quantify the benefit of using ensemble weather forecasts, and we predict the optimal performance of a hypothetical grid containing wind turbines by using simulated realistic weather forecast scenarios based on data. Because forecast quality degrades with lead time, we perform a sensitivity analysis to determine which planning horizon results in the best performance. Our results show that, for day-ahead planning, longer planning horizons outperform shorter planning horizons in terms of cost of operations, but this improvement diminishes as the planning horizon lengthens.}
+      \field{issn}{0306-2619}
+      \field{journaltitle}{Applied Energy}
+      \field{title}{A Robust Optimization Approach to Hybrid Microgrid Operation Using Ensemble Weather Forecasts}
+      \field{volume}{201}
+      \field{year}{2017}
+      \field{pages}{135\bibrangedash 147}
+      \range{pages}{13}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.apenergy.2017.05.068
+      \endverb
+      \keyw{Renewable energy,Microgrid,Robust optimization}
+    \endentry
+    \entry{DistributedEnergyResources2018}{misc}{}
+      \field{sortinit}{D}
+      \field{sortinithash}{d10b5413de1f3d197b20897dd0d565bb}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://building-microgrid.lbl.gov/projects/der-cam}
+      \field{journaltitle}{Berkeley Lab}
+      \field{title}{Distributed {{Energy Resources}} - {{Customer Adoption Model}} ({{DER}}-{{CAM}})}
+      \field{year}{2018}
+    \endentry
+    \entry{SOLTANINEJADFARSANGI2018257}{article}{}
+      \name{author}{4}{}{%
+        {{hash=7709a2591bd8a5999a25db903890a94c}{%
+           family={Farsangi},
+           familyi={F\bibinitperiod},
+           given={Alireza\bibnamedelima SoltaniNejad},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=d4f69a753a00b7ed9d4a1286ffef286e}{%
+           family={Hadayeghparast},
+           familyi={H\bibinitperiod},
+           given={Shahrzad},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0507ad4c6a7175640732afc84ad1c0c8}{%
+           family={Mehdinejad},
+           familyi={M\bibinitperiod},
+           given={Mehdi},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9b2e2075704af21836f8b14e5bf446ff}{%
+           family={Shayanfar},
+           familyi={S\bibinitperiod},
+           given={Heidarali},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{574f7fa401c1fb63d1bb0883b5cd2a73}
+      \strng{fullhash}{8da950dcff168d1e580fc4ff4898acb6}
+      \strng{authornamehash}{574f7fa401c1fb63d1bb0883b5cd2a73}
+      \strng{authorfullhash}{8da950dcff168d1e580fc4ff4898acb6}
+      \field{sortinit}{F}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper, the energy management of a microgrid including wind turbine, PhotoVoltaic (PV) modules, Combined Heat and Power (CHP) systems, fuel cells, power only units, heat only unit, Plug-in Electric Vehicles (PEVs), and thermal energy storage resources for supplying electrical and thermal loads is presented. For achieving a better management on demand side, both price-based and incentive-based Demand Response Programs (DRPs) have been used and their impacts on reducing the operational cost of microgrid in both grid-connected and island modes have been investigated. Also, the uncertainty of price, load, wind speed and solar radiation are taken into account in order to obtain more realistic results. By discretization of Probability Distribution Function (PDF) of each uncertain parameter, a set of scenarios is generated. Then, using a scenario reduction method based on mixed-integer linear optimization, the set of reduced scenarios is obtained. Two-stage stochastic programming approach is used to minimize the operational cost in microgrid energy management. The proposed method for microgrid energy management has been evaluated in three modes: grid-connected, grid-connected with DRPs, and island mode with DRPs.}
+      \field{issn}{0360-5442}
+      \field{journaltitle}{Energy}
+      \field{title}{A Novel Stochastic Energy Management of a Microgrid with Various Types of Distributed Energy Resources in Presence of Demand Response Programs}
+      \field{volume}{160}
+      \field{year}{2018}
+      \field{pages}{257\bibrangedash 274}
+      \range{pages}{18}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.energy.2018.06.136
+      \endverb
+      \keyw{Uncertainty,Two-stage stochastic programming,Microgrid energy management,Demand response programs (DRPs),Distributed energy resource (DER),Plug-in electric vehicles (PEVs)}
+    \endentry
+    \entry{GithubSearchMicrogrid2018}{misc}{}
+      \field{sortinit}{G}
+      \field{sortinithash}{618d986594b7198ba52cf8b00d348f3f}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://github.com/search?o=desc\&q=microgrid+optimization\&s=stars\&type=Repositories}
+      \field{journaltitle}{github.com}
+      \field{langid}{english}
+      \field{title}{Github {{Search}} - '{{Microgrid Optimization}}' , Sorted by Most Stars}
+      \field{year}{2018}
+    \endentry
+    \entry{7125149}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=b3e2f00ec46be58697754d48896a5c95}{%
+           family={Gulin},
+           familyi={G\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2ecca5f2a6ad0d80842c4672935c3956}{%
+           family={Matuško},
+           familyi={M\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f37562c96b566b54e23d7098a73deab6}{%
+           family={Vašak},
+           familyi={V\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{28040a773c94b18d1355471bd0072901}
+      \strng{fullhash}{162f9ed79e7bcf4427f003264d0d2144}
+      \strng{authornamehash}{28040a773c94b18d1355471bd0072901}
+      \strng{authorfullhash}{162f9ed79e7bcf4427f003264d0d2144}
+      \field{sortinit}{G}
+      \field{sortinithash}{618d986594b7198ba52cf8b00d348f3f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper we present power flow optimization of a residential DC microgrid that consists of photovoltaic array, batteries stack and fuel cells stack with electrolyser, and is connected to the grid via bidirectional power converter. The optimization problem aims to minimize microgrid operating costs and is formulated using a linear program that takes into account the storages charge and discharge efficiency. To account for power predictions uncertainty, optimization problem is defined in a stochastic framework by using chance constraints. Since we assume that the error in realization of power predictions will be compensated by utility grid, chance constraints are defined for power exchange between the microgrid and the utility grid. Finally, we investigate a stochastic model predictive control for the closed-loop power management in the microgrid. Performance verification of the proposed approach is performed on simulations for two-month period.}
+      \field{booktitle}{2015 {{IEEE International Conference}} on {{Industrial Technology}} ({{ICIT}})}
+      \field{month}{3}
+      \field{note}{ISSN:}
+      \field{title}{Stochastic Model Predictive Control for Optimal Economic Operation of a Residential {{DC}} Microgrid}
+      \field{year}{2015}
+      \field{pages}{505\bibrangedash 510}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICIT.2015.7125149
+      \endverb
+      \keyw{distributed power generation,Microgrid,Microgrids,power generation control,Batteries,power grids,power generation economics,Optimization,power grid,secondary cells,Stochastic processes,Uncertainty,Predictive models,Linear programming,linear programming,fuel cell,operating cost minimization,stochastic programming,predictive control,optimal control,load flow control,battery stack,bidirectional power converter,Chance Constraints,closed loop systems,closed-loop power management,cost reduction,electrolyser,fuel cells,linear program,Linear Program,optimal economic operation,photovoltaic array,power convertors,power flow optimization,Power Flow Optimization,residential DC microgrid,solar cells,stochastic model predictive control,Stochastic Model Predictive Control}
+    \endentry
+    \entry{7981571}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=aad54ca5f58c6c5b98e2ce8a752e42d4}{%
+           family={{Henao-Muñoz}},
+           familyi={H\bibinitperiod},
+           given={A.\bibnamedelimi C.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=2d79eeb0244eda690ee5625171d786f6}{%
+           family={{Saavedra-Montes}},
+           familyi={S\bibinitperiod},
+           given={A.\bibnamedelimi J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=4f9e0a03aa0ba3aa06d9d20c3dffe6b2}{%
+           family={{Ramos-Paja}},
+           familyi={R\bibinitperiod},
+           given={C.\bibnamedelimi A.},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{51204c6da5c20904349c28dd5ab9e3e4}
+      \strng{fullhash}{adda4d4952584cd8c9ee7630616e0fab}
+      \strng{authornamehash}{51204c6da5c20904349c28dd5ab9e3e4}
+      \strng{authorfullhash}{adda4d4952584cd8c9ee7630616e0fab}
+      \field{sortinit}{H}
+      \field{sortinithash}{2f664b453ec75da1fe3804ca92633405}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A comparison of two energy management systems for an isolated microgrid based on photovoltaic generation is presented in this paper. One energy management system is presented as an optimization problem solved by means of a mixed integer linear programming which aims to minimize the operating cost of the microgrid. The algorithm determines the optimal power dispatch of all distributed generation units using reduced linear models and operating constraints for each unit, together with a cost function, and historical information of meteorological and demand conditions. The simulation of the microgrid is carried out in Matlab. Results from the mixed integer linear programming are compared with results obtained from a proposed weighted algorithm, showing a reduction in the operating cost of the microgrid when the mixed integer linear programming algorithm is used; however, this algorithm spent more processing time than the weighted algorithm.}
+      \field{booktitle}{2017 14th {{International Conference}} on {{Synthesis}}, {{Modeling}}, {{Analysis}} and {{Simulation Methods}} and {{Applications}} to {{Circuit Design}} ({{SMACD}})}
+      \field{month}{6}
+      \field{note}{ISSN:}
+      \field{title}{Energy Management System for an Isolated Microgrid with Photovoltaic Generation}
+      \field{year}{2017}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/SMACD.2017.7981571
+      \endverb
+      \keyw{distributed power generation,Microgrids,Batteries,Photovoltaic systems,Mathematical model,Energy management,Generators,energy management systems,Optimization,power generation dispatch,photovoltaic generation,photovoltaic power systems,integer programming,linear programming,Matlab,photovoltaic generator,cost function,distributed generation units,energy management system,Energy management system,isolated microgrid,isolated microgrids,mixed integer linear programming,operating constraints,optimal power dispatch,optimization problem,reduced linear models,weighted algorithm}
+    \endentry
+    \entry{HOMERGridBehindtheMeter2018}{misc}{}
+      \field{sortinit}{H}
+      \field{sortinithash}{2f664b453ec75da1fe3804ca92633405}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://www.homerenergy.com/products/grid/index.html}
+      \field{journaltitle}{HOMER Energy}
+      \field{langid}{english}
+      \field{title}{{{HOMER Grid Behind}}-the-{{Meter Optimization Software}} for {{Demand Charge Reduction}} and {{Energy Arbitrage}}}
+      \field{year}{2018}
+    \endentry
+    \entry{8240914}{article}{}
+      \name{author}{3}{}{%
+        {{hash=d3ffc93361c2abaecfb9199b2bc10065}{%
+           family={Hussain},
+           familyi={H\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=849ea6002f07276fc6e43b3d1a855cbb}{%
+           family={Bui},
+           familyi={B\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=d2c77fbbb1ca8cbb3104e4f3c5760de2}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{5c11182d4be1bb8e4b725a9101e506aa}
+      \strng{fullhash}{81fbf4e70e79e91fe83b0904e6ca336e}
+      \strng{authornamehash}{5c11182d4be1bb8e4b725a9101e506aa}
+      \strng{authorfullhash}{81fbf4e70e79e91fe83b0904e6ca336e}
+      \field{sortinit}{H}
+      \field{sortinithash}{2f664b453ec75da1fe3804ca92633405}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Energy management system (EMS) is responsible for the optimal operation of microgrids. EMS adjusts its operational schedule for near future by using the available information. Market price signals are generally used for the operation of microgrids, which are obtained by using estimation/ forecasting methods. However, it is difficult to precisely predict the market prices due to the involvement of various complex factors like weather, policy, demand, errors in forecasting methods, and fuel cost. Therefore, in this paper, the uncertainties associated with the real-time market price signals (buying and selling) are realized via a robust optimization method. In addition to market price signals, uncertainties associated with renewable power sources and forecasted load values are also considered. Initially, a deterministic model is formulated for an ac/dc hybrid microgrid. Then a min-max robust counterpart is formulated by considering the worstcase uncertainties. Finally, an equivalent mixed integer problem is formulated by using linear duality and other optimality conditions. The developed model can provide feasible solutions for all the scenarios if the uncertainties fluctuate within the specified bounds. The effect of market price uncertainties on internal power transfer and external power trading, operation cost, the state-of-charge of energy storage elements, and unit commitment of dispatchable generators is analyzed. Taguchi's orthogonal array (OA) method is used to find the worst-case scenario within the specified uncertainty bounds. Then, Monte Carlo method is used to generate various scenarios within the uncertainty bounds to evaluate the robustness of the selected scenario via Taguchi's OA method. Finally, a violation index is formulated to evaluate the robustness of the proposed approach against the deterministic model. Simulations results have validated the robustness of the proposed optimization strategy.}
+      \field{issn}{2169-3536}
+      \field{journaltitle}{IEEE Access}
+      \field{title}{Robust {{Optimal Operation}} of {{AC}}/{{DC Hybrid Microgrids Under Market Price Uncertainties}}}
+      \field{volume}{6}
+      \field{year}{2018}
+      \field{pages}{2654\bibrangedash 2667}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2017.2784834
+      \endverb
+      \keyw{distributed power generation,Microgrids,power markets,pricing,energy storage,microgrid operation,power generation economics,Energy management,Generators,energy management systems,Robustness,Optimization,optimisation,power generation scheduling,Load modeling,power generation dispatch,Uncertainty,integer programming,linear programming,robust optimization,energy management system,load forecasting,EMS,cost reduction,ac-dc hybrid microgrid,ac/dc hybrid microgrids,AC/DC hybrid microgrids,costing,deterministic model,estimation-forecasting methods,forecasted load values,Forecasted price uncertainty,market price uncertainties,min-max robust counterpart,Monte Carlo method,Monte Carlo methods,operation cost,operational schedule,optimal operation,optimality conditions,optimization strategy,real-time market price signals,robust control,robust optimal operation,robust optimization method,Taguchi's OA method,Taguchi's orthogonal array method,uncertainty modeling,worstcase uncertainties}
+    \endentry
+    \entry{7853085}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=038c0577c8e6a8ac3f9d422f6b87e0af}{%
+           family={Kamboj},
+           familyi={K\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c8ac33b7020160b20e1035aa28b52a62}{%
+           family={Chanana},
+           familyi={C\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c455158252df3d97aa42e9483153616}
+      \strng{fullhash}{4c455158252df3d97aa42e9483153616}
+      \strng{authornamehash}{4c455158252df3d97aa42e9483153616}
+      \strng{authorfullhash}{4c455158252df3d97aa42e9483153616}
+      \field{sortinit}{K}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The conventional sources and central generation systems are becoming outdated. Moreover, they don't seem to be capable of fulfilling the growing energy demand in future and are major cause of pollution and Green House effect. In recent years, Renewable Energy and Distributed Generation systems have become a hot topic and a lot of research is carried out in these fields. In this paper, a renewable energy micro-grid containing PV and wind energy sources with Micro-Turbine, Fuel cell, Battery and Grid as backup sources is studied. The total operational cost and emissions of the micro-grid(MG) are minimized to obtain the optimal power schedule of a day. For this purpose, a mixed integer non-linear programming (MINLP) method is used and results are compared with other programming algorithms like Particle Swarm optimization (PSO) and Genetic algorithm (GA).}
+      \field{booktitle}{2016 {{IEEE}} 1st {{International Conference}} on {{Power Electronics}}, {{Intelligent Control}} and {{Energy Systems}} ({{ICPEICES}})}
+      \field{month}{7}
+      \field{note}{ISSN:}
+      \field{title}{Optimization of Cost and Emission in a {{Renewable Energy}} Micro-Grid}
+      \field{year}{2016}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICPEICES.2016.7853085
+      \endverb
+      \keyw{central generation systems,cost optimization,costing,distributed generation systems,distributed power generation,Emission,fuel cell,fuel cell power plants,genetic algorithm,genetic algorithms,Genetic algorithms,green house effect,Green products,integer programming,Iron,Linear programming,Micro-grid,microturbine,Minimize Cost,mixed integer nonlinear programming method,Mixed Integer Programming,nonlinear programming,operational cost,particle swarm optimisation,particle swarm optimization,photovoltaic power systems,pollution,power generation economics,programming algorithms,PV sources,renewable energy microgrid,wind energy sources,wind turbines}
+    \endentry
+    \entry{KOLTSAKLIS2018318}{article}{}
+      \name{author}{3}{}{%
+        {{hash=9d749352a895bdad862c26db73033065}{%
+           family={Koltsaklis},
+           familyi={K\bibinitperiod},
+           given={Nikolaos\bibnamedelima E.},
+           giveni={N\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=eb6edfd578dd45b0a6a90532babb1061}{%
+           family={Giannakakis},
+           familyi={G\bibinitperiod},
+           given={Myronas},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4a59f47a54ec2b3942efd3c648ca8c5d}{%
+           family={Georgiadis},
+           familyi={G\bibinitperiod},
+           given={Michael\bibnamedelima C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{96df2f44e61ef5b2f99bb18378516e71}
+      \strng{fullhash}{ee5b234f1482a42133b58de35c5518cc}
+      \strng{authornamehash}{96df2f44e61ef5b2f99bb18378516e71}
+      \strng{authorfullhash}{ee5b234f1482a42133b58de35c5518cc}
+      \field{sortinit}{K}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This work presents a generic optimization framework to address the problem of the optimal design and operational scheduling of energy microgrids. The problem to be solved is formulated as a mixed-integer linear programming (MILP) model whose objective function concerns the total cost minimization of the energy microgrid. The energy generating units to be installed consist of technologies using fuel (natural gas) as a raw material (microturbines, fuel cells etc.), and renewable energy sources (wind and solar). The microgrid is divided into a certain number of zones, each of which is characterized by a given amount of electricity demand to be satisfied, while the system can exchange electrical energy with the main power grid by acquiring from and selling energy to the grid. The efficiency and applicability of the proposed model is illustrated using three case studies. The maximum allowable level of CO2 emissions, the price of electricity purchased from the main grid, and the price of electricity sold to the main grid constitute the parameters whose influences on the economic variables of the microgrid, on the quantities and the capacities of the installed technologies, as well as on the energy balance of the microgrid are investigated. The proposed model provides a systematic and analytical methodological framework for a detailed planning and scheduling of energy microgrids, highlighting potential risks and appropriate price signals on critical energy projects undertaken by investors and/or designed by policy makers at a national and/or regional level under realistic operating conditions.}
+      \field{issn}{0263-8762}
+      \field{journaltitle}{Chemical Engineering Research and Design}
+      \field{note}{Energy Systems Engineering}
+      \field{title}{Optimal Energy Planning and Scheduling of Microgrids}
+      \field{volume}{131}
+      \field{year}{2018}
+      \field{pages}{318\bibrangedash 332}
+      \range{pages}{15}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.cherd.2017.07.030
+      \endverb
+      \keyw{Microgrid,Distributed energy resources,CO emissions,Electricity trade,Energy planning and scheduling}
+    \endentry
+    \entry{LAUINGER201624}{article}{}
+      \name{author}{4}{}{%
+        {{hash=70f1a999437effa873b03145056fda49}{%
+           family={Lauinger},
+           familyi={L\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=ca2be88e3886bcd01fe869d9080bad94}{%
+           family={Caliandro},
+           familyi={C\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=1254b90d0ac809be894f4c86a4975dbd}{%
+           family={{herle}},
+           familyi={h\bibinitperiod},
+           given={J.\bibnamedelimi Van},
+           giveni={J\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=0b83fd4c66eee78145c409fd29b16e4d}{%
+           family={Kuhn},
+           familyi={K\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{b53f601c2854463e782837caffd8a9dc}
+      \strng{fullhash}{c4047ce537f46e4ebd07e0a5fcdb730c}
+      \strng{authornamehash}{b53f601c2854463e782837caffd8a9dc}
+      \strng{authorfullhash}{c4047ce537f46e4ebd07e0a5fcdb730c}
+      \field{sortinit}{L}
+      \field{sortinithash}{7bba64db83423e3c29ad597f3b682cf3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A decision-support tool (ORES) in the form of a linear program is developed to determine the optimal investment and operating decisions for residential energy systems. It shows how energy conversion units such as a cogeneration fuel cell, a heat pump, a boiler, photovoltaic panels and solar thermal collectors can be combined with energy storage devices, consisting of a battery and a hot water tank, to drive down total yearly energy costs and CO2 emissions while meeting space heat, hot water and electricity needs. Under the assumption of perfect demand and production forecasts and depending on how the dwelling is allowed to exchange electricity with the grid, cost reductions between 5 and 60\% are possible, whereas emissions can be cut by 45–{}90\% with respect to a base case. Stochastic programming is used effectively to reduce the sensitivity to uncertainty in weather parameters. The resulting cost increase is limited to 1.2\%. Decision rules are implemented to account for unforeseen variations in electric load. If it is assumed that peak loads can occur at any instant of the optimization horizon, energy costs rise by 9\%, which in off-grid scenarios, are driven by the installation of an about 50\% bigger battery system.}
+      \field{issn}{2352-152X}
+      \field{journaltitle}{Journal of Energy Storage}
+      \field{title}{A Linear Programming Approach to the Optimization of Residential Energy Systems}
+      \field{volume}{7}
+      \field{year}{2016}
+      \field{pages}{24\bibrangedash 37}
+      \range{pages}{14}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.est.2016.04.009
+      \endverb
+      \keyw{Batteries,Linear programming,Fuel cells,Residential energy systems}
+    \endentry
     \entry{7975049}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=a6a898305cdd7e5986a7abab204580ff}{%
@@ -48,7 +555,6 @@
       \strng{authorfullhash}{0cf89c2c6b4cc463ee58f555b57f6fe5}
       \field{sortinit}{L}
       \field{sortinithash}{7bba64db83423e3c29ad597f3b682cf3}
-      \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{To achieve optimal energy generation for different renewable energy resources and to control the charging and discharging functions of energy storage system by minimizing the operation cost and by satisfying the electricity demand is a seriously challenging optimization problem. The aim of the Virtual Power Producer (VPP) is to ensure the optimal scheduling of the connected units in the Islanded Smart Microgrid. It is necessary to examine the scheduling problem using different approaches, since different methods can give different solutions. This paper surveys the Mixed-Integer Programming (MILP) and the Genetic Algorithm (GA) methods used in the field focusing on energy management. The optimization issue is examined using the presented methods. The results are summarized and compared by a Graphical User Interface (GUI). The proposed methods guarantee a reliability and quality solution of the minimum operational cost's problem. The results presented in this paper might be valuable for future research in energy management systems.}
@@ -63,6 +569,218 @@
       \verb 10.1109/OPTIM.2017.7975049
       \endverb
       \keyw{distributed power generation,Microgrids,Batteries,renewable energy resources,power generation economics,Generators,energy management systems,smart power grids,power generation scheduling,genetic algorithms,power generation reliability,Sociology,integer programming,linear programming,Genetic algorithms,graphical user interfaces,MILP,electricity demand,mixed integer linear programming method,optimal scheduling,energy storage system,Optimal scheduling,graphical user interface,GUI,islanded smart microgrid,optimal energy generation,real coded genetic algorithm,virtual power producer,VPP}
+    \endentry
+    \entry{7741704}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=5831de745df56bf5051a6d719f6e2cfa}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=3d829b74cab2c2adbd946dd7271133c9}{%
+           family={Starke},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=048ccd1f23d05bdd3c29a6997ed37342}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xiaohu},
+           giveni={X\bibinitperiod}}}%
+        {{hash=04e7bcacf4144dbb250b6b7f0ad95998}{%
+           family={Tomsovic},
+           familyi={T\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{2128e61c2a194f203facd509f631823b}
+      \strng{fullhash}{2691c1184109ed1f6c589cebb04a764f}
+      \strng{authornamehash}{2128e61c2a194f203facd509f631823b}
+      \strng{authorfullhash}{2691c1184109ed1f6c589cebb04a764f}
+      \field{sortinit}{L}
+      \field{sortinithash}{7bba64db83423e3c29ad597f3b682cf3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper proposes a distribution optimal power flow (D-OPF) model for the operation of microgrids. The proposed model minimizes not only the operating cost, including fuel cost, purchasing cost and demand charge, but also several performance indices, including voltage deviation, network power loss and power factor. It co-optimizes the real and reactive power form distributed generators (DGs) and batteries considering their capacity and power factor limits. The D-OPF is formulated as a mixed-integer linear programming (MILP). Numerical simulation results show the effectiveness of the proposed model.}
+      \field{booktitle}{2016 {{IEEE Power}} and {{Energy Society General Meeting}} ({{PESGM}})}
+      \field{issn}{1944-9933}
+      \field{month}{7}
+      \field{title}{A {{MILP}}-Based Distribution Optimal Power Flow Model for Microgrid Operation}
+      \field{year}{2016}
+      \field{pages}{1\bibrangedash 5}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/PESGM.2016.7741704
+      \endverb
+      \keyw{distributed power generation,Microgrids,power generation control,Batteries,microgrids,microgrid operation,power generation economics,Reactive power,Optimization,State of charge,Linear programming,power distribution economics,integer programming,linear programming,mixed-integer linear programming,operating cost minimization,power distribution control,optimal control,load flow control,mixed integer linear programming,MILP,fuel cost,distributed generators,Fuels,demand charge,Distribution optimal power flow,distribution optimal power flow model,multiobjective optimization,network power loss,power factor,power factor correction,purchasing cost,reactive power optimization,voltage deviation}
+    \endentry
+    \entry{8023785}{article}{}
+      \name{author}{10}{}{%
+        {{hash=f4f3e34bc380e83e262168d2c96ab2e3}{%
+           family={Mashayekh},
+           familyi={M\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=adbeeef8916c341a7c9296df35f2099f}{%
+           family={Stadler},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f668105278a0973b9ac7083550faf700}{%
+           family={Cardoso},
+           familyi={C\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=5d5e422dc1130e11ed50952da0008ad2}{%
+           family={Heleno},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=32f46d0b66d17d1fd2d3bd5e97e94aab}{%
+           family={Madathil},
+           familyi={M\bibinitperiod},
+           given={S.\bibnamedelimi C.},
+           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=b4addfa25596f38ba67e07eebe5092d8}{%
+           family={Nagarajan},
+           familyi={N\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=b1026584e50319efda681813a5258ffc}{%
+           family={Bent},
+           familyi={B\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=922ec72a28bfedcbd73864bbe7889a92}{%
+           family={{Mueller-Stoffels}},
+           familyi={M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e9624de7b2f567e77587eeb44b2a2903}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=8845475b32556b4a8eb724ec4cb86611}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{72dff615357ddfb3ccb69d44c654e7c2}
+      \strng{fullhash}{c117115afac6363a45ac33004adc11d6}
+      \strng{authornamehash}{72dff615357ddfb3ccb69d44c654e7c2}
+      \strng{authorfullhash}{c117115afac6363a45ac33004adc11d6}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Energy supply in rural and off-grid communities has traditionally relied on diesel-based microgrids, due to limited access. But global environmental concerns are pushing for the transformation of these systems into renewable-based microgrids. This transition to more complex systems with a mix of dispatchable and nondispatchable resources requires new planning tools that ensure the security of supply. This paper presents a novel mixed-integer linear optimization model that determines optimal technology mix, size, placement, and associated dispatch for a multi-energy microgrid. The model satisfies microgrid's electrical and heat transfer network limitations by integrating linear power flow and heat transfer equations. It captures the efficiency gains from waste heat recovery through combined heat and power technologies, by modeling the interplay between electrical and heat sources. To ensure a secure design against generator outages, the optimization maintains sufficient reserve capacity in the system, which is dynamically allocated based on system operating conditions. Several case studies on an isolated microgrid model, developed based on a real microgrid in Alaska, illustrate how the proposed model works. The results show the effectiveness of the model and are used to discuss various aspects of the optimization solution.}
+      \field{issn}{0885-8950}
+      \field{journaltitle}{IEEE Transactions on Power Systems}
+      \field{month}{5}
+      \field{number}{3}
+      \field{title}{Security-{{Constrained Design}} of {{Isolated Multi}}-{{Energy Microgrids}}}
+      \field{volume}{33}
+      \field{year}{2018}
+      \field{pages}{2452\bibrangedash 2462}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1109/TPWRS.2017.2748060
+      \endverb
+      \keyw{Security,distributed power generation,Microgrids,Mathematical model,microgrid,load flow,Optimization,power system security,power generation dispatch,Resistance heating,Cooling,waste heat,integer programming,linear programming,power generation planning,MILP,mixed integer linear program,combined heat-power technologies,complex systems,diesel-based microgrids,dispatchable resources,electrical heat sources,energy supply,generator outages,heat recovery,Heat recovery,heat transfer,heat transfer equations,heat transfer network limitations,Isolated,isolated microgrid model,isolated multienergy microgrids,linear power flow,microgrid electrical transfer network limitations,N-1 contingency,nondispatchable resources,novel mixed-integer linear optimization model,off-grid communities,optimal dispatch,optimal planning,planning tools,remote,renewable-based microgrids,security-constrained,security-constrained design,system operating conditions,waste heat recovery}
+    \endentry
+    \entry{mashayekhMixedIntegerLinear2017}{article}{}
+      \name{author}{4}{}{%
+        {{hash=f9d056bdc78b41ad07ed1442277384c7}{%
+           family={Mashayekh},
+           familyi={M\bibinitperiod},
+           given={Salman},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c24162cc10bf3c286840394d1d6c619d}{%
+           family={Stadler},
+           familyi={S\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b2165e1d5c8789591945eba7b9163e88}{%
+           family={Cardoso},
+           familyi={C\bibinitperiod},
+           given={Gonçalo},
+           giveni={G\bibinitperiod}}}%
+        {{hash=6a973aced4aff5b633bd5e35d01a8493}{%
+           family={Heleno},
+           familyi={H\bibinitperiod},
+           given={Miguel},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{69de419ab5d8e89d63fe411b486445bc}
+      \strng{fullhash}{26f89a7eede8cc0ac4e9abf4f95caa02}
+      \strng{authornamehash}{69de419ab5d8e89d63fe411b486445bc}
+      \strng{authorfullhash}{26f89a7eede8cc0ac4e9abf4f95caa02}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Optimal microgrid design is a challenging problem, especially for multi-energy microgrids with electricity, heating, and cooling loads as well as sources, and multiple energy carriers. To address this problem, this paper presents an optimization model formulated as a mixed-integer linear program, which determines the optimal technology portfolio, the optimal technology placement, and the associated optimal dispatch, in a microgrid with multiple energy types. The developed model uses a multi-node modeling approach (as opposed to an aggregate single-node approach) that includes electrical power flow and heat flow equations, and hence, offers the ability to perform optimal siting considering physical and operational constraints of electrical and heating/cooling networks. The new model is founded on the existing optimization model DER-CAM, a state-of-the-art decision support tool for microgrid planning and design. The results of a case study that compares single-node vs. multi-node optimal design for an example microgrid show the importance of multi-node modeling. It has been shown that single-node approaches are not only incapable of optimal DER placement, but may also result in sub-optimal DER portfolio, as well as underestimation of investment costs.}
+      \field{issn}{0306-2619}
+      \field{journaltitle}{Applied Energy}
+      \field{month}{2}
+      \field{title}{A Mixed Integer Linear Programming Approach for Optimal {{DER}} Portfolio, Sizing, and Placement in Multi-Energy Microgrids}
+      \field{volume}{187}
+      \field{year}{2017}
+      \field{pages}{154\bibrangedash 168}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1016/j.apenergy.2016.11.020
+      \endverb
+      \verb{file}
+      \verb /Users/maxi/Zotero/storage/7KCMTNGG/Mashayekh et al. - 2017 - A mixed integer linear programming approach for op.pdf;/Users/maxi/Zotero/storage/WQI5JFYQ/S0306261916316051.html
+      \endverb
+      \keyw{Electrical network,Heating and cooling network,Mixed-integer linear program,Multi-energy microgrid design,Power flow}
+    \endentry
+    \entry{7540870}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=aa1d5b950d9b5fd9c4f9c108ed05747e}{%
+           family={Moshi},
+           familyi={M\bibinitperiod},
+           given={G.\bibnamedelimi G.},
+           giveni={G\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=0c0bc520dd8c29e1f51a95ebed10c423}{%
+           family={Bovo},
+           familyi={B\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=879eb329950bf433ea2261a29e4d4c78}{%
+           family={Berizzi},
+           familyi={B\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=932a91f3c9320fb56c9d1e7d7bf7490a}{%
+           family={Taccari},
+           familyi={T\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{f03b7aef74a589da02fa9e244eaca85f}
+      \strng{fullhash}{fe0ad5f9aac38939ec1bbd592c6ba640}
+      \strng{authornamehash}{f03b7aef74a589da02fa9e244eaca85f}
+      \strng{authorfullhash}{fe0ad5f9aac38939ec1bbd592c6ba640}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We present two Mixed-Integer Linear Programming (MILP) models for a complete microgrid planning problem which consider uncertainties in the main input data (hourly solar irradiance, wind speed and electricity demand). The first model adopts a Two-Stage Stochastic Integer Programming (2SSIP) formulation with discrete scenarios, whereas the second model adopts a Robust Optimization (RO) formulation with polyhedral uncertainty sets. The aim is to determine the optimal combination, capacities, and number of components to install in the microgrid considering long-term operations and uncertainty in the main input data. The 2SSIP model offers the possibility to obtain a planning solution using discrete scenarios sampled from appropriate probability distributions. The RO model gives a planning solution which is guaranteed to be feasible for any realization of input data within specified uncertainty sets. To show and compare the effectiveness of these models, we present a case study in which we apply the two models to plan a standalone microgrid in Singida, Tanzania. The proposed models can be applied for planning and detailed feasibility studies on generic microgrids with renewables, storage batteries and diesel generators.}
+      \field{booktitle}{2016 {{Power Systems Computation Conference}} ({{PSCC}})}
+      \field{month}{6}
+      \field{note}{ISSN:}
+      \field{title}{Optimization of Integrated Design and Operation of Microgrids under Uncertainty}
+      \field{year}{2016}
+      \field{pages}{1\bibrangedash 7}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/PSCC.2016.7540870
+      \endverb
+      \keyw{2SSIP formulation,Batteries,Biological system modeling,distributed power generation,integer programming,linear programming,Linear programming,microgrid design optimization,microgrid operation,microgrid planning,microgrid planning problem,Microgrids,MILP models,mixed-integer linear programming,optimization,Optimization,Planning,polyhedral uncertainty sets,power distribution planning,probability distributions,RO formulation,robust optimization,robust optimization formulation,statistical distributions,stochastic integer programming,two-stage stochastic integer programming,uncertainty,Uncertainty}
     \endentry
     \entry{NEMATI2018944}{article}{}
       \name{author}{3}{}{%
@@ -88,7 +806,6 @@
       \strng{authorfullhash}{54beacb0df489a98334eda2b04a4fae3}
       \field{sortinit}{N}
       \field{sortinithash}{1163c28585427c673ad5a010cbf82f52}
-      \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Energy Management System (EMS) applications of modern power networks like microgrids have to respond to a number of stringent challenges due to current energy revolution. Optimal resource dispatch tasks must be handled with specific regard to the addition of new resource types and the adoption of novel modeling considerations. In addition, due to the comprehensive changes concerning the multi cell grid structure, new policies should be fulfilled via microgrids' EMS. At the same time achieving a variety of (conflicting) goals in different microgrids requires a universal and a multi criteria optimization tool. Few of recent works in this area have considered the different perspectives of network operation with high amount of constraints and decision criteria. In this paper two dispatch-optimizers for a centralized EMS (CEMS) as a universal tool are introduced. An improved real-coded genetic algorithm and an enhanced mixed integer linear programming (MILP) based method have been developed to schedule the unit commitment and economic dispatch of microgrid units. In the proposed methods, network restrictions like voltages and equipment loadings and unit constraints have been considered. The adopted genetic algorithm features a highly flexible set of sub-functions, intelligent convergence behavior, as well as diversified searching approaches and penalty methods for constraint violations. Moreover, a novel method has been introduced to deal with the limitations of the MILP algorithm for handling the non-linear network topology constraints. A new aging model of a Lithium-Ion battery based on an event-driven aging behavior has been introduced. Ultimately, the developed GA-based and MILP-based optimizers have been applied to a test microgrid model under different operation policies, and the functionality of each method has been evaluated and compared together.}
@@ -103,6 +820,881 @@
       \verb https://doi.org/10.1016/j.apenergy.2017.07.007
       \endverb
       \keyw{Microgrids,Mixed integer linear programming,Economic dispatch,Genetic algorithm,Unit commitment}
+    \endentry
+    \entry{7244857}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=afef56d1978ae6b4b8cad3768498a15c}{%
+           family={Nugraha},
+           familyi={N\bibinitperiod},
+           given={P.\bibnamedelimi Y.},
+           giveni={P\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=ed3c95695d912d7ae7b6d6c608865d6d}{%
+           family={Hadisupadmo},
+           familyi={H\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=da117f5fadbb8162668e8066ec9ac6c8}{%
+           family={Widyotriatmo},
+           familyi={W\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=06f76c6de2d4fa795208273f3a0417dc}{%
+           family={Kurniadi},
+           familyi={K\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{630250138fe6d03d256307349dd9b452}
+      \strng{fullhash}{00002911c5bd47556ca63152a19a1fe6}
+      \strng{authornamehash}{630250138fe6d03d256307349dd9b452}
+      \strng{authorfullhash}{00002911c5bd47556ca63152a19a1fe6}
+      \field{sortinit}{N}
+      \field{sortinithash}{1163c28585427c673ad5a010cbf82f52}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper deals with the optimization of capacity and operation scheduling for a grid-tied microgrid system. Photovoltaic power system is used as renewable energy source and pumped-storage hydroelectricity is used as energy storage. The physical models of the photovoltaic system and pumped-storage hydroelectricity are developed. The objective function is formulated based on capital and operational costs of individual systems. The constraints for the optimization are defined considering the model of systems, operational limitations, and performance requirements. The capacity and the operation scheduling of the photovoltaic and pumped-storage hydroelectricity are optimized based on the solar insolation data and average load demand tied to the microgrid. The performances required are high renewable energy penetration and low curtailed renewable energy. The optimization problem is solved using the mixed integer linear problem (MILP). With the proposed scheme, the renewable energy penetration ratio achieves 50\%, which is acceptable. Moreover, the curtailed renewable energy ratio of 1.22\% is obtained, which is very low. Both achievements, the acceptable renewable energy penetration ratio and the low curtailed renewable energy ratio, are the key outcomes of this research.}
+      \field{booktitle}{2015 10th {{Asian Control Conference}} ({{ASCC}})}
+      \field{month}{5}
+      \field{note}{ISSN:}
+      \field{title}{Optimization of Capacity and Operational Scheduling for Grid-Tied Microgrid Using Pumped-Storage Hydroelectricity and Photovoltaic}
+      \field{year}{2015}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ASCC.2015.7244857
+      \endverb
+      \keyw{distributed power generation,Microgrid,Microgrids,Renewable energy sources,Photovoltaic systems,energy storage,Energy storage,Optimization,Schedules,renewable energy,power generation scheduling,photovoltaic power systems,integer programming,linear programming,optimization,optimal capacity,optimal operation scheduling,photovoltaic,photovoltaic power system,renewable energy source,objective function,MILP,average load demand,curtailed renewable energy ratio,grid-tied microgrid,Hydroelectric power generation,mixed integer linear problem,operational limitations,performance requirements,pumped-storage hydroelectric system,pumped-storage hydroelectricity,pumped-storage power stations,renewable energy penetration ratio,solar insolation data}
+    \endentry
+    \entry{palma2013microgrid}{article}{}
+      \name{author}{7}{}{%
+        {{hash=b3850f83275d1d440a0641562b94c333}{%
+           family={{Palma-Behnke}},
+           familyi={P\bibinitperiod},
+           given={Rodrigo},
+           giveni={R\bibinitperiod}}}%
+        {{hash=a2667919c805c91b743127a8c5ce4117}{%
+           family={Benavides},
+           familyi={B\bibinitperiod},
+           given={Carlos},
+           giveni={C\bibinitperiod}}}%
+        {{hash=3494c4261bf1d5a9195de6d39f8edfd4}{%
+           family={Lanas},
+           familyi={L\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod}}}%
+        {{hash=c5e95939baf3b17a069fd5ee29ccdeee}{%
+           family={Severino},
+           familyi={S\bibinitperiod},
+           given={Bernardo},
+           giveni={B\bibinitperiod}}}%
+        {{hash=d24d4abfb16b36290e4a7a6040f6ec87}{%
+           family={Reyes},
+           familyi={R\bibinitperiod},
+           given={Lorenzo},
+           giveni={L\bibinitperiod}}}%
+        {{hash=25cf107bd9ce4c859e9ad04b4d7a2241}{%
+           family={Llanos},
+           familyi={L\bibinitperiod},
+           given={Jacqueline},
+           giveni={J\bibinitperiod}}}%
+        {{hash=bac7af9ab7b7078e0723a2d8e96ea78a}{%
+           family={Sáez},
+           familyi={S\bibinitperiod},
+           given={Doris},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{571cb64c2ae5ac777b5498a3a291cc3b}
+      \strng{fullhash}{fb67f7fd1db018b6ba46e9a0aaa10b4a}
+      \strng{authornamehash}{571cb64c2ae5ac777b5498a3a291cc3b}
+      \strng{authorfullhash}{fb67f7fd1db018b6ba46e9a0aaa10b4a}
+      \field{sortinit}{P}
+      \field{sortinithash}{24100cef455d7974167575052c29146e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Smart Grid}
+      \field{number}{2}
+      \field{title}{A Microgrid Energy Management System Based on the Rolling Horizon Strategy}
+      \field{volume}{4}
+      \field{year}{2013}
+      \field{pages}{996\bibrangedash 1006}
+      \range{pages}{11}
+    \endentry
+    \entry{6669807}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=f5000e2d8d941f789580371d88f03183}{%
+           family={Parisio},
+           familyi={P\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b2c26d6d074ea9a80e10496aa7abd2c9}{%
+           family={Glielmo},
+           familyi={G\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{256de2ef5db129eb044904c19886f1eb}
+      \strng{fullhash}{256de2ef5db129eb044904c19886f1eb}
+      \strng{authornamehash}{256de2ef5db129eb044904c19886f1eb}
+      \strng{authorfullhash}{256de2ef5db129eb044904c19886f1eb}
+      \field{sortinit}{P}
+      \field{sortinithash}{24100cef455d7974167575052c29146e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Microgrids are subsystems of the distribution grid which comprises generation capacities, storage devices and controllable loads, which can operate either connected or isolated from the utility grid. In this work, microgrid management system is developed in a stochastic framework. Uncertainties due to fluctuating demand and generation from renewable energy sources are taken into account and a two-stage stochastic programming approach is applied to efficiently optimize microgrid operations while satisfying a time-varying request and operation constraints. Mathematically, the stochastic optimization problem is stated as a mixed-integer linear programming problem, which can be solved in an efficient way by using commercial solvers. The stochastic problem is incorporated in a Model Predictive Control (MPC) scheme to further compensate the uncertainty though the feedback mechanism. Simulations show the effective performance of the proposed approach.}
+      \field{booktitle}{2013 {{European Control Conference}} ({{ECC}})}
+      \field{month}{7}
+      \field{note}{ISSN:}
+      \field{title}{Stochastic {{Model Predictive Control}} for Economic/Environmental Operation Management of Microgrids}
+      \field{year}{2013}
+      \field{pages}{2014\bibrangedash 2019}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.23919/ECC.2013.6669807
+      \endverb
+      \keyw{Programming,distributed power generation,Microgrids,power generation control,power system management,power generation economics,environmental factors,Optimization,Load modeling,Stochastic processes,Uncertainty,distribution grid,integer programming,linear programming,stochastic programming,controllable loads,generation capacities,predictive control,storage devices,Vectors,utility grid,microgrid operations,stochastic model predictive control,stochastic optimization problem,mixed-integer linear programming problem,economic-environmental operation management,feedback,feedback mechanism,fluctuating demand,microgrid management system,stochastic framework,time-varying request,two-stage stochastic programming approach}
+    \endentry
+    \entry{6700453}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=77d4e33cd485c07bdb54e80df2e2d060}{%
+           family={{Rigo-Mariani}},
+           familyi={R\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=394538596e2971606440675de7159296}{%
+           family={Sareni},
+           familyi={S\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=5253d0ca2b4a91065a10b5ea9281c9ae}{%
+           family={Roboam},
+           familyi={R\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{d1fcdfd0fc2b027b673f3740d79eb680}
+      \strng{fullhash}{ac5fd5835fd9fa8e139c3b94dfb35646}
+      \strng{authornamehash}{d1fcdfd0fc2b027b673f3740d79eb680}
+      \strng{authorfullhash}{ac5fd5835fd9fa8e139c3b94dfb35646}
+      \field{sortinit}{R}
+      \field{sortinithash}{c15bc8eb6936bc6b3c8baa9e8575af53}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper proposes a fast strategy for optimal dispatching of power flows in a microgrid with storage. The investigated approach is based on the use of standard Linear Programming (LP) algorithm in association with a coarse but linear model of the microgrid. The control references resulting from the LP optimization are adapted in order to comply with a finer model which takes nonlinear features (efficiencies) into account. This approach allows simulating long periods of time and estimating the cost effectiveness with regard to various energy price policies. It would lead to a systemic optimization that would integrate the management strategy device sizing.}
+      \field{booktitle}{{{IECON}} 2013 - 39th {{Annual Conference}} of the {{IEEE Industrial Electronics Society}}}
+      \field{issn}{1553-572X}
+      \field{month}{11}
+      \field{title}{A Fast Optimization Strategy for Power Dispatching in a Microgrid with Storage}
+      \field{year}{2013}
+      \field{pages}{7902\bibrangedash 7907}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/IECON.2013.6700453
+      \endverb
+      \keyw{distributed power generation,Microgrids,Production,energy storage,Mathematical model,microgrid,load flow,Optimization,storage,Adaptation models,Dispatching,linear programming,dynamic programming,System-on-chip,linear model,linear programming algorithm,load dispatching,optimal dispatching,power dispatching,power flows dispatching}
+    \endentry
+    \entry{7281564}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=914ef5e5a46f343d34b40aeeddd4c2c7}{%
+           family={Santos},
+           familyi={S\bibinitperiod},
+           given={L.\bibnamedelimi T.\bibnamedelimi Dos},
+           giveni={L\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=d665cb9c839f7265091e7fdd6199ef44}{%
+           family={Sechilariu},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=bece46e9fae9d284492cb6f79bd667ab}{%
+           family={Locment},
+           familyi={L\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{a24fc338364ebe43bdf39a49aadbaac1}
+      \strng{fullhash}{fe26c0736f4e9986b571049a3685eb89}
+      \strng{authornamehash}{a24fc338364ebe43bdf39a49aadbaac1}
+      \strng{authorfullhash}{fe26c0736f4e9986b571049a3685eb89}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper presents an optimal scheduling and real-time power management for islanded microgrid. Based on prediction data, a multi-objective cost function is formulated aiming to minimize the total energy cost by reducing the diesel-generator fuel consumption and load shedding, while respecting the storage parameters and microgrid operation constraints. The problem is solved with two different optimization algorithms. Simulation results prove that the mixed integer linear programing optimization permits to obtain the lower total energy cost for real-time power balancing.}
+      \field{booktitle}{2015 {{IEEE}} 24th {{International Symposium}} on {{Industrial Electronics}} ({{ISIE}})}
+      \field{issn}{2163-5145}
+      \field{month}{6}
+      \field{title}{Prediction-Based Optimization for Islanded Microgrid Resources Scheduling and Management}
+      \field{year}{2015}
+      \field{pages}{760\bibrangedash 765}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ISIE.2015.7281564
+      \endverb
+      \keyw{distributed power generation,Microgrids,Algorithm design and analysis,power generation economics,energy consumption,microgrid,Load flow,power generation scheduling,storage,secondary cells,integer programming,linear programming,diesel generator,optimization,photovoltaic,diesel-electric generators,mixed integer linear programming,power management,diesel-generator fuel consumption,differential evolution,energy cost,fuel economy,islanded microgrid resources scheduling,load shedding,Maximum power point trackers,microgrid operation constraints,mixed integer linear programming optimization,multiobjective cost function,optimal scheduling,Optimized production technology,power balancing,power mnagement,power system simulation,prediction-based optimization,storage parameters,System-on-chip,wind-turbine}
+    \endentry
+    \entry{6872087}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=d665cb9c839f7265091e7fdd6199ef44}{%
+           family={Sechilariu},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c99b6704db7938c487c47739de24d9b7}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=bece46e9fae9d284492cb6f79bd667ab}{%
+           family={Locment},
+           familyi={L\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{ef4b9e5372b6a17862af0aedc995b7d0}
+      \strng{fullhash}{eeefee4eb0d33bd050ce0f60747fe1dc}
+      \strng{authornamehash}{ef4b9e5372b6a17862af0aedc995b7d0}
+      \strng{authorfullhash}{eeefee4eb0d33bd050ce0f60747fe1dc}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper presents a photovoltaic-storage-microturbine based DC microgrid, with multi-layer supervision which optimizes efficiently operation while satisfying constraints. Based on forecast data and using a mixed integer linear programming optimization, a predictive power flow is obtained which leads to an optimization-based strategy for real-time power balancing. Experimental test proves the feasibility of the supervisory control and demonstrates the problem formulation of minimizing total energy cost.}
+      \field{booktitle}{2014 {{International Symposium}} on {{Power Electronics}}, {{Electrical Drives}}, {{Automation}} and {{Motion}}}
+      \field{month}{6}
+      \field{note}{ISSN:}
+      \field{title}{Power Management and Optimization for Isolated {{DC}} Microgrid}
+      \field{year}{2014}
+      \field{pages}{1284\bibrangedash 1289}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/SPEEDAM.2014.6872087
+      \endverb
+      \keyw{distributed power generation,Microgrids,Production,power system management,Energy management,microgrid,load flow,Load flow,energy cost minimization,Optimization,Power demand,storage,integer programming,linear programming,photovoltaic,power management,mixed integer linear programming optimization,System-on-chip,cost reduction,solar cells,data forecasting,energy cost optimization,forecast data,photovoltaic-storage-microturbine based isolated DC microgrid,power flow,power optimization,real-time power balancing,supervision}
+    \endentry
+    \entry{sechilariu2014supervision}{article}{}
+      \name{author}{3}{}{%
+        {{hash=5cf4c757a9cbb6100ffacdd62907290c}{%
+           family={Sechilariu},
+           familyi={S\bibinitperiod},
+           given={Manuela},
+           giveni={M\bibinitperiod}}}%
+        {{hash=21551b8315eea7f3981489d31faca502}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Bao\bibnamedelima Chao},
+           giveni={B\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=d0c7b7a8be09f022e2526e5e7e82bae7}{%
+           family={Locment},
+           familyi={L\bibinitperiod},
+           given={Fabrice},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{a1d347c4d5d3e8d77cb5c7f5c7e7ea2b}
+      \strng{fullhash}{00db55deae31fd23d8c83e13eaacdf75}
+      \strng{authornamehash}{a1d347c4d5d3e8d77cb5c7f5c7e7ea2b}
+      \strng{authorfullhash}{00db55deae31fd23d8c83e13eaacdf75}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Electrical Power \& Energy Systems}
+      \field{title}{Supervision Control for Optimal Energy Cost Management in {{DC}} Microgrid: {{Design}} and Simulation}
+      \field{volume}{58}
+      \field{year}{2014}
+      \field{pages}{140\bibrangedash 149}
+      \range{pages}{10}
+    \endentry
+    \entry{SHAMS2018326}{article}{}
+      \name{author}{3}{}{%
+        {{hash=ac9702d0c5fd1a8d951ac4c2dcc3acec}{%
+           family={Shams},
+           familyi={S\bibinitperiod},
+           given={Mohammad\bibnamedelima H.},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=a29391e71e9e2aa6638e512d5d8b4c21}{%
+           family={Shahabi},
+           familyi={S\bibinitperiod},
+           given={Majid},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b4e827a9a8987ba10bc706bb14792b28}{%
+           family={Khodayar},
+           familyi={K\bibinitperiod},
+           given={Mohammad\bibnamedelima E.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{3fcd6700edaf8b4a85fb9053f2822958}
+      \strng{fullhash}{e26d77dce72478a1d5bd081c4ad55397}
+      \strng{authornamehash}{3fcd6700edaf8b4a85fb9053f2822958}
+      \strng{authorfullhash}{e26d77dce72478a1d5bd081c4ad55397}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Microgrids are indispensable components of active energy systems that supply diverse electrical and thermal demands. A microgrid is composed of distributed energy resources (DER) including renewable resources, combined heat and power generation (CHP) and conventional generation resources that rely on fossil fuels. Energy hubs in microgrids facilitate the conversion of different types of energy resources. The coupling among natural gas and electricity distribution networks introduces new challenges to the short-term operation planning of microgrids. In this paper, a two-stage stochastic optimization problem is formulated for the short-term operation planning of microgrids with multiple-energy carrier networks to determine the scheduled energy and reserve capacity. The problem is formulated as a mixed integer linear programming problem in which the objective function is to minimize the expected operation cost in the short-term operation horizon. The uncertainties in the renewable generation including the wind and solar photovoltaic generation, and electrical and thermal demands are captured by introducing scenarios with respective probabilities. The proposed solution framework ensures the reliability and security of energy supply in multiple scenarios. The advantage of capturing the interdependence among the electricity and natural gas systems to promote energy efficiency is presented. Furthermore, the effectiveness of demand response programs to reduce the operation costs and improve the security measures is investigated. The sensitivity of the operation costs to the variation of natural gas flow and congestion in pipelines and energy prices is addressed to highlight the interdependence among natural gas and electricity infrastructure systems.}
+      \field{issn}{0360-5442}
+      \field{journaltitle}{Energy}
+      \field{title}{Stochastic Day-Ahead Scheduling of Multiple Energy {{Carrier}} Microgrids with Demand Response}
+      \field{volume}{155}
+      \field{year}{2018}
+      \field{pages}{326\bibrangedash 338}
+      \range{pages}{13}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.energy.2018.04.190
+      \endverb
+      \keyw{Microgrid,Stochastic programming,Energy hub,Multiple-energy carrier}
+    \endentry
+    \entry{silvente2015rolling}{article}{}
+      \name{author}{4}{}{%
+        {{hash=2c6d6aa468bbf7569a35c408f6ebc4d1}{%
+           family={Silvente},
+           familyi={S\bibinitperiod},
+           given={Javier},
+           giveni={J\bibinitperiod}}}%
+        {{hash=466e0c8074c073dd62f3e47ffee73475}{%
+           family={Kopanos},
+           familyi={K\bibinitperiod},
+           given={Georgios\bibnamedelima M},
+           giveni={G\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=eb261617828ccbf2ef3315b5289152b2}{%
+           family={Pistikopoulos},
+           familyi={P\bibinitperiod},
+           given={Efstratios\bibnamedelima N},
+           giveni={E\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=cdf6237ca03eca4d36d3f2b2d812f2aa}{%
+           family={Espuña},
+           familyi={E\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{9a433e6a74b6426df8cf8bbcc908b748}
+      \strng{fullhash}{8eb098957e03873168608e360d823ee2}
+      \strng{authornamehash}{9a433e6a74b6426df8cf8bbcc908b748}
+      \strng{authorfullhash}{8eb098957e03873168608e360d823ee2}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Applied Energy}
+      \field{title}{A Rolling Horizon Optimization Framework for the Simultaneous Energy Supply and Demand Planning in Microgrids}
+      \field{volume}{155}
+      \field{year}{2015}
+      \field{pages}{485\bibrangedash 501}
+      \range{pages}{17}
+    \endentry
+    \entry{TAVAKOLI20181}{article}{}
+      \name{author}{6}{}{%
+        {{hash=e34d1ac845f4624d30850df42e887f32}{%
+           family={Tavakoli},
+           familyi={T\bibinitperiod},
+           given={Mehdi},
+           giveni={M\bibinitperiod}}}%
+        {{hash=19347f0b2330978a13e73205af7bcf57}{%
+           family={Shokridehaki},
+           familyi={S\bibinitperiod},
+           given={Fatemeh},
+           giveni={F\bibinitperiod}}}%
+        {{hash=56954cc02793de62f36ae3d561ee28a9}{%
+           family={Akorede},
+           familyi={A\bibinitperiod},
+           given={Mudathir\bibnamedelima Funsho},
+           giveni={M\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=492daca069f1729a961a24ea68fae8d6}{%
+           family={Marzband},
+           familyi={M\bibinitperiod},
+           given={Mousa},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b8b386002115f5e9f6db629efd936ec4}{%
+           family={Vechiu},
+           familyi={V\bibinitperiod},
+           given={Ionel},
+           giveni={I\bibinitperiod}}}%
+        {{hash=faf96890225a486e8dcccb267eb1a3ac}{%
+           family={Pouresmaeil},
+           familyi={P\bibinitperiod},
+           given={Edris},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{be626fefeeb1563c45ce0d6eff45a7d9}
+      \strng{fullhash}{7023ff64454d1b56fabe0efb7ee04f74}
+      \strng{authornamehash}{be626fefeeb1563c45ce0d6eff45a7d9}
+      \strng{authorfullhash}{7023ff64454d1b56fabe0efb7ee04f74}
+      \field{sortinit}{T}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper aims at enhancing the resilience of a photovoltaic-based microgrid equipped with battery storage, supplying a typical commercial building. When extreme weather conditions such as hurricane, tsunami and similar events occur, leading to islanding of the microgrid from the main power grid, it is not expected that the microgrid would be taken out of service for a long time. At the same time, it is not cost effective to make the electrical system to be absolutely reliable to provide service for the customers. The main contribution of this paper lies in its ability to determine the optimal point between the operational cost and grid resilience. In other words, this work proposes an optimal management system of battery energy storage in a way to enhance the resilience of the proposed microgrid while maintaining its operational cost at a minimum level. The optimization is achieved by solving a linear optimization programming problem while the Conditional Value at Risk (CVaR) is incorporated in the objective function. The CVaR is used to account for the uncertainty in the intermittent PV system generated power and that in the electricity price. Simulation analyses are carried out in MATLAB to evaluate the performance of the proposed method. Results reveal that the commercial building microgrid resilience is improved remarkably at a slight increase in the operational cost.}
+      \field{issn}{0142-0615}
+      \field{journaltitle}{International Journal of Electrical Power \& Energy Systems}
+      \field{title}{{{CVaR}}-Based Energy Management Scheme for Optimal Resilience and Operational Cost in Commercial Building Microgrids}
+      \field{volume}{100}
+      \field{year}{2018}
+      \field{pages}{1\bibrangedash 9}
+      \range{pages}{9}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.ijepes.2018.02.022
+      \endverb
+      \keyw{Microgrid,Energy management,Resilience,Commercial buildings,Conditional Value at Risk (CVaR)}
+    \endentry
+    \entry{UMEOZOR2016272}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d27045ba3638af546907a2342db6334c}{%
+           family={Umeozor},
+           familyi={U\bibinitperiod},
+           given={Eva\bibnamedelima C.},
+           giveni={E\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=07114074826516791dd227bad0a2a373}{%
+           family={Trifkovic},
+           familyi={T\bibinitperiod},
+           given={Milana},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1a497d26546423be654858f38ed7e8a}
+      \strng{fullhash}{b1a497d26546423be654858f38ed7e8a}
+      \strng{authornamehash}{b1a497d26546423be654858f38ed7e8a}
+      \strng{authorfullhash}{b1a497d26546423be654858f38ed7e8a}
+      \field{sortinit}{U}
+      \field{sortinithash}{1554584e7f69d2b4fe0a645e73d50194}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{An energy management system (EMS) for efficient and tractable coordination of distributed energy sources in a residential level microgrid is presented. Sources of energy include renewable (solar photovoltaic and wind turbine), conventional systems (microturbine and utility grid connection) and battery energy storage system. The overall problem is formulated using parametric mixed-integer linear programming (p-MILP) via parameterizations of the uncertain coordinates of the wind and solar resources. This results in a bi-level optimization problem, where choice of the parameterization scheme is made at the upper level while system operation decisions are made at the lower level. The p-MILP formulation leads to significant improvements in uncertainty management, solution quality and computational burden; by easing dependency on meteorological information and avoiding the multiple computational cycles of the traditional online optimization techniques. The problem is solved offline on a day-ahead basis, allowing online implementation to be achieved via real-time system state updates. The proposed parametric programming approach extends the state-of-the-art in microgrid energy management methods, and the simulation evidence its feasibility and effectiveness.}
+      \field{issn}{2405-8963}
+      \field{journaltitle}{IFAC-PapersOnLine}
+      \field{note}{11th IFAC Symposium on Dynamics and Control of Process SystemsIncluding Biosystems DYCOPS-CAB 2016}
+      \field{number}{7}
+      \field{title}{Energy Management of a Microgrid via Parametric Programming}
+      \field{volume}{49}
+      \field{year}{2016}
+      \field{pages}{272\bibrangedash 277}
+      \range{pages}{6}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.ifacol.2016.07.278
+      \endverb
+      \keyw{Microgrids,Energy management,Scheduling,Parametric optimization}
+    \endentry
+    \entry{UMEOZOR2016672}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c21aa70b7f1dce8c210e430c2a08b857}{%
+           family={Umeozor},
+           familyi={U\bibinitperiod},
+           given={Evar\bibnamedelima Chinedu},
+           giveni={E\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=07114074826516791dd227bad0a2a373}{%
+           family={Trifkovic},
+           familyi={T\bibinitperiod},
+           given={Milana},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{7442b5dce77e812846068dcca1d4a369}
+      \strng{fullhash}{7442b5dce77e812846068dcca1d4a369}
+      \strng{authornamehash}{7442b5dce77e812846068dcca1d4a369}
+      \strng{authorfullhash}{7442b5dce77e812846068dcca1d4a369}
+      \field{sortinit}{U}
+      \field{sortinithash}{1554584e7f69d2b4fe0a645e73d50194}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We present a parametric programming based approach for energy management in microgrids. An operational planning problem for a grid-connected microgrid with energy sources including solar photovoltaic, wind turbine and battery energy storage system, in addition to a household load demand, is captured as a parametric mixed-integer linear programming problem (p-MILP) through parameterizations of the uncertain coordinates of wind and solar energy resources. Thus, the energy management problem - typically nonlinear - is transformed into a linear bi-level optimization problem, where choice of the parameterization scheme is made at the upper level while system operation decisions are made at the lower level. The p-MILP formulation leads to significant improvements in uncertainty handling, solution quality and computational ease; by removing dependency of the solution on meteorological forecasts and avoiding the multiple computational cycles of the traditional online optimization techniques. The problem is solved offline on a flexible time-scale basis, allowing online implementation to be achievable on real-time system state updates. The proposed parametric programming approach extends the state-of-the-art in microgrid energy management methods and the results from various case studies are used to demonstrate the feasibility of our method.}
+      \field{issn}{0306-2619}
+      \field{journaltitle}{Applied Energy}
+      \field{title}{Operational Scheduling of Microgrids via Parametric Programming}
+      \field{volume}{180}
+      \field{year}{2016}
+      \field{pages}{672\bibrangedash 681}
+      \range{pages}{10}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.apenergy.2016.08.009
+      \endverb
+      \keyw{Renewable energy,Microgrids,Energy management,Optimization}
+    \endentry
+    \entry{wouters2015energy}{article}{}
+      \name{author}{3}{}{%
+        {{hash=c62d24b41501bd662f66427ee9c85025}{%
+           family={Wouters},
+           familyi={W\bibinitperiod},
+           given={Carmen},
+           giveni={C\bibinitperiod}}}%
+        {{hash=6c4fde0e97d965131ab4a21db28ec027}{%
+           family={Fraga},
+           familyi={F\bibinitperiod},
+           given={Eric\bibnamedelima S},
+           giveni={E\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=33052134be181fd9c9bc8d8a8594f558}{%
+           family={James},
+           familyi={J\bibinitperiod},
+           given={Adrian\bibnamedelima M},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{d32095d1b934f7741341d49667348f19}
+      \strng{fullhash}{0dc407897f81e32ef213e89f5f037589}
+      \strng{authornamehash}{d32095d1b934f7741341d49667348f19}
+      \strng{authorfullhash}{0dc407897f81e32ef213e89f5f037589}
+      \field{sortinit}{W}
+      \field{sortinithash}{6d25b3eefe5aa2147d1f339686808918}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Energy}
+      \field{title}{An Energy Integrated, Multi-Microgrid, {{MILP}} (Mixed-Integer Linear Programming) Approach for Residential Distributed Energy System Planning--a {{South Australian}} Case-Study}
+      \field{volume}{85}
+      \field{year}{2015}
+      \field{pages}{30\bibrangedash 44}
+      \range{pages}{15}
+    \endentry
+    \entry{6465822}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=01f57310278c91d7a3bd7407fa942d2a}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=298db7fe95de35f7ad8f9a6126e3159b}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=1e560a784398b21b7457354a31639ff5}{%
+           family={Bie},
+           familyi={B\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{096675af3dd21a06393f2c37a83fca3e}
+      \strng{fullhash}{6bda54b070c7d01c83fed45751eb7ad8}
+      \strng{authornamehash}{096675af3dd21a06393f2c37a83fca3e}
+      \strng{authorfullhash}{6bda54b070c7d01c83fed45751eb7ad8}
+      \field{sortinit}{W}
+      \field{sortinithash}{6d25b3eefe5aa2147d1f339686808918}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper presents an efficient method for the optimal generation scheduling of a microgrid comprising various distributed generators (DG), storage device. To give the optimal operation strategy, an optimization model is proposed respecting various distributed energy resources (DER) constraints and system constraints. The objective function is aimed at minimizing the system cost associated with the DG's energy production and start-up and shut-down decisions, along with possible profits. The problem is similar to a unit commitment problem in power system, however, there are some differences due to the special characteristics of DERs in the microgrid, each DER is modeled based on its characteristics and constraints. Finally, a mixed integer linear programming (MILP) method is applied to solve the problem. The effectiveness of the proposed approach is validated by case studies, the test results also indicate the MILP method is a promising approach to solve this kind of problem with high accuracy and low time consumption.}
+      \field{booktitle}{2012 3rd {{IEEE PES Innovative Smart Grid Technologies Europe}} ({{ISGT Europe}})}
+      \field{issn}{2165-4816}
+      \field{month}{10}
+      \field{title}{Optimal Generation Scheduling of a Microgrid}
+      \field{year}{2012}
+      \field{pages}{1\bibrangedash 7}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/ISGTEurope.2012.6465822
+      \endverb
+      \keyw{distributed power generation,Microgrids,Batteries,distributed energy resources,microgrid,Optimization,power generation scheduling,power system,Linear programming,integer programming,linear programming,Fuel cells,optimization model,mixed integer linear programming,distributed generators,costing,Discharges (electric),DG energy production,efficient method,generation scheduling,MILP method,optimal generation scheduling,optimal operation strategy,shut-down decisions,system cost,unit commitment problem}
+    \endentry
+    \entry{zhang2011optimal}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=392cd3493647f2d7e2731c6a1889e6e8}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Di},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d34b1ebc6389961351fbbf61243c3b0f}{%
+           family={Papageorgiou},
+           familyi={P\bibinitperiod},
+           given={Lazaros\bibnamedelima G},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=a9542cc0c39e3f57fd2bf8c7c609a556}{%
+           family={Samsatli},
+           familyi={S\bibinitperiod},
+           given={Nouri\bibnamedelima J},
+           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=b385edca77dad9e7382feabe7c133ca6}{%
+           family={Shah},
+           familyi={S\bibinitperiod},
+           given={Nilay},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IARIA XPS PRESS}%
+      }
+      \strng{namehash}{7424ae0001bd0bd6a737cea0ade000a8}
+      \strng{fullhash}{c7280d0f54ee5b4bc3639cbb2df049ca}
+      \strng{authornamehash}{7424ae0001bd0bd6a737cea0ade000a8}
+      \strng{authorfullhash}{c7280d0f54ee5b4bc3639cbb2df049ca}
+      \field{sortinit}{Z}
+      \field{sortinithash}{35589aa085e881766b72503e53fd4c97}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{{{PROCEEDINGS OF THE FIRST INTERNATIONAL CONFERENCE ON SMART GRIDS}}, {{GREEN COMMUNICATIONS AND IT ENERGY}}-{{AWARE TECHNOLOGIES}} ({{ENERGY}} 2011)}
+      \field{title}{Optimal Scheduling of Smart Homes Energy Consumption with Microgrid}
+      \field{year}{2011}
+      \field{pages}{70\bibrangedash 75}
+      \range{pages}{6}
+    \endentry
+    \entry{zhang2013efficient}{article}{}
+      \name{author}{3}{}{%
+        {{hash=392cd3493647f2d7e2731c6a1889e6e8}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Di},
+           giveni={D\bibinitperiod}}}%
+        {{hash=b385edca77dad9e7382feabe7c133ca6}{%
+           family={Shah},
+           familyi={S\bibinitperiod},
+           given={Nilay},
+           giveni={N\bibinitperiod}}}%
+        {{hash=d34b1ebc6389961351fbbf61243c3b0f}{%
+           family={Papageorgiou},
+           familyi={P\bibinitperiod},
+           given={Lazaros\bibnamedelima G},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{7424ae0001bd0bd6a737cea0ade000a8}
+      \strng{fullhash}{80f6dc3d4736663c7813065a9714c8c7}
+      \strng{authornamehash}{7424ae0001bd0bd6a737cea0ade000a8}
+      \strng{authorfullhash}{80f6dc3d4736663c7813065a9714c8c7}
+      \field{sortinit}{Z}
+      \field{sortinithash}{35589aa085e881766b72503e53fd4c97}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Energy Conversion and Management}
+      \field{title}{Efficient Energy Consumption and Operation Management in a Smart Building with Microgrid}
+      \field{volume}{74}
+      \field{year}{2013}
+      \field{pages}{209\bibrangedash 222}
+      \range{pages}{14}
+    \endentry
+    \entry{ZHANG20181229}{article}{}
+      \name{author}{5}{}{%
+        {{hash=28f91f3a4b62ce57b7a533e742e8aae1}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=98bd5aaa570c965f64d780c02bf3e74f}{%
+           family={Fu},
+           familyi={F\bibinitperiod},
+           given={Lijun},
+           giveni={L\bibinitperiod}}}%
+        {{hash=6d4d64f86c1136193285ea1d3757bfcc}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Wanlu},
+           giveni={W\bibinitperiod}}}%
+        {{hash=b9f883d30b3c9f1773273d574935b9ff}{%
+           family={Bao},
+           familyi={B\bibinitperiod},
+           given={Xianqiang},
+           giveni={X\bibinitperiod}}}%
+        {{hash=7d5de9c2622d4b841854d6c07e9e9c4f}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Cang},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{37b129e5ba18129997157b8fc224c8d9}
+      \strng{fullhash}{e57b06eecb54cbd2f884720321b38a7f}
+      \strng{authornamehash}{37b129e5ba18129997157b8fc224c8d9}
+      \strng{authorfullhash}{e57b06eecb54cbd2f884720321b38a7f}
+      \field{sortinit}{Z}
+      \field{sortinithash}{35589aa085e881766b72503e53fd4c97}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{As the increasing penetration of wind and PV generations in island microgrids, the intermittent nature of renewable energy resources and randomness of load demands are inevitable, therefore, maintaining system stability and reliability has become a challenging issue for microgrid operators. In addition, energy storage unit and demand side management technology are widely utilized in the island microgrids to alleviate the passive impacts introduced by renewable energy resources. Nevertheless, they produce uncertainties as well. To accommodate the combined uncertainties, a two-stage robust model predictive control based optimization approach is proposed in this paper. The mixed integer quadratic programming model is established in the first operation stage to minimize the operation cost under the joint worst case of uncertainty, then an economic dispatch model is used to minimize the adjustment cost after obtaining actual data in the second operation stage. Robust linearization methods with the consideration of three types of uncertainty scenarios and uncertainty budgets are utilized in the first operation stage. Finally, the case study indicates that the proposed approach is more robust and economical than the conventional two-stage robust optimization approach, then the sensitivity of typical parameters and important units are analyzed and discussed.}
+      \field{issn}{0360-5442}
+      \field{journaltitle}{Energy}
+      \field{title}{Robust Model Predictive Control for Optimal Energy Management of Island Microgrids with Uncertainties}
+      \field{volume}{164}
+      \field{year}{2018}
+      \field{pages}{1229\bibrangedash 1241}
+      \range{pages}{13}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.energy.2018.08.200
+      \endverb
+      \keyw{Island microgrid,Mixed integer programming,Robust linear optimization,Robust model predictive control (RMPC),Uncertainty}
+    \endentry
+    \entry{zhang2015optimal}{article}{}
+      \name{author}{5}{}{%
+        {{hash=28f91f3a4b62ce57b7a533e742e8aae1}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=228dd687961f3612985beeddec81f72a}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Tao},
+           giveni={T\bibinitperiod}}}%
+        {{hash=9a8e37c2db183faff113a94a5dbc4914}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Rui},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e1ce30db16e8f18cf5970e2ecf311d7d}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Yajie},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=6ad09f5b1d5fd7855d7a396a59a7ab0a}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Bo},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{37b129e5ba18129997157b8fc224c8d9}
+      \strng{fullhash}{df2c11cdf967ab1bec28d3a2a5b746b7}
+      \strng{authornamehash}{37b129e5ba18129997157b8fc224c8d9}
+      \strng{authorfullhash}{df2c11cdf967ab1bec28d3a2a5b746b7}
+      \field{sortinit}{Z}
+      \field{sortinithash}{35589aa085e881766b72503e53fd4c97}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Solar Energy}
+      \field{title}{Optimal Operation of a Smart Residential Microgrid Based on Model Predictive Control by Considering Uncertainties and Storage Impacts}
+      \field{volume}{122}
+      \field{year}{2015}
+      \field{pages}{1052\bibrangedash 1065}
+      \range{pages}{14}
+    \endentry
+    \entry{8216436}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=66f18f1bcc0653349db1d7b16f4ba827}{%
+           family={Zhaoxia},
+           familyi={Z\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=d9fe18fd14d988cce720eb1f86877f2f}{%
+           family={Jiakai},
+           familyi={J\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=d222ad3f4e873fd13360ac7424dbdf94}{%
+           family={Guerrero},
+           familyi={G\bibinitperiod},
+           given={J.\bibnamedelimi M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=f0a599ec10fe663ec45aebb0f5487f88}{%
+           family={Hongwei},
+           familyi={H\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{f532f48832b02c1e40dee66de8d61563}
+      \strng{fullhash}{f9a6ea44145b08acbf56c2e883c0c279}
+      \strng{authornamehash}{f532f48832b02c1e40dee66de8d61563}
+      \strng{authorfullhash}{f9a6ea44145b08acbf56c2e883c0c279}
+      \field{sortinit}{Z}
+      \field{sortinithash}{35589aa085e881766b72503e53fd4c97}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A multiple time-scale optimization scheduling including day ahead and short time for an islanded microgrid is presented. In this paper, the microgrid under study includes photovoltaics (PV), wind turbine (WT), diesel generator (DG), batteries, and shiftable loads. The study considers the maximum efficiency operation area for the diesel engine and the cost of the battery charge/discharge cycle losses. The day-ahead generation scheduling takes into account the minimum operational cost and the maximum load satisfaction as the objective function. Short-term optimal dispatch is based on minimizing the adjustment of the day-ahead scheduling and giving priority to the use of renewable energy. According to the forecast of the critical and noncritical load, the wind speed, and the solar irradiation, mixed integer linear programming (MILP) optimization method is used to solve the multi-objective optimization functions. Simulation results shown that the proposed multiple time-scale optimization scheduling approach minimizes the battery usage and maximize the use of renewable energies.}
+      \field{booktitle}{{{IECON}} 2017 - 43rd {{Annual Conference}} of the {{IEEE Industrial Electronics Society}}}
+      \field{month}{10}
+      \field{note}{ISSN:}
+      \field{title}{Multiple Time-Scale Optimization Scheduling for Islanded Microgrids Including {{PV}}, Wind Turbine, Diesel Generator and Batteries}
+      \field{year}{2017}
+      \field{pages}{2594\bibrangedash 2599}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/IECON.2017.8216436
+      \endverb
+      \keyw{distributed power generation,islanded microgrid,optimisation,power generation scheduling,power generation dispatch,wind turbines,photovoltaic power systems,secondary cells,integer programming,linear programming,noncritical load,diesel generator,mixed-integer linear programming (MILP),wind turbine,diesel-electric generators,batteries,battery charge-discharge cycle losses,battery usage,critical load,day-ahead generation scheduling,day-ahead scheduling,diesel engine,Islanded microgrid,maximum efficiency operation area,maximum load satisfaction,minimum operational cost,mixed integer linear programming optimization method,multi-objective,multiobjective optimization functions,multiple time-scale,multiple time-scale optimization scheduling,PV,shiftable loads,short-term optimal dispatch,wind speed}
+    \endentry
+    \entry{ZHENG2018836}{article}{}
+      \name{author}{5}{}{%
+        {{hash=48dab11bc03d3cf53e370833b01f7d9e}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Yingying},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=0b074f2f62b45629324e96f3049d99ba}{%
+           family={Jenkins},
+           familyi={J\bibinitperiod},
+           given={Bryan\bibnamedelima M.},
+           giveni={B\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=aca6bb47234ff4ce87cb477e64fe8fe3}{%
+           family={Kornbluth},
+           familyi={K\bibinitperiod},
+           given={Kurt},
+           giveni={K\bibinitperiod}}}%
+        {{hash=1bb24d48e4c155b4a15c5da96e44247e}{%
+           family={Kendall},
+           familyi={K\bibinitperiod},
+           given={Alissa},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a464f51d11d3462dc29bf118d3fb11ae}{%
+           family={Træholt},
+           familyi={T\bibinitperiod},
+           given={Chresten},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{54049d6011471dbaf4f91acd60d77d78}
+      \strng{fullhash}{eaeafad1e4acf86ff634bcf45bd6cbd9}
+      \strng{authornamehash}{54049d6011471dbaf4f91acd60d77d78}
+      \strng{authorfullhash}{eaeafad1e4acf86ff634bcf45bd6cbd9}
+      \field{sortinit}{Z}
+      \field{sortinithash}{35589aa085e881766b72503e53fd4c97}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A load shifting algorithm based on economic linear programming with model predictive control was developed to minimize the operating cost of a biomass combined heat and power based microgrid system. The model simultaneously manages supply and demand of both electrical and thermal energy as decision variables. An algorithm was developed to optimize the shifting of loads based on the renewable energy generation and time-of-use tariff. As an illustrative example, a case study was examined for a conceptual utility grid-connected microgrid application in Davis, California. For the assumptions used, the proposed load shifting algorithm improved the performance of the microgrid by changing the load pattern and reduced the operating cost by 6.06\% and increased the renewable energy fraction by 6.34\% compared with the conventional no-load shift case. Monte Carlo simulation was used to evaluate uncertainties among the renewable energy, demand side, and economic assumptions, generating a probability density function for the cost of energy.}
+      \field{issn}{0306-2619}
+      \field{journaltitle}{Applied Energy}
+      \field{title}{Optimization of a Biomass-Integrated Renewable Energy Microgrid with Demand Side Management under Uncertainty}
+      \field{volume}{230}
+      \field{year}{2018}
+      \field{pages}{836\bibrangedash 844}
+      \range{pages}{9}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.apenergy.2018.09.015
+      \endverb
+      \keyw{Microgrid,Optimization,Uncertainty,Demand side management,Biomass CHP,Load shifting}
+    \endentry
+    \entry{ZHENG2018204}{article}{}
+      \name{author}{4}{}{%
+        {{hash=48dab11bc03d3cf53e370833b01f7d9e}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Yingying},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=0b074f2f62b45629324e96f3049d99ba}{%
+           family={Jenkins},
+           familyi={J\bibinitperiod},
+           given={Bryan\bibnamedelima M.},
+           giveni={B\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=aca6bb47234ff4ce87cb477e64fe8fe3}{%
+           family={Kornbluth},
+           familyi={K\bibinitperiod},
+           given={Kurt},
+           giveni={K\bibinitperiod}}}%
+        {{hash=a464f51d11d3462dc29bf118d3fb11ae}{%
+           family={Træholt},
+           familyi={T\bibinitperiod},
+           given={Chresten},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{54049d6011471dbaf4f91acd60d77d78}
+      \strng{fullhash}{1f08dc5703a5211fd531545cf67fa274}
+      \strng{authornamehash}{54049d6011471dbaf4f91acd60d77d78}
+      \strng{authorfullhash}{1f08dc5703a5211fd531545cf67fa274}
+      \field{sortinit}{Z}
+      \field{sortinithash}{35589aa085e881766b72503e53fd4c97}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Deterministic constrained optimization and stochastic optimization approaches were used to evaluate uncertainties in biomass-integrated microgrids supplying both electricity and heat. An economic linear programming model with a sliding time window was developed to assess design and scheduling of biomass combined heat and power (BCHP) based microgrid systems. Other available technologies considered within the microgrid were small-scale wind turbines, photovoltaic modules (PV), producer gas storage, battery storage, thermal energy storage and heat-only boilers. As an illustrative example, a case study was examined for a conceptual utility grid-connected microgrid application in Davis, California. The results show that for the assumptions used, a BCHP/PV with battery storage combination is the most cost effective design based on the assumed energy load profile, local climate data, utility tariff structure, and technical and financial performance of the various components of the microgrid. Monte Carlo simulation was used to evaluate uncertainties in weather and economic assumptions, generating a probability density function for the cost of energy.}
+      \field{issn}{0960-1481}
+      \field{journaltitle}{Renewable Energy}
+      \field{title}{Optimization under Uncertainty of a Biomass-Integrated Renewable Energy Microgrid with Energy Storage}
+      \field{volume}{123}
+      \field{year}{2018}
+      \field{pages}{204\bibrangedash 217}
+      \range{pages}{14}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.renene.2018.01.120
+      \endverb
+      \keyw{Microgrids,Energy storage,Uncertainty,Modeling,Biomass,Combined heat and power,Renewables integration,Stochastic analysis}
     \endentry
   \endsortlist
 \endrefsection

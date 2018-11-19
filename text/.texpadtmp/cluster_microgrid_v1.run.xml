@@ -54,9 +54,12 @@
       <file>blx-compat.def</file>
       <file>biblatex.def</file>
       <file>blx-natbib.def</file>
-      <file>chicago-authordate.bbx</file>
-      <file>chicago-authordate.cbx</file>
-      <file>chicago-dates-common.cbx</file>
+      <file>nature.bbx</file>
+      <file>numeric-comp.bbx</file>
+      <file>numeric.bbx</file>
+      <file>standard.bbx</file>
+      <file>nature.cbx</file>
+      <file>numeric-comp.cbx</file>
       <file>biblatex.cfg</file>
       <file>english.lbx</file>
       <file>ngerman.lbx</file>
@@ -83,6 +86,7 @@
     </requires>
     <requires type="editable">
       <file>microgrid_literature.bib</file>
+      <file>extra_literature.bib</file>
     </requires>
   </external>
 </requests>

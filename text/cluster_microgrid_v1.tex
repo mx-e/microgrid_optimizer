@@ -120,8 +120,9 @@
 \usepackage{etoolbox}
 
 %%% Zitation %%%
-\usepackage[style=chicago-authordate,
+\usepackage[%style=chicago-authordate,
 			%style=authoryear,
+			style=nature,
             giveninits,					% Vornamen abkürzen
 			maxbibnames=10,				% in der Bib werden 10 Autoren ausgegeben (bis zu 10)
             maxcitenames=2,				% max. 3 Autoren bei \cite
@@ -133,7 +134,8 @@
             sorting=nyt					
 			]{biblatex}
 
-\addbibresource{microgrid_literature.bib}}
+\addbibresource{microgrid_literature.bib}
+\addbibresource{extra_literature.bib}
 \usepackage{breakcites}
 
 \DeclareNameAlias{author}{last-first}				
@@ -496,45 +498,39 @@ The publication chart is not very enlightening. This is due to the fact 28 out o
 
 
 \subsection{Literature Overview}
-The first question in need of an answer in approaching the problem of optimizing a microgrids design and dispatch is the question of the modelling approach itself. Although the dataset of literature derived from the methodology described in 2.2 is biased towards Linear Programming, which was one of the search and filter criteria, it contains multiple employed methodologies. For example \cite{7975049} employ both a Mixed Integer Linear Programming (MILP) model as well as a Genetic Algorithm (GA) and comes to the conclusion that while both deliver accurate and robust results the MILP model is faster. \cite{NEMATI2018944} mostly concur. While the results of the GA were better in two scenarios, it was outperformed by the MILP model in the remaining three.
+The first question in need of an answer in optimizing a microgrids design and dispatch is the question of the modelling approach itself. Although the dataset of literature derived from the methodology described in 2.2 is biased towards Linear Programming, which was one of the search and filter criteria, it contains multiple employed methodologies. For example, \cite{7975049} employ both a Mixed Integer Linear Programming (MILP) model and a Genetic Algorithm (GA) and come to the conclusion that while both deliver accurate and robust results the MILP model is faster. \cite{NEMATI2018944} mostly concur. While in this case, the results of the GA were better in two scenarios, it was outperformed by the MILP model in the remaining three.
 A key problem of MILP however seems to be its deterministic nature, which anticipates perfect knowledge of all the parameters involved. Especially for optimisation problems regarding a short timeframe, such as day-ahead scheduling this is a significant problem, since actual parameters may be different. Several methods addressing this problem can be found in literature. 
-
---rolling horizon\\
---robust optimization\\
---stochatic progrmming\\
---parametric programming\\\\
-
-------scope
-
---microgrid definition\\  
---islanded versus grid-bound\\
---pure dispatch vs allocation and dispatch\\
---types of generation (dispatchable and non-dispatchable, electric vs thermal)\\
---types of storage (electric vs thermal)\\
---topology included\\
---power quality included\\
---demand response included (controllable vs flexible vs critical loads)\\
---duration and stepsize of case studies\\\\
-
-
-------parameters
-
---papers with parameters vs papers without\\
---usual breakdown of cost variables\\
---irridiation and other weather data\\
---load data\\
---other parameters\\\\
-
-------commonly used tools
-
---commercial tools such as DER-CAM and HOMER \\
---solvers (CPLEX etc.)\\
---modelling languages (MATLAB, GAMS etc.)\\
--- open source tools (github reference) but none with interface\\
-
-
-
-
+\\
+One such method are rolling time horizons. This approach optimizes the dispatch of a microgrid for a fixed time horizon based on steadily updated forecasts of the uncertain paremeters. The optimization is repeated periodically to reflect the updated forecasts \cite{palma2013microgrid} \cite{silvente2015rolling} and increase dispatch accuracy in the nearer future. Rolling Horizon Optimization is however unfit to optimize investment, since it is not possible to adapt investment decisions ex post to changed conditions.
+\\
+While the rolling time horizon method helps to limit uncertainty by reacting to changes of input parameters, Robust Optimization and Stochatsic Optimization try to proactively account for a variety of possible scenarios. Robust Optimization achieves this by optimizing for a number of scenarios deemed equally likely, as in \cite{CRAPARO2017135} using ensemble weather forecasts or in \cite{8240914} and \cite{zhang2015optimal} using upper and lower boundaries for uncertain parameters. Stochastic Optimization on the other hand uses detailed probability distributions to weigh the probability of each scenario occuring as explained in \cite{7540870}. To arrive at these distributions secondary tools are usually needed. Shams et al use a simple Gaussian randomization to make their demand data reflect uncertainty, as well as more specific distributions for irridiation and wind speeds. A number of other methodologies appear in literature such as employing a Monte Carlo simulation \cite{ZHENG2018204} or deriving multiple scenarios and corresponding realization probabilities from historical data \cite{7244857}.
+\\
+The scope of the microgrid models found in literature varies greatly. A constant however is the definition of a microgrid as bounded, operating in a small geographical zone and with a clear electrical boundaries \cite{TAVAKOLI20181}\cite{mashayekhMixedIntegerLinear2017}\cite{7853085}; managing local loads \cite{zhang2013efficient} \cite{ZHENG2018836}; possibly containing various generation units and storage \cite{silvente2015rolling}\cite{7741704} and possibly being able to exchange power with the main grid \cite{NEMATI2018944}\cite{SOLTANINEJADFARSANGI2018257}, from whose perspective it is seen as a single entity \cite{KOLTSAKLIS2018318}.
+\\
+While most of the selected literature consider cases where a grid connection exists and can be used at all times, there is a number of publications that consider either completely islanded microgrids \cite{ZHANG20181229}\cite{palma2013microgrid} \cite{6872087}\cite{7281564} or microgrids that can sustain themselves in islanded mode for extended periods for exapmle in case of natural disasters \cite{TAVAKOLI20181}.
+\\
+The clearest distinctions between microgrid models, after the object and applied methodology is properly defined, is based on the aspect or aspects that the model is supposed to optimize. The literature can be split in two groups, either optimizing only dispatch or both investment (e.g. the planning phase) and dispatch. The former group is definitely the larger, with only 12 out of 61 publications considering investment. Notably only one of these \cite{7540870} uses any of the methods to model uncertainty discussed above.
+\\
+There is also significant diversity in literature when it comes to the technologies considered in modelling.
+Modelling dispatchable (eg. non-renewable) as well as non-dispatchable (eg. renewable) generation is rather common, but the specifics differ:
+While most models consider PV or Wind as well as a CHP generator, the included generation technologies are as diverse as geothermal generators \cite{7975049} and gas turbines \cite{UMEOZOR2016272} \cite{NEMATI2018944}. In addition to modelling electricity, some publications also consider heat generation and transmission \cite{LAUINGER201624}\cite{wouters2015energy}. This is valuable, because the economic performance of a non-renewable generation unit (usually CHP) present in most models depends heavily on if and how the heat is used, as \cite{costa2014mixed} point out.
+\\
+The types of storage used in literature also vary. Although battery storage \cite{7399422}\cite{UMEOZOR2016272}\cite{6465822} or an abstract storage device \cite{6669807}\cite{zhang2011optimal} are the most common choices, there are a number of papers modeling heat storage \cite{zhang2013efficient}\cite{zhang2015optimal}\cite{LAUINGER201624}\cite{wouters2015energy}, and some with more exotic technology choices such as flywheels \cite{6700453} or an electrolyzer \cite{7125149}.
+\\
+In addition to these generation and storage technologies some publications also model the network topology \cite{8023785}\cite{7972908}\cite{SHAMS2018326} and some even consider electrical phenomena such as active and reactive power losses \cite{7741704}\cite{mashayekhMixedIntegerLinear2017} and voltage deviation \cite{7741704}. 
+\\
+Demand side management, which some models implement is usually represented by dividing loads into different categories. \cite{7972908} distinguish between 'critical loads' ,meaning loads that absolutely have to be satisfied, 'shiftable loads', meaning loads that have to be satisfied, although there is a time window, rather than an exact point in which they can be serviced, and 'adjustable' loads, which can be dropped if needed. Although the terms may vary, and many publications do not introduce the 'shiftable loads' category alltogether, these conceptual distinctions are made by a number of other authors \cite{silvente2015rolling}\cite{zhang2015optimal}\cite{8216436}.
+\\
+The model results depend almost as much on the given input parameters used in case studies as on the modelling approach itself. There is however only a limited number of publications with detailed documentation of the parameters used.
+The used parameters can be broadly categorized as eiter economic parameters, such as capital and operation and maintenance cost for the technologies used, generation related parameters such as irridiation and wind speeds, and load data, representing consumer behaviour.
+\\
+In publications documenting cost parameters there is a clear trend towards a split of technology cost into investment and maintenance cost. However, whereas \cite{LAUINGER201624} define maintenance cost as a fixed cost per unit of time, \cite{wouters2015energy} define it as a function of kilowatthours produced, a measurement which \cite{LAUINGER201624} call 'fuel costs'. \cite{7399422} choose a definition closer aligned with the former, they however define yearly maintenance cost simply as a flat percentage of the units' investment cost.\cite{KOLTSAKLIS2018318} seem to neglect maintenance costs alltogether focusing only on investment costs. While some models document econimic paramters such as discount rates \cite{7399422}, many don't and it is unclear if future flows of value are properly discounted in these models. Furthermore many of the publications declare cost parameters as assumptions rather than trying to derive them from sources, although a few such as \cite{LAUINGER201624} and \cite{wouters2015energy} do so.
+\\
+The selected literature offers multiple ways of obtaining input parameters of metereological data. \cite{7981571} use historical metereological data while \cite{palma2013microgrid} build a prediction model for forecasting irridiation and wind speeds. Similarly there are authors who use historical data for load parameters such as \cite{7981571} and ones who generate synthetic data based on appliance use and probabilistic models \cite{zhang2013efficient}\cite{zhang2011optimal}\cite{zhang2015optimal} or neural networks using empirical data \cite{palma2013microgrid}.
+\\
+When it comes to modelling tools DER-CAM \cite{LAUINGER201624}\cite{ZHENG2018204}\cite{8023785} and HOMER \cite{amrollahi2017techno}\cite{ZHENG2018204}\cite{LAUINGER201624} are the most often referenced. DER-CAM or Distributed Energy Resources Customer Adoption Model is an optimizatioon tool developed at Berkeley Labs and uses Mixed Integer Linear Programming to optimize portfolio, placement, sizing and dispatch of Microgrid Energy Systems \cite{DistributedEnergyResources2018}. HOMER Grid is a commercial optimization tool for behind the meter systems. Its main advantage is it's large database of components and tariff rates in the United States and Canada \cite{HOMERGridBehindtheMeter2018}. The most often mentioned solver is the CPLEX comercial solver \cite{sechilariu2014supervision}\cite{NEMATI2018944}\cite{UMEOZOR2016672}\cite{7741704}... . Most of the models are written in GAMS \cite{silvente2015rolling}\cite{UMEOZOR2016672}\cite{CRAPARO2017135}..., although many are written in MATLAB \cite{7741704}\cite{7972908}...  .
+\\
+Open source tools seem scarcely available. A search of 'microgrid optimization' on github.com, the major open source software platform, brings up only 3 items with more than one star, none of them has more than ten (popular libraries might have thousands)\cite{GithubSearchMicrogrid2018}. The most up-to-date one has not been updated for a year and none features a graphical user interface.
 
 \newpage
 -
