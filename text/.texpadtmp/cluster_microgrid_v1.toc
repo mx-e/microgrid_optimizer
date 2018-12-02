@@ -39,8 +39,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4}Literature Overview}{5}{subsection.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Appendix}{9}{section.3}
+\contentsline {section}{\numberline {3}Model}{8}{section.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Literature Review}{9}{subsection.3.1}
+\contentsline {section}{\numberline {4}Case Study}{9}{section.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\nonumberline Literature}{10}{section*.9}
+\contentsline {subsection}{\numberline {4.1}Meterological Data}{9}{subsection.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2}Investment Options}{9}{subsection.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3}Further Assumptions}{10}{subsection.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Results and Discussion}{11}{section.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Appendix}{12}{section.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1}Literature Review}{12}{subsection.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Literature}{13}{section*.12}

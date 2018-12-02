@@ -86,6 +86,17 @@
       \endverb
       \keyw{performance analysis,distributed power generation,Microgrids,Renewable energy sources,renewable energy sources,Batteries,microgrids,power systems,demand side management,smart power grids,demand response,Optimization,residential microgrids,Home appliances,battery storage plants,smart grids,Load modeling,battery energy storage system,Stochastic processes,integer programming,linear programming,hybrid power systems,mixed integer linear programming,load forecasting,Design optimization,battery systems,eco-friendly technologies,electric load prediction,electric power generation,electric transportation,hybrid renewable energy system,load flexibility,Okinawa}
     \endentry
+    \entry{BlueGENWorldsMost2018}{misc}{}
+      \list{publisher}{1}{%
+        {SOLIDpower S.p.a.}%
+      }
+      \field{sortinit}{B}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{{{BlueGEN}} - the Worlds Most Efficient Micro-{{CHP}}}
+      \field{year}{2018}
+    \endentry
     \entry{7972908}{article}{}
       \name{author}{7}{}{%
         {{hash=9be4d62c296f903e9a24a63cbbdb61c6}{%
@@ -570,6 +581,17 @@
       \endverb
       \keyw{distributed power generation,Microgrids,Batteries,renewable energy resources,power generation economics,Generators,energy management systems,smart power grids,power generation scheduling,genetic algorithms,power generation reliability,Sociology,integer programming,linear programming,Genetic algorithms,graphical user interfaces,MILP,electricity demand,mixed integer linear programming method,optimal scheduling,energy storage system,Optimal scheduling,graphical user interface,GUI,islanded smart microgrid,optimal energy generation,real coded genetic algorithm,virtual power producer,VPP}
     \endentry
+    \entry{LithiumIonenHEHigh2018}{misc}{}
+      \list{publisher}{1}{%
+        {Victron Energy}%
+      }
+      \field{sortinit}{L}
+      \field{sortinithash}{7bba64db83423e3c29ad597f3b682cf3}
+      \field{labeltitlesource}{title}
+      \field{langid}{DE}
+      \field{title}{{Lithium-Ionen HE (High Energy) Batterie und Lynx Ion BMS}}
+      \field{year}{2018}
+    \endentry
     \entry{7741704}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=5831de745df56bf5051a6d719f6e2cfa}{%
@@ -738,6 +760,17 @@
       \endverb
       \keyw{Electrical network,Heating and cooling network,Mixed-integer linear program,Multi-energy microgrid design,Power flow}
     \endentry
+    \entry{ModulePriceIndex2018}{misc}{}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://www.pv-magazine.com/features/investors/module-price-index/}
+      \field{journaltitle}{pv magazine}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{title}{Module {{Price Index}}}
+      \field{year}{2018}
+    \endentry
     \entry{7540870}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=aa1d5b950d9b5fd9c4f9c108ed05747e}{%
@@ -781,6 +814,16 @@
       \verb 10.1109/PSCC.2016.7540870
       \endverb
       \keyw{2SSIP formulation,Batteries,Biological system modeling,distributed power generation,integer programming,linear programming,Linear programming,microgrid design optimization,microgrid operation,microgrid planning,microgrid planning problem,Microgrids,MILP models,mixed-integer linear programming,optimization,Optimization,Planning,polyhedral uncertainty sets,power distribution planning,probability distributions,RO formulation,robust optimization,robust optimization formulation,statistical distributions,stochastic integer programming,two-stage stochastic integer programming,uncertainty,Uncertainty}
+    \endentry
+    \entry{NaturalGasPrices2018}{misc}{}
+      \field{sortinit}{N}
+      \field{sortinithash}{1163c28585427c673ad5a010cbf82f52}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://www.statista.com/statistics/418009/natural-gas-prices-for-households-in-germany/}
+      \field{journaltitle}{statista.com}
+      \field{langid}{de}
+      \field{title}{{Natural gas prices for households in Germany from 2010 to 2018, semi-annually (in euro cents per kilowatt-hour)}}
+      \field{year}{2018}
     \endentry
     \entry{NEMATI2018944}{article}{}
       \name{author}{3}{}{%
@@ -955,6 +998,54 @@
       \verb 10.23919/ECC.2013.6669807
       \endverb
       \keyw{Programming,distributed power generation,Microgrids,power generation control,power system management,power generation economics,environmental factors,Optimization,Load modeling,Stochastic processes,Uncertainty,distribution grid,integer programming,linear programming,stochastic programming,controllable loads,generation capacities,predictive control,storage devices,Vectors,utility grid,microgrid operations,stochastic model predictive control,stochastic optimization problem,mixed-integer linear programming problem,economic-environmental operation management,feedback,feedback mechanism,fluctuating demand,microgrid management system,stochastic framework,time-varying request,two-stage stochastic programming approach}
+    \endentry
+    \entry{pfenningerLongtermPatternsEuropean2016}{article}{}
+      \name{author}{2}{}{%
+        {{hash=8359589e9631ed503fc038c4c896c11c}{%
+           family={Pfenninger},
+           familyi={P\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f423668ec907764acad83154cc902312}{%
+           family={Staffell},
+           familyi={S\bibinitperiod},
+           given={Iain},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{bcfa84887c462c38f13b898edb39c0e9}
+      \strng{fullhash}{bcfa84887c462c38f13b898edb39c0e9}
+      \strng{authornamehash}{bcfa84887c462c38f13b898edb39c0e9}
+      \strng{authorfullhash}{bcfa84887c462c38f13b898edb39c0e9}
+      \field{sortinit}{P}
+      \field{sortinithash}{24100cef455d7974167575052c29146e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Solar PV is rapidly growing globally, creating difficult questions around how to efficiently integrate it into national electricity grids. Its time-varying power output is difficult to model credibly because it depends on complex and variable weather systems, leading to difficulty in understanding its potential and limitations. We demonstrate how the MERRA and MERRA-2 global meteorological reanalyses as well as the Meteosat-based CM-SAF SARAH satellite dataset can be used to produce hourly PV simulations across Europe. To validate these simulations, we gather metered time series from more than 1000~PV systems as well as national aggregate output reported by transmission network operators. We find slightly better accuracy from satellite data, but greater stability from reanalysis data. We correct for systematic bias by matching our simulations to the mean bias in modeling individual sites, then examine the long-term patterns, variability and correlation with power demand across Europe, using thirty years of simulated outputs. The results quantify how the increasing deployment of PV substantially changes net power demand and affects system adequacy and ramping requirements, with heterogeneous impacts across different European countries. The simulation code and the hourly simulations for all European countries are available freely via an interactive web platform, www.renewables.ninja.}
+      \field{issn}{0360-5442}
+      \field{journaltitle}{Energy}
+      \field{month}{11}
+      \field{title}{Long-Term Patterns of {{European PV}} Output Using 30 Years of Validated Hourly Reanalysis and Satellite Data}
+      \field{volume}{114}
+      \field{year}{2016}
+      \field{pages}{1251\bibrangedash 1265}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1016/j.energy.2016.08.060
+      \endverb
+      \verb{file}
+      \verb /Users/maxi/Zotero/storage/8GXKX8DL/Pfenninger and Staffell - 2016 - Long-term patterns of European PV output using 30 .pdf;/Users/maxi/Zotero/storage/5FWGRGDB/S0360544216311744.html
+      \endverb
+      \keyw{Grid integration of renewables,Meteorological reanalysis,Renewables,Satellite irradiance estimation,Solar energy}
+    \endentry
+    \entry{PowerwallTesla2018}{misc}{}
+      \field{sortinit}{P}
+      \field{sortinithash}{24100cef455d7974167575052c29146e}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://www.tesla.com/de\_DE/powerwall?redirect=no}
+      \field{journaltitle}{Tesla}
+      \field{langid}{english}
+      \field{title}{Powerwall - {{Tesla}}}
+      \field{year}{2018}
     \endentry
     \entry{6700453}{inproceedings}{}
       \name{author}{3}{}{%
@@ -1189,6 +1280,16 @@
       \field{pages}{485\bibrangedash 501}
       \range{pages}{17}
     \endentry
+    \entry{SolarmoduleEBay2018}{misc}{}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://www.ebay.de/b/Solarmodule/41981/bn\_16580037}
+      \field{journaltitle}{eBay}
+      \field{langid}{de}
+      \field{title}{{Solarmodule eBay}}
+      \field{year}{2018}
+    \endentry
     \entry{TAVAKOLI20181}{article}{}
       \name{author}{6}{}{%
         {{hash=e34d1ac845f4624d30850df42e887f32}{%
@@ -1312,6 +1413,40 @@
       \verb https://doi.org/10.1016/j.apenergy.2016.08.009
       \endverb
       \keyw{Renewable energy,Microgrids,Energy management,Optimization}
+    \endentry
+    \entry{VictronEnergyLithium2018}{misc}{}
+      \field{sortinit}{V}
+      \field{sortinithash}{555737dafdcf1396ebfeae5822e5bde2}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{http://greenakku.de/Batterien/Lithium-Batterien/Victron-Energy-Lithium-HE-Batterie-24V-200Ah::1405.html?MODsid=qhinvdl0nmp4htfsvre2igl0b4}
+      \field{journaltitle}{GreenAkku.de}
+      \field{langid}{de}
+      \field{title}{{Victron Energy Lithium HE Batterie 24V 200Ah}}
+      \field{year}{2018}
+    \endentry
+    \entry{wirthAktuelleFaktenZur2018}{report}{}
+      \name{author}{1}{}{%
+        {{hash=ca39a3c15edfcb2085b57111924efed4}{%
+           family={Wirth},
+           familyi={W\bibinitperiod},
+           given={Harry},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Fraunhofer-Institut für Solare Energiesysteme ISE}%
+      }
+      \strng{namehash}{ca39a3c15edfcb2085b57111924efed4}
+      \strng{fullhash}{ca39a3c15edfcb2085b57111924efed4}
+      \strng{authornamehash}{ca39a3c15edfcb2085b57111924efed4}
+      \strng{authorfullhash}{ca39a3c15edfcb2085b57111924efed4}
+      \field{sortinit}{W}
+      \field{sortinithash}{6d25b3eefe5aa2147d1f339686808918}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{de}
+      \field{title}{{Aktuelle Fakten zur Photovoltaik in Deutschland}}
+      \field{type}{techreport}
+      \field{year}{2018}
     \endentry
     \entry{wouters2015energy}{article}{}
       \name{author}{3}{}{%

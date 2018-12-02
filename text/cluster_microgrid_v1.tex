@@ -34,6 +34,7 @@
 \usepackage{datetime}
 \usepackage{dcolumn}
 \usepackage{todonotes}
+\usepackage{eurosym}
 
 %%% Anpassung des Formats %%%
 \RedeclareSectionCommand[
@@ -528,13 +529,94 @@ In publications documenting cost parameters there is a clear trend towards a spl
 \\
 The selected literature offers multiple ways of obtaining input parameters of metereological data. \cite{7981571} use historical metereological data while \cite{palma2013microgrid} build a prediction model for forecasting irridiation and wind speeds. Similarly there are authors who use historical data for load parameters such as \cite{7981571} and ones who generate synthetic data based on appliance use and probabilistic models \cite{zhang2013efficient}\cite{zhang2011optimal}\cite{zhang2015optimal} or neural networks using empirical data \cite{palma2013microgrid}.
 \\
-When it comes to modelling tools DER-CAM \cite{LAUINGER201624}\cite{ZHENG2018204}\cite{8023785} and HOMER \cite{amrollahi2017techno}\cite{ZHENG2018204}\cite{LAUINGER201624} are the most often referenced. DER-CAM or Distributed Energy Resources Customer Adoption Model is an optimizatioon tool developed at Berkeley Labs and uses Mixed Integer Linear Programming to optimize portfolio, placement, sizing and dispatch of Microgrid Energy Systems \cite{DistributedEnergyResources2018}. HOMER Grid is a commercial optimization tool for behind the meter systems. Its main advantage is it's large database of components and tariff rates in the United States and Canada \cite{HOMERGridBehindtheMeter2018}. The most often mentioned solver is the CPLEX comercial solver \cite{sechilariu2014supervision}\cite{NEMATI2018944}\cite{UMEOZOR2016672}\cite{7741704}... . Most of the models are written in GAMS \cite{silvente2015rolling}\cite{UMEOZOR2016672}\cite{CRAPARO2017135}..., although many are written in MATLAB \cite{7741704}\cite{7972908}...  .
+When it comes to modelling tools DER-CAM \cite{LAUINGER201624}\cite{ZHENG2018204}\cite{8023785} and HOMER \cite{amrollahi2017techno}\cite{ZHENG2018204}\cite{LAUINGER201624} are the most often referenced. DER-CAM or Distributed Energy Resources Customer Adoption Model is an optimizatioon tool developed at Berkeley Labs and uses Mixed Integer Linear Programming to optimize portfolio, placement, sizing and dispatch of Microgrid Energy Systems \cite{DistributedEnergyResources2018}. HOMER Grid is a commercial optimization tool for behind the meter systems. Its main advantage is it's large database of components and tariff rates in the United States and Canada \cite{HOMERGridBehindtheMeter2018}. The most often mentioned solver is the CPLEX comercial solver \cite{sechilariu2014supervision}\cite{NEMATI2018944}\cite{UMEOZOR2016672}\cite{7741704}... . Most of the models are written in GAMS \cite{silvente2015rolling}\cite{UMEOZOR2016672}\cite{CRAPARO2017135}..., although many are written in MATLAB \cite{7741704}\cite{7972908}... .
 \\
 Open source tools seem scarcely available. A search of 'microgrid optimization' on github.com, the major open source software platform, brings up only 3 items with more than one star, none of them has more than ten (popular libraries might have thousands)\cite{GithubSearchMicrogrid2018}. The most up-to-date one has not been updated for a year and none features a graphical user interface.
 
 \newpage
--
+\section{Model}
+
+
 \newpage
+\section{Case Study}
+\subsection{Meterological Data}
+Hourly irridiation data (in $KWm^{-2}$) for <<PLACE>> is sourced from \cite{pfenningerLongtermPatternsEuropean2016}. 
+\subsection{Investment Options}
+\begin{table}[H]
+	\centering
+	\caption{Parameters describing the conversion technologies}
+	\begin{tabular}{lllll}
+		\hline
+		\textbf{Parameter}			& \textbf{Name}			& \textbf{Unit}			& \textbf{Value}	&\textbf{Reference}     \\ \hline
+		\textit{Photovoltaic System} & & & &\\
+		Installation Cost           & information     		& \euro $KW^{-1}$  		& 1300				& Estimate based on \cite{wirthAktuelleFaktenZur2018}, \cite{SolarmoduleEBay2018}, \cite{ModulePriceIndex2018}   \\
+		Maintenance Cost            & information     		& \euro $KW^{-1}yr^{-1}$& 50				& Estimate \\
+		Lifetime                    & information     		& $yr$  				& 25 				& \cite{wirthAktuelleFaktenZur2018}   \\
+		Electric Efficiency         & information     		& $\%$  				& 17				& \cite{wirthAktuelleFaktenZur2018}   \\
+		Performance Ratio           & information     		& $\%$  				& 85				& \cite{wirthAktuelleFaktenZur2018}   \\
+		\textit{CHP Micro Fuel Cell} & & & &\\
+		Installation Cost           & information     		& \euro $KW^{-1}$  		& 3500 				& Estimate based on \cite{LAUINGER201624}    \\
+		Maintenance Cost            & information     		& \euro $KW^{-1}yr^{-1}$& 175				& Estimate based on \cite{LAUINGER201624}   \\
+		Fuel	 Cost           			& information     		& \euro $KWh^{-1}$   	& 0,0608			& \cite{NaturalGasPrices2018}   \\
+		Lifetime                    & information     		& $yr$  				& 15 				& \cite{LAUINGER201624}    \\
+		Electric Efficiency         & information     		& $\%$  				& 60				& \cite{BlueGENWorldsMost2018}   \\
+		Thermal Efficiency			& information     		& $\%$  				& 21				& \cite{BlueGENWorldsMost2018}   \\
+		Minimum Gas Flow    			& information     		& $\%$ 		 			& 30				& \cite{LAUINGER201624}   \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\caption{Parameters describing the storage technologies}
+	\begin{tabular}{lllll}
+		\hline
+		\textbf{Parameter}			& \textbf{Name}			& \textbf{Unit}			& \textbf{Value}	&\textbf{Reference}     \\ \hline
+		\textit{Li-Ion Battery 1} & & & &\textit{Tesla Powerwall} \\
+		Installation Cost              & information     	& \euro 				& 10000				& Estimate based on \cite{PowerwallTesla2018}   \\
+		Usable Capacity				   & information 		& $KWh$ 				& 13.5 				& \cite{PowerwallTesla2018} 	\\
+		Lifetime			               & information     	& $yr$  				& 10 				& Estimate based on \cite{PowerwallTesla2018} \\
+		Roundtrip Efficiency           & information     	& $\%$  				& 90				& \cite{PowerwallTesla2018}   \\
+		Self-Discharge		           & information     	& $\%hr^{-1}$  			& 5					& \cite{LAUINGER201624}   \\	
+		Max. charging power            & information    	& $kW$  				& 4.6 				& \cite{PowerwallTesla2018}      \\
+		Max. discharging power         & information     	& $kW$   				& 4.6 				& \cite{PowerwallTesla2018}      \\
+		Initial State of Charge        & information     	& $\%$  				& 100 				& Assumption   \\
+		Terminal State of Charge       & information     	& $\%$  				& 100 				& Assumption   \\
+		
+		\textit{Li-Ion Battery 2} & & & & \textit{Victron Energy Lithium HE Batterie} \\
+		Installation Cost              & information     	& \euro  				& 5000				& Estimate based on \cite{VictronEnergyLithium2018}   \\
+		Usable Capacity				   & information 		& $KWh$ 				& 4 				& based on \cite{LithiumIonenHEHigh2018} considering maximum depth of discharge\\
+		Lifetime			               & information     	& $yr$  				& 10 				& Estimate based on \cite{LithiumIonenHEHigh2018}   \\
+		Roundtrip Efficiency           & information     	& $\%$  				& 92 				& \cite{LAUINGER201624}    \\
+		Self-Discharge		           & information     	& $\%hr^{-1}$  			& 5					& \cite{LAUINGER201624}   \\	
+		Max. charging power            & information    	& $KW$  				& 4.8				& \cite{LithiumIonenHEHigh2018}    \\
+		Max. discharging power         & information     	& $KW$   				& 7.2				& \cite{LithiumIonenHEHigh2018}    \\
+		Initial State of Charge        & information     	& $\%$  				& 100 				& Assumption	   \\
+		Terminal State of Charge       & information     	& $\%$  				& 100 				& Assumption   \\	
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsection{Further Assumptions}
+
+\begin{table}[H]
+	\centering
+	\caption{Further Assumed Parameters}
+	\begin{tabular}{lllll}
+		\hline
+		\textbf{Parameter}			& \textbf{Name}			& \textbf{Unit}			& \textbf{Value}			&\textbf{Reference}     \\ \hline
+		Discount Rate              	& information     		& $\% yr^{-1}$  		& 1.5						& Estimate   \\
+		-----			            & information     		& information  			& &    \\
+		-----					    & information     		& information  			& &    \\		
+		\hline
+	\end{tabular}
+\end{table}
+
+
+\newpage
+\section{Results and Discussion}
+\newpage
+
 
 \section{Appendix}
 \subsection{Literature Review}
