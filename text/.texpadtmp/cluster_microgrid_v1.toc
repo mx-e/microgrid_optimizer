@@ -41,18 +41,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3}Model}{8}{section.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Case Study}{9}{section.4}
+\contentsline {section}{\numberline {4}Case Study}{11}{section.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Meterological Data}{9}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.1}Meterological Data}{11}{subsection.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Investment Options}{9}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.2}Investment Options}{11}{subsection.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3}Further Assumptions}{10}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.3}Further Assumptions}{12}{subsection.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Results and Discussion}{11}{section.5}
+\contentsline {section}{\numberline {5}Results and Discussion}{13}{section.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Appendix}{12}{section.6}
+\contentsline {section}{\numberline {6}Appendix}{14}{section.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Literature Review}{12}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.1}Literature Review}{14}{subsection.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\nonumberline Literature}{13}{section*.12}
+\contentsline {section}{\nonumberline Literature}{15}{section*.18}
