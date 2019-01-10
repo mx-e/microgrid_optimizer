@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.5.4)  3 DEC 2018 10:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.5.4)  10 JAN 2019 21:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -856,7 +856,16 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Cskip=\skip60
 )
 \c@@todonotes@numberoftodonotes=\count165
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/tocloft/tocloft.sty
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2013/05/02 v2.3f parameterised ToC, etc., typesetting
 Package tocloft Info: The document has section divisions on input line 44.
 \cftparskip=\skip61
@@ -989,12 +998,6 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \mathdisplay@stack=\toks42
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
  (/usr/local/texlive/2016/texmf-dist/tex/latex/mathtools/mhsetup.sty
@@ -1013,8 +1016,6 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_below_intertext_sep=\dimen183
 \l_MT_above_shortintertext_sep=\dimen184
 \l_MT_below_shortintertext_sep=\dimen185
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/base/exscale.sty
 Package: exscale 2014/09/29 v2.1h Standard LaTeX package exscale
 LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 57.
@@ -1276,13 +1277,13 @@ File: biblatex.def 2016/12/05 v3.7 biblatex compatibility (PK/JW/AB)
 )
 Package biblatex Info: Trying to load natbib compatibility...
 Package biblatex Info: ... file 'blx-natbib.def' found.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex/blx-natbib.def
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex/blx-natbib.def
 File: blx-natbib.def 2016/12/05 v3.7 biblatex compatibility (PK/JW/AB)
 )
 Package biblatex Info: Trying to load bibliography style 'nature'...
 Package biblatex Info: ... file 'nature.bbx' found.
- (/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex-nature/nature.bbx
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex-nature/nature.bbx
 File: nature.bbx 2017/03/01 v1.3b biblatex bibliography style
 Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
 Package biblatex Info: ... file 'numeric-comp.bbx' found.
@@ -1835,11 +1836,11 @@ Package: glossary-tree 2017/01/19 v4.29 (NLCT)
 \glo@main@file=\write7
 \openout7 = `cluster_microgrid_v1.glo'.
 
-Package glossaries Info: Writing glossary file cluster_microgrid_v1.glo on input line 214.
+Package glossaries Info: Writing glossary file cluster_microgrid_v1.glo on input line 215.
 \glo@acronym@file=\write8
 \openout8 = `cluster_microgrid_v1.acn'.
 
-Package glossaries Info: Writing glossary file cluster_microgrid_v1.acn on input line 214.
+Package glossaries Info: Writing glossary file cluster_microgrid_v1.acn on input line 215.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -1860,25 +1861,25 @@ File: german.lbx 2016/12/05 v3.7 biblatex localization (PK/JW/AB)
 )) (/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.aux)
 \openout1 = `cluster_microgrid_v1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 237.
-LaTeX Font Info:    ... okay on input line 237.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 237.
-LaTeX Font Info:    ... okay on input line 237.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 237.
-LaTeX Font Info:    ... okay on input line 237.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 237.
-LaTeX Font Info:    ... okay on input line 237.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 237.
-LaTeX Font Info:    ... okay on input line 237.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 237.
-LaTeX Font Info:    ... okay on input line 237.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 237.
-LaTeX Font Info:    ... okay on input line 237.
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 237.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 238.
+LaTeX Font Info:    ... okay on input line 238.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 238.
+LaTeX Font Info:    ... okay on input line 238.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 238.
+LaTeX Font Info:    ... okay on input line 238.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 238.
+LaTeX Font Info:    ... okay on input line 238.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 238.
+LaTeX Font Info:    ... okay on input line 238.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 238.
+LaTeX Font Info:    ... okay on input line 238.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 238.
+LaTeX Font Info:    ... okay on input line 238.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 238.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Info: Redefining \microtypecontext on input line 237.
+LaTeX Info: Redefining \microtypecontext on input line 238.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1976,10 +1977,10 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'cluster_microgrid_v1.bbl' found.
 (/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.bbl)
-Package biblatex Info: Reference section=0 on input line 237.
-Package biblatex Info: Reference segment=0 on input line 237.
+Package biblatex Info: Reference section=0 on input line 238.
+Package biblatex Info: Reference segment=0 on input line 238.
 \AtBeginShipoutBox=\box70
-Package hyperref Info: Link coloring OFF on input line 237.
+Package hyperref Info: Link coloring OFF on input line 238.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1987,30 +1988,30 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count470
 )
-LaTeX Info: Redefining \ref on input line 237.
-LaTeX Info: Redefining \pageref on input line 237.
-LaTeX Info: Redefining \nameref on input line 237.
+LaTeX Info: Redefining \ref on input line 238.
+LaTeX Info: Redefining \pageref on input line 238.
+LaTeX Info: Redefining \nameref on input line 238.
  (/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.out) (/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.out)
 \@outlinefile=\write9
 \openout9 = `cluster_microgrid_v1.out'.
 
- <pictures/TU_Logo_kurz_4c_rot.pdf, id=91, 134.5025pt x 100.375pt>
+ <pictures/TU_Logo_kurz_4c_rot.pdf, id=131, 134.5025pt x 100.375pt>
 File: pictures/TU_Logo_kurz_4c_rot.pdf Graphic file (type pdf)
  <use pictures/TU_Logo_kurz_4c_rot.pdf>
-Package pdftex.def Info: pictures/TU_Logo_kurz_4c_rot.pdf used on input line 246.
+Package pdftex.def Info: pictures/TU_Logo_kurz_4c_rot.pdf used on input line 247.
 (pdftex.def)             Requested size: 71.13188pt x 53.08362pt.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <6> on input line 289.
-LaTeX Font Info:    Try loading font information for U+msa on input line 289.
+(Font)              <6> on input line 290.
+LaTeX Font Info:    Try loading font information for U+msa on input line 290.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 289.
+LaTeX Font Info:    Try loading font information for U+msb on input line 290.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -2022,7 +2023,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./pictures/TU_Logo_kurz_4c_rot.pdf>]
 
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 324.
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 325.
 
 
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
@@ -2031,7 +2032,7 @@ Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [3]
-Package tocbasic Info: character protrusion at toc deactivated on input line 363.
+Package tocbasic Info: character protrusion at toc deactivated on input line 364.
  (/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.toc)
 \tf@toc=\write10
 \openout10 = `cluster_microgrid_v1.toc'.
@@ -2040,7 +2041,7 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 363
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [4]
-Package tocbasic Info: character protrusion at lof deactivated on input line 372.
+Package tocbasic Info: character protrusion at lof deactivated on input line 373.
  (/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.lof)
 \tf@lof=\write11
 \openout11 = `cluster_microgrid_v1.lof'.
@@ -2049,7 +2050,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 372
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [5]
-Package tocbasic Info: character protrusion at lot deactivated on input line 379.
+Package tocbasic Info: character protrusion at lot deactivated on input line 380.
  (/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.lot)
 \tf@lot=\write12
 \openout12 = `cluster_microgrid_v1.lot'.
@@ -2063,19 +2064,19 @@ Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.450 	\item T
+l.451 	\item T
               he price of power from the main grid as a function of the time... [1]
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [2]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 475.
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 476.
 
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
- [3] <pictures/Figure_1.png, id=188, 1806.75pt x 1003.75pt>
+ [3] <pictures/Figure_1.png, id=236, 1806.75pt x 1003.75pt>
 File: pictures/Figure_1.png Graphic file (type png)
  <use pictures/Figure_1.png>
-Package pdftex.def Info: pictures/Figure_1.png used on input line 491.
+Package pdftex.def Info: pictures/Figure_1.png used on input line 492.
 (pdftex.def)             Requested size: 455.24411pt x 252.91264pt.
 
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
@@ -2093,20 +2094,60 @@ Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [8]
+Underfull \hbox (badness 10000) in paragraph at lines 582--586
+
+ []
+
+
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [9]
+Overfull \hbox (3.39125pt too wide) in paragraph at lines 623--623
+[][][][]\T1/cmss/m/n/10.95 (-20) Introductory 
+ []
+
+
+Overfull \hbox (3.39125pt too wide) in paragraph at lines 623--623
+[][][][]\T1/cmss/m/n/10.95 (-20) Introductory 
+ []
+
+
+Overfull \hbox (3.39125pt too wide) in paragraph at lines 623--623
+[][][][]\T1/cmss/m/n/10.95 (-20) Introductory 
+ []
+
+
+Overfull \hbox (3.39125pt too wide) in paragraph at lines 623--623
+[][][][]\T1/cmss/m/n/10.95 (-20) Introductory 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 623--625
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 645--647
+
+ []
+
+
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [10]
-Overfull \hbox (80.5637pt too wide) in paragraph at lines 679--705
- [][] 
+Underfull \hbox (badness 10000) in paragraph at lines 666--669
+
  []
 
 
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [11]
+Underfull \hbox (badness 10000) in paragraph at lines 718--719
+
+ []
+
+
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [12]
@@ -2116,8 +2157,8 @@ Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [14]
-Overfull \hbox (276.22577pt too wide) in paragraph at lines 765--765
-[]\T1/cmss/m/n/10.95 (-20) "Github Search - 'Mi-cro-grid Op-ti-miza-tion' , Sorted by Most Stars". https://github.com/search?o=desc&q=microgrid+optimization&s=stars&type=Repositories.
+Overfull \hbox (80.5637pt too wide) in paragraph at lines 812--838
+ [][] 
  []
 
 
@@ -2130,14 +2171,31 @@ Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [17]
-Overfull \hbox (55.28902pt too wide) in paragraph at lines 765--765
+Overfull \vbox (1.74245pt too high) has occurred while \output is active []
+
+ [18]
+Overfull \hbox (276.22577pt too wide) in paragraph at lines 898--898
+[]\T1/cmss/m/n/10.95 (-20) "Github Search - 'Mi-cro-grid Op-ti-miza-tion' , Sorted by Most Stars". https://github.com/search?o=desc&q=microgrid+optimization&s=stars&type=Repositories.
+ []
+
+
+Overfull \vbox (1.74245pt too high) has occurred while \output is active []
+
+ [19]
+Overfull \vbox (1.74245pt too high) has occurred while \output is active []
+
+ [20]
+Overfull \vbox (1.74245pt too high) has occurred while \output is active []
+
+ [21]
+Overfull \hbox (55.28902pt too wide) in paragraph at lines 898--898
 \T1/cmss/m/n/10.95 (-20) Batterien/Victron-Energy-Lithium-HE-Batterie-24V-200Ah::1405.html?MODsid=qhinvdl0nmp4htfsvre2igl0b4.
  []
 
 
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
- [18]
+ [22]
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
@@ -2146,12 +2204,12 @@ This document will not have a glossary.
 
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
- [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 765.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 765.
+ [23]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 898.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 898.
  (/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 765.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 765.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 898.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 898.
 Package rerunfilecheck Info: File `cluster_microgrid_v1.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
 Package logreq Info: Writing requests to 'cluster_microgrid_v1.run.xml'.
@@ -2159,18 +2217,18 @@ Package logreq Info: Writing requests to 'cluster_microgrid_v1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46532 strings out of 493013
- 884555 string characters out of 6133344
- 1496289 words of memory out of 5000000
- 49054 multiletter control sequences out of 15000+600000
- 22844 words of font info for 93 fonts, out of 8000000 for 9000
+ 46614 strings out of 493013
+ 885838 string characters out of 6133344
+ 1502916 words of memory out of 5000000
+ 49095 multiletter control sequences out of 15000+600000
+ 23315 words of font info for 100 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  73i,16n,100p,10459b,1920s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb>
-Output written on /Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.pdf (25 pages, 394014 bytes).
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb>
+Output written on /Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.pdf (29 pages, 397126 bytes).
 PDF statistics:
- 571 PDF objects out of 1000 (max. 8388607)
- 514 compressed objects within 6 object streams
- 150 named destinations out of 1000 (max. 500000)
- 17087 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 650 PDF objects out of 1000 (max. 8388607)
+ 591 compressed objects within 6 object streams
+ 177 named destinations out of 1000 (max. 500000)
+ 17167 words of extra memory for PDF output out of 17280 (max. 10000000)
 

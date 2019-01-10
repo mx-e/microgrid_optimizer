@@ -35,6 +35,7 @@
 \usepackage{dcolumn}
 \usepackage{todonotes}
 \usepackage{eurosym}
+\usepackage{amssymb}
 
 %%% Anpassung des Formats %%%
 \RedeclareSectionCommand[
@@ -536,61 +537,232 @@ Open source tools seem scarcely available. A search of 'microgrid optimization' 
 \newpage
 \section{Model}
 
-\section*{Optimisation Formula}
+\subsection{Time}
+The range of scenarios and complexity the model can handle is, among other things, dependant on its implementation of discrete time. More and smaller timesteps and a representative sample of diverse expectable conditions regarding the parameters leads to higher model accuracy. Of course the amount of timesteps is limited by processing power and therefore by model complexity. To enable both diverse and therefore potentially discountinous parameter sets and a reasonable length for each set, the length of 1 hour is chosen for the basic timestep 
+$t; t \in [1,T]; T \in \mathbb{N} ;$. $T$ denotes the number of hours in each disontinous sets of supply and demand parameters.
+Furthermore the ability of including multiple discontinous sets of supply and demand parameters of the same length in one scenario is gained by introducing a second iterator 
+$s; s \in [1,S]; S \in \mathbb{N} ;$. $S$ denotes the number of discontinous sets of supply and demand parameters.
+
+
+
+
+
+\subsection{Households}
+To properly conduct trading and for the future possibility of adding voltage and topological constraints to the model, the households are modeled as independent entities, each with its own demand, generation and storage. Therefore a third iterator $u; u \in [1,U]; U \in \mathbb{N};$ is introduced. $U$ denotes the number of households modeled.
+An absract household $H$ is defined as a tuple of storage and generation devices as well as demand curves. For discrete storage and generation devices two seperate sets of positive integers define how much of each option available in the scenario was installed. Additionally each household has a price $shiftP$ and $curtP$ at which they are willing to shift or curtail a unit  of their load respectively.
+\begin{equation}
+	H := (GEN, ST, dGEN, dST, DEM, shiftP, curtP)
+\end{equation}
+
+A conrete household $H_u$ implements these values:
+\begin{equation}
+	GEN \in \mathbb{R}^{K}; GEN_k \geq 0 \forall k; k\in [0,K]
+\end{equation}
+\begin{equation}
+	ST \in \mathbb{R}^{L}; ST_l \geq 0 \forall l; l\in [0,L] 
+\end{equation}
+\begin{equation}
+	dGEN \in \mathbb{N}^{M}
+\end{equation}
+\begin{equation}
+	dST \in \mathbb{N}^{N}
+\end{equation}
+with\\
+$k,K,L,l,M,N \in \mathbb{N}$\\
+and\\
+$shiftP, curtP \geq 0$
+
+$K$ and $L$ denote the amount of generation and storage devices in household $H_u$.This, in practice, is equal to the amount of linear scaling investment options for each category, since a zero capacity device is still modeled as a device. $M$ and $N$ denote the amount of discrete investment options in their respective category. $GEN_k$ and $ST_l$ are the capacities installed of the k-th and l-th linear investment option respectively. $GEN_m$ and $dST_n$ are the amount installed of the m-th and n-th discrete investment option available. $DEM$ is further defined in the subsection demand.
+
+
+
+
+
+\subsection{Internal Variables}
+The objective of the model is to find optimal investment, dispatch and trade. Therefore, the following sets of internal paramters are introduced:
+	\\
+	$\forall u,k,l,m,n,s,t$:
+	\\
 	\begin{equation}
-		\begin{split}
-			\min C_{total} =\sum_{i = 1}^{n} (IC_{PV} * CP_{PV_i} + IC_{ST} * CP_{ST_i})\\
-			+  \sum_{y=1}^{Y} \sum_{t=1}^{T}[\sum_{i = 1}^{n} (GEC_{t,y} * S_{GR_{i,t,y}}) +\sum_{i = 1}^{n}(NCC_i * S_{NC_{i,t,y}}) 
-			\\ + \sum_{i = 1}^{n} (SCC_i * S_{SC_{i,t,y}}) + \sum_{i = 1}^{n} (GPP_{t,y} * S_{TG{i,t,y}})]
-		\end{split}
+		toTR_{u,s,t}, fromTR_{u,s,t} \geq 0
 	\end{equation}
 	
-	\section*{Parameters}
-	Let
 	\begin{equation}
-		D_{total_i} \geq 0, i = \{1,...,n\}, i\in \mathbb{N}
-	\end{equation}
-	\begin{equation}
-		SF_t \in [0,1]
-	\end{equation}
-	\begin{equation}
-	IC_{PV}, IC_{ST}, GEC_{t,y}, NCC_i, SCC_i\geq 0	
+		genS_{u,k,s,t}, dgenS_{u,m,s,t}, fromST_{u,l,s,t}, toST_{u,l,s,t}, fromDST{u,n,s,t}, toDST{u,n,s,t} \geq 0
 	\end{equation}
 	
 	\begin{equation}
-		T \in \mathbb{N}, T \ne 0
+		toSC{u,s,t}, fromSC{u,s,t}, fromGR{u,s,t}, toGR{u,s,t}, ncS_{u,s,t},  \geq 0
+	\end{equation}
+	\\
+	$\forall u,k$:
+	\begin{equation}
+		H_u->GEN_k \geq 0
+	\end{equation}
+	\\
+	$\forall u,l$:
+	\begin{equation}
+		H_u->ST_l \geq 0
+	\end{equation}
+	
+	$\forall u,m$
+	\begin{equation}
+		H_u->dGEN_m \in \mathbb{N}
+	\end{equation}
+	
+	$\forall u,n$
+	\begin{equation}
+		H_u->dST_n \in \mathbb{N}
 	\end{equation}
 
-	\section*{Internal Variables}
-	
-	Let
+
+
+
+
+\subsection{Generation}
+\todo{Introductory sentence generation}\\
+Therefore an abstract linear generation device $GEN$ and an abstract discrete generation device $dGEN$, which can represent a range of technology options, are defined:\\
 	\begin{equation}
-		TR_{ij} \geq 0
+		GEN := (C_{Cap}, C_{OpFix}, C_{OpVar}, T_{Life}, EFF_{el}, PR, minFl)
 	\end{equation}
-	
 	\begin{equation}
-		SN_{NC_{i,t,y}}, S_{PV_{i,t,y}}, S_{GR_{i,t,y}}, S_{SC_{i,t,y}}  \geq 0
+		dGEN := (CAP, C_{Cap}, C_{OpFix}, C_{OpVar}, T_{Life}, EFF_{el}, PR, minFl)
 	\end{equation}
-	
+	$CAP \geq 0$, which is only required for discrete investments, defines the generation capacity of the discrete investment option.
+	$C_{Cap} \geq 0$ defines the total investment cost for discrete generation devices. For linear generation devices the investment cost is expressed in terms of one unit of capacity.
+	$C_{OpFix} \geq 0$ expresses the fixed maintenance cost per unit of time.
+	$C_{OpVar} \geq 0$ expresses the variable maintenance cost per unit of input consumed.
+	$T_{Life} \in \mathbb{N}$ defines the life expectancy of a generation device, e.g the time before it is replaced. 
+	$EFF_{el} \in [0,1]$ defines the ratio of supplied energy, for example sunlight or gas, to produced electricty.
+	$PR \in [0,1]$ is another definable penalty to electricity production, which can, for example, express the degradation of solar cells. 	
+	$minFl \in [0,1]$ denotes the minimal possible electricity production as a percentage of capacity.
+
+
+
+
+
+\subsection{Storage}
+The introduction of the concept of energy storage is necessary if the use of a large proportion of intermittent power production while maintaining intermittent power demand is to be seriously explored.
+Therefore an abstract linear storage device $ST$ and an abstract discrete storage device $dST$, which can represent a range of technology options, are defined:\\
 	\begin{equation}
-		CP_{PV_i}, CP_{ST_i}  \geq 0
+		ST := (C_{Cap}, T_{Life}, EFF_{+-}, LOC_{1h}, maxP_{+}, maxP_{-})
 	\end{equation}
-	
-	
+	\begin{equation}
+		dST := (CAP, C_{Cap}, T_{Life}, EFF_{+-}, LOC_{1h}, maxP_{+}, maxP_{-})
+	\end{equation}
+	$CAP \geq 0$, which is only required for discrete investments, defines the usable capacity of the discrete investment option.
+	$C_{Cap} \geq 0$ defines the total investment cost for discrete storage devices. For linear storage investment options the investment cost is expressed in terms of one unit of capacity.
+	$T_{Life} \in \mathbb{N}$ defines the life expectancy of a storage device, e.g the time before it is replaced. To be able to better estimate this value it is assumed, that storage is, on average, cycled once per day.
+	$EFF_{+-} \in [0,1]$ defines the roundtrip efficiency, e.g. what proportion of one unit of power is left after charging and discharching inefficiencies. It is used to compute the charge and discharge efficiencies.
+	The charge efficiency $EFF_{+}$ is defined as $EFF_{+} = \sqrt{EFF_{+-}}$ and the discharge efficiency $EFF_{-}$ as $EFF_{-} = 1/EFF_{+}$.\\
+	$LOC_{1h} \in [0,1]$ expresses the relative amount of charge lost, during one timestep of storage.
+	$maxP_{+} \geq 0$ and $maxP_{-} \geq 0$ denote the maximum charge rate and discharge rate respectively.
+
+
+
+
+
+\subsection{Trade}
+Trade is implemented as an exchange platform, which sums up deposits and withdrawals of power at each timestep and always needs to be balanced. This approach has the advantage of reducing the number of constraints and therefore complexity greatly, although it is not very well suited to handle grid topology constraints which might be addded in the future.\\
+The trade constraint is defined as:
+\\
+
+$\forall s,t$
+\begin{equation}
+	\sum_{u = 1}^{U}{toTR_{u,s,t}-fromTR_{u,s,t}} = 0
+\end{equation}
+
+
+
+
+
+\subsection{Demand}
+Abstract demand data $DEM$ is defined as a set of the size $S$ of demand profile sets of the size $T$:
+\begin{equation}
+ DEM:= \{DEM_s | s \in [1,S]; s\in \mathbb{N}; \forall DEM_s, DEM_s := \{DEM_{s,t} | t\in [0,T]; t \in \mathbb{N}\}
+\end{equation}
+
+As frequently applied in literature, $DEM_{s,t}$ is not a demand value, but rather a tuple of three demand values, critical demand, shiftable demand and curtailable demand \cite{silvente2015rolling}\cite{zhang2015optimal}\cite{8216436}\cite{7972908} : 
+\begin{equation}
+ DEM_{s,t}:= (critDEM_{s,t}, shiftDEM_{s,t}, curtDEM_{s,t}) 
+\end{equation}
+
+$\forall s,t$\\
+$critDEM_{s,t}, shiftDEM_{s,t}, curtDEM{s,t} \geq 0$
+
+Critical demand will be met by the model as it is seen as a constraint. Shiftable demand can be shifted by one hour at a fixed rate defined for each household. Curtailable demand can be dropped at a fixed rate defined for each household.
+
+
+
+
+
+\subsection{Grid}
+The modeled microgrid is connected to the grid via a common point of coupling. The grid is defined as:
+
+\begin{equation}
+	GRID:= (maxS, maxD, gridC, feedC)
+\end{equation}\\
+with\\
+$maxS,maxD, gridC, feedC \in \mathbb{R}^{S \times T}$\\
+and $\forall s \in [1,S], t \in [1,T]; s,t \in \mathbb{N}$: \\
+$maxS{s,t}, maxD{s,t}, gridC{s,t}, feedC{s,t} \geq 0$
+
+$maxS$ describes the maximum amount of power supplied by the grid at each timestep $(s,t)$, while $gridC_{s,t}$ expresses the price at which this power can be bought.
+$maxD$ describes the maximum amount power that can be fed into the the grid at timestep $(s,t)$, while $feedC_{s,t}$ expresses the price at which the grid buys this power. 
+
+
+
+
+
+\subsection{Power Balance}
+The power balance constraint describes the need for a balance between supply and demand at each node at each timestep: \\
+
+$\forall u,t,s$:
+\begin{equation}
+	\begin{split}
+		H_u->critDEM_{s,t} + H_u->shiftDEM_{s,t} + H_u->curtDEM{s,t}\\
+		= \\
+		fromGR_{u,s,t} - toGR{u,s,t} + \sum_{k=1}^K{genS_{u,k,s,t}} + \sum_{m=1}^M{genS_{u,m,s,t}} \\ 
+		+ fromTR{u,s,t} - toTR{u,s,t} + scS_{u,s,t} - scS_{i,s,t-1} + ncS_{u,s,t} \\
+		+ \sum_{l=1}^L{fromST_{u,l,s,t} - toST_{u,l,s,t}} + \sum_{n=1}^N{fromDST_{u,n,s,t}-toDST_{u,n,s,t}}
+	\end{split}
+\end{equation}
+
+\todo{explain this calculation}
+
+
+
+
+\subsection{Cost Minimization Formula}
+The cost minimization formula calculates the cost of all investment and dispatch decisions made:
+\begin{equation}
+	\min C_{total} = C_{Investment} + C_{Dispatch}
+\end{equation}
+\begin{equation}
+	\begin{split}
+		C_{Investment} = \sum_{u=1}^{U}[\sum_{k=1}^K{(GEN_k->C_{Cap} * H_u->GEN_k)}\\
+		+ \sum_{l=1}^L{(ST_l->C_{Cap} * H_u->ST_l)}\\
+		+ \sum_{m=1}^M{(dGEN_m->C_{Cap} * H_u->dGEN_m)}\\
+		+ \sum_{n=1}^N{(dST_n->C_{Cap} * H_u->dST_n)}]
+	\end{split}
+\end{equation}
+
+\todo{explain this calculation}
+\begin{equation}
+	\begin{split}
+		C_{Dispatch} = \sum_{s=1}^{S}\sum_{t=1}^{T}\sum_{u=1}^{N}(gridC_{s,t} * fromGR_{u,s,t} - feedC_{s,t} * toGR{u,s,t}\\
+		+ H_u->curtP * ncS_{u,s,t} + H_u->shiftP * scS{u,s,t})
+	\end{split}
+\end{equation}
+
+\todo{explain this calculation}
+
+
 	\section*{Constraints}
 	
 	\begin{equation}
 		S_{PV_i,t,y} = SF_{t,y} * CP_{PV_i}
 	\end{equation}
-	\begin{equation}
-		\begin{split}
-		D_{total_{i,t,y}} = S_{NC_{i,t,y}} + S_{PV_{i,t,y}} + S_{GR_{i,t,y}} - S_{TG_{i,t,y}} + \sum_{j=1}^{n} TR_{ji,t,y} - \sum_{j=1}^{n} TR_{ij,t,y} \\ + S_{FS_{i,t,y}} - S_{TS_{i,t-1,y}} + S_{SC_{i,t,y}} - S_{SC_{i,t-1,y}}
-		\end{split}
-	\end{equation}
-	 
-	 \begin{equation}
-	 	\sum_{i=1}^{n} TR_{i,j} - TR_{j,i} =0 \forall t \in \mathbb{N}, t \in [0,T], j \in \mathbb{N}, j \in [0,n]
-	 \end{equation}
 	 
 	 \begin{equation}
 	 		S_{SC_{i,T,Y}} = 0 
@@ -603,45 +775,6 @@ Open source tools seem scarcely available. A search of 'microgrid optimization' 
 	 \begin{equation}
 	 		S_{TS_{i,t,y}} \leq  CP_{ST_i}
 	 \end{equation}
-
-	
-	\section*{Definition of Variables}
-	\begin{table}[H]
-	\caption{Table of the definitions of all variables used}
-			\begin{tabular}{|l|l|l|}
-			Variable & Description & Unit \\
-			\hline
-			$IC_{PV}$ & investment costs for PV & Euro per KWp \\
-			$CP_{PV_i}$ & installed capacity of PV of household i & KWp \\
-			$IC_{ST}$ & investment costs for storage & Euro per KWh \\
-			$CP_{ST_i}$ & installed storage capacity of household i & KWh \\
-			$D_{total_{i,t,y}}$ & total electricity demand of houshold i at time t,y & KWh \\
-			$GEC_{t,y}$ & grid electricity cost at time t,y & Euro per KWh \\
-			$GPP_{t,y}$ & grid electricity purchase price at time t,y & Euro per KWh\\
-			$S_{GR_{i,t,y}}$ & electricity supplied from grid to househould i at time t,y & KWh \\
-			$NCC_{i}$ & cost of non-consumption (lost utility) to houshold i & Euro per KWh \\
-			$S_{NC_{i,t,y}}$ & electricity 'supplied' by non-consumption  & KWh \\
-			&to household i at time t,y& \\
-			$SF_{PV_{t,y}}$ & supply factor of solar pv at time t,y & - \\
-			$S_{PV_{i,t,y}}$ & pv generation of household i at time t,y  & KWh \\
-			$T_{ij,t,y}$ & trade of electricity from i to j at time t,y & KWh \\
-			$S_{FS_{i,t,y}}$ & electricity supplied from storage of houshold i at time t,y & KWh \\
-			$S_{TS_{i,t-1,y}}$& electricity supplied to storage of houshold i at time t,y & KWh \\
-			$SCC_i$ & cost of shifted consumption by one timeslice  & Euro per KWh \\
-			&for houshold i&\\
-			$S_{SC_{i,t,y}}$&electricity 'supplied' by shifted consumption  & KWh\\
-			 & to household i at time t,y &\\
-			$S_{SC_{i,t,y}}$& electricity 'supplied' to shifted consumption & KWh\\
-			 & by houshold i from previous timeslice & \\
-			$S_{TG_{i,t,y}}$ & electricity sold to the main grid by houshold i at time t,y & KWh \\			 $t$ & timeslice  & hour \\
-			 $y$ & year since investment& years \\
-			 
-			 
-			\hline
-		
-		\end{tabular}
-		
-	\end{table}
 
 
 \newpage
