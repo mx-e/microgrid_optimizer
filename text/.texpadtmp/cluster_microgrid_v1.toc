@@ -1,23 +1,16 @@
-\select@language {english}
+\babel@toc {english}{}
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\defcounter {refsection}{0}\relax 
-\select@language {english}
-\defcounter {refsection}{0}\relax 
-\select@language {english}
-\defcounter {refsection}{0}\relax 
-\select@language {english}
-\defcounter {refsection}{0}\relax 
-\select@language {english}
-\defcounter {refsection}{0}\relax 
-\select@language {english}
-\defcounter {refsection}{0}\relax 
-\select@language {english}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\nonumberline List of Figures}{v}{section*.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\nonumberline List of Tables}{vi}{section*.5}
-\defcounter {refsection}{0}\relax 
-\select@language {english}
+\babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
 \defcounter {refsection}{0}\relax 
@@ -59,7 +52,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.9}Power Balance}{12}{subsection.3.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.10}Cost Minimization Formula}{13}{subsection.3.10}
+\contentsline {subsection}{\numberline {3.10}Cost Minimisation Formula}{13}{subsection.3.10}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Case Study}{15}{section.4}
 \defcounter {refsection}{0}\relax 
@@ -75,4 +68,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.1}Literature Review}{18}{subsection.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\nonumberline Literature}{19}{section*.17}
+\contentsline {section}{\nonumberline Literature}{19}{section*.14}

@@ -54,16 +54,16 @@
       <file>blx-compat.def</file>
       <file>biblatex.def</file>
       <file>blx-natbib.def</file>
-      <file>nature.bbx</file>
-      <file>numeric-comp.bbx</file>
-      <file>numeric.bbx</file>
       <file>standard.bbx</file>
-      <file>nature.cbx</file>
+      <file>numeric.bbx</file>
+      <file>numeric-comp.bbx</file>
+      <file>nature.bbx</file>
       <file>numeric-comp.cbx</file>
+      <file>nature.cbx</file>
       <file>biblatex.cfg</file>
       <file>english.lbx</file>
-      <file>ngerman.lbx</file>
       <file>german.lbx</file>
+      <file>ngerman.lbx</file>
     </requires>
   </internal>
   <external package="biblatex" priority="5" active="0">

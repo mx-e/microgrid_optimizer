@@ -524,7 +524,7 @@ In addition to these generation and storage technologies some publications also 
 Demand side management, which some models implement is usually represented by dividing loads into different categories. \cite{7972908} distinguish between 'critical loads' ,meaning loads that absolutely have to be satisfied, 'shiftable loads', meaning loads that have to be satisfied, although there is a time window, rather than an exact point in which they can be serviced, and 'adjustable' loads, which can be dropped if needed. Although the terms may vary, and many publications do not introduce the 'shiftable loads' category alltogether, these conceptual distinctions are made by a number of other authors \cite{silvente2015rolling}\cite{zhang2015optimal}\cite{8216436}.
 \\
 The model results depend almost as much on the given input parameters used in case studies as on the modelling approach itself. There is however only a limited number of publications with detailed documentation of the parameters used.
-The used parameters can be broadly categorized as eiter economic parameters, such as capital and operation and maintenance cost for the technologies used, generation related parameters such as irridiation and wind speeds, and load data, representing consumer behaviour.
+The used parameters can be broadly categorized as either economic parameters, such as capital and operation and maintenance cost for the technologies used, generation related parameters such as irradiation and wind speeds, and load data, representing consumer behaviour.
 \\
 In publications documenting cost parameters there is a clear trend towards a split of technology cost into investment and maintenance cost. However, whereas \cite{LAUINGER201624} define maintenance cost as a fixed cost per unit of time, \cite{wouters2015energy} define it as a function of kilowatthours produced, a measurement which \cite{LAUINGER201624} call 'fuel costs'. \cite{7399422} choose a definition closer aligned with the former, they however define yearly maintenance cost simply as a flat percentage of the units' investment cost.\cite{KOLTSAKLIS2018318} seem to neglect maintenance costs alltogether focusing only on investment costs. While some models document econimic paramters such as discount rates \cite{7399422}, many don't and it is unclear if future flows of value are properly discounted in these models. Furthermore many of the publications declare cost parameters as assumptions rather than trying to derive them from sources, although a few such as \cite{LAUINGER201624} and \cite{wouters2015energy} do so.
 \\
@@ -538,23 +538,23 @@ Open source tools seem scarcely available. A search of 'microgrid optimization' 
 \section{Model}
 
 \subsection{Time}
-The range of scenarios and complexity the model can handle is, among other things, dependant on its implementation of discrete time. More and smaller timesteps and a representative sample of diverse expectable conditions regarding the parameters leads to higher model accuracy. Of course the amount of timesteps is limited by processing power and therefore by model complexity. To enable both diverse and therefore potentially discountinous parameter sets and a reasonable length for each set, the length of 1 hour is chosen for the basic timestep 
-$t; t \in [1,T]; T \in \mathbb{N} ;$. $T$ denotes the number of hours in each disontinous sets of supply and demand parameters.
-Furthermore the ability of including multiple discontinous sets of supply and demand parameters of the same length in one scenario is gained by introducing a second iterator 
-$s; s \in [1,S]; S \in \mathbb{N} ;$. $S$ denotes the number of discontinous sets of supply and demand parameters.
+The range of scenarios and complexity the model can handle is, among other things, dependant on its implementation of discrete time. More and smaller timesteps and a representative sample of diverse expectable conditions regarding the parameters leads to higher model accuracy. Of course the amount of timesteps is limited by processing power and therefore by model complexity. To enable both diverse and therefore potentially discontinuous parameter sets and a reasonable length for each set, the length of 1 hour is chosen for the basic timestep 
+$t; t \in [1,T]; T \in \mathbb{N} ;$. $T$ denotes the number of hours in each discontinuous sets of supply and demand parameters.
+Furthermore the ability of including multiple discontinuous sets of supply and demand parameters of the same length in one scenario is gained by introducing a second iterator 
+$s; s \in [1,S]; S \in \mathbb{N} ;$. $S$ denotes the number of discontinuous sets of supply and demand parameters.
 
 
 
 
 
 \subsection{Households}
-To properly conduct trading and for the future possibility of adding voltage and topological constraints to the model, the households are modeled as independent entities, each with its own demand, generation and storage. Therefore a third iterator $u; u \in [1,U]; U \in \mathbb{N};$ is introduced. $U$ denotes the number of households modeled.
-An absract household $H$ is defined as a tuple of storage and generation devices as well as demand curves. For discrete storage and generation devices two seperate sets of positive integers define how much of each option available in the scenario was installed. Additionally each household has a price $shiftP$ and $curtP$ at which they are willing to shift or curtail a unit  of their load respectively.
+To properly conduct trading and for the future possibility of adding voltage and topological constraints to the model, the households are modelled as independent entities, each with its own demand, generation and storage. Therefore a third iterator $u; u \in [1,U]; U \in \mathbb{N};$ is introduced. $U$ denotes the number of households modelled.
+An abstract household $H$ is defined as a tuple of storage and generation devices as well as demand curves. For discrete storage and generation devices two separate sets of positive integers define how much of each option available in the scenario was installed. Additionally each household has a price $shiftP$ and $curtP$ at which they are willing to shift or curtail a unit  of their load respectively.
 \begin{equation}
 	H := (GEN, ST, dGEN, dST, DEM, shiftP, curtP)
 \end{equation}
 
-A conrete household $H_u$ implements these values:
+A concrete household $H_u$ implements these values:
 \begin{equation}
 	GEN \in \mathbb{R}^{K}; GEN_k \geq 0 \forall k; k\in [0,K]
 \end{equation}
@@ -572,14 +572,14 @@ $k,K,L,l,M,N \in \mathbb{N}$\\
 and\\
 $shiftP, curtP \geq 0$
 
-$K$ and $L$ denote the amount of generation and storage devices in household $H_u$.This, in practice, is equal to the amount of linear scaling investment options for each category, since a zero capacity device is still modeled as a device. $M$ and $N$ denote the amount of discrete investment options in their respective category. $GEN_k$ and $ST_l$ are the capacities installed of the k-th and l-th linear investment option respectively. $GEN_m$ and $dST_n$ are the amount installed of the m-th and n-th discrete investment option available. $DEM$ is further defined in the subsection demand.
+$K$ and $L$ denote the amount of generation and storage devices in household $H_u$.This, in practice, is equal to the amount of linear scaling investment options for each category, since a zero capacity device is still modelled as a device. $M$ and $N$ denote the amount of discrete investment options in their respective category. $GEN_k$ and $ST_l$ are the capacities installed of the k-th and l-th linear investment option respectively. $GEN_m$ and $dST_n$ are the amount installed of the m-th and n-th discrete investment option available. $DEM$ is further defined in the subsection demand.
 
 
 
 
 
 \subsection{Internal Variables}
-The objective of the model is to find optimal investment, dispatch and trade. Therefore, the following sets of internal paramters are introduced:
+The objective of the model is to find optimal investment, dispatch and trade. Therefore, the following sets of internal parameters are introduced:
 	\\
 	$\forall u,k,l,m,n,s,t$:
 	\\
@@ -588,13 +588,14 @@ The objective of the model is to find optimal investment, dispatch and trade. Th
 	\end{equation}
 	
 	\begin{equation}
-		genS_{u,k,s,t}, dgenS_{u,m,s,t}, fromST_{u,l,s,t}, toST_{u,l,s,t}, fromDST{u,n,s,t}, toDST{u,n,s,t} \geq 0
+		genS_{u,k,s,t}, dgenS_{u,m,s,t}, fromST_{u,l,s,t}, toST_{u,l,s,t}, fromDST_{u,n,s,t}, toDST_{u,n,s,t} \geq 0
 	\end{equation}
 	
 	\begin{equation}
-		toSC{u,s,t}, fromSC{u,s,t}, fromGR{u,s,t}, toGR{u,s,t}, ncS_{u,s,t},  \geq 0
+		toSC_{u,s,t}, fromSC_{u,s,t}, fromGR_{u,s,t}, toGR_{u,s,t}, ncS_{u,s,t},  \geq 0
 	\end{equation}
-	\\
+	
+	
 	$\forall u,k$:
 	\begin{equation}
 		H_u->GEN_k \geq 0
@@ -633,7 +634,7 @@ Therefore an abstract linear generation device $GEN$ and an abstract discrete ge
 	$C_{OpFix} \geq 0$ expresses the fixed maintenance cost per unit of time.
 	$C_{OpVar} \geq 0$ expresses the variable maintenance cost per unit of input consumed.
 	$T_{Life} \in \mathbb{N}$ defines the life expectancy of a generation device, e.g the time before it is replaced. 
-	$EFF_{el} \in [0,1]$ defines the ratio of supplied energy, for example sunlight or gas, to produced electricty.
+	$EFF_{el} \in [0,1]$ defines the ratio of supplied energy, for example sunlight or gas, to produced electricity.
 	$PR \in [0,1]$ is another definable penalty to electricity production, which can, for example, express the degradation of solar cells. 	
 	$minFl \in [0,1]$ denotes the minimal possible electricity production as a percentage of capacity.
 
@@ -654,7 +655,7 @@ Therefore an abstract linear storage device $ST$ and an abstract discrete storag
 	$C_{Cap} \geq 0$ defines the total investment cost for discrete storage devices. For linear storage investment options the investment cost is expressed in terms of one unit of capacity.
 	$T_{Life} \in \mathbb{N}$ defines the life expectancy of a storage device, e.g the time before it is replaced. To be able to better estimate this value it is assumed, that storage is, on average, cycled once per day.
 	$EFF_{+-} \in [0,1]$ defines the roundtrip efficiency, e.g. what proportion of one unit of power is left after charging and discharching inefficiencies. It is used to compute the charge and discharge efficiencies.
-	The charge efficiency $EFF_{+}$ is defined as $EFF_{+} = \sqrt{EFF_{+-}}$ and the discharge efficiency $EFF_{-}$ as $EFF_{-} = 1/EFF_{+}$.\\
+	The charge efficiency $EFF_{+}$ is defined as $EFF_{+} = \sqrt{EFF_{+-}}$ and the discharge efficiency $EFF_{-}$ as $EFF_{-} = 1/EFF_{+}$.\cite{LAUINGER201624}\\
 	$LOC_{1h} \in [0,1]$ expresses the relative amount of charge lost, during one timestep of storage.
 	$maxP_{+} \geq 0$ and $maxP_{-} \geq 0$ denote the maximum charge rate and discharge rate respectively.
 
@@ -663,13 +664,13 @@ Therefore an abstract linear storage device $ST$ and an abstract discrete storag
 
 
 \subsection{Trade}
-Trade is implemented as an exchange platform, which sums up deposits and withdrawals of power at each timestep and always needs to be balanced. This approach has the advantage of reducing the number of constraints and therefore complexity greatly, although it is not very well suited to handle grid topology constraints which might be addded in the future.\\
+Trade is implemented as an exchange platform, which sums up deposits and withdrawals of power at each timestep and always needs to be balanced. This approach has the advantage of reducing the number of constraints and therefore complexity greatly, although it is not very well suited to handle grid topology constraints which might be added in the future.\\
 The trade constraint is defined as:
 \\
 
-$\forall s,t$
+$\forall s,t$:
 \begin{equation}
-	\sum_{u = 1}^{U}{toTR_{u,s,t}-fromTR_{u,s,t}} = 0
+	\sum_{u = 1}^{U}(toTR_{u,s,t}-fromTR_{u,s,t}) = 0
 \end{equation}
 
 
@@ -697,15 +698,15 @@ Critical demand will be met by the model as it is seen as a constraint. Shiftabl
 
 
 \subsection{Grid}
-The modeled microgrid is connected to the grid via a common point of coupling. The grid is defined as:
+The modelled microgrid is connected to the grid via a common point of coupling. The grid is defined as:
 
 \begin{equation}
 	GRID:= (maxS, maxD, gridC, feedC)
 \end{equation}\\
 with\\
 $maxS,maxD, gridC, feedC \in \mathbb{R}^{S \times T}$\\
-and $\forall s \in [1,S], t \in [1,T]; s,t \in \mathbb{N}$: \\
-$maxS{s,t}, maxD{s,t}, gridC{s,t}, feedC{s,t} \geq 0$
+and $\forall s,t \in \mathbb{N};s \in [1,S], t \in [1,T]$: \\
+$maxS_{s,t}, max_{s,t}, gridC_{s,t}, feedC_{s,t} \geq 0$
 
 $maxS$ describes the maximum amount of power supplied by the grid at each timestep $(s,t)$, while $gridC_{s,t}$ expresses the price at which this power can be bought.
 $maxD$ describes the maximum amount power that can be fed into the the grid at timestep $(s,t)$, while $feedC_{s,t}$ expresses the price at which the grid buys this power. 
@@ -715,15 +716,15 @@ $maxD$ describes the maximum amount power that can be fed into the the grid at t
 
 
 \subsection{Power Balance}
-The power balance constraint describes the need for a balance between supply and demand at each node at each timestep: \\
+The power balance constraints describe the need for a balance between supply and demand at each node at each timestep: \\
 
-$\forall u,t,s$:
+$\forall u,s,t$:
 \begin{equation}
 	\begin{split}
-		H_u->critDEM_{s,t} + H_u->shiftDEM_{s,t} + H_u->curtDEM{s,t}\\
+		H_u->critDEM_{s,t} + H_u->shiftDEM_{s,t} + H_u->curtDEM_{s,t}\\
 		= \\
-		fromGR_{u,s,t} - toGR{u,s,t} + \sum_{k=1}^K{genS_{u,k,s,t}} + \sum_{m=1}^M{genS_{u,m,s,t}} \\ 
-		+ fromTR{u,s,t} - toTR{u,s,t} + scS_{u,s,t} - scS_{i,s,t-1} + ncS_{u,s,t} \\
+		fromGR_{u,s,t} - toGR_{u,s,t} + \sum_{k=1}^K{genS_{u,k,s,t}} + \sum_{m=1}^M{dgenS_{u,m,s,t}} \\ 
+		+ fromTR_{u,s,t} - toTR_{u,s,t} + scS_{u,s,t} - scS_{i,s,t-1} + ncS_{u,s,t} \\
 		+ \sum_{l=1}^L{fromST_{u,l,s,t} - toST_{u,l,s,t}} + \sum_{n=1}^N{fromDST_{u,n,s,t}-toDST_{u,n,s,t}}
 	\end{split}
 \end{equation}
@@ -733,11 +734,12 @@ $\forall u,t,s$:
 
 
 
-\subsection{Cost Minimization Formula}
-The cost minimization formula calculates the cost of all investment and dispatch decisions made:
+\subsection{Cost Minimisation Formula}
+The cost minimisation formula calculates the cost of all investment and dispatch decisions made:
 \begin{equation}
-	\min C_{total} = C_{Investment} + C_{Dispatch}
+	\min C_{total} = C_{Investment} + C_{Operation} + C_{Dispatch}
 \end{equation}
+The total cost can be broken down into investment, operation and dispatch costs.
 \begin{equation}
 	\begin{split}
 		C_{Investment} = \sum_{u=1}^{U}[\sum_{k=1}^K{(GEN_k->C_{Cap} * H_u->GEN_k)}\\
@@ -746,41 +748,32 @@ The cost minimization formula calculates the cost of all investment and dispatch
 		+ \sum_{n=1}^N{(dST_n->C_{Cap} * H_u->dST_n)}]
 	\end{split}
 \end{equation}
+The investment costs consist of all investment into generation and storage devices throughout the microgrid.
 
-\todo{explain this calculation}
 \begin{equation}
 	\begin{split}
-		C_{Dispatch} = \sum_{s=1}^{S}\sum_{t=1}^{T}\sum_{u=1}^{N}(gridC_{s,t} * fromGR_{u,s,t} - feedC_{s,t} * toGR{u,s,t}\\
-		+ H_u->curtP * ncS_{u,s,t} + H_u->shiftP * scS{u,s,t})
+		C_{Operation} = \sum_{u=1}^{U}[\sum_{k=1}^{K}(H_u->GEN_k->C_{OpFix} * S * T)\\
+	 	+ \sum_{m=1}^{M}(H_u->dGEN_m->C_{opFix} * S * T)]
+	\end{split}
+\end{equation}
+The operation costs are the sum of all fixed operation costs of all generation devices deployed.
+
+\begin{equation}
+	\begin{split}
+		C_{Dispatch} = \sum_{s=1}^{S}\sum_{t=1}^{T}\sum_{u=1}^{U}[gridC_{s,t} * fromGR_{u,s,t} - feedC_{s,t} * toGR_{u,s,t}\\
+		+ H_u->curtP * ncS_{u,s,t} + H_u->shiftP * scS_{u,s,t}\\
+		+ \sum_{k=1}^K(H_u->GEN_k->C_{OpVar} * genS_{u,k,s,t})\\ 
+		+ \sum_{m=1}^M(H_u->dGEN_m->C_{OpVar} * dgenS_{u,m,s,t})]
 	\end{split}
 \end{equation}
 
-\todo{explain this calculation}
-
-
-	\section*{Constraints}
-	
-	\begin{equation}
-		S_{PV_i,t,y} = SF_{t,y} * CP_{PV_i}
-	\end{equation}
-	 
-	 \begin{equation}
-	 		S_{SC_{i,T,Y}} = 0 
-	 \end{equation}
-	
-	 \begin{equation}
-	 		S_{TS_{i,T,Y}} = 0 
-	 \end{equation}
-	
-	 \begin{equation}
-	 		S_{TS_{i,t,y}} \leq  CP_{ST_i}
-	 \end{equation}
+The dispatch cost consist of the fuel costs incurred by the usage of all deployed generation devices as well as the value of all shifted and curtailed loads. In addition all transactions with the main grid are valued at the power and feed-in rates for their respective timestep and summed up.
 
 
 \newpage
 \section{Case Study}
 \subsection{Meterological Data}
-Hourly irridiation data (in $KWm^{-2}$) for <<PLACE>> is sourced from \cite{pfenningerLongtermPatternsEuropean2016}. 
+Hourly irradiation data (in $KWm^{-2}$) for <<PLACE>> is sourced from \cite{pfenningerLongtermPatternsEuropean2016}. 
 \subsection{Investment Options}
 \begin{table}[H]
 	\centering
