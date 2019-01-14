@@ -435,8 +435,14 @@
 \section{Introduction}
 In this document the topic, motivation and approach of my bachelor’s thesis shall be outlined. The aim is to give the reader an idea of what I try to accomplish with the choice of topic and methods, as well as a look at the first iteration of the mathematical model I am aiming to build.
 
+\todo{more here, definition microgrid, more topic introduction, definitions of words, pv, distributed generation}
+
 \subsection{Motivation}
 As the technological requirements for a decentralized energy system increasingly mature, the importance of understanding smaller units within the electricity system grows. There is a possibility of increasing reliance on small, partially autonomous grid units (microgrids) in the future. This calls for a better understanding of how such systems might operate. Especially the possible efficiency gains over a centralised system and the circumstances on which these efficiency gains might depend should be of interest to science and will be the focus of thesis.
+
+\todo{more here, GERMANY, capacity building, distribute technological know-how}
+\todo{what is a linear model, theory, MILP, different optimisation methods}
+
 
 \subsection{Research Question}
 In my thesis I want to create a model of a small electricity grid with a single point of access to the main grid. The microgrid will contain 25 households of different types that will aim to reduce their total electricity costs. To attain this goal there will be two possible courses of action available: 
@@ -455,9 +461,13 @@ In my thesis I want to create a model of a small electricity grid with a single 
 	To model the outlined situation I want to use the computational modelling language 'Julia' and construct a linear optimisation model which can be solved with it. The goal is to minimise the cost of electricity for the households in the microgrid. It is notable at this point, that the non-consumption of electricity as well as the delay of consumption will be seen as a cost to the actor forgoing her demand. There will be an investment opportunity at the beginning of the examined timeframe of 20 years. The number of timeslices considered in the optimisation will be depending on performance of the model and can therefore not be determined yet. \\
 	As a case study for this thesis I want to apply the model to the example of a community in Northrhine-Westfalia. With environmental variables set, I will then construct a number of scenarios with variations in electricity price and actor behaviour parameters. \\
 	Another goal of this project is to make this a functional piece of research by reducing performance requirements as far as possible and creating an intuitive user interface that enables the user to 'play' with different scenarios. I prefer this approach over a few detailed and rigid scenarios because the future external factors are presently highly uncertain, which drives me to the conviction that an understanding of the dynamics involved in the examined system is of greater value than an exact solution to an unlikely scenario.
+
 	
 \subsection{Expected Results}
 The result should be a tool that enables an intuitive understanding of the characteristics and the potentials of microgrids, even to non-economists. I intend an exemplary application of the model to the case of a Northrhine-Westfalian community. From this application I expect an insight into the efficiency gains achievable by microgrids in the German context. Also the required external factors for these efficiency gains to materialise should become evident. Under the right conditions I expect a double digit percentage drop in electricity costs compared to a purely consumption-based system. I hope to arrive at practical conclusions regarding present use cases for microgrids and required future regulation.
+
+\todo{rundown of all main chapters}
+
 \newpage
 
 \section{Literature Review}
@@ -637,6 +647,19 @@ Therefore an abstract linear generation device $GEN$ and an abstract discrete ge
 	$EFF_{el} \in [0,1]$ defines the ratio of supplied energy, for example sunlight or gas, to produced electricity.
 	$PR \in [0,1]$ is another definable penalty to electricity production, which can, for example, express the degradation of solar cells. 	
 	$minFl \in [0,1]$ denotes the minimal possible electricity production as a percentage of capacity.
+	\\
+	To model generation appropriately several sets of constraints need to be defined:
+	
+	$\forall u,s,t,k,m$:
+	\begin{equation}
+		genS_{u,k,s,t} \seq H_u->GEN_k * PR
+	\end{equation}
+	\begin{equation}
+		dgenS_{u,m,s,t} \seq H_u->dGEN_m * dGEN_m->CAP * PR
+	\end{equation}
+	The capacity constraints restrict the use of any generation device to its capacity rating.
+
+
 
 
 
@@ -658,8 +681,14 @@ Therefore an abstract linear storage device $ST$ and an abstract discrete storag
 	The charge efficiency $EFF_{+}$ is defined as $EFF_{+} = \sqrt{EFF_{+-}}$ and the discharge efficiency $EFF_{-}$ as $EFF_{-} = 1/EFF_{+}$.\cite{LAUINGER201624}\\
 	$LOC_{1h} \in [0,1]$ expresses the relative amount of charge lost, during one timestep of storage.
 	$maxP_{+} \geq 0$ and $maxP_{-} \geq 0$ denote the maximum charge rate and discharge rate respectively.
-
-
+	\\
+	To model storage appropriately several sets of constraints need to be specified:
+	
+	$\forall $:
+	\begin{equation}
+		
+	\end{equation}
+s_t_li[i,t] <=  cp_li_ion[i] - (sum(s_t_li[i,u] for u=1:t) - (1/efficiency_li_ion) * sum(s_f_li[i,u] for u=1:t-1)))
 
 
 
@@ -752,8 +781,8 @@ The investment costs consist of all investment into generation and storage devic
 
 \begin{equation}
 	\begin{split}
-		C_{Operation} = \sum_{u=1}^{U}[\sum_{k=1}^{K}(H_u->GEN_k->C_{OpFix} * S * T)\\
-	 	+ \sum_{m=1}^{M}(H_u->dGEN_m->C_{opFix} * S * T)]
+		C_{Operation} = \sum_{u=1}^{U}[\sum_{k=1}^{K}(GEN_k->C_{OpFix} * S * T)\\
+	 	+ \sum_{m=1}^{M}(dGEN_m->C_{opFix} * S * T)]
 	\end{split}
 \end{equation}
 The operation costs are the sum of all fixed operation costs of all generation devices deployed.
@@ -762,8 +791,8 @@ The operation costs are the sum of all fixed operation costs of all generation d
 	\begin{split}
 		C_{Dispatch} = \sum_{s=1}^{S}\sum_{t=1}^{T}\sum_{u=1}^{U}[gridC_{s,t} * fromGR_{u,s,t} - feedC_{s,t} * toGR_{u,s,t}\\
 		+ H_u->curtP * ncS_{u,s,t} + H_u->shiftP * scS_{u,s,t}\\
-		+ \sum_{k=1}^K(H_u->GEN_k->C_{OpVar} * genS_{u,k,s,t})\\ 
-		+ \sum_{m=1}^M(H_u->dGEN_m->C_{OpVar} * dgenS_{u,m,s,t})]
+		+ \sum_{k=1}^K(GEN_k->C_{OpVar} * genS_{u,k,s,t})\\ 
+		+ \sum_{m=1}^M(dGEN_m->C_{OpVar} * dgenS_{u,m,s,t})]
 	\end{split}
 \end{equation}
 
