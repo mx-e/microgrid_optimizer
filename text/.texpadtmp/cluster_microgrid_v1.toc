@@ -48,9 +48,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.7}Demand}{13}{subsection.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.8}Grid}{13}{subsection.3.8}
+\contentsline {subsection}{\numberline {3.8}Grid}{14}{subsection.3.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.9}Power Balance}{14}{subsection.3.9}
+\contentsline {subsection}{\numberline {3.9}Power Balance}{15}{subsection.3.9}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.10}Cost Minimisation Formula}{15}{subsection.3.10}
 \defcounter {refsection}{0}\relax 

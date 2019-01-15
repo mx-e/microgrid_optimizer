@@ -608,22 +608,22 @@ The objective of the model is to find optimal investment, dispatch and trade. Th
 	
 	$\forall u,k$:
 	\begin{equation}
-		H_u->GEN_k \geq 0
+		H_u\hookrightarrow GEN_k \geq 0
 	\end{equation}
 	\\
 	$\forall u,l$:
 	\begin{equation}
-		H_u->ST_l \geq 0
+		H_u\hookrightarrow  ST_l \geq 0
 	\end{equation}
 	
 	$\forall u,m$
 	\begin{equation}
-		H_u->dGEN_m \in \mathbb{N}
+		H_u\hookrightarrow d GEN_m \in \mathbb{N}
 	\end{equation}
 	
 	$\forall u,n$
 	\begin{equation}
-		H_u->dST_n \in \mathbb{N}
+		H_u\hookrightarrow d ST_n \in \mathbb{N}
 	\end{equation}
 
 
@@ -652,10 +652,10 @@ Therefore an abstract linear generation device $GEN$ and an abstract discrete ge
 	
 	$\forall u,s,t,k,m$:
 	\begin{equation}
-		genS_{u,k,s,t} \seq H_u->GEN_k * PR
+		genS_{u,k,s,t} \leq H_u\hookrightarrow  GEN_k * PR
 	\end{equation}
 	\begin{equation}
-		dgenS_{u,m,s,t} \seq H_u->dGEN_m * dGEN_m->CAP * PR
+		dgenS_{u,m,s,t} \leq H_u\hookrightarrow  dGEN_m * dGEN_m\hookrightarrow  CAP * PR
 	\end{equation}
 	The capacity constraints restrict the use of any generation device to its capacity rating.
 
@@ -684,11 +684,47 @@ Therefore an abstract linear storage device $ST$ and an abstract discrete storag
 	\\
 	To model storage appropriately several sets of constraints need to be specified:
 	
-	$\forall $:
+	$\forall u,l,s,t $:
 	\begin{equation}
-		
+		toST_{u,l,s,t} \leq ST_l\hookrightarrow  maxP_{+}
 	\end{equation}
-s_t_li[i,t] <=  cp_li_ion[i] - (sum(s_t_li[i,u] for u=1:t) - (1/efficiency_li_ion) * sum(s_f_li[i,u] for u=1:t-1)))
+	\begin{equation}
+		toDST_{u,n,s,t} \leq dST_n\hookrightarrow  maxP_{+}
+	\end{equation}
+	\begin{equation}
+		fromST_{u,l,s,t} \leq ST_l\hookrightarrow  maxP_{-}
+	\end{equation}
+	\begin{equation}
+		fromDST_{u,n,s,t} \leq dST_n\hookrightarrow  maxP_{-}
+	\end{equation}
+	
+	
+	\begin{equation}
+		\begin{split}
+		toST_{u,l,s,t} * ST_l \hookrightarrow EFF_{+} \leq H_u\hookrightarrow  ST_l\\ -
+		\sum_{t'=1}^{t-1}(ST_l \hookrightarrow EFF_{+} * toST_{u,l,s,t'} - ST_l \hookrightarrow EFF_{-} * fromST_{u,l,s,t'})
+		\end{split}
+	\end{equation}
+	\begin{equation}
+		\begin{split}
+		toDST_{u,l,s,t} * dST_n \hookrightarrow EFF_{+} \leq H_u\hookrightarrow  dST_l * dST_n\hookrightarrow  CAP\\
+		- \sum_{t'=1}^{t-1}(dST_n \hookrightarrow EFF_{+} * toDST_{u,l,s,t'} - dST_n \hookrightarrow EFF_{-} * fromDST_{u,l,s,t'})
+		\end{split}
+	\end{equation}
+	
+	\begin{equation}
+	\begin{split}
+		fromST_{u,l,s,t} * ST_l \hookrightarrow EFF_{+} \leq \\
+		\sum_{t'=1}^{t-1}(ST_l \hookrightarrow EFF_{+} * toST_{u,l,s,t'} - ST_l \hookrightarrow EFF_{-} * fromST_{u,l,s,t'}*(ST_l \hookrightarrow LOC_{1h}^{t'}))
+		\end{split}
+	\end{equation}
+	\begin{equation}
+	\begin{split}
+		fromDST_{u,l,s,t} * dST_n \hookrightarrow EFF_{+} \leq \\
+		\sum_{t'=1}^{t-1}(dST_n \hookrightarrow EFF_{+} * toDST_{u,l,s,t'} - dST_n \hookrightarrow EFF_{-} * fromDST_{u,l,s,t'}*(dST_n \hookrightarrow LOC_{1h}^{t'}))
+	\end{split}
+	\end{equation}
+
 
 
 
@@ -712,15 +748,24 @@ Abstract demand data $DEM$ is defined as a set of the size $S$ of demand profile
  DEM:= \{DEM_s | s \in [1,S]; s\in \mathbb{N}; \forall DEM_s, DEM_s := \{DEM_{s,t} | t\in [0,T]; t \in \mathbb{N}\}
 \end{equation}
 
-As frequently applied in literature, $DEM_{s,t}$ is not a demand value, but rather a tuple of three demand values, critical demand, shiftable demand and curtailable demand \cite{silvente2015rolling}\cite{zhang2015optimal}\cite{8216436}\cite{7972908} : 
+As frequently applied in literature, $DEM_{s,t}$ is not a demand value, but rather a tuple of three demand values, critical demand, shiftable demand and curtailable demand \cite{silvente2015rolling}\cite{zhang2015optimal}\cite{8216436}\cite{7972908} : \\
 \begin{equation}
  DEM_{s,t}:= (critDEM_{s,t}, shiftDEM_{s,t}, curtDEM_{s,t}) 
 \end{equation}
 
-$\forall s,t$\\
-$critDEM_{s,t}, shiftDEM_{s,t}, curtDEM{s,t} \geq 0$
+$\forall u,s,t$:\\
+$H_u \hookrightarrow critDEM_{s,t}, H_u \hookrightarrow shiftDEM_{s,t}, H_u \hookrightarrow curtDEM{s,t} \geq 0$
 
 Critical demand will be met by the model as it is seen as a constraint. Shiftable demand can be shifted by one hour at a fixed rate defined for each household. Curtailable demand can be dropped at a fixed rate defined for each household.
+The restrictions on shiftable and curtailable demand is expressed by the following sets of contraints:
+\\\\
+$\forall u,s,t$:
+\begin{equation}
+	scS_{u,s,t} \leq H_u \hookrightarrow shiftDEM_{s,t}
+\end{equation}
+\begin{equation}
+	ncS_{u,s,t} \leq H_u \hookrightarrow shiftDEM_{s,t}
+\end{equation}
 
 
 
@@ -740,8 +785,16 @@ $maxS_{s,t}, max_{s,t}, gridC_{s,t}, feedC_{s,t} \geq 0$
 $maxS$ describes the maximum amount of power supplied by the grid at each timestep $(s,t)$, while $gridC_{s,t}$ expresses the price at which this power can be bought.
 $maxD$ describes the maximum amount power that can be fed into the the grid at timestep $(s,t)$, while $feedC_{s,t}$ expresses the price at which the grid buys this power. 
 
+To model the expected behaviour of the grid several sets of constraints need to be introduced:
+\\
+$\forall s,t$:
 
-
+\begin{equation}
+	\sum_{u=1}^{U}fromGR_{u,s,t} \leq maxS{s,t}
+\end{equation}
+\begin{equation}
+	\sum_{u=1}^{U}toGR_{u,s,t} \leq maxD{s,t}
+\end{equation}
 
 
 \subsection{Power Balance}
@@ -750,7 +803,7 @@ The power balance constraints describe the need for a balance between supply and
 $\forall u,s,t$:
 \begin{equation}
 	\begin{split}
-		H_u->critDEM_{s,t} + H_u->shiftDEM_{s,t} + H_u->curtDEM_{s,t}\\
+		H_u\hookrightarrow  critDEM_{s,t} + H_u\hookrightarrow  shiftDEM_{s,t} + H_u\hookrightarrow  curtDEM_{s,t}\\
 		= \\
 		fromGR_{u,s,t} - toGR_{u,s,t} + \sum_{k=1}^K{genS_{u,k,s,t}} + \sum_{m=1}^M{dgenS_{u,m,s,t}} \\ 
 		+ fromTR_{u,s,t} - toTR_{u,s,t} + scS_{u,s,t} - scS_{i,s,t-1} + ncS_{u,s,t} \\
@@ -761,8 +814,6 @@ $\forall u,s,t$:
 \todo{explain this calculation}
 
 
-
-
 \subsection{Cost Minimisation Formula}
 The cost minimisation formula calculates the cost of all investment and dispatch decisions made:
 \begin{equation}
@@ -771,18 +822,18 @@ The cost minimisation formula calculates the cost of all investment and dispatch
 The total cost can be broken down into investment, operation and dispatch costs.
 \begin{equation}
 	\begin{split}
-		C_{Investment} = \sum_{u=1}^{U}[\sum_{k=1}^K{(GEN_k->C_{Cap} * H_u->GEN_k)}\\
-		+ \sum_{l=1}^L{(ST_l->C_{Cap} * H_u->ST_l)}\\
-		+ \sum_{m=1}^M{(dGEN_m->C_{Cap} * H_u->dGEN_m)}\\
-		+ \sum_{n=1}^N{(dST_n->C_{Cap} * H_u->dST_n)}]
+		C_{Investment} = \sum_{u=1}^{U}[\sum_{k=1}^K{(GEN_k\hookrightarrow  C_{Cap} * H_u\hookrightarrow  GEN_k)}\\
+		+ \sum_{l=1}^L{(ST_l\hookrightarrow  C_{Cap} * H_u\hookrightarrow  ST_l)}\\
+		+ \sum_{m=1}^M{(dGEN_m\hookrightarrow  C_{Cap} * H_u\hookrightarrow  dGEN_m)}\\
+		+ \sum_{n=1}^N{(dST_n\hookrightarrow  C_{Cap} * H_u\hookrightarrow  dST_n)}]
 	\end{split}
 \end{equation}
 The investment costs consist of all investment into generation and storage devices throughout the microgrid.
 
 \begin{equation}
 	\begin{split}
-		C_{Operation} = \sum_{u=1}^{U}[\sum_{k=1}^{K}(GEN_k->C_{OpFix} * S * T)\\
-	 	+ \sum_{m=1}^{M}(dGEN_m->C_{opFix} * S * T)]
+		C_{Operation} = \sum_{u=1}^{U}[\sum_{k=1}^{K}(GEN_k\hookrightarrow  C_{OpFix} * S * T)\\
+	 	+ \sum_{m=1}^{M}(dGEN_m\hookrightarrow  C_{opFix} * S * T)]
 	\end{split}
 \end{equation}
 The operation costs are the sum of all fixed operation costs of all generation devices deployed.
@@ -790,9 +841,9 @@ The operation costs are the sum of all fixed operation costs of all generation d
 \begin{equation}
 	\begin{split}
 		C_{Dispatch} = \sum_{s=1}^{S}\sum_{t=1}^{T}\sum_{u=1}^{U}[gridC_{s,t} * fromGR_{u,s,t} - feedC_{s,t} * toGR_{u,s,t}\\
-		+ H_u->curtP * ncS_{u,s,t} + H_u->shiftP * scS_{u,s,t}\\
-		+ \sum_{k=1}^K(GEN_k->C_{OpVar} * genS_{u,k,s,t})\\ 
-		+ \sum_{m=1}^M(dGEN_m->C_{OpVar} * dgenS_{u,m,s,t})]
+		+ H_u\hookrightarrow  curtP * ncS_{u,s,t} + H_u\hookrightarrow  shiftP * scS_{u,s,t}\\
+		+ \sum_{k=1}^K(GEN_k\hookrightarrow  C_{OpVar} * genS_{u,k,s,t})\\ 
+		+ \sum_{m=1}^M(dGEN_m\hookrightarrow  C_{OpVar} * dgenS_{u,m,s,t})]
 	\end{split}
 \end{equation}
 
