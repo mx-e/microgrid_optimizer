@@ -40,32 +40,34 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3}Internal Variables}{10}{subsection.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4}Generation}{11}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.4}Generation}{12}{subsection.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5}Storage}{12}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.5}Storage}{13}{subsection.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6}Trade}{13}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.6}Trade}{15}{subsection.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.7}Demand}{13}{subsection.3.7}
+\contentsline {subsection}{\numberline {3.7}Demand}{16}{subsection.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.8}Grid}{14}{subsection.3.8}
+\contentsline {subsection}{\numberline {3.8}Grid}{16}{subsection.3.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.9}Power Balance}{15}{subsection.3.9}
+\contentsline {subsection}{\numberline {3.9}Power Balance}{17}{subsection.3.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.10}Cost Minimisation Formula}{15}{subsection.3.10}
+\contentsline {subsection}{\numberline {3.10}Cost Minimisation Formula}{18}{subsection.3.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Case Study}{17}{section.4}
+\contentsline {section}{\numberline {4}Implementation}{20}{section.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Meterological Data}{17}{subsection.4.1}
+\contentsline {section}{\numberline {5}Case Study}{21}{section.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Investment Options}{17}{subsection.4.2}
+\contentsline {subsection}{\numberline {5.1}Meterological Data}{21}{subsection.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3}Further Assumptions}{18}{subsection.4.3}
+\contentsline {subsection}{\numberline {5.2}Investment Options}{21}{subsection.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Results and Discussion}{19}{section.5}
+\contentsline {subsection}{\numberline {5.3}Further Assumptions}{22}{subsection.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Appendix}{20}{section.6}
+\contentsline {section}{\numberline {6}Results and Discussion}{23}{section.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Literature Review}{20}{subsection.6.1}
+\contentsline {section}{\numberline {7}Appendix}{24}{section.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\nonumberline Literature}{21}{section*.18}
+\contentsline {subsection}{\numberline {7.1}Literature Review}{24}{subsection.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Literature}{25}{section*.16}
