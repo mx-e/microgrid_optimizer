@@ -546,7 +546,8 @@ Open source tools seem scarcely available. A search of 'microgrid optimization' 
 
 \newpage
 \section{Model}
-
+\todo{references for all equations}
+\todo{all parameters, variables table}
 \subsection{Time}
 The range of scenarios and complexity the model can handle is, among other things, dependant on its implementation of discrete time. More and smaller timesteps and a representative sample of diverse expectable conditions regarding the parameters leads to higher model accuracy. Of course the amount of timesteps is limited by processing power and therefore by model complexity. To enable both diverse and therefore potentially discontinuous parameter sets and a reasonable length for each set, the length of 1 hour is chosen for the basic timestep 
 $t; t \in [1,T]; T \in \mathbb{N} ;$. $T$ denotes the number of hours in each discontinuous sets of supply and demand parameters.
@@ -915,9 +916,33 @@ The dispatch cost consist of the fuel costs (or variable operation costs $C_{OpV
 
 \newpage
 \section{Case Study}
+\subsection{Overview}
+To demonstrate the viability of the designed model and of local microgrids, a limited case study is conducted. The location chosen is the small village of Morschenich in Northtrine-Westphalia, which is located in immidiate proximity to the lignite surface mine of Hambach. According to current plans of RWE, the owner and operator of the mine and the state of Northrine-Westfalia, the village is due to be razed and the population resettled by the year 2024, when the mining activities are expected to reach the village. \todo{source}  
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{pictures/Morschenich.png}
+	\caption{The village of Morschenich}
+	\label{morschenich}
+	\flushleft\quad\quad\footnotesize{Source: Google Maps.}
+\end{figure}	
+Although the resettlement process has already begun and the village 'Morschenich-Neu' is under construction several kilometers away, there are as of the date of writing still several hundred inhabitants remaining in Morschenich, including some Syrian war refugees, who have been accomodated in some of the abandonden houses of families who habe already been resettled or who moved away.\todo{source}
+\\
+The case study will focus on the northern part of Morschenich, where several housing- and two commercial units are located in block as indicated by the white line in Figures 2 and 3. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{pictures/Detail_Layout.png}
+	\caption{A detailed view of the chosen location.}
+	\label{morschenich_detail}
+	\flushleft\quad\quad\footnotesize{Source: Google Maps.}
+\end{figure}	
+
+In figure 3 all buildings in the area designated for the case studies proposed microgrid have been marked with colored boxes. Blue boxes represent small residential units, while green boxes indicate larger residential units and red boxes commercial units. The different classes of buildings will be modeled with different parameters to accurately represent their distinct sizes and uses. The following sections will document the assumed input parameters the model requires for the calculation of a base scenario and how they were derived. To properly function the model requires meteorological data for constraints on intermittent power generation, as well as data on investment options, household demand and grid supply. The final section will introduce a number of further scenarios in which some of the assumptions are changed.
+
 \subsection{Meterological Data}
 Hourly irradiation data (in $KWm^{-2}$) for <<PLACE>> is sourced from \cite{pfenningerLongtermPatternsEuropean2016}. 
 \subsection{Investment Options}
+To test the different implementations of discrete and linear investment options the case study incorporates two linear-scaling generation devices as possible investments, as well as two discretely-scaling storage devices. The generation devices consist of a photovoltaic system as a renewable option and a combined heat and power fuel cell, as a conventional, though decentralized and highly efficient option. It is further capable of using biofuels, which can be expressed through higher fuel prices. 
 \begin{table}[H]
 	\centering
 	\caption{Parameters describing the conversion technologies}
@@ -937,10 +962,12 @@ Hourly irradiation data (in $KWm^{-2}$) for <<PLACE>> is sourced from \cite{pfen
 		Lifetime                    & information     		& $yr$  				& 15 				& \cite{LAUINGER201624}    \\
 		Electric Efficiency         & information     		& $\%$  				& 60				& \cite{BlueGENWorldsMost2018}   \\
 		Thermal Efficiency			& information     		& $\%$  				& 21				& \cite{BlueGENWorldsMost2018}   \\
-		Minimum Gas Flow    			& information     		& $\%$ 		 			& 30				& \cite{LAUINGER201624}   \\
+		Maximum Input Flow  			& information     		& $\%$ 		 			& 30				& \cite{LAUINGER201624}   \\
 		\hline
 	\end{tabular}
 \end{table}
+
+The storage investment options given are two differntly sized Lithium Ion batteries: A 4 KWh option manufactured by Victron Energy and a 13.5 KWh option manufactured by Tesla. While the two generation devices are hypothetical, these storage devices can actually be bought, which leads to lower error due to false assumptions and linearization of non-linear relationships (such as storage size and price). This the main advantage discrete modeling of investment options has over linear modeling.
 
 \begin{table}[H]
 	\centering
@@ -953,7 +980,6 @@ Hourly irradiation data (in $KWm^{-2}$) for <<PLACE>> is sourced from \cite{pfen
 		Usable Capacity				   & information 		& $KWh$ 				& 13.5 				& \cite{PowerwallTesla2018} 	\\
 		Lifetime			               & information     	& $yr$  				& 10 				& Estimate based on \cite{PowerwallTesla2018} \\
 		Roundtrip Efficiency           & information     	& $\%$  				& 90				& \cite{PowerwallTesla2018}   \\
-		Self-Discharge		           & information     	& $\%hr^{-1}$  			& 5					& \cite{LAUINGER201624}   \\	
 		Max. charging power            & information    	& $kW$  				& 4.6 				& \cite{PowerwallTesla2018}      \\
 		Max. discharging power         & information     	& $kW$   				& 4.6 				& \cite{PowerwallTesla2018}      \\
 		Initial State of Charge        & information     	& $\%$  				& 100 				& Assumption   \\
@@ -964,7 +990,6 @@ Hourly irradiation data (in $KWm^{-2}$) for <<PLACE>> is sourced from \cite{pfen
 		Usable Capacity				   & information 		& $KWh$ 				& 4 				& based on \cite{LithiumIonenHEHigh2018} considering maximum depth of discharge\\
 		Lifetime			               & information     	& $yr$  				& 10 				& Estimate based on \cite{LithiumIonenHEHigh2018}   \\
 		Roundtrip Efficiency           & information     	& $\%$  				& 92 				& \cite{LAUINGER201624}    \\
-		Self-Discharge		           & information     	& $\%hr^{-1}$  			& 5					& \cite{LAUINGER201624}   \\	
 		Max. charging power            & information    	& $KW$  				& 4.8				& \cite{LithiumIonenHEHigh2018}    \\
 		Max. discharging power         & information     	& $KW$   				& 7.2				& \cite{LithiumIonenHEHigh2018}    \\
 		Initial State of Charge        & information     	& $\%$  				& 100 				& Assumption	   \\
@@ -972,6 +997,11 @@ Hourly irradiation data (in $KWm^{-2}$) for <<PLACE>> is sourced from \cite{pfen
 		\hline
 	\end{tabular}
 \end{table}
+
+\subsection{Demand}
+
+\subsection{Grid Supply}
+For the base scenario the grid supply is assumed to be capped at a constant value of 500KW, which guarantees that all supply could be met by the grid. It is further assumed that the price of this energy is set at 0.3\euro at any time. The feed in tarrif is assumed to be constant at 0.09\euro and the feed-in capped at a constant 20KW. \todo{back up those numbers}
 
 \subsection{Further Assumptions}
 
@@ -988,6 +1018,7 @@ Hourly irradiation data (in $KWm^{-2}$) for <<PLACE>> is sourced from \cite{pfen
 	\end{tabular}
 \end{table}
 
+\subsection{Further Scenarios}
 
 \newpage
 \section{Results and Discussion}

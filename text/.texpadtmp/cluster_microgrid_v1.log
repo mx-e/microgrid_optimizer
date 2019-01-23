@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.11)  16 JAN 2019 13:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.11)  23 JAN 2019 17:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1749,7 +1749,7 @@ LaTeX Info: Redefining \nameref on input line 238.
 \@outlinefile=\write9
 \openout9 = `cluster_microgrid_v1.out'.
 
-<pictures/TU_Logo_kurz_4c_rot.pdf, id=135, 134.5025pt x 100.375pt>
+<pictures/TU_Logo_kurz_4c_rot.pdf, id=151, 134.5025pt x 100.375pt>
 File: pictures/TU_Logo_kurz_4c_rot.pdf Graphic file (type pdf)
 <use pictures/TU_Logo_kurz_4c_rot.pdf>
 Package pdftex.def Info: pictures/TU_Logo_kurz_4c_rot.pdf  used on input line 247.
@@ -1835,7 +1835,7 @@ Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [4]
-<pictures/Figure_1.png, id=249, 1806.75pt x 1003.75pt>
+<pictures/Figure_1.png, id=273, 1806.75pt x 1003.75pt>
 File: pictures/Figure_1.png Graphic file (type png)
 <use pictures/Figure_1.png>
 Package pdftex.def Info: pictures/Figure_1.png  used on input line 502.
@@ -1853,20 +1853,19 @@ Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [8]
+
+LaTeX Warning: Marginpar on page 9 moved.
+
+
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [9]
-Underfull \hbox (badness 10000) in paragraph at lines 601--605
+Underfull \hbox (badness 10000) in paragraph at lines 602--606
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 607--611
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 613--617
+Underfull \hbox (badness 10000) in paragraph at lines 608--612
 
  []
 
@@ -1874,12 +1873,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 613--617
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [10]
-Underfull \hbox (badness 10000) in paragraph at lines 619--623
+Underfull \hbox (badness 10000) in paragraph at lines 614--618
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 651--653
+Underfull \hbox (badness 10000) in paragraph at lines 620--624
 
  []
 
@@ -1887,10 +1886,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 651--653
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [11]
+Underfull \hbox (badness 10000) in paragraph at lines 652--654
+
+ []
+
+
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [12]
-Underfull \hbox (badness 10000) in paragraph at lines 695--697
+Underfull \hbox (badness 10000) in paragraph at lines 696--698
 
  []
 
@@ -1901,7 +1905,7 @@ Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [14]
-Underfull \hbox (badness 10000) in paragraph at lines 783--786
+Underfull \hbox (badness 10000) in paragraph at lines 784--787
 
  []
 
@@ -1909,7 +1913,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 783--786
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [15]
-Underfull \hbox (badness 10000) in paragraph at lines 802--803
+Underfull \hbox (badness 10000) in paragraph at lines 803--804
 
  []
 
@@ -1929,45 +1933,62 @@ Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [20]
-Overfull \hbox (80.5637pt too wide) in paragraph at lines 948--974
+<pictures/Morschenich.png, id=535, 1523.6925pt x 1300.86pt>
+File: pictures/Morschenich.png Graphic file (type png)
+<use pictures/Morschenich.png>
+Package pdftex.def Info: pictures/Morschenich.png  used on input line 923.
+(pdftex.def)             Requested size: 341.43307pt x 291.4899pt.
+<pictures/Detail_Layout.png, id=536, 1180.41pt x 1240.635pt>
+File: pictures/Detail_Layout.png Graphic file (type png)
+<use pictures/Detail_Layout.png>
+Package pdftex.def Info: pictures/Detail_Layout.png  used on input line 934.
+(pdftex.def)             Requested size: 341.43307pt x 358.84734pt.
+
+Overfull \vbox (1.74245pt too high) has occurred while \output is active []
+
+ [21 <./pictures/Morschenich.png>]
+Overfull \vbox (1.74245pt too high) has occurred while \output is active []
+
+ [22 <./pictures/Detail_Layout.png>]
+Overfull \hbox (80.5637pt too wide) in paragraph at lines 975--1001
  [][] 
  []
 
 
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
- [21]
-Overfull \vbox (1.74245pt too high) has occurred while \output is active []
-
- [22]
-Overfull \vbox (1.74245pt too high) has occurred while \output is active []
-
  [23]
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [24]
-Overfull \hbox (276.22577pt too wide) in paragraph at lines 1034--1034
-[]\T1/cmss/m/n/10.95 (-20) "Github Search - 'Mi-cro-grid Op-ti-miza-tion' , Sorted by Most Stars". https://github.com/search?o=desc&q=microgrid+optimization&s=stars&type=Repositories.
- []
-
-
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [25]
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [26]
+Overfull \hbox (276.22577pt too wide) in paragraph at lines 1067--1067
+[]\T1/cmss/m/n/10.95 (-20) "Github Search - 'Mi-cro-grid Op-ti-miza-tion' , Sorted by Most Stars". https://github.com/search?o=desc&q=microgrid+optimization&s=stars&type=Repositories.
+ []
+
+
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [27]
-Overfull \hbox (55.28902pt too wide) in paragraph at lines 1034--1034
+Overfull \vbox (1.74245pt too high) has occurred while \output is active []
+
+ [28]
+Overfull \vbox (1.74245pt too high) has occurred while \output is active []
+
+ [29]
+Overfull \hbox (55.28902pt too wide) in paragraph at lines 1067--1067
 \T1/cmss/m/n/10.95 (-20) Batterien/Victron-Energy-Lithium-HE-Batterie-24V-200Ah::1405.html?MODsid=qhinvdl0nmp4htfsvre2igl0b4.
  []
 
 
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
- [28]
+ [30]
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
@@ -1976,12 +1997,12 @@ This document will not have a glossary.
 
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
- [29]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1034.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1034.
+ [31]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1067.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1067.
  (/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1034.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1034.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1067.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1067.
 Package rerunfilecheck Info: File `cluster_microgrid_v1.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
 Package logreq Info: Writing requests to 'cluster_microgrid_v1.run.xml'.
@@ -1989,18 +2010,18 @@ Package logreq Info: Writing requests to 'cluster_microgrid_v1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47447 strings out of 492649
- 912360 string characters out of 6129622
- 1545925 words of memory out of 5000000
- 50255 multiletter control sequences out of 15000+600000
- 549998 words of font info for 109 fonts, out of 8000000 for 9000
+ 47518 strings out of 492649
+ 913831 string characters out of 6129622
+ 1550781 words of memory out of 5000000
+ 50309 multiletter control sequences out of 15000+600000
+ 550087 words of font info for 110 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  73i,16n,100p,10459b,2269s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb>
-Output written on /Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.pdf (35 pages, 409221 bytes).
+Output written on /Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.pdf (37 pages, 9804552 bytes).
 PDF statistics:
- 700 PDF objects out of 1000 (max. 8388607)
- 634 compressed objects within 7 object streams
- 198 named destinations out of 1000 (max. 500000)
- 17175 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 746 PDF objects out of 1000 (max. 8388607)
+ 675 compressed objects within 7 object streams
+ 211 named destinations out of 1000 (max. 500000)
+ 17217 words of extra memory for PDF output out of 17280 (max. 10000000)
 

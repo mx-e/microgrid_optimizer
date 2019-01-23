@@ -58,16 +58,24 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5}Case Study}{21}{section.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1}Meterological Data}{21}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.1}Overview}{21}{subsection.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2}Investment Options}{21}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.2}Meterological Data}{22}{subsection.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3}Further Assumptions}{22}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.3}Investment Options}{23}{subsection.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Results and Discussion}{23}{section.6}
+\contentsline {subsection}{\numberline {5.4}Demand}{24}{subsection.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Appendix}{24}{section.7}
+\contentsline {subsection}{\numberline {5.5}Grid Supply}{24}{subsection.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Literature Review}{24}{subsection.7.1}
+\contentsline {subsection}{\numberline {5.6}Further Assumptions}{24}{subsection.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\nonumberline Literature}{25}{section*.16}
+\contentsline {subsection}{\numberline {5.7}Further Scenarios}{24}{subsection.5.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Results and Discussion}{25}{section.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Appendix}{26}{section.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1}Literature Review}{26}{subsection.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Literature}{27}{section*.23}
