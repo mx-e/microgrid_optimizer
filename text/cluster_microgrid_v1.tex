@@ -939,8 +939,17 @@ The case study will focus on the northern part of Morschenich, where several hou
 
 In figure 3 all buildings in the area designated for the case studies proposed microgrid have been marked with coloured boxes. Blue boxes represent small residential units, while green boxes indicate larger residential units and red boxes commercial units. The different classes of buildings will be modelled with different parameters to accurately represent their distinct sizes and uses. The following sections will document the assumed input parameters the model requires for the calculation of a base scenario and how they were derived. To properly function the model requires meteorological data for constraints on intermittent power generation, as well as data on investment options, household demand and grid supply. The final section will introduce a number of further scenarios in which some of the assumptions are changed.
 
+
+
+
+
+
 \subsection{Meteorological Data}
-Hourly irradiation data (in $KWm^{-2}$) for <<PLACE>> is sourced from \cite{pfenningerLongtermPatternsEuropean2016}. 
+Hourly irradiation data (in $KWm^{-2}$) for Morschenich is sourced from \cite{pfenningerLongtermPatternsEuropean2016}. It is then used to calculate the capacity factor, e.g. the percentage of usable capacity of the solar panel, based on the lighting. The resulting vector of values is used as the parameter $GEN_1 \hookrightarrow maxFl$, which is the maximum input flow of the photovoltaic system. 
+
+
+
+
 \subsection{Investment Options}
 To test the different implementations of discrete and linear investment options the case study incorporates two linear-scaling generation devices as possible investments, as well as two discretely-scaling storage devices. The generation devices consist of a photovoltaic system as a renewable option and a combined heat and power fuel cell, as a conventional, though decentralised and highly efficient option. It is further capable of using biofuels, which can be expressed through higher fuel prices. 
 \begin{table}[H]
@@ -1001,6 +1010,11 @@ The storage investment options given are two differently sized Lithium Ion batte
 \end{table}
 
 \subsection{Demand}
+Demand vectors for the base scenario are sourced from VDI \todo{here VDI stuff with more detail}...
+\\
+As the load vectors sourced only cover a duration of 24 hours i generate vectors for any larger duration by repeating the values. In addition a gaussian filter is used to randomise the values to a degree for the purpose of representing a variability of daily profiles that could be observed in reality, without shifting the total consumption.
+\\
+For the base scenario it is assumed that 10 percent of loads can be curtailed at a flat rate of 0.35\euro per KwH. A further 30 percent of total loads are assumed to be shiftable at a flat rate of 0.15\euro per KwH. The remaining 60 percent of loads are deemed essential by the base scenario.
 
 \subsection{Grid Supply}
 For the base scenario the grid supply is assumed to be capped at a constant value of 500KW, which guarantees that all supply could be met by the grid. It is further assumed that the price of this energy is set at 0.3\euro at any time. The feed in tariff is assumed to be constant at 0.09\euro and the feed-in capped at a constant 20KW. \todo{back up those numbers}
