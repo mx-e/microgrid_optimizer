@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.11)  23 JAN 2019 17:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.27)  23 JAN 2019 18:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1947,10 +1947,15 @@ Package pdftex.def Info: pictures/Detail_Layout.png  used on input line 934.
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [21 <./pictures/Morschenich.png>]
+Overfull \hbox (18.69388pt too wide) in paragraph at lines 949--970
+ [][] 
+ []
+
+
 Overfull \vbox (1.74245pt too high) has occurred while \output is active []
 
  [22 <./pictures/Detail_Layout.png>]
-Overfull \hbox (80.5637pt too wide) in paragraph at lines 975--1001
+Overfull \hbox (15.31357pt too wide) in paragraph at lines 977--1001
  [][] 
  []
 
@@ -2011,17 +2016,17 @@ Package logreq Info: Writing requests to 'cluster_microgrid_v1.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  47518 strings out of 492649
- 913831 string characters out of 6129622
- 1550781 words of memory out of 5000000
+ 913831 string characters out of 6129621
+ 1550714 words of memory out of 5000000
  50309 multiletter control sequences out of 15000+600000
  550087 words of font info for 110 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  73i,16n,100p,10459b,2269s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb>
-Output written on /Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.pdf (37 pages, 9804552 bytes).
+Output written on /Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.pdf (37 pages, 9804695 bytes).
 PDF statistics:
- 746 PDF objects out of 1000 (max. 8388607)
- 675 compressed objects within 7 object streams
+ 742 PDF objects out of 1000 (max. 8388607)
+ 671 compressed objects within 7 object streams
  211 named destinations out of 1000 (max. 500000)
  17217 words of extra memory for PDF output out of 17280 (max. 10000000)
 

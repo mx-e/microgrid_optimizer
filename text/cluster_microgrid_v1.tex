@@ -696,10 +696,10 @@ Therefore an abstract linear generation device $GEN$ and an abstract discrete ge
 The introduction of the concept of energy storage is necessary if the use of a large proportion of intermittent power production while maintaining intermittent power demand is to be seriously explored.
 Therefore an abstract linear storage device $ST$ and an abstract discrete storage device $dST$, which can represent a range of technology options, are defined:\\
 	\begin{equation}
-		ST := (C_{Cap}, T_{Life}, EFF_{+-}, LOC_{1h}, maxP_{+}, maxP_{-})
+		ST := (C_{Cap}, T_{Life}, EFF_{+-}, maxP_{+}, maxP_{-})
 	\end{equation}
 	\begin{equation}
-		dST := (CAP, C_{Cap}, T_{Life}, EFF_{+-}, LOC_{1h}, maxP_{+}, maxP_{-})
+		dST := (CAP, C_{Cap}, T_{Life}, EFF_{+-}, maxP_{+}, maxP_{-})
 	\end{equation}
 	$CAP \geq 0$, which is only required for discrete investments, defines the usable capacity of the discrete investment option.
 	$C_{Cap} \geq 0$ defines the total investment cost for discrete storage devices. For linear storage investment options the investment cost is expressed in terms of one unit of capacity.
@@ -937,37 +937,39 @@ The case study will focus on the northern part of Morschenich, where several hou
 	\flushleft\quad\quad\footnotesize{Source: Google Maps.}
 \end{figure}	
 
-In figure 3 all buildings in the area designated for the case studies proposed microgrid have been marked with colored boxes. Blue boxes represent small residential units, while green boxes indicate larger residential units and red boxes commercial units. The different classes of buildings will be modeled with different parameters to accurately represent their distinct sizes and uses. The following sections will document the assumed input parameters the model requires for the calculation of a base scenario and how they were derived. To properly function the model requires meteorological data for constraints on intermittent power generation, as well as data on investment options, household demand and grid supply. The final section will introduce a number of further scenarios in which some of the assumptions are changed.
+In figure 3 all buildings in the area designated for the case studies proposed microgrid have been marked with coloured boxes. Blue boxes represent small residential units, while green boxes indicate larger residential units and red boxes commercial units. The different classes of buildings will be modelled with different parameters to accurately represent their distinct sizes and uses. The following sections will document the assumed input parameters the model requires for the calculation of a base scenario and how they were derived. To properly function the model requires meteorological data for constraints on intermittent power generation, as well as data on investment options, household demand and grid supply. The final section will introduce a number of further scenarios in which some of the assumptions are changed.
 
-\subsection{Meterological Data}
+\subsection{Meteorological Data}
 Hourly irradiation data (in $KWm^{-2}$) for <<PLACE>> is sourced from \cite{pfenningerLongtermPatternsEuropean2016}. 
 \subsection{Investment Options}
-To test the different implementations of discrete and linear investment options the case study incorporates two linear-scaling generation devices as possible investments, as well as two discretely-scaling storage devices. The generation devices consist of a photovoltaic system as a renewable option and a combined heat and power fuel cell, as a conventional, though decentralized and highly efficient option. It is further capable of using biofuels, which can be expressed through higher fuel prices. 
+To test the different implementations of discrete and linear investment options the case study incorporates two linear-scaling generation devices as possible investments, as well as two discretely-scaling storage devices. The generation devices consist of a photovoltaic system as a renewable option and a combined heat and power fuel cell, as a conventional, though decentralised and highly efficient option. It is further capable of using biofuels, which can be expressed through higher fuel prices. 
 \begin{table}[H]
 	\centering
-	\caption{Parameters describing the conversion technologies}
+	\caption{Parameters describing the generation technologies}
 	\begin{tabular}{lllll}
 		\hline
 		\textbf{Parameter}			& \textbf{Name}			& \textbf{Unit}			& \textbf{Value}	&\textbf{Reference}     \\ \hline
-		\textit{Photovoltaic System} & & & &\\
-		Installation Cost           & information     		& \euro $KW^{-1}$  		& 1300				& Estimate based on \cite{wirthAktuelleFaktenZur2018}, \cite{SolarmoduleEBay2018}, \cite{ModulePriceIndex2018}   \\
-		Maintenance Cost            & information     		& \euro $KW^{-1}yr^{-1}$& 50				& Estimate \\
-		Lifetime                    & information     		& $yr$  				& 25 				& \cite{wirthAktuelleFaktenZur2018}   \\
-		Electric Efficiency         & information     		& $\%$  				& 17				& \cite{wirthAktuelleFaktenZur2018}   \\
-		Performance Ratio           & information     		& $\%$  				& 85				& \cite{wirthAktuelleFaktenZur2018}   \\
-		\textit{CHP Micro Fuel Cell} & & & &\\
-		Installation Cost           & information     		& \euro $KW^{-1}$  		& 3500 				& Estimate based on \cite{LAUINGER201624}    \\
-		Maintenance Cost            & information     		& \euro $KW^{-1}yr^{-1}$& 175				& Estimate based on \cite{LAUINGER201624}   \\
-		Fuel	 Cost           			& information     		& \euro $KWh^{-1}$   	& 0,0608			& \cite{NaturalGasPrices2018}   \\
-		Lifetime                    & information     		& $yr$  				& 15 				& \cite{LAUINGER201624}    \\
-		Electric Efficiency         & information     		& $\%$  				& 60				& \cite{BlueGENWorldsMost2018}   \\
-		Thermal Efficiency			& information     		& $\%$  				& 21				& \cite{BlueGENWorldsMost2018}   \\
-		Maximum Input Flow  			& information     		& $\%$ 		 			& 30				& \cite{LAUINGER201624}   \\
+		\textit{Photovoltaic System} & $GEN_1$ & & &\\
+		Installation Cost           & $C_{Cap}$     		& \euro $KW^{-1}$  		& 1300				& Estimate based on \cite{wirthAktuelleFaktenZur2018}, \cite{SolarmoduleEBay2018}, \cite{ModulePriceIndex2018}   \\
+		Maintenance Cost            & $C_{OpFix}$     		& \euro $KW^{-1}yr^{-1}$& 50				& Estimate \\
+		Fuel	 Cost           			& $C_{OpVar}$     		& \euro $KWh^{-1}$   	& 0.0			& no sun taxes ... yet  \\
+		Lifetime                    & $T_{Life}$     		& $yr$  				& 25 				& \cite{wirthAktuelleFaktenZur2018}   \\
+		Electric Efficiency         & $EFF_{el}$     		& $\%$  				& 17				& \cite{wirthAktuelleFaktenZur2018}   \\
+		Performance Ratio           & $PR$     		& $\%$  				& 85				& \cite{wirthAktuelleFaktenZur2018}   \\
+		Maximum Input Flow  			& $maxFl$     		& $KW$ 		 			& see section 5.2				& based on insolation   \\
+		\textit{CHP Micro Fuel Cell} & $GEN_2$ & & &\\
+		Installation Cost           & $C_{Cap}$     		& \euro $KW^{-1}$  		& 3500 				& Estimate based on \cite{LAUINGER201624}    \\
+		Maintenance Cost            & $C_{OpFix}$     		& \euro $KW^{-1}yr^{-1}$& 175				& Estimate based on \cite{LAUINGER201624}   \\
+		Fuel	 Cost           			& $C_{OpVar}$     		& \euro $KWh^{-1}$   	& 0.0608			& \cite{NaturalGasPrices2018}   \\
+		Lifetime                    & $T_{Life}$     		& $yr$  				& 15 				& \cite{LAUINGER201624}    \\
+		Electric Efficiency         & $EFF_{el}$       		& $\%$  				& 60				& \cite{BlueGENWorldsMost2018}   \\
+		Performance Ratio           & $PR$     		& $\%$  				& 100				& no additional penalties  \\
+		Maximum Input Flow  			& $maxFl$     		& $KW$ 		 			& 999				& no restrictions  \\
 		\hline
 	\end{tabular}
 \end{table}
 
-The storage investment options given are two differntly sized Lithium Ion batteries: A 4 KWh option manufactured by Victron Energy and a 13.5 KWh option manufactured by Tesla. While the two generation devices are hypothetical, these storage devices can actually be bought, which leads to lower error due to false assumptions and linearization of non-linear relationships (such as storage size and price). This the main advantage discrete modeling of investment options has over linear modeling.
+The storage investment options given are two differently sized Lithium Ion batteries: A 4 KWh option manufactured by Victron Energy and a 13.5 KWh option manufactured by Tesla. While the two generation devices are hypothetical, these storage devices can actually be bought, which leads to lower error due to false assumptions and linearisation of non-linear relationships (such as storage size and price). This the main advantage discrete modelling of investment options has over linear modelling.
 
 \begin{table}[H]
 	\centering
@@ -975,25 +977,25 @@ The storage investment options given are two differntly sized Lithium Ion batter
 	\begin{tabular}{lllll}
 		\hline
 		\textbf{Parameter}			& \textbf{Name}			& \textbf{Unit}			& \textbf{Value}	&\textbf{Reference}     \\ \hline
-		\textit{Li-Ion Battery 1} & & & &\textit{Tesla Powerwall} \\
-		Installation Cost              & information     	& \euro 				& 10000				& Estimate based on \cite{PowerwallTesla2018}   \\
-		Usable Capacity				   & information 		& $KWh$ 				& 13.5 				& \cite{PowerwallTesla2018} 	\\
-		Lifetime			               & information     	& $yr$  				& 10 				& Estimate based on \cite{PowerwallTesla2018} \\
-		Roundtrip Efficiency           & information     	& $\%$  				& 90				& \cite{PowerwallTesla2018}   \\
-		Max. charging power            & information    	& $kW$  				& 4.6 				& \cite{PowerwallTesla2018}      \\
-		Max. discharging power         & information     	& $kW$   				& 4.6 				& \cite{PowerwallTesla2018}      \\
-		Initial State of Charge        & information     	& $\%$  				& 100 				& Assumption   \\
-		Terminal State of Charge       & information     	& $\%$  				& 100 				& Assumption   \\
+		\textit{Li-Ion Battery 1} & $dST_1$ & & &\textit{Tesla Powerwall} \\
+		Usable Capacity				   & $CAP$ 		& $KWh$ 				& 13.5 				& \cite{PowerwallTesla2018} 	\\
+		Installation Cost              & $C_{Cap}$        	& \euro 				& 10000				& Estimate based on \cite{PowerwallTesla2018}   \\
+		Lifetime			               & $T_{Life}$       	& $yr$  				& 10 				& Estimate based on \cite{PowerwallTesla2018} \\
+		Roundtrip Efficiency           & $EFF_{+-}$     	& $\%$  				& 90				& \cite{PowerwallTesla2018}   \\
+		Max. charging power            & $maxP_+$    	& $kW$  				& 4.6 				& \cite{PowerwallTesla2018}      \\
+		Max. discharging power         & $maxP_-$     	& $kW$   				& 4.6 				& \cite{PowerwallTesla2018}      \\
+		Initial State of Charge        & $-$     	& $\%$  				& 100 				& Assumption   \\
+		Terminal State of Charge       & $-$     	& $\%$  				& 100 				& Assumption   \\
 		
-		\textit{Li-Ion Battery 2} & & & & \textit{Victron Energy Lithium HE Batterie} \\
-		Installation Cost              & information     	& \euro  				& 5000				& Estimate based on \cite{VictronEnergyLithium2018}   \\
-		Usable Capacity				   & information 		& $KWh$ 				& 4 				& based on \cite{LithiumIonenHEHigh2018} considering maximum depth of discharge\\
-		Lifetime			               & information     	& $yr$  				& 10 				& Estimate based on \cite{LithiumIonenHEHigh2018}   \\
-		Roundtrip Efficiency           & information     	& $\%$  				& 92 				& \cite{LAUINGER201624}    \\
-		Max. charging power            & information    	& $KW$  				& 4.8				& \cite{LithiumIonenHEHigh2018}    \\
-		Max. discharging power         & information     	& $KW$   				& 7.2				& \cite{LithiumIonenHEHigh2018}    \\
-		Initial State of Charge        & information     	& $\%$  				& 100 				& Assumption	   \\
-		Terminal State of Charge       & information     	& $\%$  				& 100 				& Assumption   \\	
+		\textit{Li-Ion Battery 2} & $dST_2$ & & & \textit{Victron Energy Lithium HE Batterie} \\
+		Usable Capacity				   & $CAP$ 		& $KWh$ 				& 4 				& based on \cite{LithiumIonenHEHigh2018} considering depth of discharge\\
+		Installation Cost              & $C_{Cap}$     	& \euro  				& 5000				& Estimate based on \cite{VictronEnergyLithium2018}   \\
+		Lifetime			               & $T_{Life}$     	& $yr$  				& 10 				& Estimate based on \cite{LithiumIonenHEHigh2018}   \\
+		Roundtrip Efficiency           & $EFF_{+-}$      	& $\%$  				& 92 				& \cite{LAUINGER201624}    \\
+		Max. charging power            & $maxP_+$    	& $KW$  				& 4.8				& \cite{LithiumIonenHEHigh2018}    \\
+		Max. discharging power         & $maxP_-$     	& $KW$   				& 7.2				& \cite{LithiumIonenHEHigh2018}    \\
+		Initial State of Charge        & $-$     	& $\%$  				& 100 				& Assumption	   \\
+		Terminal State of Charge       & $-$    	& $\%$  				& 100 				& Assumption   \\	
 		\hline
 	\end{tabular}
 \end{table}
@@ -1001,7 +1003,7 @@ The storage investment options given are two differntly sized Lithium Ion batter
 \subsection{Demand}
 
 \subsection{Grid Supply}
-For the base scenario the grid supply is assumed to be capped at a constant value of 500KW, which guarantees that all supply could be met by the grid. It is further assumed that the price of this energy is set at 0.3\euro at any time. The feed in tarrif is assumed to be constant at 0.09\euro and the feed-in capped at a constant 20KW. \todo{back up those numbers}
+For the base scenario the grid supply is assumed to be capped at a constant value of 500KW, which guarantees that all supply could be met by the grid. It is further assumed that the price of this energy is set at 0.3\euro at any time. The feed in tariff is assumed to be constant at 0.09\euro and the feed-in capped at a constant 20KW. \todo{back up those numbers}
 
 \subsection{Further Assumptions}
 

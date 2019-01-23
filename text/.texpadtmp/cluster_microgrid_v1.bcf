@@ -2086,22 +2086,18 @@
     <bcf:citekey order="101">NaturalGasPrices2018</bcf:citekey>
     <bcf:citekey order="102">LAUINGER201624</bcf:citekey>
     <bcf:citekey order="103">BlueGENWorldsMost2018</bcf:citekey>
-    <bcf:citekey order="104">BlueGENWorldsMost2018</bcf:citekey>
-    <bcf:citekey order="105">LAUINGER201624</bcf:citekey>
+    <bcf:citekey order="104">PowerwallTesla2018</bcf:citekey>
+    <bcf:citekey order="105">PowerwallTesla2018</bcf:citekey>
     <bcf:citekey order="106">PowerwallTesla2018</bcf:citekey>
     <bcf:citekey order="107">PowerwallTesla2018</bcf:citekey>
     <bcf:citekey order="108">PowerwallTesla2018</bcf:citekey>
     <bcf:citekey order="109">PowerwallTesla2018</bcf:citekey>
-    <bcf:citekey order="110">LAUINGER201624</bcf:citekey>
-    <bcf:citekey order="111">PowerwallTesla2018</bcf:citekey>
-    <bcf:citekey order="112">PowerwallTesla2018</bcf:citekey>
-    <bcf:citekey order="113">VictronEnergyLithium2018</bcf:citekey>
+    <bcf:citekey order="110">LithiumIonenHEHigh2018</bcf:citekey>
+    <bcf:citekey order="111">VictronEnergyLithium2018</bcf:citekey>
+    <bcf:citekey order="112">LithiumIonenHEHigh2018</bcf:citekey>
+    <bcf:citekey order="113">LAUINGER201624</bcf:citekey>
     <bcf:citekey order="114">LithiumIonenHEHigh2018</bcf:citekey>
     <bcf:citekey order="115">LithiumIonenHEHigh2018</bcf:citekey>
-    <bcf:citekey order="116">LAUINGER201624</bcf:citekey>
-    <bcf:citekey order="117">LAUINGER201624</bcf:citekey>
-    <bcf:citekey order="118">LithiumIonenHEHigh2018</bcf:citekey>
-    <bcf:citekey order="119">LithiumIonenHEHigh2018</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
