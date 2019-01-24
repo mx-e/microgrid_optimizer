@@ -5,7 +5,6 @@ include("./microgrid_utils.jl")
 importall MicrogridUtils
 
 m = Model(solver = CbcSolver())
-
 f = open("./input.json")
 
 input_data = JSON.parse(f)
@@ -14,12 +13,54 @@ close(f)
 #---------SET-PARAMETERS--------
 #-------------------------------
 
+iterators = input_data["iterators"]
+
 #number of households
-N = input_data["N"]
-
+U::int32 = iterators["U"]
+#number of discountinous sets of timeslices
+S::int32 = iterators["S"]
 #number of timeslices in hours
-T = input_data["T"]
+T:int32 = iterators["T"]
+#number of linear generation investment options
+K::int32 = iterators["K"]
+#number of discrete generation investment options
+L::int32 = iterators["M"]
+#number of linear storage investment options
+M::int32 = iterators["L"]
+#number of discrete storage investment options
+N::int32 = iterators["N"]
 
+#-----HOUSEHOLDS---------------
+households = []
+for i in input_data["households"]
+    push!(household, constructHouseehold(i, S, T))
+end
+
+#-----INVESTMENT OPTIONS-------
+GEN = []
+for i in input_data["generationLinear"]
+    push!(GEN, constructLinearGenerationDevice(i, S, T))
+end
+
+dGEN = []
+for i in input_data["generationDiscrete"]
+    push!(dGEN, constructDiscreteGenerationDevice(i, S, T))
+end
+
+ST = []
+for i in input_data["storageLinear"]
+    push!(ST, constructLinearStorageDevice(i))
+end
+
+dST = []
+for i in input_data["generationLinear"]
+    push!(dST, constructDiscreteStorageDevice(i))
+end
+
+#------GRID----------
+grid = constructGrid(input_data["grid"], S, T)
+
+#=
 #-----BEHAVIOURAL VARIABLES----
 #non-consumption price for households
 ncc = input_data["ncc"]
@@ -96,71 +137,84 @@ gas_price = 0.001
 discount_rate_yearly = 0.04
 discount_rate = compute_hourly_discount(discount_rate_yearly)
 
+=#
+
 #-------------------------------
 #---------VARIABLES-------------
 #-------------------------------
 
 # Trade between households
-@variable(m, tr_from[1:N,1:T] >= 0)
-@variable(m, tr_to[1:N,1:T] >= 0)
+@variable(m, toTR[1:U,1:S,1:T] >= 0)
+@variable(m, fromTR[1:U,1:S,1:T] >= 0)
 
+# Generation
+if K > 0
+    @variable(m, genS[1:U,1:K,1:S,1:T] >= 0)
+end
+if M > 0
+    @variable(m, dgenS[1:U,1:M,1:S,1:T] >= 0)
+end
+
+# Storage
+if L > 0
+    @variable(m, fromST[1:U,1:L,1:S,1:T] >= 0)
+    @variable(m, toST[1:U,1:L,1:S,1:T] >= 0)
+end
+if N > 0
+    @variable(m, fromDST[1:U,1:N,1:S,1:T] >= 0)
+    @variable(m, toDST[1:U,1:N,1:S,1:T] >= 0)
+end
 
 # Non-Consumption
-@variable(m, snc[1:N,1:T] >= 0)
-
-# PV-Production
-@variable(m, spv[1:N,1:T] >= 0)
-
-# CHP-Production
-@variable(m, s_chp[1:N, 1:T] >= 0)
-
-# Grid Imports
-@variable(m, sgr[1:N,1:T] >= 0)
-
-# Grid Exports
-@variable(m, stg[1:N,1:T] >= 0)
+@variable(m, ncS[1:U,1:S,1:T] >= 0)
 
 # Shifted Consumption
-@variable(m, ssc[1:N,0:T] >= 0)
+@variable(m, toSC[1:U,1:S,1:T] >= 0)
+@variable(m, fromSC[1:U,1:S,1:T] >= 0)
 
-# Gas Imports 
-@variable(m, gas_import[1:N, 1:T] >= 0)
-
-# Gas Production
-@variable(m, gas_prod[1:N, 1:T] >= 0)
-
-#----------STORAGE--------------
-# To Gas Storage 
-@variable(m, s_t_gst[1:N,1:T] >= 0)
-
-# From Gas Storage
-@variable(m, s_f_gst[1:N,1:T] >= 0)
-
-# To Battery
-@variable(m, s_t_li[1:N,1:T] >= 0)
-
-# From Battery
-@variable(m, s_f_li[1:N,1:T] >= 0)
+# Grid Imports/Exports
+@variable(m, toGR[1:U,1:S,1:T] >= 0)
+@variable(m, fromGR[1:N,1:S,1:T] >= 0)
 
 #-----------INVESTMENTS---------
-# PV-Capacity 
-@variable(m, cp_pv[1:N] >= 0)
+#Generation
+if K > 0
+    @variable(m, HuGENk[1:U,1:K] >= 0)
+end
+if M > 0
+    @variable(m, HuDGENm[1:U,1:M] >= 0)
+end
 
-# Storage Capacity 
-@variable(m, cp_li_ion[1:N] >= 0)
-
-# Biogas CHP Capacity 
-@variable(m, cp_chp[1:N] >= 0)
-
-# Biogas Digester Capacity
-@variable(m, cp_digester[1:N] >= 0)
-
-# Gas Storage Capacity
-@variable(m, cp_gas_st[1:N] >= 0)
+#Storage
+if L > 0
+    @variable(m, HuSTl[1:U, 1:L] >= 0)
+end
+if N > 0
+    @variable(m, HuDSTn[1:U, 1:N] >= 0)
+end
 
 #-------------------------------
 #---------CONSTRAINTS-----------
 #-------------------------------
+
+#Generation
+#linear
+if K > 0
+    @constraint(m, genConstr[u=1:U, k=1:K, s=1:S, t=1:T], genS[u,k,s,t] 
+    <= min((GEN[k].EFFel * GEN[k].maxFL[s,t]/HuGENk[u,k], 1.0) * HuGENk[u,k] * GEN[k].PR)
+end
+#discrete 
+if M > 0
+    @constraint(m, dgenConstr[u=1:U, m=1:M, s=1:S, t=1:T], dgenS[u,m,s,t] 
+    <= min((dGEN[m].EFFel * dGEN[m].maxFL[s,t])/(HuGENk[u,k]*dGEN[m].CAP), 1.0) * HuGENk[u,k] * dGEN[m].PR * dGEN[m].CAP)
+end
+
+#Storage
+#linear
+if L > 0
+    @constraint(m, to)
+#discrete
+
 
 #PV Supply Constraint
 @constraint(m, pv_constr[i=1:N, t=1:T], spv[i,t] == cap_fr[t] * cp_pv[i])

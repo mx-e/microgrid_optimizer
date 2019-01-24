@@ -1,1 +1,101 @@
-{"T":24,"N":3,"demand":[[1,1,1,2,2,2,3,4.5,4,3.5,3,2,1.5,1.5,1.5,3,4.5,3,3,2.5,2,2,1.5,1],[1,1,1,2,2,2,3,4.5,4,3.5,3,2,1.5,1.5,1.5,3,4.5,3,3,2.5,2,2,1.5,1],[1,1,1,2,2,2,3,4.5,4,3.5,3,2,1.5,1.5,1.5,3,4.5,3,3,2.5,2,2,1.5,1]]}
+{
+    "iterators": {
+        "T": 24,
+        "S": 1,
+        "U": 3,
+        "K": 2,
+        "L": 0,
+        "M": 0,
+        "N": 2
+    },
+    "households": [
+        {
+            "opts":{
+                "areDemandSharesFixed":true,
+                "curtailableShare": 0.10,
+                "shiftableShare": 0.20
+            },
+            "shiftP": 0.15,
+            "curtP": 0.35,
+            "DEM": [[1.0,1.0,1.0,2.0,2.5,2.5,1.0,1.0,1.0,2.0,3.0,4.0,1.0,1.0,2.0,2.5,3.0,5.0,8.0,5.0,5.0,2.5,1.5]]
+        },
+        {
+            "opts":{
+                "areDemandSharesFixed":true,
+                "curtailableShare": 0.10,
+                "shiftableShare": 0.20
+            },
+            "shiftP": 0.15,
+            "curtP": 0.35,
+            "DEM": [[1.0,1.0,1.0,2.0,2.5,2.5,1.0,1.0,1.0,2.0,3.0,4.0,1.0,1.0,2.0,2.5,3.0,5.0,8.0,5.0,5.0,2.5,1.5]]
+        },
+        {
+            "opts":{
+                "areDemandSharesFixed":true,
+                "curtailableShare": 0.10,
+                "shiftableShare": 0.20
+            },
+            "shiftP": 0.15,
+            "curtP": 0.35,
+            "DEM": [[1.0,1.0,1.0,2.0,2.5,2.5,1.0,1.0,1.0,2.0,3.0,4.0,1.0,1.0,2.0,2.5,3.0,5.0,8.0,5.0,5.0,2.5,1.5]]
+        }
+    ],
+    "generationLinear": [
+        {
+            "opts":{
+                "isMaxFlConstant": false
+            },
+            "cCap": 1300,
+            "cOpFix": 50,
+            "cOpVar": 0.0,
+            "tLife": 25,
+            "EFFel": 0.17,
+            "PR": 0.85,
+            "maxFl": [[0.0, 0.0, 0.0, 0.0, 0.0, 0.511, 15.373, 42.567, 83.029, 94.608, 58.725, 37.399, 12.309, 0.688, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]]
+        },
+        {
+            "opts":{
+                "isMaxFlConstant": true
+            },
+            "cCap": 3500,
+            "cOpFix": 175,
+            "cOpVar": 0.0608,
+            "tLife": 15,
+            "EFFel": 0.60,
+            "PR": 1.0,
+            "maxFl": 999.0
+        }
+    ],
+    "generationDiscrete":[],
+    "storageLinear":[],
+    "storageDiscrete":[
+        {
+            "CAP": 13.5,
+            "cCap":10000,
+            "tLife": 10,
+            "EFF+-": 0.9,
+            "maxP+": 4.6,
+            "maxP-": 4.6
+        },
+        {
+            "CAP": 4,
+            "cCap": 5000,
+            "tLife": 10,
+            "EFF+-": 0.92,
+            "maxP+": 4.8,
+            "maxP-": 7.2
+        }
+    ],
+    "grid": {
+        "opts": {
+            "isCostConstant": true,
+            "isSupplyConstant": true,
+            "isDemandConstant": true
+        },
+        "maxS": 500.0,
+        "maxD": 20.0,
+        "gridC": 0.30,
+        "feedC": 0.09
+    }
+    
+}
