@@ -63,6 +63,7 @@
     end
 
     struct DiscreteStorageDevice <: StorageDevice
+        CAP::Float64
         cCap::Float64
         tLife::Float64
         EFFplusminus::Float64
@@ -85,12 +86,13 @@
         DEM::Array{Float64,3}
     end
 
-    function constructLinearGenerationDevice(device::Dict{Any,Any}, S::Int64, T::Int64)
+    function constructLinearGenerationDevice(device::Dict{String,Any}, S::Int64, T::Int64)
         opts = device["opts"]
+        maxFl = []
         if opts["isMaxFlConstant"] == false
             maxFl = array_of_arrays_to_matrix(device["maxFl"], S, T)
         else
-            maxFL = fill(device["maxFl"], S, T)
+            maxFl = fill(device["maxFl"],(S, T))
         end
         cCap = device["cCap"]
         cOpFix = device["cOpFix"]
@@ -99,7 +101,7 @@
         EFFel = device["EFFel"]
         PR = device["PR"]
 
-        return LinearGenerationDevice(cCap, cOpFix, cOpVar, tLife, EFFel, PR, maxFL)
+        return LinearGenerationDevice(cCap, cOpFix, cOpVar, tLife, EFFel, PR, maxFl)
     end
 
     function constructDiscreteGenerationDevice(device::Dict{String,Any}, S::Int64, T::Int64)
@@ -107,7 +109,7 @@
         if opts["isMaxFlConstant"] == false
             maxFl = array_of_arrays_to_matrix(device["maxFl"], S, T)
         else
-            maxFL = fill(device["maxFl"], S::int32, T::int32)
+            maxFL = fill(device["maxFl"],(S, T))
         end
         CAP = device["CAP"]
         cCap = device["cCap"]
@@ -135,30 +137,30 @@
         CAP = device["CAP"]
         cCap = device["cCap"]
         tLife = device["tLife"]
-        EFFplusminus = device["EFFplusminus"]
+        EFFplusminus = device["EFF+-"]
         EFFplus = sqrt(EFFplusminus)
         EFFminus = 1.0/EFFplus
-        maxPplus = device["maxPplus"]
-        maxPminus = device["maxPminus"]
-        return LinearStorageDevice(CAP, cCap, tLife, EFFplusminus, EFFplus, EFFminus, maxPplus, maxPminus)
+        maxPplus = device["maxP+"]
+        maxPminus = device["maxP-"]
+        return DiscreteStorageDevice(CAP, cCap, tLife, EFFplusminus, EFFplus, EFFminus, maxPplus, maxPminus)
     end
 
     function constructGrid(grid::Dict{String,Any}, S::Int64, T::Int64)
         opts = grid["opts"]
         if opts["isCostConstant"] == true
-            gridC = fill(grid["gridC"], S, T)
-            feedC = fill(grid["feedC"], S, T)
+            gridC = fill(grid["gridC"],(S, T))
+            feedC = fill(grid["feedC"],(S, T))
         else
             gridC = array_of_arrays_to_matrix(grid["gridC"], S, T)
             feedC = array_of_arrays_to_matrix(grid["feedC"], S, T)
         end
         if opts["isSupplyConstant"] == true
-            maxS = fill(grid["maxS"], S, T)
+            maxS = fill(grid["maxS"],(S, T))
         else
             maxS = array_of_arrays_to_matrix(grid["maxS"], S, T)
         end
         if opts["isDemandConstant"] == true
-            maxD = fill(grid["maxD"], S, T)
+            maxD = fill(grid["maxD"],(S, T))
         else
             maxD = array_of_arrays_to_matrix(grid["maxD"], S, T)
         end
@@ -185,7 +187,7 @@
                 end
             end
         end
-        reshape(DEM, S, T, 3)
+        DEM = reshape(DEM, (S, T, 3))
         shiftP = household["shiftP"]
         curtP = household["curtP"]
         return Household(shiftP, curtP, DEM)

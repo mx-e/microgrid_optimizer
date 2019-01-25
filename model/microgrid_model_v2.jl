@@ -32,7 +32,7 @@ N = iterators["N"]
 #-----HOUSEHOLDS---------------
 H = []
 for i in input_data["households"]
-    push!(household, constructHousehold(i, S, T))
+    push!(H, constructHousehold(i, S, T))
 end
 
 #-----INVESTMENT OPTIONS-------
@@ -52,7 +52,7 @@ for i in input_data["storageLinear"]
 end
 
 dST = []
-for i in input_data["generationLinear"]
+for i in input_data["storageDiscrete"]
     push!(dST, constructDiscreteStorageDevice(i))
 end
 
@@ -94,7 +94,7 @@ end
 
 # Grid Imports/Exports
 @variable(m, toGR[1:U,1:S,1:T] >= 0)
-@variable(m, fromGR[1:N,1:S,1:T] >= 0)
+@variable(m, fromGR[1:U,1:S,1:T] >= 0)
 
 #-----------INVESTMENTS---------
 #Generation
@@ -121,12 +121,12 @@ end
 #linear
 if K > 0
     @constraint(m, genConstr[u=1:U, k=1:K, s=1:S, t=1:T], genS[u,k,s,t] 
-    <= min((GEN[k].EFFel * GEN[k].maxFL[s,t]/HuGENk[u,k], 1.0) * HuGENk[u,k] * GEN[k].PR)
+    <= min((GEN[k].EFFel * GEN[k].maxFl[s,t]), 1.0) * HuGENk[u,k] * GEN[k].PR)
 end
 #discrete 
 if M > 0
     @constraint(m, dgenConstr[u=1:U, m=1:M, s=1:S, t=1:T], dgenS[u,m,s,t] 
-    <= min((dGEN[m].EFFel * dGEN[m].maxFL[s,t])/(HuGENk[u,k]*dGEN[m].CAP), 1.0) * HuGENk[u,k] * dGEN[m].PR * dGEN[m].CAP)
+    <= min(dGEN[m].EFFel * dGEN[m].maxFl[s,t] *dGEN[m].CAP, 1.0) * HuGENk[u,k] * dGEN[m].PR * dGEN[m].CAP)
 end
 
 #Storage
@@ -145,15 +145,15 @@ if L > 0
 end
 #discrete
 if N > 0
-    @constraint(m, disc_flowConstrTO[u=1:U, m=1:N, s=1:S, t=1:T], toDST[u,n,s,t] <= dST[n].maxPplus * HuDSTn[u,n] * dST[n].CAP)
-    @constraint(m, disc_flowConstrFROM[u=1:U, l=1:N, s=1:S, t=1:T], fromDST[u,n,s,t] <= dST[n].maxPminus * HuDSTn[u,n] * dST[n].CAP)
+    @constraint(m, disc_flowConstrTO[u=1:U, n=1:N, s=1:S, t=1:T], toDST[u,n,s,t] <= dST[n].maxPplus * HuDSTn[u,n] * dST[n].CAP)
+    @constraint(m, disc_flowConstrFROM[u=1:U, n=1:N, s=1:S, t=1:T], fromDST[u,n,s,t] <= dST[n].maxPminus * HuDSTn[u,n] * dST[n].CAP)
 
-    @constraint(m, disc_balanceConstr[u=1:U, l=1:N, s=1:S], sum(dST[n].EFFplus * toDST[u,n,s,t] - dST[n].EFFminus * fromDST[u,n,s,t] for t=1:T) == 0.0)
+    @constraint(m, disc_balanceConstr[u=1:U, n=1:N, s=1:S], sum(dST[n].EFFplus * toDST[u,n,s,t] - dST[n].EFFminus * fromDST[u,n,s,t] for t=1:T) == 0.0)
     
-    @constraint(m, disc_capConstr[u=1:U, l=1:N, s=1:S, t=1:T], toDST[u,n,s,t] * dST[l].EFFplus 
+    @constraint(m, disc_capConstr[u=1:U, n=1:N, s=1:S, t=1:T], toDST[u,n,s,t] * dST[n].EFFplus 
     <= sum(-dST[n].EFFplus * toDST[u,n,s,x] + dST[n].EFFminus * fromDST[u,n,s,x] for x=1:(t-1)))
 
-    @constraint(m, disc_lvlConstr[u=1:U, l=1:N, s=1:S, t=1:T], fromDST[u,n,s,t] * dST[l].EFFminus
+    @constraint(m, disc_lvlConstr[u=1:U, n=1:N, s=1:S, t=1:T], fromDST[u,n,s,t] * dST[n].EFFminus
     <= HuDSTn[u,n] * dST[n].CAP + sum(dST[n].EFFplus * toDST[u,n,s,x] - dST[n].EFFminus * fromDST[u,n,s,x] for x=1:(t-1)))
 end
 
@@ -169,37 +169,81 @@ end
 
 #Grid
 @constraint(m, gridSupplyConstr[s=1:S, t=1:T], sum(fromGR[u,s,t] - toGR[u,s,t] for u=1:U) <= GR.maxS[s,t])
-@constraint(m, gridDemandContsr[s=1:S, t=1:T], sum(toGR[u,s,t] - fromGR[u,s,t] for u=1:U) <= GR.maxD[s,t])
+@constraint(m, gridDemandContstr[s=1:S, t=1:T], sum(toGR[u,s,t] - fromGR[u,s,t] for u=1:U) <= GR.maxD[s,t])
 
 #Power Balance
+function conditionalSum(X, var, u, s, t)
+    if X > 0
+        return sum(var[u,x,s,t] for x=1:X)
+    else
+        return 0.0
+    end
+end
 
-@constraint(m, powerBalanceConstr[u=1:U, s=1:S, t=1:T], sum(H[u].DEM[s,t]) == fromGR[u,s,t] - toGR[u,s,t] + fromTR[u,s,t] - toTR[u,s,t] + fromSC[u,s,t] - toSC[u,s,t]
-+ K > 0 ? sum(genS[u,k,s,t] for k=1:K) : 0.0
-+ M > 0 ? sum(dgenS[u,m,s,t] for m=1:M) : 0.0
-+ L > 0 ? sum(fromST[u,l,s,t] - toST[u,l,s,t] for l=1:L) : 0.0
-+ N > 0 ? sum(fromDST[u,n,s,t] - toDST[u,n,s,t] for n=1:N) : 0.0
-)
+
+@constraint(m, powerBalanceConstr[u=1:U, s=1:S, t=1:T], H[u].DEM[s,t,1] + H[u].DEM[s,t,2] + H[u].DEM[s,t,3]
+== fromGR[u,s,t] - toGR[u,s,t] + fromTR[u,s,t] - toTR[u,s,t] + fromSC[u,s,t] - toSC[u,s,t]
++ conditionalSum(K, genS, u, s, t) 
+# + conditionalSum(M, dgenS, u, s, t) 
+# + conditionalSum(L, fromST, u, s, t) - conditionalSum(L, toST, u, s, t) 
++ conditionalSum(N, fromDST, u, s, t) - conditionalSum(N, toDST, u, s, t))
+
 
 #-------------------------------
 #-----------OBJECTIVE-----------
 #-------------------------------
-C_Investment = sum(
-    K > 0 ? sum(GEN[k].cCAP * HuGENk[u,k] for k=1:K) : 0.0 + 
-    M > 0 ? sum(dGEN[m].cCAP * HuDGENm[u,m] for m=1:M) : 0.0 + 
-    L > 0 ? sum(ST[l].cCAP * HuSTl[u,l] for l=1:L) : 0.0 + 
-    N > 0 ? sum(dST[n].cCAP * HuDSTn[u,n] for n=1:N) : 0.0
-    for u=1:U
-)
-C_Operation = sum(
-    K > 0 ? sum(GEN[k].cOpFix * HuGENk[u,k] * S * T for k=1:K) : 0.0 +
-    M > 0 ? sum(dGEN[m].cOpFix * HuDGENm[u,m] * S * T for m=1:M) : 0.0 
-    for u=1:U
-)
-C_Dispatch = sum(sum(sum(
-    GR.gridC[s,t] * fromGR[u,s,t] - feedC[s,t] * toGR[u,s,t] + H[u].curtP * ncS[u,s,t] + H[u].shiftP * toSC[u,s,t]
-    + K > 0 ? sum(GEN[k].cOpVar * genS[u,k,s,t] / GEN[k].EFFel  for k=1:K) : 0.0
-    + M > 0 ? sum(dGEN[m].cOpVar * dgenS[u,m,s,t] / dGEN[m].EFFel for m=1:M) : 0.0
-for u=1:U)for s=1:S) t=1:T)
+C_Investment_GEN = 0.0
+C_Investment_dGEN = 0.0
+C_Investment_ST = 0.0
+C_investment_dST = 0.0
+C_Operation_GEN = 0.0
+C_Operation_dGEN = 0.0
+C_Dispatch_GEN = 0.0
+C_Dispatch_dGEN = 0.0
+
+if K > 0
+    C_Investment_GEN = sum(
+        sum(GEN[k].cCap * HuGENk[u,k] for k=1:K)
+    for u=1:U)
+    C_Operation_GEN  = sum(
+        sum(GEN[k].cOpFix * HuGENk[u,k] * S * T for k=1:K)
+    for u=1:U)
+    C_Dispatch_GEN = sum(
+        sum(GEN[k].cOpVar * genS[u,k,s,t] / GEN[k].EFFel for k=1:K)
+    for u=1:U, s=1:S, t=1:T)
+end
+
+if M > 0
+    C_Investment_dGEN = sum(
+        um(dGEN[m].cCap * HuDGENm[u,m] for m=1:M)
+    for u=1:U)
+    C_Operation_dGEN = sum(
+        sum(dGEN[m].cOpFix * HuDGENm[u,m] * S * T for m=1:M)
+    for u=1:U)
+    C_Dispatch_dGEN = sum(
+        sum(dGEN[m].cOpVar * dgenS[u,m,s,t] / dGEN[m].EFFel for m=1:M)
+    for u=1:U, s=1:S, t=1:T)
+end
+
+if L > 0
+    C_Investment_ST = sum(
+        sum(ST[l].cCap * HuSTl[u,l] for l=1:L)
+    for u=1:U)
+end
+
+if N > 0
+    C_investment_dST = sum(
+        sum(dST[n].cCap * HuDSTn[u,n] for n=1:N)
+    for u=1:U)
+end
+
+C_Investment = C_Investment_GEN + C_Investment_dGEN + C_Investment_ST + C_investment_dST
+
+C_Operation = C_Operation_GEN + C_Operation_dGEN
+
+C_Dispatch = sum(
+    GR.gridC[s,t] * fromGR[u,s,t] - GR.feedC[s,t] * toGR[u,s,t] + H[u].curtP * ncS[u,s,t] + H[u].shiftP * toSC[u,s,t]
+    for u=1:U, s=1:S, t=1:T) + C_Dispatch_GEN + C_Dispatch_dGEN
 
 @objective(m, Min, C_Investment + C_Operation + C_Dispatch)
 
