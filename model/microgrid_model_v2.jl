@@ -182,7 +182,7 @@ end
 
 
 @constraint(m, powerBalanceConstr[u=1:U, s=1:S, t=1:T], H[u].DEM[s,t,1] + H[u].DEM[s,t,2] + H[u].DEM[s,t,3]
-== fromGR[u,s,t] - toGR[u,s,t] + fromTR[u,s,t] - toTR[u,s,t] + fromSC[u,s,t] - toSC[u,s,t]
+== fromGR[u,s,t] - toGR[u,s,t] + fromTR[u,s,t] - toTR[u,s,t] - fromSC[u,s,t] + toSC[u,s,t]
 + conditionalSum(K, genS, u, s, t) 
 # + conditionalSum(M, dgenS, u, s, t) 
 # + conditionalSum(L, fromST, u, s, t) - conditionalSum(L, toST, u, s, t) 
@@ -203,10 +203,10 @@ C_Dispatch_dGEN = 0.0
 
 if K > 0
     C_Investment_GEN = sum(
-        sum(GEN[k].cCap * HuGENk[u,k] for k=1:K)
+        sum(adjust_capex(GEN[k].cCap, 25, T*S) * HuGENk[u,k] for k=1:K)
     for u=1:U)
     C_Operation_GEN  = sum(
-        sum(GEN[k].cOpFix * HuGENk[u,k] * S * T for k=1:K)
+        sum(adjust_opex(GEN[k].cOpFix, S*T) * HuGENk[u,k] * S * T for k=1:K)
     for u=1:U)
     C_Dispatch_GEN = sum(
         sum(GEN[k].cOpVar * genS[u,k,s,t] / GEN[k].EFFel for k=1:K)
@@ -215,10 +215,10 @@ end
 
 if M > 0
     C_Investment_dGEN = sum(
-        um(dGEN[m].cCap * HuDGENm[u,m] for m=1:M)
+        um(adjust_capex(dGEN[m].cCap,15,T*S) * HuDGENm[u,m] for m=1:M)
     for u=1:U)
     C_Operation_dGEN = sum(
-        sum(dGEN[m].cOpFix * HuDGENm[u,m] * S * T for m=1:M)
+        sum(adjust_opex(dGEN[m].cOpFix, S*T) * HuDGENm[u,m] * S * T for m=1:M)
     for u=1:U)
     C_Dispatch_dGEN = sum(
         sum(dGEN[m].cOpVar * dgenS[u,m,s,t] / dGEN[m].EFFel for m=1:M)
@@ -227,13 +227,13 @@ end
 
 if L > 0
     C_Investment_ST = sum(
-        sum(ST[l].cCap * HuSTl[u,l] for l=1:L)
+        sum(adjust_capex(ST[l].cCap,10,S*T) * HuSTl[u,l] for l=1:L)
     for u=1:U)
 end
 
 if N > 0
     C_investment_dST = sum(
-        sum(dST[n].cCap * HuDSTn[u,n] for n=1:N)
+        sum(adjust_capex(dST[n].cCap,10,S*T) * HuDSTn[u,n] for n=1:N)
     for u=1:U)
 end
 
@@ -290,7 +290,7 @@ println("Trade To: ")
 println(getvalue(toTR))
 println("----------------------")
 
-# println("Battery Levels:")
+println("Battery Levels:")
 # println(map((i -> (sum(getvalue(s_t_li[i,t]) for t=1:T) - (1/efficiency_li_ion) * sum(getvalue(s_f_li[i,t]) for t=1:T))), [1:N]))
 # println("----------------------")
 

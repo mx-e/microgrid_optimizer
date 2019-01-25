@@ -6,6 +6,7 @@
     #IN: full capex in €, full_lieftime in years, actual_time in hours
     #OUT: adjusted capex
     adjust_capex(full_capex, full_lifetime, actual_time) = full_capex / (full_lifetime*8760/actual_time)
+    adjust_opex(full_opex, actual_time) = full_opex / (8760/actual_time)
 
     function map(func, list)
         retval = []
