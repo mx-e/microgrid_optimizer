@@ -32,7 +32,9 @@ N = iterators["N"]
 #-----HOUSEHOLDS---------------
 H = []
 for i in input_data["households"]
-    push!(H, constructHousehold(i, S, T))
+    for j in [1:i["opts"]["instances"]]
+        push!(H, constructHousehold(i, S, T))
+    end
 end
 
 #-----INVESTMENT OPTIONS-------
