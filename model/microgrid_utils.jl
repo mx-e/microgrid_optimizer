@@ -96,6 +96,16 @@ function constructDiscreteGenerationDevice(device::Dict{String,Any}, S::Int64, T
     else
         maxFL = fill(device["maxFl"],(S, T))
     end
+
+    if opts["extendTimelines"] == true
+        maxFl = createExtendedTimeline(maxFl,S,T)
+    end
+
+    if opts["applyNoise"] == true
+        variance = opts["variance"]
+        maxFl = applyNoise(maxFL,variance)
+    end
+
     CAP = device["CAP"]
     cCap = device["cCap"]
     cOpFix = device["cOpFix"]
@@ -157,13 +167,14 @@ function constructHousehold(household::Dict{String,Any}, S::Int64, T::Int64)
     DEM = []
 
     if opts["extendTimelines"] == true
-        DEM = createExtendedTimeline(household)
+        DEM = createExtendedTimeline(household["DEM"],S,T)
     else
         DEM = household["DEM"]
     end
 
     if opts["applyNoise"] == true
-        DEM = applyNoise(DEM)
+        variance = opts["variance"]
+        DEM = applyNoise(DEM, variance)
     end
 
     if opts["areDemandSharesFixed"] == true
@@ -190,9 +201,24 @@ function constructHousehold(household::Dict{String,Any}, S::Int64, T::Int64)
 end
 
 function createExtendedTimeline(demand::Array, S::Int64, T::Int64)
-
+    for s in demand
+        current_length = length(s)
+        difference = T-current_length
+        if difference > 0
+            for i = (current_length+1):T
+                push!(s,s[(convert(Int64,i) % current_length) + 1])
+            end
+        end
+    end
+    return demand
 end
 
-function applyNoise(demand::Array, S::Int64, T::Int64)
-
+function applyNoise(demand::Array{Any,1}, variance::Float64)
+    distribution = Normal(1,variance)
+    for s in demand
+        for t in s
+            t = t * rand(distribution)
+        end
+    end
+    return demand
 end

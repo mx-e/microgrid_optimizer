@@ -1,6 +1,8 @@
 using JuMP
 using Cbc
 using JSON
+using Distributions
+
 include("microgrid_utils.jl")
 
 m = Model(solver = CbcSolver())
@@ -28,6 +30,9 @@ L = iterators["M"]
 M = iterators["L"]
 #number of discrete storage investment options
 N = iterators["N"]
+
+otherParameters  = input_data["otherParameters"]
+S_weights = otherParameters["S_weights"]
 
 #-----HOUSEHOLDS---------------
 H = []
@@ -211,7 +216,7 @@ if K > 0
         sum(adjust_opex(GEN[k].cOpFix, S*T) * HuGENk[u,k] * S * T for k=1:K)
     for u=1:U)
     C_Dispatch_GEN = sum(
-        sum(GEN[k].cOpVar * genS[u,k,s,t] / GEN[k].EFFel for k=1:K)
+        sum(GEN[k].cOpVar * genS[u,k,s,t] / GEN[k].EFFel for k=1:K) * S_weights[s]
     for u=1:U, s=1:S, t=1:T)
 end
 
@@ -223,7 +228,7 @@ if M > 0
         sum(adjust_opex(dGEN[m].cOpFix, S*T) * HuDGENm[u,m] * S * T for m=1:M)
     for u=1:U)
     C_Dispatch_dGEN = sum(
-        sum(dGEN[m].cOpVar * dgenS[u,m,s,t] / dGEN[m].EFFel for m=1:M)
+        sum(dGEN[m].cOpVar * dgenS[u,m,s,t] / dGEN[m].EFFel for m=1:M) * S_weights[s]
     for u=1:U, s=1:S, t=1:T)
 end
 
@@ -244,7 +249,7 @@ C_Investment = C_Investment_GEN + C_Investment_dGEN + C_Investment_ST + C_invest
 C_Operation = C_Operation_GEN + C_Operation_dGEN
 
 C_Dispatch = sum(
-    GR.gridC[s,t] * fromGR[u,s,t] - GR.feedC[s,t] * toGR[u,s,t] + H[u].curtP * ncS[u,s,t] + H[u].shiftP * toSC[u,s,t]
+    (GR.gridC[s,t] * fromGR[u,s,t] - GR.feedC[s,t] * toGR[u,s,t] + H[u].curtP * ncS[u,s,t] + H[u].shiftP * toSC[u,s,t]) * S_weights[s]
     for u=1:U, s=1:S, t=1:T) + C_Dispatch_GEN + C_Dispatch_dGEN
 
 @objective(m, Min, C_Investment + C_Operation + C_Dispatch)
