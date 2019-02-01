@@ -12,6 +12,14 @@ function map(func, list)
     return retval
 end
 
+function array_of_arrays_to_matrix(arr, T, N)
+    retval = []
+    for i in arr
+        push!(retval, i...)
+    end
+    return reshape(retval, T, N)
+end
+
 abstract type Device end
 abstract type GenerationDevice <: Device end
 abstract type StorageDevice <: Device end
@@ -73,12 +81,21 @@ end
 
 function constructLinearGenerationDevice(device::Dict{String,Any}, S::Int64, T::Int64)
     opts = device["opts"]
-    maxFl = []
+    maxFl = device["maxFl"]
     if opts["isMaxFlConstant"] == false
-        maxFl = array_of_arrays_to_matrix(device["maxFl"], S, T)
+        if opts["adaptTimelines"] == true
+            maxFl = createAdaptedTimeline(maxFl,S,T)
+        end
     else
-        maxFl = fill(device["maxFl"],(S, T))
+        maxFl = fill(maxFl,(S*T))
     end
+    if opts["applyNoise"] == true
+        variance = opts["variance"]
+        maxFl = applyNoise(maxFl,variance)
+    end
+
+    maxFl = array_of_arrays_to_matrix(maxFl,S,T)
+    
     cCap = device["cCap"]
     cOpFix = device["cOpFix"]
     cOpVar = device["cOpVar"]
@@ -91,20 +108,20 @@ end
 
 function constructDiscreteGenerationDevice(device::Dict{String,Any}, S::Int64, T::Int64)
     opts = device["opts"]
+    maxFl = device["maxFl"]
     if opts["isMaxFlConstant"] == false
-        maxFl = array_of_arrays_to_matrix(device["maxFl"], S, T)
+        if opts["extendTimelines"] == true
+            maxFl = createExtendedTimeline(maxFl,S,T)
+        end
     else
-        maxFL = fill(device["maxFl"],(S, T))
+        maxFL = fill(maxFl,(S*T))
     end
-
-    if opts["extendTimelines"] == true
-        maxFl = createExtendedTimeline(maxFl,S,T)
-    end
-
     if opts["applyNoise"] == true
         variance = opts["variance"]
-        maxFl = applyNoise(maxFL,variance)
+        maxFl = applyNoise(maxFl,variance)
     end
+
+    maxFl = array_of_arrays_to_matrix(maxFl,S,T)
 
     CAP = device["CAP"]
     cCap = device["cCap"]
@@ -166,8 +183,8 @@ function constructHousehold(household::Dict{String,Any}, S::Int64, T::Int64)
     opts = household["opts"]
     DEM = []
 
-    if opts["extendTimelines"] == true
-        DEM = createExtendedTimeline(household["DEM"],S,T)
+    if opts["adaptTimelines"] == true
+        DEM = createAdaptedTimeline(household["DEM"],S,T)
     else
         DEM = household["DEM"]
     end
@@ -178,21 +195,25 @@ function constructHousehold(household::Dict{String,Any}, S::Int64, T::Int64)
     end
 
     if opts["areDemandSharesFixed"] == true
+        newDEM = []
         curtailableShare = opts["curtailableShare"]
         shiftableShare = opts["shiftableShare"]
-        for i in household["DEM"]
+        for i in DEM
             for y in i
-                push!(DEM, y * (1.0-curtailableShare-shiftableShare))
-                push!(DEM, y * shiftableShare)
-                push!(DEM, y * curtailableShare)
+                push!(newDEM, y * (1.0-curtailableShare-shiftableShare))
+                push!(newDEM, y * shiftableShare)
+                push!(newDEM, y * curtailableShare)
             end
         end
+        DEM = newDEM
     else
+        newDEM = []
         for i in household["DEM"]
             for y in i
-                push!(DEM, y...)
+                push!(newDEM, y...)
             end
         end
+        DEM = newDEM
     end
     DEM = reshape(DEM, (S, T, 3))
     shiftP = household["shiftP"]
@@ -200,17 +221,17 @@ function constructHousehold(household::Dict{String,Any}, S::Int64, T::Int64)
     return Household(shiftP, curtP, DEM)
 end
 
-function createExtendedTimeline(demand::Array, S::Int64, T::Int64)
+function createAdaptedTimeline(demand::Array, S::Int64, T::Int64)
+    new_demand = []
     for s in demand
+        new_s = []
         current_length = length(s)
-        difference = T-current_length
-        if difference > 0
-            for i = (current_length+1):T
-                push!(s,s[(convert(Int64,i) % current_length) + 1])
-            end
+        for i = 1:T
+            push!(new_s,s[(i % current_length) + 1])
         end
+        push!(new_demand,new_s)
     end
-    return demand
+    return new_demand
 end
 
 function applyNoise(demand::Array{Any,1}, variance::Float64)

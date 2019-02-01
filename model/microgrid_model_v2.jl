@@ -1,11 +1,11 @@
 using JuMP
-using Cbc
+using Gurobi
 using JSON
 using Distributions
 
 include("microgrid_utils.jl")
 
-m = Model(solver = CbcSolver())
+m = Model(solver = GurobiSolver())
 f = open("input.json")
 
 input_data = JSON.parse(f)
@@ -32,13 +32,17 @@ M = iterators["L"]
 N = iterators["N"]
 
 otherParameters  = input_data["otherParameters"]
+
 S_weights = otherParameters["S_weights"]
+tradeC = otherParameters["tradeC"]
 
 #-----HOUSEHOLDS---------------
 H = []
 for i in input_data["households"]
-    for j in [1:i["opts"]["instances"]]
+    j = 0
+    while j < (i["opts"]["instances"])
         push!(H, constructHousehold(i, S, T))
+        j+=1
     end
 end
 
@@ -109,7 +113,7 @@ if K > 0
     @variable(m, HuGENk[1:U,1:K] >= 0)
 end
 if M > 0
-    @variable(m, HuDGENm[1:U,1:M] >= 0)
+    @variable(m, HuDGENm[1:U,1:M] >= 0, Int)
 end
 
 #Storage
@@ -117,7 +121,7 @@ if L > 0
     @variable(m, HuSTl[1:U, 1:L] >= 0)
 end
 if N > 0
-    @variable(m, HuDSTn[1:U, 1:N] >= 0)
+    @variable(m, HuDSTn[1:U, 1:N] >= 0, Int)
 end
 
 #-------------------------------
@@ -249,7 +253,8 @@ C_Investment = C_Investment_GEN + C_Investment_dGEN + C_Investment_ST + C_invest
 C_Operation = C_Operation_GEN + C_Operation_dGEN
 
 C_Dispatch = sum(
-    (GR.gridC[s,t] * fromGR[u,s,t] - GR.feedC[s,t] * toGR[u,s,t] + H[u].curtP * ncS[u,s,t] + H[u].shiftP * toSC[u,s,t]) * S_weights[s]
+    (GR.gridC[s,t] * fromGR[u,s,t] - GR.feedC[s,t] * toGR[u,s,t] 
+    + H[u].curtP * ncS[u,s,t] + H[u].shiftP * toSC[u,s,t] + toTR[u,s,t] * tradeC) * S_weights[s]
     for u=1:U, s=1:S, t=1:T) + C_Dispatch_GEN + C_Dispatch_dGEN
 
 @objective(m, Min, C_Investment + C_Operation + C_Dispatch)
@@ -257,7 +262,7 @@ C_Dispatch = sum(
 #-------------------------------
 #------------SOLUTION-----------
 #-------------------------------
-
+println("Starting to solve...")
 status = solve(m)
 println("")
 println("----------------------")
