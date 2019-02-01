@@ -120,7 +120,7 @@ class Results extends React.Component{
             </svg>
           </div>
         </div>
-        <p>Copyright © 2018 Maximilian Eißler</p>
+        <p>Copyright © 2019 Maximilian Eißler</p>
       </div>
     )
   }

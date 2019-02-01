@@ -243,3 +243,29 @@ function applyNoise(demand::Array{Any,1}, variance::Float64)
     end
     return demand
 end
+
+function export_results()
+    output_data = Dict(
+        "objective" => getobjectivevalue(m),
+        "toTR" => getvalue(toTR),
+        "fromTR" => getvalue(fromTR),
+        "genS" => getvalue(genS),
+        "fromDST" => getvalue(fromDST),
+        "toDST" => getvalue(toDST),
+        "ncS" => getvalue(ncS),
+        "toSC" => getvalue(toSC),
+        "fromSC" => getvalue(fromSC),
+        "toGR" => getvalue(toGR),
+        "fromGR" => getvalue(fromGR),
+        "HuGENk" => getvalue(HuGENk),
+        "HuDSTn" => getvalue(HuDSTn),
+        "parameters" => input_data
+    )
+
+    json_string = JSON.json(output_data)
+
+    open("./output.json", "w") do f
+        write(f, json_string)
+    end
+
+end
