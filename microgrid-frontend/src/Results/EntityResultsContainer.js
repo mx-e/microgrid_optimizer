@@ -5,7 +5,7 @@ import RelativeBarChart from './RelativeBarChart'
 const EntityResultsContainer = (props) => {
     return(
         <div className="entityWrapper">
-            <h5>{props.entityName}</h5>
+            <h3>{props.entityName}</h3>
             <div className="supplyGraphWrapper">
                 <RelativeBarChart {...props.barChartProps} />
             </div>

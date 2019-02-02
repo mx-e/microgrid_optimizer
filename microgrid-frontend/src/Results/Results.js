@@ -73,14 +73,14 @@ class Results extends React.Component{
     })
 
     let layout = this.props.result.H.map((household,i) => (
-      {i: String(i+2), x: 0, y: i+2, w: 1, h:4, minH: 4, static: true}
+      {i: String(i+2), x: 0, y: i+2, w: 4, h:1, minH: 1, static: true}
     ))
-    layout.push({i: String(0), x: 0, y: 0, w: 1, h:4, minH: 4, static: true})
-    layout.push({i: String(1), x: 0, y: 1, w: 1, h:4, minH: 4, static: true})
+    layout.push({i: String(0), x: 0, y: 0, w: 4, h:1, minH: 1, static: true})
+    layout.push({i: String(1), x: 0, y: 1, w: 4, h:1, minH: 1, static: true})
 
 
     const gridOfHouseholds = (
-      <GridLayout className="layout" layout={layout} cols={12} rowHeight={170} width={1200}>
+      <GridLayout className="layout" layout={layout} cols={4} rowHeight={720} width={window.innerWidth * 0.8}>
         <div key={String(0)}>
           <EntityResultsContainer {...createPropsForGenInvestment()}/>
         </div>
@@ -98,15 +98,17 @@ class Results extends React.Component{
     )
 
     return (
-      <div className="Results">
+      <div className="results">
         <div className="banner">
-          <div className="Header">
+          <div className="header">
             <h2>Results</h2>
-            <button style={{position: 'relative'}} onClick={this.handleCalculate}>Calculate</button>
+            <button className="requestButton" onClick={this.handleCalculate}>CALCULATE</button>
           </div>
           </div>
           {generalResults}
+          <div className="gridWrapper">
           {gridOfHouseholds}
+          </div>
         <p>Copyright © 2019 Maximilian Eißler</p>
       </div>
 

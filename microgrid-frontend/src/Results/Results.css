@@ -1,7 +1,7 @@
 @import "~@blueprintjs/core/lib/css/blueprint.css";
 @import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
 
-.Header {
+.header {
     position: relative;
     background: darkgrey;
     height: 100px;
@@ -12,63 +12,9 @@
     align-items: center;
 }
 
-.resultsCharts{
-    grid-column: 2 / 3;
-    display: flex;
-    flex-direction: column;
-}
-
-.Results p {
-    text-align: center;
-}
-
-#supplyGraphContainer, #investmentArcContainer {
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.resultsGrid {
-    display: grid;
-    grid-template-columns: auto 80vw auto;
-    width: 100vw;
-}
-.cycleForward {
-    grid-column: 3 / 4 ;
-}
-
-.cycleBack {
-    grid-column: 1 / 2;
-}
-
-.cycleBack, .cycleForward{
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.idContainer{
-    grid-column: 2 / 3;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    margin-top: 40px;
-}
-
-.idCircle{
-    display: inline-block;
-    border-radius: 100%;
-    background: black;
-    color: white;
-    width: 35px;
-    height: 35px;
-    text-align: center;
+.gridWrapper{
+    width:86vw;
+    margin-left: 7vw;
 }
 
 .generalResults{
@@ -87,11 +33,6 @@
     left: 10px;
     font-size: medium;
     font-weight: bold;
-}
-
-.id{
-    padding-top: 5px;
-    font-size: 20px;
 }
 
 .generalResultsContainer{
@@ -132,4 +73,17 @@
 .idHeader{
     font-size: medium;
     font-weight: bold;
+}
+
+.requestButton{
+    position: absolute;
+    top: 37px;
+    right: 40px;
+    border-radius: 0px;
+    height: 30px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    font-size: 14px;
+
 }
