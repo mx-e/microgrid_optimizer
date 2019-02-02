@@ -244,7 +244,6 @@ const createSupplyTracesByHousehold = (result, householdID) => {
 }
 
 const getTraceByHousehold = (rawData, householdId) => {
-  
   return rawData[0].map((season,i) => {
     return rawData.map(timeslice => {
       return timeslice[i][householdId]
@@ -264,8 +263,8 @@ const getDeviceTracesByHousehold = (rawData, householdID) => {
 const getDemandTraceByHousehold = (rawData,householdID) => {
   return rawData[householdID].DEM.map((season) => 
     (season.map((timeslice) => (
-      timeslice.reduce((acc,val) => acc+val)
-  )
+      timeslice.reduce((acc,val) => (acc+val))
+    )
   ))).flat()
 }
 

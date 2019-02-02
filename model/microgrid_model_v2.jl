@@ -34,6 +34,9 @@ N = iterators["N"]
 otherParameters  = input_data["otherParameters"]
 
 S_weights = otherParameters["S_weights"]
+S_weights = normalize_weights(S_weights)
+print(S_weights)
+
 tradeC = otherParameters["tradeC"]
 
 #-----HOUSEHOLDS---------------
@@ -132,7 +135,7 @@ end
 #linear
 if K > 0
     @constraint(m, genConstr[u=1:U, k=1:K, s=1:S, t=1:T], genS[u,k,s,t] 
-    <= min((GEN[k].EFFel * GEN[k].maxFl[s,t]), 1.0) * HuGENk[u,k] * GEN[k].PR)
+    <= min((GEN[k].EFFel * GEN[k].maxFl[t,s]), 1.0) * HuGENk[u,k] * GEN[k].PR)
 end
 #discrete 
 if M > 0
@@ -192,7 +195,7 @@ function conditionalSum(X, var, u, s, t)
 end
 
 
-@constraint(m, powerBalanceConstr[u=1:U, s=1:S, t=1:T], H[u].DEM[s,t,1] + H[u].DEM[s,t,2] + H[u].DEM[s,t,3]
+@constraint(m, powerBalanceConstr[u=1:U, s=1:S, t=1:T], H[u].DEM[1,t,s] + H[u].DEM[2,t,s] + H[u].DEM[3,t,s]
 == fromGR[u,s,t] - toGR[u,s,t] + fromTR[u,s,t] - toTR[u,s,t] - fromSC[u,s,t] + toSC[u,s,t]
 + conditionalSum(K, genS, u, s, t) 
 # + conditionalSum(M, dgenS, u, s, t) 
@@ -214,37 +217,37 @@ C_Dispatch_dGEN = 0.0
 
 if K > 0
     C_Investment_GEN = sum(
-        sum(adjust_capex(GEN[k].cCap, 25, T*S) * HuGENk[u,k] for k=1:K)
+        sum(adjust_capex(GEN[k].cCap, GEN[k].tLife, S*T) * HuGENk[u,k] for k=1:K)
     for u=1:U)
     C_Operation_GEN  = sum(
-        sum(adjust_opex(GEN[k].cOpFix, S*T) * HuGENk[u,k] * S * T for k=1:K)
+        sum(adjust_opex(GEN[k].cOpFix, S*T) * HuGENk[u,k] for k=1:K)
     for u=1:U)
     C_Dispatch_GEN = sum(
-        sum(GEN[k].cOpVar * genS[u,k,s,t] / GEN[k].EFFel for k=1:K) * S_weights[s]
+        sum((GEN[k].cOpVar/ GEN[k].EFFel) * genS[u,k,s,t]  for k=1:K) * S_weights[s]
     for u=1:U, s=1:S, t=1:T)
 end
 
 if M > 0
     C_Investment_dGEN = sum(
-        um(adjust_capex(dGEN[m].cCap,15,T*S) * HuDGENm[u,m] for m=1:M)
+        um(adjust_capex(dGEN[m].cCap, dGEN[m].tLife, T*S) * HuDGENm[u,m] for m=1:M)
     for u=1:U)
     C_Operation_dGEN = sum(
-        sum(adjust_opex(dGEN[m].cOpFix, S*T) * HuDGENm[u,m] * S * T for m=1:M)
+        sum(adjust_opex(dGEN[m].cOpFix, S*T) * HuDGENm[u,m] for m=1:M)
     for u=1:U)
     C_Dispatch_dGEN = sum(
-        sum(dGEN[m].cOpVar * dgenS[u,m,s,t] / dGEN[m].EFFel for m=1:M) * S_weights[s]
+        sum((dGEN[m].cOpVar/dGEN[m].EFFel) * dgenS[u,m,s,t] for m=1:M) * S_weights[s]
     for u=1:U, s=1:S, t=1:T)
 end
 
 if L > 0
     C_Investment_ST = sum(
-        sum(adjust_capex(ST[l].cCap,10,S*T) * HuSTl[u,l] for l=1:L)
+        sum(adjust_capex(ST[l].cCap, ST[l].tLife, S*T) * HuSTl[u,l] for l=1:L)
     for u=1:U)
 end
 
 if N > 0
     C_investment_dST = sum(
-        sum(adjust_capex(dST[n].cCap,10,S*T) * HuDSTn[u,n] for n=1:N)
+        sum(adjust_capex(dST[n].cCap, dST[n].tLife, S*T) * HuDSTn[u,n] for n=1:N)
     for u=1:U)
 end
 

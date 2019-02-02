@@ -1,8 +1,13 @@
 
 #IN: full capex in €, full_lieftime in years, actual_time in hours
 #OUT: adjusted capex
-adjust_capex(full_capex, full_lifetime, actual_time) = full_capex / (full_lifetime*8760/actual_time)
-adjust_opex(full_opex, actual_time) = full_opex / (8760/actual_time)
+function adjust_capex(full_capex, full_lifetime, actual_time)
+    return full_capex * actual_time / (full_lifetime * 8760.)
+end
+
+function adjust_opex(full_opex, actual_time)
+    return full_opex * (actual_time / 8760)
+end
 
 function map(func, list)
     retval = []
@@ -82,6 +87,7 @@ end
 function constructLinearGenerationDevice(device::Dict{String,Any}, S::Int64, T::Int64)
     opts = device["opts"]
     maxFl = device["maxFl"]
+
     if opts["isMaxFlConstant"] == false
         if opts["adaptTimelines"] == true
             maxFl = createAdaptedTimeline(maxFl,S,T)
@@ -94,8 +100,15 @@ function constructLinearGenerationDevice(device::Dict{String,Any}, S::Int64, T::
         maxFl = applyNoise(maxFl,variance)
     end
 
-    maxFl = array_of_arrays_to_matrix(maxFl,S,T)
-    
+    newFl = []
+    for i in maxFl
+        for y in i
+            push!(newFl, y...)
+        end
+    end
+    maxFl = reshape(newFl, (T, S))
+
+
     cCap = device["cCap"]
     cOpFix = device["cOpFix"]
     cOpVar = device["cOpVar"]
@@ -121,7 +134,14 @@ function constructDiscreteGenerationDevice(device::Dict{String,Any}, S::Int64, T
         maxFl = applyNoise(maxFl,variance)
     end
 
-    maxFl = array_of_arrays_to_matrix(maxFl,S,T)
+    newFl = []
+    for i in maxFl
+        for y in i
+            push!(newFl, y...)
+        end
+    end
+    maxFl = reshape(newFl, (T, S))
+
 
     CAP = device["CAP"]
     cCap = device["cCap"]
@@ -234,14 +254,31 @@ function createAdaptedTimeline(demand::Array, S::Int64, T::Int64)
     return new_demand
 end
 
-function applyNoise(demand::Array{Any,1}, variance::Float64)
+function applyNoise(arr::Array{Any,1}, variance::Float64)
     distribution = Normal(1,variance)
-    for s in demand
+    new_arr = []
+    for s in arr
+        new_s = []
         for t in s
-            t = t * rand(distribution)
+            push!(new_s, max(t*rand(distribution), 0.0))
         end
+        push!(new_arr,new_s)
     end
-    return demand
+    return new_arr
+end
+
+function normalize_weights(arr::Array{Any,1})
+    total_weight = 0
+    len = length(arr)
+    for i in arr
+        total_weight += i
+    end
+    new_arr = []
+    for i in arr
+        push!(new_arr, i/total_weight*len)
+    end
+
+    return new_arr
 end
 
 function export_results(input_data)
@@ -260,7 +297,8 @@ function export_results(input_data)
         "HuGENk" => getvalue(HuGENk),
         "HuDSTn" => getvalue(HuDSTn),
         "parameters" => input_data,
-        "H" => H
+        "H" => H,
+        "GEN" => GEN
     )
 
     json_string = JSON.json(output_data)

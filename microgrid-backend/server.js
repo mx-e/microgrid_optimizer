@@ -24,8 +24,6 @@ app.listen(port, () => {
 })
 
 app.post('/modelrequest', (req, res) => {
-  console.log(req.body)
-  
   const dir = __dirname
 
   console.log('Starting Shell Script...')

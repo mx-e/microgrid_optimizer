@@ -25,8 +25,8 @@ const RelativeBarChart = (props) => {
                 autosize: false, 
                 width: window.innerWidth*0.9,
                 height: 600,
-                xaxis: {title: props.xAxisTitle},
-                yaxis: {title: props.yAxisTitle},
+                xaxis: {title: props.xAxisTitle, hoverformat: '.4f'},
+                yaxis: {title: props.yAxisTitle, hoverformat: '.4f'},
                 barmode: 'relative'
             }
             }

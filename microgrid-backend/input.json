@@ -1,6 +1,6 @@
 {
     "iterators": {
-        "T": 144,
+        "T": 168,
         "S": 3,
         "U": 13,
         "K": 2,
@@ -17,7 +17,7 @@
                 "shiftableShare": 0.20,
                 "adaptTimelines": true,
                 "applyNoise": true,
-                "variance": 0.1
+                "variance": 0.25
             },
             "shiftP": 0.15,
             "curtP": 0.35,
@@ -35,7 +35,7 @@
                 "shiftableShare": 0.20,
                 "adaptTimelines": true,
                 "applyNoise": true,
-                "variance": 0.1
+                "variance": 0.15
             },
             "shiftP": 0.15,
             "curtP": 0.35,
@@ -73,7 +73,7 @@
                 "applyNoise": true,
                 "variance": 0.25
             },
-            "cCap": 1300,
+            "cCap": 1200,
             "cOpFix": 50,
             "cOpVar": 0.0,
             "tLife": 25,
@@ -130,11 +130,11 @@
         },
         "maxS": 500.0,
         "maxD": 20.0,
-        "gridC": 22.0,
-        "feedC": 0.09
+        "gridC": 0.30,
+        "feedC": 0.08
     },
     "otherParameters": {
-        "S_weights": [1,1,1],
+        "S_weights": [169,81,115],
         "tradeC":0.001
     }
     
