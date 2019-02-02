@@ -244,7 +244,7 @@ function applyNoise(demand::Array{Any,1}, variance::Float64)
     return demand
 end
 
-function export_results()
+function export_results(input_data)
     output_data = Dict(
         "objective" => getobjectivevalue(m),
         "toTR" => getvalue(toTR),
@@ -259,7 +259,8 @@ function export_results()
         "fromGR" => getvalue(fromGR),
         "HuGENk" => getvalue(HuGENk),
         "HuDSTn" => getvalue(HuDSTn),
-        "parameters" => input_data
+        "parameters" => input_data,
+        "H" => H
     )
 
     json_string = JSON.json(output_data)

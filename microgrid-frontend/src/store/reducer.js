@@ -1,7 +1,8 @@
 import {TYPE} from './action'
+import {data} from '../Results/prelResults'
 
 const initialState = {
-  result: null,
+  result: data,
   requestPending: false,
 
   id_counter: 1,

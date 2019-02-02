@@ -66,6 +66,7 @@
     ],
     "generationLinear": [
         {
+            "name": "Solar-PV",
             "opts":{
                 "isMaxFlConstant": false,
                 "adaptTimelines": true,
@@ -85,6 +86,7 @@
             ]
         },
         {
+            "name": "Micro Fuel Cell",
             "opts":{
                 "isMaxFlConstant": true,
                 "applyNoise": false
@@ -102,6 +104,7 @@
     "storageLinear":[],
     "storageDiscrete":[
         {
+            "name": "Tesla Powerwall",
             "CAP": 13.5,
             "cCap": 10000,
             "tLife": 10,
@@ -110,6 +113,7 @@
             "maxP-": 4.6
         },
         {
+            "name": "Victron Li-Ion Battery",
             "CAP": 4,
             "cCap": 5000,
             "tLife": 10,
