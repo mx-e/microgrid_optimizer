@@ -76,7 +76,8 @@
     background-color: lightgray;
     width: 80vw;
     margin-left: 10vw;
-    height: 80px;
+    padding-bottom: 20px;
+    padding-top: 30px;
     position: relative;
 }
 
@@ -95,6 +96,7 @@
 
 .generalResultsContainer{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: left;
@@ -103,7 +105,7 @@
 .generalInformationPiece{
     display: inline-flex;
     margin-left: 20px;
-    margin-top: 35px;
+    margin-top: 10px;
 }
 
 .generalInformationKey{

@@ -8,24 +8,25 @@ const RelativeBarChart = (props) => {
         name: props.names[i],
         type: 'bar'
     }))
-    traces.push({
-        x: [...Array(props.demandTrace.length).keys()],
-        y: props.demandTrace,
-        name: "DEMAND",
-        type: 'scatter'
-    })
+    if(props.demandTrace){
+        traces.push({
+            x: [...Array(props.demandTrace.length).keys()],
+            y: props.demandTrace,
+            name: "DEMAND",
+            type: 'scatter'
+        })
+    }
 
-    console.log(traces)
     return(
         <Plot
         data={traces}
         layout={
             {
                 autosize: false, 
-                width: window.innerWidth*0.8,
+                width: window.innerWidth*0.9,
                 height: 600,
-                xaxis: {title: 'Timeslices'},
-                yaxis: {title: 'Supply by Source in KWh'},
+                xaxis: {title: props.xAxisTitle},
+                yaxis: {title: props.yAxisTitle},
                 barmode: 'relative'
             }
             }

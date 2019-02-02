@@ -6,9 +6,12 @@ import GridLayout from 'react-grid-layout';
 import EntityResultsContainer from './EntityResultsContainer'
 
 import './Results.css'
+import {sendRequest} from "../store/action";
 
 class Results extends React.Component{
-
+  handleCalculate = () => {
+    this.props.requestModel()
+  }
 
   render(){
     const generalInformationPiece = (key, value) => (
@@ -18,10 +21,18 @@ class Results extends React.Component{
       </div>
     )
 
+    const {T, S, U, K, L, M, N} = this.props.result.parameters.iterators
+
     const generalInformation = this.props.result
-      ? [{key:'No. of Households', value: this.props.result.N},
-        {key: 'Timesteps', value: this.props.result.T},
-        {key: 'Objective Value', value: this.props.result.Objective}]
+      ? [
+        {key:'No. of Households', value: U},
+        {key: 'Timesteps', value: S + " x " + T},
+        {key: 'Gen Options', value: K+M},
+        {key: 'Storage Options', value: L+N},
+        {key: 'Objective Value', value: this.props.result.objective},
+        {key: 'Autarky', value: computeAutarky(this.props.result) + ' %'},
+        {key: 'Self Consumption', value: computeSelfConsumption(this.props.result) + ' %'}
+        ]
       : []
 
     const generalResults = (
@@ -33,38 +44,65 @@ class Results extends React.Component{
       </div>
     )
 
-
     const createPropsForHousehold = (id) => ({
       entityName: "Household " + id,
       barChartProps: {
         ...createSupplyTracesByHousehold(this.props.result, id),
-      demandTrace: getDemandTraceByHousehold(this.props.result.H, id)
+        demandTrace: getDemandTraceByHousehold(this.props.result.H, id),
+        xAxisTitle: "Timeslices",
+        yAxisTitle: "Supply by Source in KWh"
       }
     })
 
-    const layout = this.props.result.H.map((household,i) => (
-      {i: String(i), x: 0, y: i, w: 1, h:4, minH: 4, static: true}
+    const createPropsForGenInvestment = () => ({
+      entityName: "Generation Investment",
+      barChartProps: {
+        ...createGenInvestmentTraces(this.props.result),
+        xAxisTitle: "Household ID",
+        yAxisTitle: "Employed Capacity by Investment Option in KW"
+      }
+    })
+
+    const createPropsForStInvestment = () => ({
+      entityName: "Storage Investment",
+      barChartProps: {
+        ...createStInvestmentTraces(this.props.result),
+        xAxisTitle: "Household ID",
+        yAxisTitle: "Employed Capacity by Investment Option in KW"
+      }
+    })
+
+    let layout = this.props.result.H.map((household,i) => (
+      {i: String(i+2), x: 0, y: i+2, w: 1, h:4, minH: 4, static: true}
     ))
+    layout.push({i: String(0), x: 0, y: 0, w: 1, h:4, minH: 4, static: true})
+    layout.push({i: String(1), x: 0, y: 1, w: 1, h:4, minH: 4, static: true})
+
 
     const gridOfHouseholds = (
       <GridLayout className="layout" layout={layout} cols={12} rowHeight={170} width={1200}>
+        <div key={String(0)}>
+          <EntityResultsContainer {...createPropsForGenInvestment()}/>
+        </div>
+        <div key={String(1)}>
+          <EntityResultsContainer {...createPropsForStInvestment()}/>
+        </div>
         {this.props.result.H.map((household,i) => {
           return(
-            <div key={String(i)}>
+            <div key={String(i+2)}>
               <EntityResultsContainer {...createPropsForHousehold(i)}/>
             </div>
           )
         })}
       </GridLayout>
     )
-    
-
 
     return (
       <div className="Results">
         <div className="banner">
           <div className="Header">
             <h2>Results</h2>
+            <button style={{position: 'relative'}} onClick={this.handleCalculate}>Calculate</button>
           </div>
           </div>
           {generalResults}
@@ -82,6 +120,81 @@ const mapStateToProps = state => {
     requestPending: state.requestPending
   }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    requestModel: () => dispatch(sendRequest())
+  }
+}
+
+const computeAutarky = (result) => {
+  const totalPowerUsed = result.H.reduce((total, house, i) => (
+    total + (getDemandTraceByHousehold(result.H, i).reduce((acc, t) => acc+t))
+  ),0.0)
+  const totalPowerImported = result.H.reduce((total, house, i) => (
+    total + (getTraceByHousehold(result.fromGR, i).reduce((acc,t) => acc+t))
+  ),0.0)
+  return Math.round((1-(totalPowerImported + 0.001) / totalPowerUsed) * 100)
+}
+
+const computeSelfConsumption = (result) => {
+  const totalPowerExported = result.H.reduce((total, house, i) => (
+    total + (getTraceByHousehold(result.toGR, i).reduce((acc, t) => acc+t))
+  ),0.0)
+  const deviceTraces = [result.genS, result.dgenS]
+  const totalPowerProduced = result.H.reduce((total, house, i) => (
+    total +
+    deviceTraces.map(deviceTraces => getDeviceTracesByHousehold(deviceTraces, i)).flat(2)
+      .reduce((acc, t) => acc + t)
+  ),0.0)
+
+  return Math.round((1 - ((totalPowerExported + 0.001) / totalPowerProduced)) * 100)
+}
+
+const createGenInvestmentTraces = (result) => {
+  const { HuGENk, HuDGENm } = result
+  const { generationLinear, generationDiscrete } = result.parameters
+  const deviceLists = [generationLinear, generationDiscrete]
+  let traces = []
+  traces = traces.concat([HuGENk, HuDGENm].map((deviceList,i) =>(
+    createInvestmentTrace(deviceList, deviceLists[i])
+  )).flat())
+  let names = []
+  names = names.concat(deviceLists.map(deviceList =>(
+    getDeviceNames(deviceList)
+  )).flat())
+  return {
+    traces: traces,
+    names: names
+  }
+}
+
+const createStInvestmentTraces = (result) => {
+  const { HuSTk, HuDSTn } = result
+  const { storageLinear, storageDiscrete } = result.parameters
+  const deviceLists = [storageLinear, storageDiscrete]
+  let traces = []
+  traces = traces.concat([HuSTk, HuDSTn].map((deviceList,i) =>(
+    createInvestmentTrace(deviceList, deviceLists[i])
+  )).flat())
+  let names = []
+  names = names.concat(deviceLists.map(deviceList =>(
+    getDeviceNames(deviceList)
+  )).flat())
+  return {
+    traces: traces,
+    names: names
+  }
+}
+
+const createInvestmentTrace = (rawData, devices) => {
+  if(!rawData || !devices){return []}
+  return rawData.map( (device, i) => {
+    const multiplier = devices[i].CAP ? devices[i].CAP : 1.0
+    return multplTraceWithConst(device, multiplier)
+  })
+}
+
 const createSupplyTracesByHousehold = (result, householdID) => {
   let names = []
   let traces = []
@@ -158,11 +271,16 @@ const negateTrace = (trace) => {
   return trace.map(d => (-d))
 }
 
-const getDeviceNames = (deviceList, prefix) => {
+const multplTraceWithConst = (trace, constant) => (
+  trace.map(d => constant*d)
+)
+
+
+const getDeviceNames = (deviceList, prefix = '') => {
   return deviceList.map(device =>(
     (prefix + device.name)
   ))
 }
 
 
-export default connect(mapStateToProps)(Results)
+export default connect(mapStateToProps, mapDispatchToProps)(Results)
