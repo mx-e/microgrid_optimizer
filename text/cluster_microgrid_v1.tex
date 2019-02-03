@@ -908,11 +908,40 @@ The dispatch cost consist of the fuel costs (or variable operation costs $C_{OpV
 
 \newpage
 \section{Implementation}
+The performance of a modeling tool depends as much on its implementation, as on mathematical soundness. In this section the choices made implementing the model described in the previous section are outlined.\\
+The implementation of the modeling tool pursues multiple objectives:
+\begin{itemize}
+	\item Performance: The ability to solve the problem adequately fast.
+	\item Scalability: The ability for the system to potentially be used by many users concurrently, without encountering performance issues.
+	\item Flexibility: The ability to receive a wide range of differently formatted input data and still function adequately. Sparse, or otherwise lacking input data is preprocessed, and can be supplemented by default values.
+	\item User-Friendliness: The tool offers a user-friendly way of inputting data and of viewing computation results, possibly through a graphical interface.
+\end{itemize}
+\subsection{Architecture}
+To address these objectives the modeling tool was designed to work as a multi-layer architecture, with each layer performing a distinct part of the work flow. It is important to note however, that, while these layers can run on seperate machines to provide scalability, they do not have to. In the setup used for conducting the case study all layers were run on a single machine. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{pictures/ARCHITECTURE.png}
+	\caption{The proposed architecture for scaling the optimization tool}
+	\label{architecture}
+	\flushleft\quad\quad\footnotesize{Source: Own Illustration.}
+\end{figure}	
 
+The computation layer is where the actual model is built and solved. It ideally consist of several worker units, possibly virtualized or containerized, which run the model code and a load balancing server queueing and assigning tasks received from the middleware layer via messages and relaying the returned solutions. It is currently implemented only rudimentary as shell script, that relays input and output data and launches the model code. The model code is written in the Julia programming language, which was chosen for its high performance \todo{reference} and its focus on scientific computing. The model code also includes the data preprocessing code, which grants the user higher flexibility regarding the form and quality of her input data. It is integrated directly with the model itself, so the model can be used with different interfaces without the need to implement data preprocessing first (see 4.2). This does however impact performance, as preprocessing in the presentation layer would be distributed. \\
+The data layer should ideally consist of an SQL database which allows the implementation of features in the presentation layer, that require a persistent state, such as user authentication or saved requests and solutions. It is accessed via the middleware layer. For all but the largest scale implementations there is no need to physically separate it from the middleware layer. The data layer and corresponding functionality are currently not implemented.
+\\
+The middleware layer coordinates communication between the users and the layers below. It is currently implemented as a simple node.js server \todo{reference} exposing a REST API \todo{reference} to the presentation layer.
+\\
+The presentation layer handles all user input and presents the results of the calculations conducted by the computation layer. It also handles all data processing required for presenting the data tu the user.  It is currently implemented as a Web Application using the React.js framework \todo{reference} . 
 
-
-
-
+\subsection{Workflow}
+When the user enters data in the presentation layer, basic type checks are conducted. The input is then encoded as a JSON string \todo{reference}, which is sent as the payload of an HTML GET-Request \todo{reference} to the middleware layer. The middleware layer transfers the JSON string into the environment the model code is run in and launches the model code. The model preprocesses the received input. The preprocessing is configured with option parameters which are included in the input. Currently the model supports a number of preprocessing options:
+\begin{itemize}
+	\item Filling vector parameters, such as electricity prices or shiftable demand with a constant. 
+	\item Adjusting the length of a number of vector parameters by cutting, if too long and looping, if too short.
+	\item Adding noise to a number of vector parameters, by multiplying each value with a random number out of a normal distribution with a mean of 1.0. A variance can additionally be supplied.
+	\item Normalizing the weights given to the discontinuous periods $s_i$.
+\end{itemize} 
+The model is then constructed and solved. For construction the Julia library "JuMP" is used, for solving the Gurobi commercial solver. \todo{reference both} The model results are saved and transferred to the presentation layer via the middleware layer in a response to the GET-Request sent earlier. In the presentation layer the results are interactively visualized using the plotly visualization library. \todo{reference} Currently a dispatch chart for each modeled household as well as two charts showing the generation and storage investment of each household are generated. In addition Key Performance Indicators (KPIs) such as the the levels of autarky and self-consumption or the average cost per KWh consumed are calculated to make different result easier to compare.
 
 \newpage
 \section{Case Study}
@@ -1016,7 +1045,7 @@ As the case study distinguishes between three types of buildings, three demand p
 \\
 For the residential buildings it is assumed that at any time 10 percent of loads can be curtailed at a flat renumeration rate of 0.35\euro per KwH. A further 20 percent of total loads are assumed to be shiftable at a flat rate of 0.15\euro per KwH per hour shifted. The remaining 70 percent of loads are deemed essential. The commercial units can also shift up to 20 percent of their load for 0.15\euro per KwH per hour, but no curtailment is allowed.
 
-The profiles are scaled for the total yearly demand of the smaller residential buildings to be around 5000 KWh hours. The multi-family residential and commercial buildings' profiles are scaled to a yearly demand of approximately 10000 KWh and 16000 KWh respectively. 
+The profiles are scaled for the total yearly demand of the smaller residential buildings to be around 5000 KWh. The multi-family residential and commercial buildings' profiles are scaled to a yearly demand of approximately 10000 KWh and 16000 KWh respectively. 
 
 \subsection{Grid Supply}
 For the base scenario the grid supply is assumed to be capped at a constant value of 500KW, which guarantees that all supply can be met solely by the grid. It is further assumed that the price of this energy is set at 0.3\euro at any time. The feed in tariff is assumed to be constant at 0.08\euro and the feed-in is capped at a constant 20KW. \todo{back up those numbers}
@@ -1074,11 +1103,12 @@ The increased gas price results in a drop of installed fuel cell capacity by aro
 
 Another factor which seems critical to the base result is the reliance on trading. To test the robustness of trading, the price per traded KWh of electricity is raised from a merely symbolic 0.001\euro to 0.03\euro. This could be considered the cost of maintaining the infrastructure of the grid, or the energy lost in cross-microgrid transactions.
 \\
-This has only a negligible effect, as the objective value is only raised by about 10 \euro. Raising the fee to 0.06 \euro. per KWh has a similarly small effect, raising the objective value by another 18 \euro. Another incrase to 0.09 \euro fails to have a much greater impact at an objective value of approx. 1293 \euro. With trade completely impossible at 1000\euro per KWh, 
+This has only a negligible effect, as the objective value is only raised by about 10 \euro. Raising the fee to 0.06 \euro. per KWh has a similarly small effect, raising the objective value by another 18 \euro. Another incrase to 0.09 \euro fails to have a much greater impact at an objective value of approx. 1293 \euro. 
 
 Another possibility is a change in the price of pv panels and batteries in the coming years. To test the effect these changes could have on the optimal result, the base case is altered by reducing the investment price of pv installations by 25 percent and the investment price of storage by 35 percent. This has a simnilar effect to increased gas prices, in that fuel cell deployment falls, whereas pv installations increase. Additionally, as before, one Tesla Powerwall is installed by a commercial entity. The effect on the objective value however is not significant, as it is only decreased by 46\euro or 0.005\euro per KWh. Adding the 50 percent increased gas prices to alterations results in a total of 64 KWp pv installation, but only a single Powerwall, which seems to suffice, as self-consumption is still at 92 percent. The average electricity price rises to 0.19 \euro. Decreasing battery prices by 50 percent relative to the base case results in the. installation of a second Powerwall in one of the multi-family residential buildings. The solution however, is hardly superior at 0.188 \euro per KWh. 
-\\
-Finally, a major weakness of the base cases result is the linear scaling of the price of generation technology, which leads to installation of small capacities throughout the microgrid. In reality this would be very expensive, since the prices do not in fact scale linearly. To test the robustness to non-linear generation options, we convert both generation options to discrete investments. The pv installation will only be available in increments of 5 KWp and the Fuel Cell in increments of 2.5 KWp.
+\\\\
+Finally, a major weakness of the base cases result is the linear scaling of the price of generation technology, which leads to installation of small capacities throughout the microgrid. In reality this would be very expensive, since the prices do not in fact scale linearly. To test the robustness to non-linear generation options, we convert both generation options to discrete investments. The pv installation will only be available in increments of 5 KWp and the Fuel Cell in increments of 2.5 KWp.\\\\ 
+	The test is run with a 15 min time limit, as it does not terminate in a reasonable amount of time otherwise. The gap to optimality after this period is at 0.31 percent or approx. 4 \euro. 
 
 
 

@@ -23,7 +23,7 @@ app.listen(port, () => {
   console.log('We are live on ' + port);
 })
 
-app.post('/modelrequest', (req, res) => {
+app.get('/modelrequest', (req, res) => {
   const dir = __dirname
 
   console.log('Starting Shell Script...')
