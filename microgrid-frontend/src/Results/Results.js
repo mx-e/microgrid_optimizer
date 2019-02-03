@@ -31,7 +31,8 @@ class Results extends React.Component{
         {key: 'Storage Options', value: L+N},
         {key: 'Objective Value', value: this.props.result.objective},
         {key: 'Autarky', value: computeAutarky(this.props.result) + ' %'},
-        {key: 'Self Consumption', value: computeSelfConsumption(this.props.result) + ' %'}
+        {key: 'Self Consumption', value: computeSelfConsumption(this.props.result) + ' %'},
+        {key: 'Cost per KWh', value: computeCostPerKwh(this.props.result) + ' Euro'}
         ]
       : []
 
@@ -151,6 +152,13 @@ const computeSelfConsumption = (result) => {
   ),0.0)
 
   return Math.round((1 - ((totalPowerExported + 0.001) / totalPowerProduced)) * 100)
+}
+
+const computeCostPerKwh = (result) => {
+  const totalPowerUsed = result.H.reduce((total, house, i) => (
+    total + (getDemandTraceByHousehold(result.H, i).reduce((acc, t) => acc+t))
+  ),0.0)
+  return Math.round(result.objective / totalPowerUsed * 1000)/1000
 }
 
 const createGenInvestmentTraces = (result) => {

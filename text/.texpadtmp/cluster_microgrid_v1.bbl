@@ -90,6 +90,57 @@
       \endverb
       \keyw{performance analysis,distributed power generation,Microgrids,Renewable energy sources,renewable energy sources,Batteries,microgrids,power systems,demand side management,smart power grids,demand response,Optimization,residential microgrids,Home appliances,battery storage plants,smart grids,Load modeling,battery energy storage system,Stochastic processes,integer programming,linear programming,hybrid power systems,mixed integer linear programming,load forecasting,Design optimization,battery systems,eco-friendly technologies,electric load prediction,electric power generation,electric transportation,hybrid renewable energy system,load flexibility,Okinawa}
     \endentry
+    \entry{bauerAbgrundtief2018}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=04b2dcbe80cb47701d83bb004ed17de3}{%
+           family={Bauer},
+           familyi={B\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{04b2dcbe80cb47701d83bb004ed17de3}
+      \strng{fullhash}{04b2dcbe80cb47701d83bb004ed17de3}
+      \strng{bibnamehash}{04b2dcbe80cb47701d83bb004ed17de3}
+      \strng{authorbibnamehash}{04b2dcbe80cb47701d83bb004ed17de3}
+      \strng{authornamehash}{04b2dcbe80cb47701d83bb004ed17de3}
+      \strng{authorfullhash}{04b2dcbe80cb47701d83bb004ed17de3}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Wo jetzt das Dorf Morschenich steht, wird in wenigen Jahren nur noch ein Loch sein. Aber ausgerechnet an diesem unsicheren Ort wächst eine ungewöhnliche Freundschaft.}
+      \field{howpublished}{https://www.zeit.de/2018/09/freundschaft-dorf-morschenich-fluechtlinge-solidaritaet-nachbarschaft}
+      \field{journaltitle}{Zeit Online}
+      \field{langid}{de}
+      \field{month}{2}
+      \field{title}{{Abgrundtief}}
+      \field{type}{{Newspaper}}
+      \field{year}{2018}
+    \endentry
+    \entry{bdewStandardlastprofileStrom2017}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=0d55ce825ee463587f0b6c6914471b9f}{%
+           family={{bdew}},
+           familyi={b\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {bdew}%
+      }
+      \strng{namehash}{0d55ce825ee463587f0b6c6914471b9f}
+      \strng{fullhash}{0d55ce825ee463587f0b6c6914471b9f}
+      \strng{bibnamehash}{0d55ce825ee463587f0b6c6914471b9f}
+      \strng{authorbibnamehash}{0d55ce825ee463587f0b6c6914471b9f}
+      \strng{authornamehash}{0d55ce825ee463587f0b6c6914471b9f}
+      \strng{authorfullhash}{0d55ce825ee463587f0b6c6914471b9f}
+      \field{sortinit}{b}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{de}
+      \field{month}{1}
+      \field{title}{{Standardlastprofile Strom}}
+      \field{year}{2017}
+    \endentry
     \entry{BlueGENWorldsMost2018}{misc}{}
       \list{publisher}{1}{%
         {SOLIDpower S.p.a.}%
@@ -294,6 +345,36 @@
       \endverb
       \keyw{Uncertainty,Two-stage stochastic programming,Microgrid energy management,Demand response programs (DRPs),Distributed energy resource (DER),Plug-in electric vehicles (PEVs)}
     \endentry
+    \entry{fuenfgeldAnwendungRepraesentativenVDEWLastprofile2000}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=8075d81b7b8a8f4146787f570e289652}{%
+           family={Fünfgeld},
+           familyi={F\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=35e27c7feb8165a86dcb391836dbe34d}{%
+           family={Tiedemann},
+           familyi={T\bibinitperiod},
+           given={Remo},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Brandenburgische Technische Universität Cottbus}%
+      }
+      \strng{namehash}{36bf61b277c24352fc94098e5569a273}
+      \strng{fullhash}{36bf61b277c24352fc94098e5569a273}
+      \strng{bibnamehash}{36bf61b277c24352fc94098e5569a273}
+      \strng{authorbibnamehash}{36bf61b277c24352fc94098e5569a273}
+      \strng{authornamehash}{36bf61b277c24352fc94098e5569a273}
+      \strng{authorfullhash}{36bf61b277c24352fc94098e5569a273}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{de}
+      \field{title}{{Anwendung der Repräsentativen VDEW-Lastprofile}}
+      \field{year}{2000}
+    \endentry
     \entry{GithubSearchMicrogrid2018}{misc}{}
       \field{sortinit}{G}
       \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
@@ -436,6 +517,33 @@
       \verb 10.1109/ACCESS.2017.2784834
       \endverb
       \keyw{distributed power generation,Microgrids,power markets,pricing,energy storage,microgrid operation,power generation economics,Energy management,Generators,energy management systems,Robustness,Optimization,optimisation,power generation scheduling,Load modeling,power generation dispatch,Uncertainty,integer programming,linear programming,robust optimization,energy management system,load forecasting,EMS,cost reduction,ac-dc hybrid microgrid,ac/dc hybrid microgrids,AC/DC hybrid microgrids,costing,deterministic model,estimation-forecasting methods,forecasted load values,Forecasted price uncertainty,market price uncertainties,min-max robust counterpart,Monte Carlo method,Monte Carlo methods,operation cost,operational schedule,optimal operation,optimality conditions,optimization strategy,real-time market price signals,robust control,robust optimal operation,robust optimization method,Taguchi's OA method,Taguchi's orthogonal array method,uncertainty modeling,worstcase uncertainties}
+    \endentry
+    \entry{vereindeutscheringenieureReferenzlastprofileUndMehrfamilien2008}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=dbd6ddf449f37f4b4dccf2dfe02f2560}{%
+           family={INGENIEURE},
+           familyi={I\bibinitperiod},
+           given={VEREIN\bibnamedelima DEUTSCHER},
+           giveni={V\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {VDI}%
+      }
+      \strng{namehash}{dbd6ddf449f37f4b4dccf2dfe02f2560}
+      \strng{fullhash}{dbd6ddf449f37f4b4dccf2dfe02f2560}
+      \strng{bibnamehash}{dbd6ddf449f37f4b4dccf2dfe02f2560}
+      \strng{authorbibnamehash}{dbd6ddf449f37f4b4dccf2dfe02f2560}
+      \strng{authornamehash}{dbd6ddf449f37f4b4dccf2dfe02f2560}
+      \strng{authorfullhash}{dbd6ddf449f37f4b4dccf2dfe02f2560}
+      \field{sortinit}{I}
+      \field{sortinithash}{320bc8fe8101b9376f9f21cd507de0e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In Deutschland wurden bisher einige tausend KWK- Anlagen kleiner Leistung installiert. Bei der Fest- legung der technischen Daten stellte man jedoch fest, dass es derzeit keine Normen oder Richtlinien zur Bestimmung des Normnutzungsgrades gibt. Dieser wäre für einen Wirtschaftlichkeitsvergleich jedoch sehr wichtig. Für konventionelle Heizgeräte wird heute die DIN 4702-8 herangezogen. Dabei definiert die DIN verschiedene Teillastpunkte für den Heizbetrieb, die bei vorgegebenen Temperaturspreizungen des Heiz- wassers vermessen werden. Dieses Verfahren ist auf kleine KWK-Anlagen prin- zipiell übertragbar. Jedoch müssen Angaben zur Be- stimmung des elektrischen Nutzungsgrades ergänzt werden, die für den Betreiber von kleinen KWK-An- lagen als Kennwerte fundamental sind, da sie einen großen Einfluss auf die Wirtschaftlichkeit haben. Innerhalb des Arbeitskreises ,,Brennstoffzellen in der Haustechnik`` des VDI-GET-Fachausschusses ,,Brennstoffzellen`` (BREZEL) wurden die Vorarbei- ten, das heißt die Sammlung und Auswertung von Messdaten sowie die Erstellung der typischen Last- profile geleistet. Dem Arbeitskreis wurden existie- rende ein- bis zweijährige Messdaten von Ein- und Mehrfamilienhäusern zur Verfügung gestellt –{} Strom-, Heizwärme- und Warmwasserlastgänge. Die Messdaten von Ein- und Zweifamilienhäusern liegen als Minutenmittelwerte, die Messdaten von Mehrfa- milienhäusern als 15-Minuten-Mittelwerte vor. Da die Erfassung der Lastgänge über einen Zeitraum von einem Jahr eine überaus große Datenmenge verursa- chen würde, wurde auf typische Lastgänge bestimm- ter Tage zurückgegriffen. Typische Lastprofile sind wichtig für die Auslegung und Wirtschaftlichkeitsbe- rechung von KWK-Anlagen. Die Richtlinie VDI 4655 soll als Hilfestellung die- nen, Nutzungsgrade von KWK-Anlagen zur Liefe- rung von Wärme und Strom in Wohngebäuden zu be- stimmen. Grundlage der Richtlinie ist dabei die Ermittlung von Referenzlastprofilen aus gemessenen Wärme-, Strom- und Warmwasserverbräuchen von fünf Ein- und drei Mehrfamilienhäusern. Die Referenzlastpro- file wurden aus den Messwerten für zehn Typtag- kategorien erstellt. Ein Referenzlastprofil ist die Auswahl desjenigen Profils aus der Menge der definierten Typtage, das dem typischen Verlauf der gemessenen Tage am nächsten kommt. Somit ist gewährleistet, dass die Charakteristika eines Profils erhalten bleiben und nicht durch Mittelwertbildung und die damit verbun- dene Glättung verloren gehen. Die Vorgehensweise bei der Ermittlung der Referenz- lastprofile ist in [1] ausführlich beschrieben. Analyse und Auswertung der Messdaten sowie die Ermittlung von Referenzlastprofilen wurden vom Gaswärme-Institut e. V., Essen geleistet. Die Ergeb- nisse der Auswertung fließen in die Richtlinie ein. Für die Bestimmung des Normnutzungsgrades einer KWK-Anlage wird eine DIN-Norm erstellt. Zur Aus- legung einer Mikro-KWK-Anlage in Wohngebäuden ist die Richtlinie VDI 4656 in Vorbereitung.}
+      \field{langid}{ger/en}
+      \field{month}{5}
+      \field{title}{{Referenzlastprofile von Ein- und Mehrfamilien- häusern für den Einsatz von KWK-Anlagen}}
+      \field{year}{2008}
     \endentry
     \entry{7853085}{inproceedings}{}
       \name{author}{2}{}{%
@@ -792,6 +900,30 @@
       \endverb
       \keyw{Electrical network,Heating and cooling network,Mixed-integer linear program,Multi-energy microgrid design,Power flow}
     \endentry
+    \entry{gemeindemerzenichUmsiedlungMorschenich}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=d61f4895a2f5ee0183794769bd9c95f8}{%
+           family={Merzenich},
+           familyi={M\bibinitperiod},
+           given={Gemeinde},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{d61f4895a2f5ee0183794769bd9c95f8}
+      \strng{fullhash}{d61f4895a2f5ee0183794769bd9c95f8}
+      \strng{bibnamehash}{d61f4895a2f5ee0183794769bd9c95f8}
+      \strng{authorbibnamehash}{d61f4895a2f5ee0183794769bd9c95f8}
+      \strng{authornamehash}{d61f4895a2f5ee0183794769bd9c95f8}
+      \strng{authorfullhash}{d61f4895a2f5ee0183794769bd9c95f8}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Morschenich ist ein Ortsteil der Gemeinde Merzenich im Kreis Düren, Nordrhein-Westfalen. Der Ort liegt im zukünftigen Abbaugebiet des Tagebaus Hambach. Durch eine Bürgerbefragung wurde der neue Standort im Westen von Merzenich ,,Zwischen den Höfen``, jenseits der L264, von den Bürgern festgelegt. Die Morschenicher Bürgerinnen und Bürger können seit dem Jahr 2015 in den neu entstehenden Ort ,,Morschenich-Neu`` umsiedeln.}
+      \field{howpublished}{https://www.gemeinde-merzenich.de/freizeitkultur/Umsiedlung.php}
+      \field{journaltitle}{Gemeinde Merzenich}
+      \field{langid}{de}
+      \field{title}{{Umsiedlung Morschenich}}
+    \endentry
     \entry{ModulePriceIndex2018}{misc}{}
       \field{sortinit}{M}
       \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
@@ -1080,6 +1212,31 @@
       \verb /Users/maxi/Zotero/storage/8GXKX8DL/Pfenninger and Staffell - 2016 - Long-term patterns of European PV output using 30 .pdf;/Users/maxi/Zotero/storage/5FWGRGDB/S0360544216311744.html
       \endverb
       \keyw{Grid integration of renewables,Meteorological reanalysis,Renewables,Satellite irradiance estimation,Solar energy}
+    \endentry
+    \entry{rwepowerRahmendatenMorschenichGemeinde2018}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=08d71d95d8e009e8b59a69b4916fa539}{%
+           family={Power},
+           familyi={P\bibinitperiod},
+           given={RWE},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{08d71d95d8e009e8b59a69b4916fa539}
+      \strng{fullhash}{08d71d95d8e009e8b59a69b4916fa539}
+      \strng{bibnamehash}{08d71d95d8e009e8b59a69b4916fa539}
+      \strng{authorbibnamehash}{08d71d95d8e009e8b59a69b4916fa539}
+      \strng{authornamehash}{08d71d95d8e009e8b59a69b4916fa539}
+      \strng{authorfullhash}{08d71d95d8e009e8b59a69b4916fa539}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{http://www.rwe.com/web/cms/de/1375406/umsiedlung/meine-umsiedlung/morschenich/rahmendaten/}
+      \field{journaltitle}{RWE}
+      \field{langid}{de}
+      \field{title}{{Rahmendaten - Morschenich, Gemeinde Merzenich (Kreis Düren)}}
+      \field{type}{{Corporate}}
+      \field{year}{2018}
     \endentry
     \entry{PowerwallTesla2018}{misc}{}
       \field{sortinit}{P}

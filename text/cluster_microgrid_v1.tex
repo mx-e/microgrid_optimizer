@@ -917,7 +917,7 @@ The dispatch cost consist of the fuel costs (or variable operation costs $C_{OpV
 \newpage
 \section{Case Study}
 \subsection{Overview}
-To demonstrate the viability of the designed model and of local microgrids, a limited case study is conducted. The location chosen is the small village of Morschenich in Northtrine-Westphalia, which is located in immidiate proximity to the lignite surface mine of Hambach. According to current plans of RWE, the owner and operator of the mine and the state of Northrine-Westfalia, the village is due to be razed and the population resettled by the year 2024, when the mining activities are expected to reach the village. \todo{source}  
+To demonstrate the viability of the designed model and of local microgrids, a limited case study is conducted. The location chosen is the small village of Morschenich in Northtrine-Westphalia, which is located in immidiate proximity to the lignite surface mine of Hambach. According to current plans of RWE, the owner and operator of the mine and the state of Northrine-Westfalia, the village is due to be razed and the population resettled by the year 2024, when the mining activities are expected to reach the village. \cite{rwepowerRahmendatenMorschenichGemeinde2018}\cite{gemeindemerzenichUmsiedlungMorschenich}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.75\textwidth]{pictures/Morschenich.png}
@@ -925,7 +925,7 @@ To demonstrate the viability of the designed model and of local microgrids, a li
 	\label{morschenich}
 	\flushleft\quad\quad\footnotesize{Source: Google Maps.}
 \end{figure}	
-Although the resettlement process has already begun and the village 'Morschenich-Neu' is under construction several kilometers away, there are as of the date of writing still several hundred inhabitants remaining in Morschenich, including some Syrian war refugees, who have been accomodated in some of the abandonden houses of families who habe already been resettled or who moved away.\todo{source}
+Although the resettlement process has already begun and the village 'Morschenich-Neu' is under construction several kilometers away, there are as of the date of writing still several hundred inhabitants remaining in Morschenich, including some Syrian war refugees, who have been accommodated in abandonden houses of families already been resettled.\cite{bauerAbgrundtief2018}
 \\
 The case study will focus on the northern part of Morschenich, where several housing- and two commercial units are located in block as indicated by the white line in Figures 2 and 3. 
 
@@ -937,7 +937,11 @@ The case study will focus on the northern part of Morschenich, where several hou
 	\flushleft\quad\quad\footnotesize{Source: Google Maps.}
 \end{figure}	
 
-In figure 3 all buildings in the area designated for the case studies proposed microgrid have been marked with coloured boxes. Blue boxes represent small residential units, while green boxes indicate larger residential units and red boxes commercial units. The different classes of buildings will be modelled with different parameters to accurately represent their distinct sizes and uses. The following sections will document the assumed input parameters the model requires for the calculation of a base scenario and how they were derived. To properly function the model requires meteorological data for constraints on intermittent power generation, as well as data on investment options, household demand and grid supply. The final section will introduce a number of further scenarios in which some of the assumptions are changed.
+In figure 3 all buildings in the area designated for the case studies proposed microgrid have been marked with coloured boxes. Blue boxes represent small residential units, while green boxes indicate larger residential and red boxes commercial units.
+\\
+The case study will examine the business case of the establishment of an autonomous microgrid in the selected area. Therefore we model investment decisions and dispatch for three discontinuous periods of one week each to reflect the different conditions encountered throughout the year. The buildings designated will be assumed to be the participants of the considered microgrid. The different classes of buildings are modelled with different parameters to accurately represent their distinct sizes and uses.
+
+ The following sections will document the assumed input parameters the model requires for the calculation of a base scenario and how they were derived. To properly function the model requires meteorological data for constraints on intermittent power generation, as well as data on investment options, household demand and grid supply. The final section will introduce a number of further scenarios in which some of the assumptions are changed.
 
 
 
@@ -945,10 +949,7 @@ In figure 3 all buildings in the area designated for the case studies proposed m
 
 
 \subsection{Meteorological Data}
-Hourly irradiation data (in $KWm^{-2}$) for Morschenich is sourced from \cite{pfenningerLongtermPatternsEuropean2016}. It is then used to calculate the capacity factor, e.g. the percentage of usable capacity of the solar panel, based on the lighting. The resulting vector of values is used as the parameter $GEN_1 \hookrightarrow maxFl$, which is the maximum input flow of the photovoltaic system. 
-
-
-
+An hourly profile of solar the capacity factor for a pv installation in Morschenich is sourced from \cite{pfenningerLongtermPatternsEuropean2016}. From the profile, which includes an entire year of data, three samples are extracted: One 144 hour sample representing the transitional season, e.g. spring and fall and two 72 hour samples representing summer and winter. The difference in length is not relevant for use in the model, as the data preprocessing only uses these profiles as input for generating the profiles used in the optimization itself (see section 4). The resulting vector of values is used as the parameter $GEN_1 \hookrightarrow maxFl$, which is interpreted as the maximum input flow for the solar pv installation. In addition the parameter $EFF_{el}$ is set to 1.0, which makes the model effectively treat the vector as a capacity factor.
 
 \subsection{Investment Options}
 To test the different implementations of discrete and linear investment options the case study incorporates two linear-scaling generation devices as possible investments, as well as two discretely-scaling storage devices. The generation devices consist of a photovoltaic system as a renewable option and a combined heat and power fuel cell, as a conventional, though decentralised and highly efficient option. It is further capable of using biofuels, which can be expressed through higher fuel prices. 
@@ -959,11 +960,11 @@ To test the different implementations of discrete and linear investment options 
 		\hline
 		\textbf{Parameter}			& \textbf{Name}			& \textbf{Unit}			& \textbf{Value}	&\textbf{Reference}     \\ \hline
 		\textit{Photovoltaic System} & $GEN_1$ & & &\\
-		Installation Cost           & $C_{Cap}$     		& \euro $KW^{-1}$  		& 1300				& Estimate based on \cite{wirthAktuelleFaktenZur2018}, \cite{SolarmoduleEBay2018}, \cite{ModulePriceIndex2018}   \\
+		Installation Cost           & $C_{Cap}$     		& \euro $KW^{-1}$  		& 1200				& Estimate based on \cite{wirthAktuelleFaktenZur2018}, \cite{SolarmoduleEBay2018}, \cite{ModulePriceIndex2018}   \\
 		Maintenance Cost            & $C_{OpFix}$     		& \euro $KW^{-1}yr^{-1}$& 50				& Estimate \\
 		Fuel	 Cost           			& $C_{OpVar}$     		& \euro $KWh^{-1}$   	& 0.0			& no sun taxes ... yet  \\
 		Lifetime                    & $T_{Life}$     		& $yr$  				& 25 				& \cite{wirthAktuelleFaktenZur2018}   \\
-		Electric Efficiency         & $EFF_{el}$     		& $\%$  				& 17				& \cite{wirthAktuelleFaktenZur2018}   \\
+		Electric Efficiency         & $EFF_{el}$     		& $\%$  				& 100				& included in $maxFl$      \\
 		Performance Ratio           & $PR$     		& $\%$  				& 85				& \cite{wirthAktuelleFaktenZur2018}   \\
 		Maximum Input Flow  			& $maxFl$     		& $KW$ 		 			& see section 5.2				& based on insolation   \\
 		\textit{CHP Micro Fuel Cell} & $GEN_2$ & & &\\
@@ -1010,34 +1011,59 @@ The storage investment options given are two differently sized Lithium Ion batte
 \end{table}
 
 \subsection{Demand}
-Demand vectors for the base scenario are sourced from VDI \todo{here VDI stuff with more detail}...
+As the case study distinguishes between three types of buildings, three demand profiles where compiled. Each profile is made up of three hourly load vectors spanning one or several days. Demand vectors for the two types of residential units are sourced from \cite{vereindeutscheringenieureReferenzlastprofileUndMehrfamilien2008}. The choice was made because these profiles are specifically created for optimization of decentralized generation. They are samples of measurements taken on several houses and therefore feature a much higher variability than standard profiles, which usually are averages of many measurements. In the context of this case study it is critical to accurately reflect this high variability, which a microgrid can do a lot to manage. For the commercial units profiles where sourced from the association of the German power industry (BDEW) \cite{fuenfgeldAnwendungRepraesentativenVDEWLastprofile2000}\cite{bdewStandardlastprofileStrom2017}. These are standard profiles specifically from commercial consumers. The samples were of varying sizes of one to several days, to reflect the approximate ratios of occurences of the different model days provided for our particular meteorological region. They were further preprocessed by the model itself. The noise filter of the model was provided with a variance value of 0.25 for the smaller residential households and a variance of 0.15 for the larger residential and commercial buildings (see 4). This additional noise is crucial in distinguishing the demands of different instances of one household type from one another, as would occur in reality. Furthermore it makes the load profile more realistic, when scaled beyond its original length, since it makes the repeated profile differ notably.(see 4)
 \\
-As the load vectors sourced only cover a duration of 24 hours i generate vectors for any larger duration by repeating the values. In addition a gaussian filter is used to randomise the values to a degree for the purpose of representing a variability of daily profiles that could be observed in reality, without shifting the total consumption.
-\\
-For the base scenario it is assumed that 10 percent of loads can be curtailed at a flat rate of 0.35\euro per KwH. A further 30 percent of total loads are assumed to be shiftable at a flat rate of 0.15\euro per KwH. The remaining 60 percent of loads are deemed essential by the base scenario.
+For the residential buildings it is assumed that at any time 10 percent of loads can be curtailed at a flat renumeration rate of 0.35\euro per KwH. A further 20 percent of total loads are assumed to be shiftable at a flat rate of 0.15\euro per KwH per hour shifted. The remaining 70 percent of loads are deemed essential. The commercial units can also shift up to 20 percent of their load for 0.15\euro per KwH per hour, but no curtailment is allowed.
+
+The profiles are scaled for the total yearly demand of the smaller residential buildings to be around 5000 KWh hours. The multi-family residential and commercial buildings' profiles are scaled to a yearly demand of approximately 10000 KWh and 16000 KWh respectively. 
 
 \subsection{Grid Supply}
-For the base scenario the grid supply is assumed to be capped at a constant value of 500KW, which guarantees that all supply could be met by the grid. It is further assumed that the price of this energy is set at 0.3\euro at any time. The feed in tariff is assumed to be constant at 0.09\euro and the feed-in capped at a constant 20KW. \todo{back up those numbers}
+For the base scenario the grid supply is assumed to be capped at a constant value of 500KW, which guarantees that all supply can be met solely by the grid. It is further assumed that the price of this energy is set at 0.3\euro at any time. The feed in tariff is assumed to be constant at 0.08\euro and the feed-in is capped at a constant 20KW. \todo{back up those numbers}
 
 \subsection{Further Assumptions}
+To keep the model from trading randomly inside the microgrid, a trade fee of 0.001\euro per KWh is imposed on all trade within the microgrid.\\
+To accurately reflect the prevalence of the weather conditions and demand profiles represented by the three seasonal periods modelled the summer, winter and transitional period have been weighed with the factors 169, 81 and 115, respectively. These factors are normalized during preprocessing (see 4) and all cost incurred during each period is multiplied with the normalized corresponding weight. The weights have been chosen according to the prevalence of different weather conditions in the meteorological region of Morschenich \cite{vereindeutscheringenieureReferenzlastprofileUndMehrfamilien2008}.
 
-\begin{table}[H]
+\subsection{Results}
+Surprisingly, even in the base scenario, the microgrid seems to be commercially viable, as an autarky level of 94 percent is reached. Investment is heavily biased towards Fuel Cells (see figure 4), which are installed at a smaller capacity than pv installations but operate at a capacity factor of up to 100 percent versus around 12 for pv. Therefore, most power is generated by flexible gas fuel cells (dark blue), only supplemented by a small amount of pv generation (light blue). With this setup the model stays at a self-consumption rate of 100 percent, as feed-in renumeration seems to be insufficient. Furthermore no storage is needed to achieve these levels of autarky and self-sufficiency. 
+\begin{figure}[H]
 	\centering
-	\caption{Further Assumed Parameters}
-	\begin{tabular}{lllll}
-		\hline
-		\textbf{Parameter}			& \textbf{Name}			& \textbf{Unit}			& \textbf{Value}			&\textbf{Reference}     \\ \hline
-		Discount Rate              	& information     		& $\% yr^{-1}$  		& 1.5						& Estimate   \\
-		-----			            & information     		& information  			& &    \\
-		-----					    & information     		& information  			& &    \\		
-		\hline
-	\end{tabular}
-\end{table}
+	\includegraphics[width=1\textwidth]{pictures/INV_GEN_Base.png}
+	\caption{Generation Investment in the base setup of the case study}
+	\label{gen_investment_base}
+	\flushleft\quad\quad\footnotesize{Source: Own Model User Interface}
+\end{figure}
 
-\subsection{Further Scenarios}
+As can be observed in figures 5 and 6 trading (orange and pink) is heavily utilised for balancing, as the load profiles of participants differ enough to enable this. Also load shifting (green and purple) is sporadically used (see figures 5 and 6), but rarely loads are shifted for more than one hour.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{pictures/RES_1_Base.png}
+	\caption{The dispatch of a residential building in the base setup of the case study}
+	\label{residential_dispatch_base}
+	\flushleft\quad\quad\footnotesize{Source: Own Model User Interface}
+\end{figure}	
+
+The only use of the use of grid energy (also dark blue, but below orange and light blue) occurs during the winter week (the last third of the dispatch chart), when generation and internal dispatch are insufficient to meet peak demand, most likely due to a lack of irradiation (see figure 6).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{pictures/COM_2_ZOOM_Base.png}
+	\caption{The dispatch of a commercial building in detail for two winter days}
+	\label{commercial_dispatch_base}
+	\flushleft\quad\quad\footnotesize{Source: Own Model User Interface}
+\end{figure}	
+
+Overall the result is surprisingly cheap, with the average cost per KWh being at about 0.164 \euro and the total cost at approximately 1259.624 \euro.
+
+\subsection{Sensitivity Analysis}
+To test the validity and robustness of the solution obtained above, a sensitivity analysis is conducted. 
+
+To test the importance of the use of fuel cells for the result and its robustness, first the price of gas is raised by 50 percent. This could reflect the $CO^2$ neutral use of more expensive biogas or the insecurity of the price of fossile fuels in general, as the investment horizon considered in the case study is up to 25 years.
+
 
 \newpage
-\section{Results and Discussion}
+\section{Discussion and Conclusion}
 \newpage
 
 
