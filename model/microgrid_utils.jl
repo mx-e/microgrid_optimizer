@@ -123,11 +123,11 @@ function constructDiscreteGenerationDevice(device::Dict{String,Any}, S::Int64, T
     opts = device["opts"]
     maxFl = device["maxFl"]
     if opts["isMaxFlConstant"] == false
-        if opts["extendTimelines"] == true
-            maxFl = createExtendedTimeline(maxFl,S,T)
+        if opts["adaptTimelines"] == true
+            maxFl = createAdaptedTimeline(maxFl,S,T)
         end
     else
-        maxFL = fill(maxFl,(S*T))
+        maxFl = fill(maxFl,(S*T))
     end
     if opts["applyNoise"] == true
         variance = opts["variance"]
@@ -151,7 +151,7 @@ function constructDiscreteGenerationDevice(device::Dict{String,Any}, S::Int64, T
     EFFel = device["EFFel"]
     PR = device["PR"]
 
-    return DiscreteGenerationDevice(CAP, cCap, cOpFix, cOpVar, tLife, EFFel, PR, maxFL)
+    return DiscreteGenerationDevice(CAP, cCap, cOpFix, cOpVar, tLife, EFFel, PR, maxFl)
 end
 
 function constructLinearStorageDevice(device::Dict{String,Any})
@@ -281,12 +281,60 @@ function normalize_weights(arr::Array{Any,1})
     return new_arr
 end
 
+function print_results()
+    println("")
+    println("----------------------")
+
+    println("INVESTMENT:" )
+    println("GEN: ")
+    println(getvalue(HuGENk))
+    println("ST: ")
+    println(getvalue(HuDSTn))
+    println("----------------------")
+
+    println("Non-Consumption: ")
+    println(getvalue(ncS))
+    println("----------------------")
+
+    println("GEN: ")
+    println(getvalue(genS))
+    println("----------------------")
+    println("ST: ")
+    println(getvalue(fromDST))
+    println(getvalue(toDST))
+    println("----------------------")
+
+    println("Grid-Supply: ")
+    println(getvalue(fromGR))
+    println("----------------------")
+
+    println("Grid-Feed-In: ")
+    println(getvalue(toGR))
+    println("----------------------")
+
+    println("Trade From: ")
+    println(getvalue(fromTR))
+    println("----------------------")
+
+    println("Trade To: ")
+    println(getvalue(toTR))
+    println("----------------------")
+
+    println("Shifted Consumption: ")
+    println(getvalue(toSC))
+    println(getvalue(fromSC))
+    println("----------------------")
+    println("")
+
+    println("Objective value: ", getobjectivevalue(mod))
+end
+
 function export_results(input_data)
     output_data = Dict(
-        "objective" => getobjectivevalue(m),
+        "objective" => getobjectivevalue(mod),
         "toTR" => getvalue(toTR),
         "fromTR" => getvalue(fromTR),
-        "genS" => getvalue(genS),
+        "dgenS" => getvalue(dgenS),
         "fromDST" => getvalue(fromDST),
         "toDST" => getvalue(toDST),
         "ncS" => getvalue(ncS),
@@ -294,11 +342,11 @@ function export_results(input_data)
         "fromSC" => getvalue(fromSC),
         "toGR" => getvalue(toGR),
         "fromGR" => getvalue(fromGR),
-        "HuGENk" => getvalue(HuGENk),
+        "HuDGENm" => getvalue(HuDGENm),
         "HuDSTn" => getvalue(HuDSTn),
         "parameters" => input_data,
         "H" => H,
-        "GEN" => GEN
+        "dGEN" => dGEN
     )
 
     json_string = JSON.json(output_data)

@@ -19,7 +19,7 @@ const store = createStore(reducer,composeEnhancers(applyMiddleware(thunk, DataRe
 
 export const requestInstance = axios.create({
   baseURL: 'http://localhost:8000/',
-  timeout: 600000,
+  timeout: 1000000,
 })
 
 ReactDOM.render(
