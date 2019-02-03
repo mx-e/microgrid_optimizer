@@ -1108,9 +1108,34 @@ This has only a negligible effect, as the objective value is only raised by abou
 Another possibility is a change in the price of pv panels and batteries in the coming years. To test the effect these changes could have on the optimal result, the base case is altered by reducing the investment price of pv installations by 25 percent and the investment price of storage by 35 percent. This has a simnilar effect to increased gas prices, in that fuel cell deployment falls, whereas pv installations increase. Additionally, as before, one Tesla Powerwall is installed by a commercial entity. The effect on the objective value however is not significant, as it is only decreased by 46\euro or 0.005\euro per KWh. Adding the 50 percent increased gas prices to alterations results in a total of 64 KWp pv installation, but only a single Powerwall, which seems to suffice, as self-consumption is still at 92 percent. The average electricity price rises to 0.19 \euro. Decreasing battery prices by 50 percent relative to the base case results in the. installation of a second Powerwall in one of the multi-family residential buildings. The solution however, is hardly superior at 0.188 \euro per KWh. 
 \\\\
 Finally, a major weakness of the base cases result is the linear scaling of the price of generation technology, which leads to installation of small capacities throughout the microgrid. In reality this would be very expensive, since the prices do not in fact scale linearly. To test the robustness to non-linear generation options, we convert both generation options to discrete investments. The pv installation will only be available in increments of 5 KWp and the Fuel Cell in increments of 2.5 KWp.\\\\ 
-	The test is run with a 15 min time limit, as it does not terminate in a reasonable amount of time otherwise. The gap to optimality after this period is at 0.31 percent or approx. 4 \euro. 
+	The test is run with a 15 min time limit, as it does not terminate in a reasonable amount of time otherwise. The gap to optimality after this period is at 0.26 percent or approx. 4 \euro. 
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{pictures/RES_2_DISC.png}
+	\caption{A household with a pv installation under an all-discrete constraint}
+	\label{commercial_dispatch_base}
+	\flushleft\quad\quad\footnotesize{Source: Own Model User Interface}
+\end{figure}	
 
+	While the objective value at approx. 1257 \euro does not differ from the base case by a lot, the added constraints lead to a very different behaviour. Households are now clearly seperated into producers and consumers, some generating power with a pv installation, some with a fuel cell (see fig. 9 and 10). This leads to a strong increase in trading activity between the households as the microgrid tries to distribute the now more centralized generation.
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{pictures/RES_8_DISC.png}
+	\caption{A household with a fuel cell under an all-discrete constraint}
+	\label{commercial_dispatch_base}
+	\flushleft\quad\quad\footnotesize{Source: Own Model User Interface}
+\end{figure}	
+This is conducted quite succesfully, as autarky remains high, at 94 percent. Electricity from the grid is only imported during the winter period (see fig. 11). The model still does not construct any storage.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{pictures/RES_6_DISC.png}
+	\caption{A household without generation under an all-discrete constraint during winter}
+	\label{commercial_dispatch_base}
+	\flushleft\quad\quad\footnotesize{Source: Own Model User Interface}
+\end{figure}	
 
 
  
