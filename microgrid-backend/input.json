@@ -135,7 +135,7 @@
     },
     "otherParameters": {
         "S_weights": [169,81,115],
-        "tradeC":0.001
+        "tradeC":1000.0
     }
     
 }
