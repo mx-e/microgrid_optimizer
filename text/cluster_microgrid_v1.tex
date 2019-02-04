@@ -433,40 +433,28 @@
 %\include{files/Introduction}					% include statt input ermöglicht Arbeit mit \includeonly{} und fügt Seitenumbruch vor section ein
 
 \section{Introduction}
-In this document the topic, motivation and approach of my bachelor’s thesis shall be outlined. The aim is to give the reader an idea of what I try to accomplish with the choice of topic and methods, as well as a look at the first iteration of the mathematical model I am aiming to build.
+To achieve the highly ambitious goal of the Paris Agreement to keep global temperature increase "well below 2 degrees Celsius\todo{reference} " in this century, an unparalleled transformation of the energy sector is required. Germany sees itself as a leader in this effort, as one of the first countries to encourage a large scale shift of electricity generation towards renewable sources. Presently however, the country is set to miss its 2020 goals for $CO^2$ mitigation  \todo{reference} and while it is phasing out $CO^2$ neutral nuclear power, over 30 percent of electricity production still comes from coal and lignite plants, which are expected to remain running until 2035, while experts claim a coal exit by 2030 is necessary for the Paris goals to remain attainable.\todo{reference}
+\\
+Despite this ,the continually falling costs for small scale energy generation equipment such as photovoltaics (pv) panels and fuel cells and the rising cost of electricity has spawned a new movement favouring decentralised energy generation. This trend is further propelled, by ever more affordable energy storage devices, which enable solar energy to be used throughout the night.
+\\
+The idea of a microgrid proposes to take the idea of decentralization a step further by creating local autonomous grids that only interact with the main grid if necessary or advantageous.
+A microgrid in literature is defined as a small geographically bounded zone with clear electrical boundaries, that manages local loads and possibly contains generation units and storage. Furthermore it can be connected to the egrid, from whose perspective it is seen as a single entity. \\
+Proponents of the idea promise a more inclusive and resilient power supply with no single points of failure. Furthermore the electricity grid needed to balance the few loads the microgrids cannot manage themselves would be a lot less expensive in investment and maintenance, and the consumption of locally produced electricity would lead to far less transmission losses.
+\\
+Critics however, point out that microgrid infrastructure and especially the needed generation and storage units are expensive, while centralized generation and transmission infrastructure already exists. They argue that, even if microgrid operators are able to be profitable, it is by avoiding taxes and levies on power, which make up over half of the German retail power prices \todo{reeference} and not by actually being competitive with centralized generation.
+\\
+At present the concept is tested in a few case studies such as in Brooklyn \todo{reference} and on several North American university campuses \todo{reference}, but still little is known about its performance in applications ranging from residential areas to hospitals.
+\\
+Although there will no doubt be more pilot projects in the coming years, considering the trends outlined above, which propel this phenomenon remain unbroken, there is a demand for a more thorough and intuitive understanding of the performance of such a project under various conditions, without substantial risk involved.
+\\
+Mathematical models have proven a strong tool for a better understanding of many complex systems in the sciences but also in all engineering disciplines. Among them, Linear Programming has long been used to model electricity systems due to its high performance even for complex problems. Linear Programming (or Linear Optimization) is a method for solving mathematical models whose features can be expressed as linear relationships \todo{reference}. The solution space is a convex polytope, which makes finding the optimal solution a lot faster, since there cannot be any local maximum, which is not also a global maximum. As subcategory of LP is Mixed Integer Linear Programming (MILP), which in addition to the linear relationships and variables used in LP, introduces variables which can only take integer values. While slower, it can find an optimal solution reasonably quick by using the solution of the corresponding linear problem and applying the branch- and bound algorithm \todo{rference}. 
+\\\\
+In this thesis my aim is to develop a flexible modeling tool suitable for optimizing a microgrid setup under diverse conditions. In addition to modeling any kind of small scale generation or storage unit, the modeling tool should be able to reflect trade between connected entities as well as behaviour such as load shifting and curtailment. The objective of the model will be to meet the demand of all connected entities at a minimum cost. In addition to these functionalities at a small solving time, the modeling tool should meet the criteria of being scalable, flexible in regard to the form and quality of input data and as user-friendly as possible.\\
+To demonstrate the modelling tools performance, a case study will be conducted for a small community in the German state of Northrine-Westphalia, where the majority of the German lignite capacity is located. The robustness of the results will be confirmed through a sensitivity analysis.
+I expect the case study to show wether such a system is currently commercially viable in Northrine-Westphalia and, to a lesser extent, if decentralised energy management in the form of microgrids is competitive compared to the prevailing centralised solution.
+All code written, as well as all other documents, including this one, will be published on github.com \todo{reference} under an MIT license.
 
-\todo{more here, definition microgrid, more topic introduction, definitions of words, pv, distributed generation}
-
-\subsection{Motivation}
-As the technological requirements for a decentralized energy system increasingly mature, the importance of understanding smaller units within the electricity system grows. There is a possibility of increasing reliance on small, partially autonomous grid units (microgrids) in the future. This calls for a better understanding of how such systems might operate. Especially the possible efficiency gains over a centralised system and the circumstances on which these efficiency gains might depend should be of interest to science and will be the focus of thesis.
-
-\todo{more here, GERMANY, capacity building, distribute technological know-how}
-\todo{what is a linear model, theory, MILP, different optimisation methods}
-
-
-\subsection{Research Question}
-In my thesis I want to create a model of a small electricity grid with a single point of access to the main grid. The microgrid will contain 25 households of different types that will aim to reduce their total electricity costs. To attain this goal there will be two possible courses of action available: 
-	\begin{enumerate}
-	\item First, the option to invest in electricity generation and storage facilities, in this case only solar pv and battery storage. 
-	\item Secondly, the possibility of unrestricted trade within the microgrid, meaning there will be no variable transaction costs, as they would usually occur in the form of fees and levies on electricity being transferred.		
-	\end{enumerate}
-	The aim of this approach is to determine the cost-saving potential in comparison to pure electricity consumption from the main grid in subject to the characteristics of the main parameter types to this model, which are:
-	\begin{enumerate}
-	\item The environmental conditions, primarily pertaining to the availability of renewable resources - in this case, solar irradiation - as well as temperature and changing seasonal energy demand.
-	\item The 'behaviour' of the participants in this microgrid, primarily their willingness to shift or avoid loads depending on the current price of electricity within the microgrid or the main grid.
-	\item The price of power from the main grid as a function of the time of day and  season, as well as the price of power generated by the households themselves.
-	\end{enumerate}
-
-\subsection{Methods}
-	To model the outlined situation I want to use the computational modelling language 'Julia' and construct a linear optimisation model which can be solved with it. The goal is to minimise the cost of electricity for the households in the microgrid. It is notable at this point, that the non-consumption of electricity as well as the delay of consumption will be seen as a cost to the actor forgoing her demand. There will be an investment opportunity at the beginning of the examined timeframe of 20 years. The number of timeslices considered in the optimisation will be depending on performance of the model and can therefore not be determined yet. \\
-	As a case study for this thesis I want to apply the model to the example of a community in Northrhine-Westfalia. With environmental variables set, I will then construct a number of scenarios with variations in electricity price and actor behaviour parameters. \\
-	Another goal of this project is to make this a functional piece of research by reducing performance requirements as far as possible and creating an intuitive user interface that enables the user to 'play' with different scenarios. I prefer this approach over a few detailed and rigid scenarios because the future external factors are presently highly uncertain, which drives me to the conviction that an understanding of the dynamics involved in the examined system is of greater value than an exact solution to an unlikely scenario.
-
-	
-\subsection{Expected Results}
-The result should be a tool that enables an intuitive understanding of the characteristics and the potentials of microgrids, even to non-economists. I intend an exemplary application of the model to the case of a Northrhine-Westfalian community. From this application I expect an insight into the efficiency gains achievable by microgrids in the German context. Also the required external factors for these efficiency gains to materialise should become evident. Under the right conditions I expect a double digit percentage drop in electricity costs compared to a purely consumption-based system. I hope to arrive at practical conclusions regarding present use cases for microgrids and required future regulation.
-
-\todo{rundown of all main chapters}
+In the following chapters a literature review will be conducted to reflect the current state of microgrid research. Then the model constructed will be described in mathematical terms, followed by a brief overview of the technical implementation. Finally, a case study including a sensitivity analysis is conducted, before conclusions are drawn from its result.
 
 \newpage
 
@@ -1127,7 +1115,7 @@ Finally, a major weakness of the base cases result is the linear scaling of the 
 	\label{commercial_dispatch_base}
 	\flushleft\quad\quad\footnotesize{Source: Own Model User Interface}
 \end{figure}	
-This is conducted quite succesfully, as autarky remains high, at 94 percent. Electricity from the grid is only imported during the winter period (see fig. 11). The model still does not construct any storage.
+This is conducted quite successfully, as autarky remains high at 94 percent. Electricity from the grid is only imported during the winter period (see fig. 11). The model still does not construct any storage.
 
 \begin{figure}[H]
 	\centering
@@ -1141,6 +1129,7 @@ This is conducted quite succesfully, as autarky remains high, at 94 percent. Ele
  
 \newpage
 \section{Discussion and Conclusion}
+
 \newpage
 
 

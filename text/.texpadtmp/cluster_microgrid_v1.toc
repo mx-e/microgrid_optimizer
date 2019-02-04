@@ -7,81 +7,73 @@
 \babel@toc {english}{}
 \babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\nonumberline List of Figures}{vi}{section*.4}
+\contentsline {section}{\nonumberline List of Figures}{v}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\nonumberline List of Tables}{vii}{section*.5}
+\contentsline {section}{\nonumberline List of Tables}{vi}{section*.5}
 \babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1}Motivation}{1}{subsection.1.1}
+\contentsline {section}{\numberline {2}Literature Review}{3}{section.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2}Research Question}{1}{subsection.1.2}
+\contentsline {subsection}{\numberline {2.1}Key Questions}{3}{subsection.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3}Methods}{2}{subsection.1.3}
+\contentsline {subsection}{\numberline {2.2}Methodology}{3}{subsection.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4}Expected Results}{2}{subsection.1.4}
+\contentsline {subsection}{\numberline {2.3}Descriptive Analysis}{4}{subsection.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Literature Review}{4}{section.2}
+\contentsline {subsection}{\numberline {2.4}Literature Overview}{5}{subsection.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}Key Questions}{4}{subsection.2.1}
+\contentsline {section}{\numberline {3}Model}{8}{section.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Methodology}{4}{subsection.2.2}
+\contentsline {subsection}{\numberline {3.1}Time}{8}{subsection.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3}Descriptive Analysis}{5}{subsection.2.3}
+\contentsline {subsection}{\numberline {3.2}Households}{8}{subsection.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4}Literature Overview}{6}{subsection.2.4}
+\contentsline {subsection}{\numberline {3.3}Internal Variables}{9}{subsection.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Model}{9}{section.3}
+\contentsline {subsection}{\numberline {3.4}Generation}{11}{subsection.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Time}{9}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.5}Storage}{12}{subsection.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Households}{9}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.6}Trade}{14}{subsection.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}Internal Variables}{10}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.7}Demand}{15}{subsection.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4}Generation}{12}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.8}Grid}{15}{subsection.3.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5}Storage}{13}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.9}Power Balance}{16}{subsection.3.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6}Trade}{15}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.10}Cost Minimisation Formula}{17}{subsection.3.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.7}Demand}{16}{subsection.3.7}
+\contentsline {section}{\numberline {4}Implementation}{19}{section.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.8}Grid}{16}{subsection.3.8}
+\contentsline {subsection}{\numberline {4.1}Architecture}{19}{subsection.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.9}Power Balance}{17}{subsection.3.9}
+\contentsline {subsection}{\numberline {4.2}Workflow}{21}{subsection.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.10}Cost Minimisation Formula}{18}{subsection.3.10}
+\contentsline {section}{\numberline {5}Case Study}{22}{section.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Implementation}{20}{section.4}
+\contentsline {subsection}{\numberline {5.1}Overview}{22}{subsection.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Architecture}{20}{subsection.4.1}
+\contentsline {subsection}{\numberline {5.2}Meteorological Data}{24}{subsection.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Workflow}{22}{subsection.4.2}
+\contentsline {subsection}{\numberline {5.3}Investment Options}{24}{subsection.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Case Study}{23}{section.5}
+\contentsline {subsection}{\numberline {5.4}Demand}{25}{subsection.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1}Overview}{23}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.5}Grid Supply}{26}{subsection.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2}Meteorological Data}{25}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.6}Further Assumptions}{26}{subsection.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3}Investment Options}{25}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.7}Results}{26}{subsection.5.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4}Demand}{26}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.8}Sensitivity Analysis}{28}{subsection.5.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5}Grid Supply}{27}{subsection.5.5}
+\contentsline {section}{\numberline {6}Discussion and Conclusion}{32}{section.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6}Further Assumptions}{27}{subsection.5.6}
+\contentsline {section}{\numberline {7}Appendix}{33}{section.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.7}Results}{27}{subsection.5.7}
+\contentsline {subsection}{\numberline {7.1}Literature Review}{33}{subsection.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.8}Sensitivity Analysis}{29}{subsection.5.8}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Discussion and Conclusion}{33}{section.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Appendix}{34}{section.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Literature Review}{34}{subsection.7.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\nonumberline Literature}{35}{section*.36}
+\contentsline {section}{\nonumberline Literature}{34}{section*.41}
