@@ -54,12 +54,9 @@
       <file>blx-compat.def</file>
       <file>biblatex.def</file>
       <file>blx-natbib.def</file>
-      <file>standard.bbx</file>
-      <file>numeric.bbx</file>
-      <file>numeric-comp.bbx</file>
-      <file>nature.bbx</file>
-      <file>numeric-comp.cbx</file>
-      <file>nature.cbx</file>
+      <file>chicago-authordate.bbx</file>
+      <file>chicago-dates-common.cbx</file>
+      <file>chicago-authordate.cbx</file>
       <file>biblatex.cfg</file>
       <file>english.lbx</file>
       <file>german.lbx</file>

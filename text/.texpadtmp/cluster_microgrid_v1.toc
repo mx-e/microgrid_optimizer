@@ -40,11 +40,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.7}Demand}{16}{subsection.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.8}Grid}{16}{subsection.3.8}
+\contentsline {subsection}{\numberline {3.8}Grid}{17}{subsection.3.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.9}Power Balance}{17}{subsection.3.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.10}Cost Minimisation Formula}{18}{subsection.3.10}
+\contentsline {subsection}{\numberline {3.10}Cost Minimization Formula}{18}{subsection.3.10}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Technical Implementation}{20}{section.4}
 \defcounter {refsection}{0}\relax 
@@ -68,7 +68,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.7}Results}{27}{subsection.5.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.8}Sensitivity Analysis}{29}{subsection.5.8}
+\contentsline {subsection}{\numberline {5.8}Sensitivity Analysis}{30}{subsection.5.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6}Discussion and Conclusion}{33}{section.6}
 \defcounter {refsection}{0}\relax 
@@ -76,4 +76,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {7.1}Literature Review}{35}{subsection.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\nonumberline Literature}{37}{section*.40}
+\contentsline {section}{\nonumberline Literature}{37}{section*.23}
