@@ -254,9 +254,7 @@
 		\begin{center}
 			%\Large{\textbf{\textsc{\doctitle}}}\\
 			\Large{\textbf{Bachelorarbeit}}\\
-            \LARGE{\textbf{Title}}\\[2ex]
-            \Large{\textbf{Subtitle}}
-            
+            \LARGE{\textbf{An Open-Source Optimization Tool for \\  Microgrid Energy Systems}}\\[2ex]            
 			\vfill
 			
 % "Ockerfarbener Kasten":
@@ -310,9 +308,7 @@
 
 \chead{\textit{Statutory declaration}}
 \section*{Statutory declaration}
-	Hereby, I declare that I have developed and written this research completely by myself and that we have not used sources or means without declaration in the text. Any external thought, content, media, or literal quotation is explicitly marked and attributed to its respective owner or author. \\
-	As of the date of submission, this piece of doument and its content have not been submitted anywhere else but to our supervisors.
-	
+	Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig und eigenhändig sowie ohne unerlaubte fremde Hilfe und ausschließlich unter der Verwendung der aufgeführten Quellen und Hilfsmittel angefertigt habe.
 	\bigskip
 	
 	Berlin, \engdate
@@ -335,16 +331,14 @@
 	\chead{\textit{Abstract}}
 	\section*{Abstract}
 	
-	Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-	ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-	duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-	dolor sit amet. \\
-	Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-	ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-	duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-	dolor sit amet.
+	In this thesis an optimization tool for microgrid energy systems is designed and impemented in a modular, scalable architecture. It is then applied to a case study set in a village in Northrine-Westphalia which is due to be destroyed by lignite mining. The results clearly show the commercial potential for the users of the proposed system, provided of course the village is not razed by RWE in 2023, which would impact the profitability of the investment very negatively. The case study furthermore indicates the potential of a decentralized energy system, especially as the investment costs of the technologies applied further decreases, and 'energy quality` factors, such as $CO_2$ emissions besome increasingly more relevant.
 	
-	\newpage	
+	\section*{Zusammenfassung}
+	
+	In dieser Abschlussarbeit wird ein Optmierungswerkzeug für Microgrid-Energiesysteme entworfen und in einer modularen und skalierbaren Software-Architektur implementiert. Es wird dann für eine Fallstudie an einem Nordrheinwestphälischen Dorf angewendet, welches voraussichtlich durch Braunkohleabbau zerstört werden wird. Die Ergebnisse zeigen deutlich, dass die Nutzer des simulierten Systems wirtschaflich davon profitieren würden, natürlich unter der Vorraussetzung, dass es nicht mit dem Rest des Dorfes 2023 zerstört wird, was seiner Profitabilität erhablich schaden würde. Die Fallstudie zeigt außerdem das  das Potential einer gänzlich dezentralen Stromversorgung, besonders unter Berücksichtigung fallender Preise der eingesetzten Technologien und der steigenden Relevanz von Faktoren wie $CO_2$-Ausstoß.
+	
+	
+		\newpage	
 
 % ***********************************************************************************
 % Verzeichnisse
@@ -433,7 +427,7 @@
 %\include{files/Introduction}					% include statt input ermöglicht Arbeit mit \includeonly{} und fügt Seitenumbruch vor section ein
 
 \section{Introduction}
-To achieve the highly ambitious goal of the Paris Agreement to keep global temperature increase "well below 2 degrees Celsius\todo{reference} " in this century, an unparalleled transformation of the energy sector is required. Germany sees itself as a leader in this effort, as one of the first countries to encourage a large scale shift of electricity generation towards renewable sources. Presently however, the country is set to miss its 2020 goals for $CO^2$ mitigation  \todo{reference} and while it is phasing out $CO^2$ neutral nuclear power, over 30 percent of electricity production still comes from coal and lignite plants, which are expected to remain running until 2035, while experts claim a coal exit by 2030 is necessary for the Paris goals to remain attainable.\todo{reference}
+To achieve the highly ambitious goal of the Paris Agreement to keep global temperature increase "well below 2 degrees Celsius\todo{reference} " in this century, an unparalleled transformation of the energy sector is required. Germany sees itself as a leader in this effort, as one of the first countries to encourage a large scale shift of electricity generation towards renewable sources. Presently however, the country is set to miss its 2020 goals for $CO_2$ mitigation  \todo{reference} and while it is phasing out relatively $CO_2$-neutral nuclear power, over 30 percent of electricity production still comes from coal and lignite plants, which are expected to remain running until 2035, while experts claim a coal exit by 2030 is necessary for the Paris goals to remain attainable.\todo{reference}
 \\
 Despite this ,the continually falling costs for small scale energy generation equipment such as photovoltaics (pv) panels and fuel cells and the rising cost of electricity has spawned a new movement favouring decentralised energy generation. This trend is further propelled, by ever more affordable energy storage devices, which enable solar energy to be used throughout the night.
 \\
@@ -453,10 +447,11 @@ In this thesis my aim is to develop a flexible modeling tool suitable for optimi
 To demonstrate the modelling tools performance, a case study will be conducted for a small community in the German state of Northrine-Westphalia, where the majority of the German lignite capacity is located. The robustness of the results will be confirmed through a sensitivity analysis.
 I expect the case study to show wether such a system is currently commercially viable in Northrine-Westphalia and, to a lesser extent, if decentralised energy management in the form of microgrids is competitive compared to the prevailing centralised solution.
 All code written, as well as all other documents, including this one, will be published on github.com \todo{reference} under an MIT license.
-
+\\
 In the following chapters a literature review will be conducted to reflect the current state of microgrid research. Then the model constructed will be described in mathematical terms, followed by a brief overview of the technical implementation. Finally, a case study including a sensitivity analysis is conducted, before conclusions are drawn from its result.
 
 \newpage
+\chead{\textit{Literature Review}}	
 
 \section{Literature Review}
 In this section I shall attempt to give an overview over the current status quo regarding the optimizaton of microgrids and more especially the tools available to do so. I will pursue  this by answering a number of broad question, which I think are crucial regarding my subject. The procedure will be structured by utilizing a consistent and reproducible methodology described in detail below. In addition to scientific literature other sources will also be taken into account at my discrection if they are neccessary or helpful in answering a question.
@@ -471,7 +466,7 @@ This literature review will attempt to answer the following key questions in the
 \end{enumerate} 
 
 \subsection{Methodology}
-To arrive at a dataset of scientific literature that is reproducible I use the methodology described in \todo{add reference to papers here}:
+To arrive at a dataset of scientific literature that is reproducible I use the methodology described in \cite{petersenSystematicMappingStudies} and \cite{pop00975}:
 
 \begin{enumerate}
 	\item Define a search string
@@ -480,8 +475,8 @@ To arrive at a dataset of scientific literature that is reproducible I use the m
 	\item Define keywords, which have to occur in the abstracts of the publications. All publications that lack a keyword are discarded.
 	\item Define Inclusion as well as Exclusion criteria. A publication must satisfy all inclusion criteria as well as none of the exclusion criteria to be included in the literature review.
 \end{enumerate}
-Due to the nature of some of the questions I am trying to answer in my literature review it is additionally necessary to include further non-scientific sources at my discretion.
-The search strings, used databases, as well as the dataset of literature at each step will be included in the appendix. \todo{include info and datasets in the appendix}
+Due to the nature of some of the questions I am trying to answer in my literature review it is additionally necessary to include further non-scientific sources as well as additional scientific sources at my discretion.
+The search strings, used databases, as well as the result at each step is be included in the appendix.
 
 \subsection{Descriptive Analysis}
 After filtering the original dataset of 275 unique publications in the way described in the last chapter, I arrive at a set of 61 publications. The publication year, as can be observed in Figure 1 is for most publications quite recently: 27 out of 61 papers were published 2017 and after. This could indicate a rising interest in the subject, but is probably at least partly due to the way the different search engines employed compute relevancy.  
@@ -533,7 +528,8 @@ When it comes to modelling tools DER-CAM \cite{LAUINGER201624}\cite{ZHENG2018204
 Open source tools seem scarcely available. A search of 'microgrid optimization' on github.com, the major open source software platform, brings up only 3 items with more than one star, none of them has more than ten (popular libraries might have thousands)\cite{GithubSearchMicrogrid2018}. The most up-to-date one has not been updated for a year and none features a graphical user interface.
 
 \newpage
-\section{Model}
+\chead{\textit{Mathematical Formulation}}	
+\section{Mathematical Formulation}
 \todo{references for all equations}
 \todo{all parameters, variables table}
 \subsection{Time}
@@ -895,7 +891,8 @@ The dispatch cost consist of the fuel costs (or variable operation costs $C_{OpV
 
 
 \newpage
-\section{Implementation}
+\chead{\textit{Technical Implementation}}	
+\section{Technical Implementation}
 The performance of a modeling tool depends as much on its implementation, as on mathematical soundness. In this section the choices made implementing the model described in the previous section are outlined.\\
 The implementation of the modeling tool pursues multiple objectives:
 \begin{itemize}
@@ -932,6 +929,8 @@ When the user enters data in the presentation layer, basic type checks are condu
 The model is then constructed and solved. For construction the Julia library "JuMP" is used, for solving the Gurobi commercial solver. \todo{reference both} The model results are saved and transferred to the presentation layer via the middleware layer in a response to the GET-Request sent earlier. In the presentation layer the results are interactively visualized using the plotly visualization library. \todo{reference} Currently a dispatch chart for each modeled household as well as two charts showing the generation and storage investment of each household are generated. In addition Key Performance Indicators (KPIs) such as the the levels of autarky and self-consumption or the average cost per KWh consumed are calculated to make different result easier to compare.
 
 \newpage
+\chead{\textit{Case Study}}	
+
 \section{Case Study}
 \subsection{Overview}
 To demonstrate the viability of the designed model and of local microgrids, a limited case study is conducted. The location chosen is the small village of Morschenich in Northtrine-Westphalia, which is located in immidiate proximity to the lignite surface mine of Hambach. According to current plans of RWE, the owner and operator of the mine and the state of Northrine-Westfalia, the village is due to be razed and the population resettled by the year 2024, when the mining activities are expected to reach the village. \cite{rwepowerRahmendatenMorschenichGemeinde2018}\cite{gemeindemerzenichUmsiedlungMorschenich}
@@ -1036,14 +1035,15 @@ For the residential buildings it is assumed that at any time 10 percent of loads
 The profiles are scaled for the total yearly demand of the smaller residential buildings to be around 5000 KWh. The multi-family residential and commercial buildings' profiles are scaled to a yearly demand of approximately 10000 KWh and 16000 KWh respectively. 
 
 \subsection{Grid Supply}
-For the base scenario the grid supply is assumed to be capped at a constant value of 500KW, which guarantees that all supply can be met solely by the grid. It is further assumed that the price of this energy is set at 0.3\euro at any time. The feed in tariff is assumed to be constant at 0.08\euro and the feed-in is capped at a constant 20KW. \todo{back up those numbers}
+For the base scenario the grid supply is assumed to be capped at a constant value of 500KW, which guarantees that all supply can be met solely by the grid. It is further assumed that the price of this energy is set at 0.3\euro at any time\cite{bundesnetzagenturMonitoringbericht20182018}. The feed in tariff is assumed to be constant at 0.08\euro and the feed-in is capped at a constant 20KW.
 
 \subsection{Further Assumptions}
 To keep the model from trading randomly inside the microgrid, a trade fee of 0.001\euro per KWh is imposed on all trade within the microgrid.\\
 To accurately reflect the prevalence of the weather conditions and demand profiles represented by the three seasonal periods modelled the summer, winter and transitional period have been weighed with the factors 169, 81 and 115, respectively. These factors are normalized during preprocessing (see 4) and all cost incurred during each period is multiplied with the normalized corresponding weight. The weights have been chosen according to the prevalence of different weather conditions in the meteorological region of Morschenich \cite{vereindeutscheringenieureReferenzlastprofileUndMehrfamilien2008}.
 
 \subsection{Results}
-Surprisingly, even in the base scenario, the microgrid seems to be commercially viable, as an autarky level of 94 percent is reached. Investment is heavily biased towards Fuel Cells (see figure 4), which are installed at a smaller capacity than pv installations but operate at a capacity factor of up to 100 percent versus around 12 for pv. Therefore, most power is generated by flexible gas fuel cells (dark blue), only supplemented by a small amount of pv generation (light blue), mostly installed by the commercial consumers, which have higher loads throughout the day, and therefore are less disadvantaged by the intermittency of pv. With this setup the model stays at a self-consumption rate of 100 percent, as feed-in renumeration seems to be insufficient. Furthermore no storage is needed to achieve these levels of autarky and self-sufficiency. 
+Surprisingly, even in the base scenario, the microgrid seems to be commercially viable, as an autarky level of 94 percent is reached. Investment is heavily biased towards Fuel Cells (see figure 4), which are installed at a smaller capacity than pv installations but operate at a capacity factor of up to 100 percent versus around 12 for pv. Therefore, most power is generated by flexible gas fuel cells (dark blue) only supplemented by a small amount of pv generation (light blue).\\
+The ratio of fuel cell versus pv installation varies depending on the total amount and temporal distribution of demand: While the small residential residences install mostly fuel cells, the larger residential units invest in an almost equal capacity of both, while the commercial units install a lot more pv capacity than fuel cells. This is probably to keep the self-consumption ratio high, while minimizing trade, which is cheap but not free. The commercial units have by far the highest demand during midday which can be served by solar energy without demand shifting or storage.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{pictures/INV_GEN_Base.png}
@@ -1051,7 +1051,7 @@ Surprisingly, even in the base scenario, the microgrid seems to be commercially 
 	\label{gen_investment_base}
 	\flushleft\quad\quad\footnotesize{Source: Own Model User Interface}
 \end{figure}
-
+With this setup the model stays at a self-consumption rate of 100 percent, as feed-in renumeration seems to be smaller than the marginal cost of generating power with the fuel cells. Furthermore no storage is needed to achieve these levels of autarky and self-sufficiency. \\
 As can be observed in figures 5 and 6 trading (orange and pink) is heavily utilised for balancing, as the load profiles of participants differ enough to enable this. Also load shifting (green and purple) is sporadically used (see figures 5 and 6), but rarely loads are shifted for more than one hour.
 
 \begin{figure}[H]
@@ -1062,7 +1062,7 @@ As can be observed in figures 5 and 6 trading (orange and pink) is heavily utili
 	\flushleft\quad\quad\footnotesize{Source: Own Model User Interface}
 \end{figure}	
 
-The only use of the use of grid energy (also dark blue, but below orange and light blue) occurs during the winter week (the last third of the dispatch chart), when generation and internal dispatch are insufficient to meet peak demand, most likely due to a lack of irradiation (see figure 6).
+The only use of the use of grid energy (also dark blue, but below orange and light blue) occurs during the winter week (the last third of the dispatch chart), when generation and internal dispatch are insufficient to meet peak demand, most likely due to a lack of irradiation (see Figure 7). This indicates that the levelized cost of solar energy is significantly below that of the electricity generated by fuel cells, as it would otherwise be cheaper to satisfy demand entirely with them instead of adding solar and as a consequence having to rely on some grid imports during winter.
 
 \begin{figure}[H]
 	\centering
@@ -1128,10 +1128,20 @@ This is conducted quite successfully, as autarky remains high at 94 percent. Ele
 
  
 \newpage
+\chead{\textit{Discussion and Conclusion}}	
 \section{Discussion and Conclusion}
+Although the sensitivity analysis showed the model result to be quite robust, there are weaknesses to point out: The cost computation is simplified and does not take into account borrowing rates and does not discount future earnings. The results rather reflects a situation in which all equipment is leased and in which interest rates on this leasing contract are negligible. While this is very close to the truth in most of Europe and the U.S., it is still a minor distortion and a major one anywhere else.\\\\
+Another weakness is the modeling approach itself. By its very nature LP assumes perfect knowledge of the input parameters involved. This includes all parameters describing demand and supply, which in reality cannot be known at the point of an investment decision. Futhermore dispatch decisions in an LP are also made with perfect knowledge of the future, so every time storage is filled or demand shifted, the perfect amount is certain, which of course also is not the case in a real scenario. This affects only dispatch decisions with an impact on future dispatch decisions however, which our base case does not make a lot of, since it does not have any storage. As a result, the fact that the results arrived at are the product of an LP should only imply a minor advantage in investment optimality, since this can be predicted with quite high accuracy by means of statistics, and in dispatch optimality, since demand shifting is the only dispatch method utilized, which is impacted by perfect foresight. Furthermore demand shifting is mostly utilized for only one hour into the future, for which quite accurate forecasting tools are available, further reducing the information disadvatage of a real life scenario.\\\\
+Any minor inaccuracies aside the model results clearly conclude that a microgrid, as described in the base case, if regulatorily feasable, would be highly profitable, with a margin of over 0.13 \euro per KWh. The sensitivity analysis further shows, that even under significant deteroration of some of the assumptions made the margin still remains higher than 0.10 \euro per KWh. There is however some uncertainty involved as being razed by RWE in 2023 would signicantly worsen the profitability of the system. \\
+To the question regarding the bigger picture of decentralization, the answer is less clear: While clearly profitable in the context of German electricity retail prices, the generation costs of 0.164 \euro per KWh are still significantly higher than the current generation costs included in the retail price of 0.067 \euro per KWh \cite{bundesnetzagenturMonitoringbericht20182018}. This would conclude, that decentralized generation is still far off, when it comes to large scale competitiveness, it however leaves out of consideration some important factors: First, there is an addtional cost of 0.0719 \euro per KWh incurred by transmission, when buying electricity \cite{bundesnetzagenturMonitoringbericht20182018}. 
+In a decentralized scenario of 94 percent autarky, as exhibited in the base results, these costs would most likely be vastly smaller, if at all significant. This brings us to a total of 0.1389 \euro per KWh which is signifcantly closer to the 0.164 \euro result of the base case. Secondly, there is another 0.0917 \euro of levies (excluding taxes) included in the retail price, the majority of which is used to subsidize renewable generation \cite{bundesnetzagenturMonitoringbericht20182018}. Still the present German electricity mix is much dirtier, than the one used in the microgrid of the base case, which consists only of solar and higly efficient natural gas generation. 
+Taking this 'power quality' consideration into account the total price of equivalent electricty delivered by a centralized system is (at least in Germany) closer to 0.2305 \euro, which is actually significantly higher than even the results reached in the sensitivity analysis. Furthermore it does not even take into account the heat output of the fuel cells, which can be used without losses for heating water etc. \\
+	In addition, it is highly likely, that a major uptake of decentralized generation methods would reduce investment costs, especially of fuel cells, further bringing down the estimated price of electricity. \\
+	Of course a decentralized system would incur other costs, as a rudimentary grid would still be needed and industry would possibly suffer from the loss of access to subsidized electricity. \todo{reference eeg umlage}
+	Overall though, the results arrived at in this case study suggest a bright future for decentralized generation systems, as they close, or even have closed the cost gap to current centralized ones.
 
 \newpage
-
+\chead{\textit{Appendix}}	
 
 \section{Appendix}
 \subsection{Literature Review}
@@ -1165,7 +1175,8 @@ After the filtering by inclusion and exclusion criteria 58 publications remained
 
 % weitere Dokumente einfügen mit den gleichen zwei Befehlen
 
-%\nocite{*}									% gibt zum Testen des Literaturverzeichnisses alle Bibeinträge aus
+%\nocite{*}	
+\newpage								% gibt zum Testen des Literaturverzeichnisses alle Bibeinträge aus
 \chead{\textit{References}}				    % siehe oben 
 \renewcommand\refname{Literature}			% in Literaturverzeichnis umbenennen
 \printbibliography

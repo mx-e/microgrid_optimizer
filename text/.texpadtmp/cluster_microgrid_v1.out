@@ -1,12 +1,12 @@
-\BOOKMARK [1][-]{section*.4}{List of Figures}{}% 1
-\BOOKMARK [1][-]{section*.5}{List of Tables}{}% 2
+\BOOKMARK [1][-]{section*.5}{List of Figures}{}% 1
+\BOOKMARK [1][-]{section*.6}{List of Tables}{}% 2
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 3
 \BOOKMARK [1][-]{section.2}{Literature Review}{}% 4
 \BOOKMARK [2][-]{subsection.2.1}{Key Questions}{section.2}% 5
 \BOOKMARK [2][-]{subsection.2.2}{Methodology}{section.2}% 6
 \BOOKMARK [2][-]{subsection.2.3}{Descriptive Analysis}{section.2}% 7
 \BOOKMARK [2][-]{subsection.2.4}{Literature Overview}{section.2}% 8
-\BOOKMARK [1][-]{section.3}{Model}{}% 9
+\BOOKMARK [1][-]{section.3}{Mathematical Formulation}{}% 9
 \BOOKMARK [2][-]{subsection.3.1}{Time}{section.3}% 10
 \BOOKMARK [2][-]{subsection.3.2}{Households}{section.3}% 11
 \BOOKMARK [2][-]{subsection.3.3}{Internal Variables}{section.3}% 12
@@ -17,7 +17,7 @@
 \BOOKMARK [2][-]{subsection.3.8}{Grid}{section.3}% 17
 \BOOKMARK [2][-]{subsection.3.9}{Power Balance}{section.3}% 18
 \BOOKMARK [2][-]{subsection.3.10}{Cost Minimisation Formula}{section.3}% 19
-\BOOKMARK [1][-]{section.4}{Implementation}{}% 20
+\BOOKMARK [1][-]{section.4}{Technical Implementation}{}% 20
 \BOOKMARK [2][-]{subsection.4.1}{Architecture}{section.4}% 21
 \BOOKMARK [2][-]{subsection.4.2}{Workflow}{section.4}% 22
 \BOOKMARK [1][-]{section.5}{Case Study}{}% 23
@@ -32,4 +32,4 @@
 \BOOKMARK [1][-]{section.6}{Discussion and Conclusion}{}% 32
 \BOOKMARK [1][-]{section.7}{Appendix}{}% 33
 \BOOKMARK [2][-]{subsection.7.1}{Literature Review}{section.7}% 34
-\BOOKMARK [1][-]{section*.41}{Literature}{}% 35
+\BOOKMARK [1][-]{section*.40}{Literature}{}% 35
