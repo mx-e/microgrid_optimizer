@@ -214,6 +214,32 @@
       \endverb
       \keyw{distributed power generation,Microgrids,Batteries,microgrid,demand side management,Planning,integer programming,linear programming,power generation planning,wind turbine,Genetic algorithms,multi-objective optimization,Customer satisfaction,Demand side management,distributed generation sources,fuzzy satisfaction-maximizing,fuzzy satisfaction-maximizing method,mixed integer linear programming algorithm,multiobjective optimization method,Optimization methods,photovoltaic arrays,planning and operation optimization}
     \endentry
+    \entry{chenowethRiseUniversityMicrogrids2018}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=4920faa7e0b6366a8ba8d75f76b12407}{%
+           family={Chenoweth},
+           familyi={C\bibinitperiod},
+           given={Hannah},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{4920faa7e0b6366a8ba8d75f76b12407}
+      \strng{fullhash}{4920faa7e0b6366a8ba8d75f76b12407}
+      \strng{bibnamehash}{4920faa7e0b6366a8ba8d75f76b12407}
+      \strng{authorbibnamehash}{4920faa7e0b6366a8ba8d75f76b12407}
+      \strng{authornamehash}{4920faa7e0b6366a8ba8d75f76b12407}
+      \strng{authorfullhash}{4920faa7e0b6366a8ba8d75f76b12407}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://info.higheredfacilitiesforum.com/blog/the-rise-of-university-microgrids}
+      \field{journaltitle}{Higher Ed Facilities Forum}
+      \field{langid}{english}
+      \field{title}{The {{Rise}} of {{University Microgrids}}}
+      \field{year}{2018}
+    \endentry
     \entry{costa2014mixed}{article}{}
       \name{author}{2}{}{%
         {{hash=c4a9df21e6a51f62e722825cafafcdc9}{%
@@ -292,31 +318,6 @@
       \verb https://doi.org/10.1016/j.apenergy.2017.05.068
       \endverb
       \keyw{Renewable energy,Microgrid,Robust optimization}
-    \endentry
-    \entry{crockfordIntroducingJSON}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=e289d8e4f4648ab33fb5d884998637aa}{%
-           family={Crockford},
-           familyi={C\bibinitperiod},
-           given={Douglas},
-           giveni={D\bibinitperiod}}}%
-      }
-      \strng{namehash}{e289d8e4f4648ab33fb5d884998637aa}
-      \strng{fullhash}{e289d8e4f4648ab33fb5d884998637aa}
-      \strng{bibnamehash}{e289d8e4f4648ab33fb5d884998637aa}
-      \strng{authorbibnamehash}{e289d8e4f4648ab33fb5d884998637aa}
-      \strng{authornamehash}{e289d8e4f4648ab33fb5d884998637aa}
-      \strng{authorfullhash}{e289d8e4f4648ab33fb5d884998637aa}
-      \field{sortinit}{C}
-      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
-      \field{labeldatesource}{nodate}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. It is based on a subset of the JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999. JSON is a text format that is completely language independent but uses conventions that are familiar to programmers of the C-family of languages, including C, C++, C\#, Java, JavaScript, Perl, Python, and many others. These properties make JSON an ideal data-interchange language.}
-      \field{howpublished}{https://www.json.org/}
-      \field{journaltitle}{JSON}
-      \field{langid}{english}
-      \field{title}{Introducing {{JSON}}}
     \endentry
     \entry{DistributedEnergyResources2018}{misc}{}
       \field{sortinit}{D}
@@ -447,6 +448,58 @@
       \field{journaltitle}{github.com}
       \field{langid}{english}
       \field{title}{Github {{Search}} - '{{Microgrid Optimization}}' , Sorted by Most Stars}
+      \field{year}{2018}
+    \endentry
+    \entry{goekeErfolgreicherKlimaschutzDurch2018}{article}{}
+      \name{author}{6}{}{%
+        {{hash=60183ab93a5985a9e83c1d252e31db6d}{%
+           family={Göke},
+           familyi={G\bibinitperiod},
+           given={Leonard},
+           giveni={L\bibinitperiod}}}%
+        {{hash=29979a76180b176b800048095fca8d50}{%
+           family={Kittel},
+           familyi={K\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=439c53fe4f7114b643800bcd9f7feb00}{%
+           family={Kemfert},
+           familyi={K\bibinitperiod},
+           given={Claudia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=db29736968f88383e0feb745e726be2f}{%
+           family={Lorenz},
+           familyi={L\bibinitperiod},
+           given={Casimir},
+           giveni={C\bibinitperiod}}}%
+        {{hash=bae7a122380ec5daaf339e9089c1d340}{%
+           family={Oei},
+           familyi={O\bibinitperiod},
+           given={Pao-Yu},
+           giveni={P\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=866f3916c8f672d93a6f020d7408887f}{%
+           family={{von Hirschhausen}},
+           familyi={v\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{1e588b9c863c94a82cd57b9d855afd0b}
+      \strng{fullhash}{2c7044588a7ae0208831af4d9502edcb}
+      \strng{bibnamehash}{2c7044588a7ae0208831af4d9502edcb}
+      \strng{authorbibnamehash}{2c7044588a7ae0208831af4d9502edcb}
+      \strng{authornamehash}{1e588b9c863c94a82cd57b9d855afd0b}
+      \strng{authorfullhash}{2c7044588a7ae0208831af4d9502edcb}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{DIW Wochenbericht}
+      \field{langid}{de}
+      \field{number}{33}
+      \field{title}{{Erfolgreicher Klimaschutz durch zügigen Kohleausstieg in Deutschland und Nordrhein- Westfalen}}
+      \field{volume}{2018}
       \field{year}{2018}
     \endentry
     \entry{goodarziLinearOptimization2014}{incollection}{}
@@ -686,6 +739,17 @@
       \field{title}{Julia {{Micro}}-{{Benchmarks}}}
       \field{year}{2018}
     \endentry
+    \entry{JuMPJlModeling2019}{misc}{}
+      \field{sortinit}{J}
+      \field{sortinithash}{fce5f8d0bd05e8d93f3dbe21c78897ca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://github.com/JuliaOpt/JuMP.jl}
+      \field{langid}{english}
+      \field{title}{{{JuMP}}.Jl - {{Modeling}} Language for {{Mathematical Optimization}} (Linear, Mixed-Integer, Conic, Semidefinite, Nonlinear)}
+      \field{year}{2019}
+    \endentry
     \entry{7853085}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=038c0577c8e6a8ac3f9d422f6b87e0af}{%
@@ -767,6 +831,38 @@
       \verb https://doi.org/10.1016/j.cherd.2017.07.030
       \endverb
       \keyw{Microgrid,Distributed energy resources,CO emissions,Electricity trade,Energy planning and scheduling}
+    \endentry
+    \entry{kuechlerIndustriestrompreiseDeutschlandUnd2014}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=df79a21065d323e8e200aa095453539d}{%
+           family={Küchler},
+           familyi={K\bibinitperiod},
+           given={Swantje},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c95cacecbc34c14dc328e757a0eca38a}{%
+           family={Wronski},
+           familyi={W\bibinitperiod},
+           given={Rupert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Forum Ökologisch-Soziale Marktwirtschaft}%
+      }
+      \strng{namehash}{1a4844fc639846e8458ba3e529aa63f7}
+      \strng{fullhash}{1a4844fc639846e8458ba3e529aa63f7}
+      \strng{bibnamehash}{1a4844fc639846e8458ba3e529aa63f7}
+      \strng{authorbibnamehash}{1a4844fc639846e8458ba3e529aa63f7}
+      \strng{authornamehash}{1a4844fc639846e8458ba3e529aa63f7}
+      \strng{authorfullhash}{1a4844fc639846e8458ba3e529aa63f7}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{de}
+      \field{title}{{Industriestrompreise in Deutschland und den USA}}
+      \field{year}{2014}
     \endentry
     \entry{LAUINGER201624}{article}{}
       \name{author}{4}{}{%
@@ -1321,6 +1417,105 @@
       \endverb
       \keyw{distributed power generation,Microgrid,Microgrids,Renewable energy sources,Photovoltaic systems,energy storage,Energy storage,Optimization,Schedules,renewable energy,power generation scheduling,photovoltaic power systems,integer programming,linear programming,optimization,optimal capacity,optimal operation scheduling,photovoltaic,photovoltaic power system,renewable energy source,objective function,MILP,average load demand,curtailed renewable energy ratio,grid-tied microgrid,Hydroelectric power generation,mixed integer linear problem,operational limitations,performance requirements,pumped-storage hydroelectric system,pumped-storage hydroelectricity,pumped-storage power stations,renewable energy penetration ratio,solar insolation data}
     \endentry
+    \entry{oeiKohleausstiegNRWIm2018}{misc}{}
+      \name{author}{7}{}{%
+        {{hash=bae7a122380ec5daaf339e9089c1d340}{%
+           family={Oei},
+           familyi={O\bibinitperiod},
+           given={Pao-Yu},
+           giveni={P\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=db474475b63f992c8357141c2f645155}{%
+           family={Brauers},
+           familyi={B\bibinitperiod},
+           given={Hanna},
+           giveni={H\bibinitperiod}}}%
+        {{hash=439c53fe4f7114b643800bcd9f7feb00}{%
+           family={Kemfert},
+           familyi={K\bibinitperiod},
+           given={Claudia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=29979a76180b176b800048095fca8d50}{%
+           family={Kittel},
+           familyi={K\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=60183ab93a5985a9e83c1d252e31db6d}{%
+           family={Göke},
+           familyi={G\bibinitperiod},
+           given={Leonard},
+           giveni={L\bibinitperiod}}}%
+        {{hash=866f3916c8f672d93a6f020d7408887f}{%
+           family={{von Hirschhausen}},
+           familyi={v\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=cb967ec5d09817076c45a84a4003e63c}{%
+           family={Walk},
+           familyi={W\bibinitperiod},
+           given={Paula},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Deutsches Institut für Wirtschaftsforschung}%
+      }
+      \strng{namehash}{177f9a38c30a454adcd2c75cecaa5ec8}
+      \strng{fullhash}{eb97d53570eae9a7a5992a7a59352719}
+      \strng{bibnamehash}{eb97d53570eae9a7a5992a7a59352719}
+      \strng{authorbibnamehash}{eb97d53570eae9a7a5992a7a59352719}
+      \strng{authornamehash}{177f9a38c30a454adcd2c75cecaa5ec8}
+      \strng{authorfullhash}{eb97d53570eae9a7a5992a7a59352719}
+      \field{sortinit}{O}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{de}
+      \field{title}{{Kohleausstieg in NRW im deutschen und europäischen Kontext –{} Energiewirtschaft, Klimaziele und wirtschaftliche Entwicklung}}
+      \field{year}{2018}
+    \endentry
+    \entry{oeiWeichenstellungKohlekonsensKohlevorraete2019}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=bae7a122380ec5daaf339e9089c1d340}{%
+           family={Oei},
+           familyi={O\bibinitperiod},
+           given={Pao-Yu},
+           giveni={P\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=415b4ffb64353beca522f9003080d18c}{%
+           family={Rieve},
+           familyi={R\bibinitperiod},
+           given={Catharina},
+           giveni={C\bibinitperiod}}}%
+        {{hash=866f3916c8f672d93a6f020d7408887f}{%
+           family={{von Hirschhausen}},
+           familyi={v\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=439c53fe4f7114b643800bcd9f7feb00}{%
+           family={Kemfert},
+           familyi={K\bibinitperiod},
+           given={Claudia},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Deutsches Institut für Wirtschaftsforschung}%
+      }
+      \strng{namehash}{177f9a38c30a454adcd2c75cecaa5ec8}
+      \strng{fullhash}{afc0f2a44442b32f57f8039ab4ee3ad3}
+      \strng{bibnamehash}{afc0f2a44442b32f57f8039ab4ee3ad3}
+      \strng{authorbibnamehash}{afc0f2a44442b32f57f8039ab4ee3ad3}
+      \strng{authornamehash}{177f9a38c30a454adcd2c75cecaa5ec8}
+      \strng{authorfullhash}{afc0f2a44442b32f57f8039ab4ee3ad3}
+      \field{sortinit}{O}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{de}
+      \field{title}{{Weichenstellung Kohlekonsens: Kohlevorräte ermöglichen den Erhalt des Hambacher Waldes und aller noch bedrohten Dörfer}}
+      \field{year}{2019}
+    \endentry
     \entry{palma2013microgrid}{article}{}
       \name{author}{7}{}{%
         {{hash=b3850f83275d1d440a0641562b94c333}{%
@@ -1420,44 +1615,6 @@
       \endverb
       \keyw{Programming,distributed power generation,Microgrids,power generation control,power system management,power generation economics,environmental factors,Optimization,Load modeling,Stochastic processes,Uncertainty,distribution grid,integer programming,linear programming,stochastic programming,controllable loads,generation capacities,predictive control,storage devices,Vectors,utility grid,microgrid operations,stochastic model predictive control,stochastic optimization problem,mixed-integer linear programming problem,economic-environmental operation management,feedback,feedback mechanism,fluctuating demand,microgrid management system,stochastic framework,time-varying request,two-stage stochastic programming approach}
     \endentry
-    \entry{petersenSystematicMappingStudies}{article}{}
-      \name{author}{4}{}{%
-        {{hash=b1fabf9697f0dac32839ca9d4eea8d88}{%
-           family={Petersen},
-           familyi={P\bibinitperiod},
-           given={Kai},
-           giveni={K\bibinitperiod}}}%
-        {{hash=586e398faf79549b53f97ca8d2463143}{%
-           family={Feldt},
-           familyi={F\bibinitperiod},
-           given={Robert},
-           giveni={R\bibinitperiod}}}%
-        {{hash=3bf1b3c9f875ee79f0a6d3082f5351ef}{%
-           family={Mujtaba},
-           familyi={M\bibinitperiod},
-           given={Shahid},
-           giveni={S\bibinitperiod}}}%
-        {{hash=30d283308b4de5b545a4a292daf24c77}{%
-           family={Mattson},
-           familyi={M\bibinitperiod},
-           given={Michael},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{956fcf23ee1be0159e140bdc43f360ef}
-      \strng{fullhash}{2424d643184ddd3a5c1fb08a07e80288}
-      \strng{bibnamehash}{2424d643184ddd3a5c1fb08a07e80288}
-      \strng{authorbibnamehash}{2424d643184ddd3a5c1fb08a07e80288}
-      \strng{authornamehash}{956fcf23ee1be0159e140bdc43f360ef}
-      \strng{authorfullhash}{2424d643184ddd3a5c1fb08a07e80288}
-      \field{sortinit}{P}
-      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
-      \field{extradate}{1}
-      \field{labeldatesource}{nodate}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{BACKGROUND: A software engineering systematic map is a defined method to build a classification scheme and structure a software engineering field of interest. The analysis of results focuses on frequencies of publications for categories within the scheme. Thereby, the coverage of the research field can be determined. Different facets of the scheme can also be combined to answer more specific research questions. OBJECTIVE: We describe how to conduct a systematic mapping study in software engineering and provide guidelines. We also compare systematic maps and systematic reviews to clarify how to chose between them. This comparison leads to a set of guidelines for systematic maps. METHOD: We have defined a systematic mapping process and applied it to complete a systematic mapping study. Furthermore, we compare systematic maps with systematic reviews by systematically analyzing existing systematic reviews. RESULTS: We describe a process for software engineering systematic mapping studies and compare it to systematic reviews. Based on this, guidelines for doing systematic maps are defined. CONCLUSIONS: Systematic maps and reviews are different in terms of goals, breadth, validity issues and implications. Thus, they should be used complementarily and require different methods (e.g., for analysis).}
-      \field{title}{Systematic {{Mapping Studies}} in {{Software Engineering}}}
-    \endentry
     \entry{pop00975}{article}{}
       \name{author}{3}{}{%
         {{hash=466e57f34f7aeba8e27a05346a389956}{%
@@ -1484,14 +1641,15 @@
       \strng{authorfullhash}{27b94e3e56f3face5224bb5422173b7a}
       \field{sortinit}{P}
       \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
-      \field{extradate}{2}
-      \field{labeldatesource}{nodate}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{researchgate.net}
       \field{note}{Query date: 2018-06-27}
       \field{title}{Mapping the {{Sea}} of {{Opportunities}}: {{Blockchain}} in {{Supply Chain}} and {{Logistics}}}
       \field{type}{PDF}
+      \field{year}{2018}
     \endentry
     \entry{pfenningerLongtermPatternsEuropean2016}{article}{}
       \name{author}{2}{}{%
@@ -1533,7 +1691,7 @@
       \verb{file}
       \verb /Users/maxi/Zotero/storage/8GXKX8DL/Pfenninger and Staffell - 2016 - Long-term patterns of European PV output using 30 .pdf;/Users/maxi/Zotero/storage/5FWGRGDB/S0360544216311744.html
       \endverb
-      \keyw{Solar energy,Meteorological reanalysis,Satellite irradiance estimation,Renewables,Grid integration of renewables}
+      \keyw{Grid integration of renewables,Meteorological reanalysis,Renewables,Satellite irradiance estimation,Solar energy}
     \endentry
     \entry{PlotlyJavascriptOpen2019}{misc}{}
       \field{sortinit}{P}
@@ -2583,8 +2741,8 @@
       \keyw{Microgrids,Energy storage,Uncertainty,Modeling,Biomass,Combined heat and power,Renewables integration,Stochastic analysis}
     \endentry
   \enddatalist
-  \missing{JuMPJlModeling2019}
-  \missing{chenowethRiseUniversityMicrogrids2018}
+  \missing{crockfordIntroducingJSON}
+  \missing{petersenSystematicMappingStudies}
 \endrefsection
 \endinput
 
