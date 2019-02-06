@@ -2755,4 +2755,200 @@
       <bcf:constraint type="data" datatype="pattern" pattern="(?:sf|sm|sn|pf|pm|pn|pp)">
         <bcf:field>gender</bcf:field>
       </bcf:constraint>
-    </bcf:con
+    </bcf:constraints>
+  </bcf:datamodel>
+  <!-- CITATION DATA -->
+  <!-- SECTION 0 -->
+  <bcf:bibdata section="0">
+    <bcf:datasource type="file" datatype="bibtex">microgrid_literature.bib</bcf:datasource>
+    <bcf:datasource type="file" datatype="bibtex">extra_literature.bib</bcf:datasource>
+  </bcf:bibdata>
+  <bcf:section number="0">
+    <bcf:citekey order="1">ParisAgreement2018</bcf:citekey>
+    <bcf:citekey order="2">NuclearPowerGermany2019</bcf:citekey>
+    <bcf:citekey order="3">yanguasparraScienceBasedCoal2018</bcf:citekey>
+    <bcf:citekey order="4">Monitoringbericht20182018</bcf:citekey>
+    <bcf:citekey order="5">heindlIstEnergiewendeSozial2014</bcf:citekey>
+    <bcf:citekey order="6">mengelkampDesigningMicrogridEnergy2018</bcf:citekey>
+    <bcf:citekey order="7">chenowethRiseUniversityMicrogrids2018</bcf:citekey>
+    <bcf:citekey order="8">goodarziLinearOptimization2014</bcf:citekey>
+    <bcf:citekey order="9">MixedIntegerProgrammingMIP2018</bcf:citekey>
+    <bcf:citekey order="10">MITLicense2018</bcf:citekey>
+    <bcf:citekey order="11">petersenSystematicMappingStudies</bcf:citekey>
+    <bcf:citekey order="12">pop00975</bcf:citekey>
+    <bcf:citekey order="13">7975049</bcf:citekey>
+    <bcf:citekey order="14">NEMATI2018944</bcf:citekey>
+    <bcf:citekey order="15">palma2013microgrid</bcf:citekey>
+    <bcf:citekey order="16">silvente2015rolling</bcf:citekey>
+    <bcf:citekey order="17">CRAPARO2017135</bcf:citekey>
+    <bcf:citekey order="18">8240914</bcf:citekey>
+    <bcf:citekey order="19">zhang2015optimal</bcf:citekey>
+    <bcf:citekey order="20">7540870</bcf:citekey>
+    <bcf:citekey order="21">SHAMS2018326</bcf:citekey>
+    <bcf:citekey order="22">ZHENG2018204</bcf:citekey>
+    <bcf:citekey order="23">7244857</bcf:citekey>
+    <bcf:citekey order="24">TAVAKOLI20181</bcf:citekey>
+    <bcf:citekey order="25">mashayekhMixedIntegerLinear2017</bcf:citekey>
+    <bcf:citekey order="26">7853085</bcf:citekey>
+    <bcf:citekey order="27">zhang2013efficient</bcf:citekey>
+    <bcf:citekey order="28">ZHENG2018836</bcf:citekey>
+    <bcf:citekey order="29">silvente2015rolling</bcf:citekey>
+    <bcf:citekey order="30">7741704</bcf:citekey>
+    <bcf:citekey order="31">NEMATI2018944</bcf:citekey>
+    <bcf:citekey order="32">SOLTANINEJADFARSANGI2018257</bcf:citekey>
+    <bcf:citekey order="33">KOLTSAKLIS2018318</bcf:citekey>
+    <bcf:citekey order="34">ZHANG20181229</bcf:citekey>
+    <bcf:citekey order="35">palma2013microgrid</bcf:citekey>
+    <bcf:citekey order="36">6872087</bcf:citekey>
+    <bcf:citekey order="37">7281564</bcf:citekey>
+    <bcf:citekey order="38">TAVAKOLI20181</bcf:citekey>
+    <bcf:citekey order="39">7540870</bcf:citekey>
+    <bcf:citekey order="40">7975049</bcf:citekey>
+    <bcf:citekey order="41">UMEOZOR2016272</bcf:citekey>
+    <bcf:citekey order="42">NEMATI2018944</bcf:citekey>
+    <bcf:citekey order="43">LAUINGER201624</bcf:citekey>
+    <bcf:citekey order="44">wouters2015energy</bcf:citekey>
+    <bcf:citekey order="45">costa2014mixed</bcf:citekey>
+    <bcf:citekey order="46">7399422</bcf:citekey>
+    <bcf:citekey order="47">UMEOZOR2016272</bcf:citekey>
+    <bcf:citekey order="48">6465822</bcf:citekey>
+    <bcf:citekey order="49">6669807</bcf:citekey>
+    <bcf:citekey order="50">zhang2011optimal</bcf:citekey>
+    <bcf:citekey order="51">zhang2013efficient</bcf:citekey>
+    <bcf:citekey order="52">zhang2015optimal</bcf:citekey>
+    <bcf:citekey order="53">LAUINGER201624</bcf:citekey>
+    <bcf:citekey order="54">wouters2015energy</bcf:citekey>
+    <bcf:citekey order="55">6700453</bcf:citekey>
+    <bcf:citekey order="56">7125149</bcf:citekey>
+    <bcf:citekey order="57">8023785</bcf:citekey>
+    <bcf:citekey order="58">7972908</bcf:citekey>
+    <bcf:citekey order="59">SHAMS2018326</bcf:citekey>
+    <bcf:citekey order="60">7741704</bcf:citekey>
+    <bcf:citekey order="61">mashayekhMixedIntegerLinear2017</bcf:citekey>
+    <bcf:citekey order="62">7741704</bcf:citekey>
+    <bcf:citekey order="63">7972908</bcf:citekey>
+    <bcf:citekey order="64">silvente2015rolling</bcf:citekey>
+    <bcf:citekey order="65">zhang2015optimal</bcf:citekey>
+    <bcf:citekey order="66">8216436</bcf:citekey>
+    <bcf:citekey order="67">LAUINGER201624</bcf:citekey>
+    <bcf:citekey order="68">wouters2015energy</bcf:citekey>
+    <bcf:citekey order="69">LAUINGER201624</bcf:citekey>
+    <bcf:citekey order="70">7399422</bcf:citekey>
+    <bcf:citekey order="71">KOLTSAKLIS2018318</bcf:citekey>
+    <bcf:citekey order="72">7399422</bcf:citekey>
+    <bcf:citekey order="73">LAUINGER201624</bcf:citekey>
+    <bcf:citekey order="74">wouters2015energy</bcf:citekey>
+    <bcf:citekey order="75">7981571</bcf:citekey>
+    <bcf:citekey order="76">palma2013microgrid</bcf:citekey>
+    <bcf:citekey order="77">7981571</bcf:citekey>
+    <bcf:citekey order="78">zhang2013efficient</bcf:citekey>
+    <bcf:citekey order="79">zhang2011optimal</bcf:citekey>
+    <bcf:citekey order="80">zhang2015optimal</bcf:citekey>
+    <bcf:citekey order="81">palma2013microgrid</bcf:citekey>
+    <bcf:citekey order="82">LAUINGER201624</bcf:citekey>
+    <bcf:citekey order="83">ZHENG2018204</bcf:citekey>
+    <bcf:citekey order="84">8023785</bcf:citekey>
+    <bcf:citekey order="85">amrollahi2017techno</bcf:citekey>
+    <bcf:citekey order="86">ZHENG2018204</bcf:citekey>
+    <bcf:citekey order="87">LAUINGER201624</bcf:citekey>
+    <bcf:citekey order="88">DistributedEnergyResources2018</bcf:citekey>
+    <bcf:citekey order="89">HOMERGridBehindtheMeter2018</bcf:citekey>
+    <bcf:citekey order="90">sechilariu2014supervision</bcf:citekey>
+    <bcf:citekey order="91">NEMATI2018944</bcf:citekey>
+    <bcf:citekey order="92">UMEOZOR2016672</bcf:citekey>
+    <bcf:citekey order="93">7741704</bcf:citekey>
+    <bcf:citekey order="94">silvente2015rolling</bcf:citekey>
+    <bcf:citekey order="95">UMEOZOR2016672</bcf:citekey>
+    <bcf:citekey order="96">CRAPARO2017135</bcf:citekey>
+    <bcf:citekey order="97">7741704</bcf:citekey>
+    <bcf:citekey order="98">7972908</bcf:citekey>
+    <bcf:citekey order="99">GithubSearchMicrogrid2018</bcf:citekey>
+    <bcf:citekey order="100">LAUINGER201624</bcf:citekey>
+    <bcf:citekey order="101">silvente2015rolling</bcf:citekey>
+    <bcf:citekey order="102">zhang2015optimal</bcf:citekey>
+    <bcf:citekey order="103">8216436</bcf:citekey>
+    <bcf:citekey order="104">7972908</bcf:citekey>
+    <bcf:citekey order="105">JuliaMicroBenchmarks2018</bcf:citekey>
+    <bcf:citekey order="106">NodeJs2018</bcf:citekey>
+    <bcf:citekey order="107">fieldingArchitecturalStylesDesign2000</bcf:citekey>
+    <bcf:citekey order="108">ReactJavaScriptLibrary2019</bcf:citekey>
+    <bcf:citekey order="109">crockfordIntroducingJSON</bcf:citekey>
+    <bcf:citekey order="110">fieldingArchitecturalStylesDesign2000</bcf:citekey>
+    <bcf:citekey order="111">JuMPJlModeling2019</bcf:citekey>
+    <bcf:citekey order="112">GurobiOptimization</bcf:citekey>
+    <bcf:citekey order="113">PlotlyJavascriptOpen2019</bcf:citekey>
+    <bcf:citekey order="114">RahmendatenMorschenichGemeinde2018</bcf:citekey>
+    <bcf:citekey order="115">UmsiedlungMorschenich</bcf:citekey>
+    <bcf:citekey order="116">bauerAbgrundtief2018</bcf:citekey>
+    <bcf:citekey order="117">pfenningerLongtermPatternsEuropean2016</bcf:citekey>
+    <bcf:citekey order="118">wirthAktuelleFaktenZur2018</bcf:citekey>
+    <bcf:citekey order="119">SolarmoduleEBay2018</bcf:citekey>
+    <bcf:citekey order="120">ModulePriceIndex2018</bcf:citekey>
+    <bcf:citekey order="121">wirthAktuelleFaktenZur2018</bcf:citekey>
+    <bcf:citekey order="122">wirthAktuelleFaktenZur2018</bcf:citekey>
+    <bcf:citekey order="123">LAUINGER201624</bcf:citekey>
+    <bcf:citekey order="124">LAUINGER201624</bcf:citekey>
+    <bcf:citekey order="125">NaturalGasPrices2018</bcf:citekey>
+    <bcf:citekey order="126">LAUINGER201624</bcf:citekey>
+    <bcf:citekey order="127">BlueGENWorldsMost2018</bcf:citekey>
+    <bcf:citekey order="128">PowerwallTesla2018</bcf:citekey>
+    <bcf:citekey order="129">PowerwallTesla2018</bcf:citekey>
+    <bcf:citekey order="130">PowerwallTesla2018</bcf:citekey>
+    <bcf:citekey order="131">PowerwallTesla2018</bcf:citekey>
+    <bcf:citekey order="132">PowerwallTesla2018</bcf:citekey>
+    <bcf:citekey order="133">PowerwallTesla2018</bcf:citekey>
+    <bcf:citekey order="134">LithiumIonenHEHigh2018</bcf:citekey>
+    <bcf:citekey order="135">VictronEnergyLithium2018</bcf:citekey>
+    <bcf:citekey order="136">LithiumIonenHEHigh2018</bcf:citekey>
+    <bcf:citekey order="137">LAUINGER201624</bcf:citekey>
+    <bcf:citekey order="138">LithiumIonenHEHigh2018</bcf:citekey>
+    <bcf:citekey order="139">LithiumIonenHEHigh2018</bcf:citekey>
+    <bcf:citekey order="140">ReferenzlastprofileUndMehrfamilien2008</bcf:citekey>
+    <bcf:citekey order="141">fuenfgeldAnwendungRepraesentativenVDEWLastprofile2000</bcf:citekey>
+    <bcf:citekey order="142">StandardlastprofileStrom2017</bcf:citekey>
+    <bcf:citekey order="143">Monitoringbericht20182018</bcf:citekey>
+    <bcf:citekey order="144">ReferenzlastprofileUndMehrfamilien2008</bcf:citekey>
+    <bcf:citekey order="145">Monitoringbericht20182018</bcf:citekey>
+    <bcf:citekey order="146">Monitoringbericht20182018</bcf:citekey>
+    <bcf:citekey order="147">Monitoringbericht20182018</bcf:citekey>
+  </bcf:section>
+  <!-- SORTING TEMPLATES -->
+  <bcf:sortingtemplate name="nyt">
+    <bcf:sort order="1">
+      <bcf:sortitem order="1">presort</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="2" final="1">
+      <bcf:sortitem order="1">sortkey</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="3">
+      <bcf:sortitem order="1">sortname</bcf:sortitem>
+      <bcf:sortitem order="2">author</bcf:sortitem>
+      <bcf:sortitem order="3">editor</bcf:sortitem>
+      <bcf:sortitem order="4">translator</bcf:sortitem>
+      <bcf:sortitem order="5">sorttitle</bcf:sortitem>
+      <bcf:sortitem order="6">title</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="4">
+      <bcf:sortitem order="1">sortyear</bcf:sortitem>
+      <bcf:sortitem order="2">year</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="5">
+      <bcf:sortitem order="1">sorttitle</bcf:sortitem>
+      <bcf:sortitem order="2">title</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="6">
+      <bcf:sortitem order="1">volume</bcf:sortitem>
+      <bcf:sortitem order="2">0</bcf:sortitem>
+    </bcf:sort>
+  </bcf:sortingtemplate>
+  <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="nyt/global//global/global"
+                type="entry"
+                sortingtemplatename="nyt"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global">
+  </bcf:datalist>
+</bcf:controlfile>
