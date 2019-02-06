@@ -456,7 +456,7 @@ In the following chapters a literature review will be conducted to reflect the c
 \section{Literature Review}
 In this section I will give an overview over the current status quo regarding the optimization of microgrids and more specifically the tools available to do so. I will pursue  this by answering a number of broad question, which I think are crucial regarding my subject. The procedure will be structured by utilizing a consistent and reproducible methodology described in detail below. 
 
-\subsection{Key Questions}
+\subsection{Key Questions \& Methodology}
 This literature review will attempt to answer the following key questions in the context of my subject:
 \begin{enumerate}
 	\item What are the most eminent scientific standards for modeling a microgrid allocation and dispatch?
@@ -465,8 +465,7 @@ This literature review will attempt to answer the following key questions in the
 	\item What are the most commonly used (commercial) tools for optimizing a microgrid? Are there any free or open source solutions? 
 \end{enumerate} 
 
-\subsection{Methodology}
-To arrive at a reproducible dataset of scientific literature, I will use the methodology described in \cite{petersenSystematicMappingStudies} and \cite{pop00975}:
+To arrive at a reproducible dataset of scientific literature, I will use the methodology described in \cite{petersenSystematicMappingStudies2008} and \cite{pop00975}:
 
 \begin{enumerate}
 	\item Define a search string.
@@ -1127,8 +1126,8 @@ This is conducted quite successfully, as autarky remains high at 94 percent. Ele
 
  
 \newpage
-\chead{\textit{Discussion and Conclusion}}	
-\section{Discussion and Conclusion}
+\chead{\textit{Discussion}}	
+\section{Discussion}
 Although the sensitivity analysis showed the model result to be quite robust, there are weaknesses to point out: The cost computation is simplified and does not take into account borrowing rates and does not discount future earnings. The result rather resembles a situation in which all equipment is leased and in which interest rates on this leasing contract are negligible. While this is very close to the truth in most of Europe and the US, it is still a minor distortion and a major one anywhere else.\\\\
 Another weakness is the modeling approach itself. By its very nature LP assumes perfect knowledge of the input parameters involved. This includes all parameters describing demand and supply, which in reality cannot be known at the point of an investment decision. Furthermore, dispatch decisions in an LP are also made with perfect knowledge of the future, so that every time storage is filled or demand shifted, the perfect amount is certain, which of course is not the case in a real-world scenario. This affects only dispatch decisions with an impact on future dispatch decisions, which do not feature heavily in the base case, since it does not install any storage. As a consequence, the fact that the results arrived at are the product of an LP should only imply a minor advantage in investment optimality, since this can be predicted with quite high accuracy by means of statistics. It also implies only a minor advantage in dispatch optimality, since demand shifting is the only dispatch method utilized that is impacted by perfect foresight. Moreover, demand shifting is mostly utilized for only one hour into the future, for which quite accurate forecasting tools are available, which further reduces the information disadvantage of a real-life scenario.\\\\
 Any minor inaccuracies aside the model results clearly conclude that a microgrid, as described in the base case, if regulatorily feasible, would be highly profitable with a margin of over 0.13 \euro\ per KWh. The sensitivity analysis further shows that even under significant deterioration of some of the assumptions made the margin still remains higher than 0.10 \euro\ per KWh. There is, however, some uncertainty involved, as being razed by RWE would significantly worsen the profitability of the system. \\
@@ -1138,6 +1137,12 @@ Taking this `power quality' consideration into account the total price of equiva
 	In addition, it is highly likely that a major uptake of decentralized generation methods would reduce investment costs, especially of fuel cells, further bringing down the estimated price of electricity. \\
 	Of course, a decentralized system would incur other costs, as a rudimentary grid would still be needed and industry would possibly suffer from the loss of access to subsidized electricity [\cite{kuechlerIndustriestrompreiseDeutschlandUnd2014}].
 	But overall, the results arrived at in this case study suggest a bright future for decentralized generation systems, as they close, – or even have already closed – the the cost gap to current centralized systems.
+	
+\newpage
+\chead{\textit{Conclusion}}	
+\section{Conclusion}
+
+
 
 \newpage
 \chead{\textit{Appendix}}	
@@ -1155,21 +1160,21 @@ The search string for the abstract keyword search was [(microgrid OR micro-grid 
 After the abstract keyword search was conducted, 106 publications remained.
 \\
 The inclusion criteria were:
-\begin{enumerate}
+\begin{itemize}
 	\item An optimization model is employed.
 	\item There is some discussion of the design of the model.
 	\item The objective of the model is the optimization of design or dispatch of a single microgrid.
 	\item There is some sort of case study conducted.
-\end{enumerate}
+\end{itemize}
 The exclusion criteria were:
-\begin{enumerate}
+\begin{itemize}
 	\item The publication is not in English.
 	\item The full text is not obtainable for this author with reasonable effort.
 	\item The publication is a Work-In-Progress / Conference Paper version of a publication published in a journal and also included in this dataset.
 	\item The mathematical model designed is non-linear.
 	\item The mathematical model designed only considers a specific aspect of dispatch or design, not the entirety.
 	\item The mathematical model is mostly focused on heat generation / distribution rather than electricity.
-\end{enumerate}
+\end{itemize}
 After filtering the publications by inclusion and exclusion criteria, 58 publications remained.
 
 % weitere Dokumente einfügen mit den gleichen zwei Befehlen

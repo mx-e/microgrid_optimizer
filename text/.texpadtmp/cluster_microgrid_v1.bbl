@@ -1615,6 +1615,45 @@
       \endverb
       \keyw{Programming,distributed power generation,Microgrids,power generation control,power system management,power generation economics,environmental factors,Optimization,Load modeling,Stochastic processes,Uncertainty,distribution grid,integer programming,linear programming,stochastic programming,controllable loads,generation capacities,predictive control,storage devices,Vectors,utility grid,microgrid operations,stochastic model predictive control,stochastic optimization problem,mixed-integer linear programming problem,economic-environmental operation management,feedback,feedback mechanism,fluctuating demand,microgrid management system,stochastic framework,time-varying request,two-stage stochastic programming approach}
     \endentry
+    \entry{petersenSystematicMappingStudies2008}{article}{}
+      \name{author}{4}{}{%
+        {{hash=b1fabf9697f0dac32839ca9d4eea8d88}{%
+           family={Petersen},
+           familyi={P\bibinitperiod},
+           given={Kai},
+           giveni={K\bibinitperiod}}}%
+        {{hash=586e398faf79549b53f97ca8d2463143}{%
+           family={Feldt},
+           familyi={F\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=3bf1b3c9f875ee79f0a6d3082f5351ef}{%
+           family={Mujtaba},
+           familyi={M\bibinitperiod},
+           given={Shahid},
+           giveni={S\bibinitperiod}}}%
+        {{hash=30d283308b4de5b545a4a292daf24c77}{%
+           family={Mattson},
+           familyi={M\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{956fcf23ee1be0159e140bdc43f360ef}
+      \strng{fullhash}{2424d643184ddd3a5c1fb08a07e80288}
+      \strng{bibnamehash}{2424d643184ddd3a5c1fb08a07e80288}
+      \strng{authorbibnamehash}{2424d643184ddd3a5c1fb08a07e80288}
+      \strng{authornamehash}{956fcf23ee1be0159e140bdc43f360ef}
+      \strng{authorfullhash}{2424d643184ddd3a5c1fb08a07e80288}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{BACKGROUND: A software engineering systematic map is a defined method to build a classification scheme and structure a software engineering field of interest. The analysis of results focuses on frequencies of publications for categories within the scheme. Thereby, the coverage of the research field can be determined. Different facets of the scheme can also be combined to answer more specific research questions. OBJECTIVE: We describe how to conduct a systematic mapping study in software engineering and provide guidelines. We also compare systematic maps and systematic reviews to clarify how to chose between them. This comparison leads to a set of guidelines for systematic maps. METHOD: We have defined a systematic mapping process and applied it to complete a systematic mapping study. Furthermore, we compare systematic maps with systematic reviews by systematically analyzing existing systematic reviews. RESULTS: We describe a process for software engineering systematic mapping studies and compare it to systematic reviews. Based on this, guidelines for doing systematic maps are defined. CONCLUSIONS: Systematic maps and reviews are different in terms of goals, breadth, validity issues and implications. Thus, they should be used complementarily and require different methods (e.g., for analysis).}
+      \field{title}{Systematic {{Mapping Studies}} in {{Software Engineering}}}
+      \field{year}{2008}
+    \endentry
     \entry{pop00975}{article}{}
       \name{author}{3}{}{%
         {{hash=466e57f34f7aeba8e27a05346a389956}{%
@@ -2742,7 +2781,6 @@
     \endentry
   \enddatalist
   \missing{crockfordIntroducingJSON}
-  \missing{petersenSystematicMappingStudies}
 \endrefsection
 \endinput
 
