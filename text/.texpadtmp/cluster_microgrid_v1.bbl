@@ -19,6 +19,19 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{NodeJs2018}{misc}{}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{abstract}{As an asynchronous event driven JavaScript runtime, Node is designed to build scalable network applications. In the following "hello world" example, many connections can be handled concurrently. Upon each connection the callback is fired, but if there is no work to be done, Node will sleep.}
+      \field{howpublished}{https://nodejs.org/en/about/}
+      \field{journaltitle}{Nodejs}
+      \field{langid}{english}
+      \field{title}{About {{Node}}.Js}
+      \field{year}{2018}
+    \endentry
     \entry{amrollahi2017techno}{article}{}
       \name{author}{2}{}{%
         {{hash=0cf969297f2c2b197a288da88fdbdd5a}{%
@@ -1546,6 +1559,19 @@
       \field{title}{Powerwall - {{Tesla}}}
       \field{year}{2018}
     \endentry
+    \entry{RahmendatenMorschenichGemeinde2018}{misc}{}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{http://www.rwe.com/web/cms/de/1375406/umsiedlung/meine-umsiedlung/morschenich/rahmendaten/}
+      \field{journaltitle}{RWE Power}
+      \field{langid}{de}
+      \field{title}{{Rahmendaten - Morschenich, Gemeinde Merzenich (Kreis Düren)}}
+      \field{type}{{Corporate}}
+      \field{year}{2018}
+    \endentry
     \entry{ReactJavaScriptLibrary2019}{misc}{}
       \field{sortinit}{R}
       \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
@@ -2020,6 +2046,17 @@
       \verb https://doi.org/10.1016/j.apenergy.2016.08.009
       \endverb
       \keyw{Renewable energy,Microgrids,Energy management,Optimization}
+    \endentry
+    \entry{UmsiedlungMorschenich}{misc}{}
+      \field{sortinit}{U}
+      \field{sortinithash}{36a2444f5238e0dcf4bb59704df6624d}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Morschenich ist ein Ortsteil der Gemeinde Merzenich im Kreis Düren, Nordrhein-Westfalen. Der Ort liegt im zukünftigen Abbaugebiet des Tagebaus Hambach. Durch eine Bürgerbefragung wurde der neue Standort im Westen von Merzenich ,,Zwischen den Höfen``, jenseits der L264, von den Bürgern festgelegt. Die Morschenicher Bürgerinnen und Bürger können seit dem Jahr 2015 in den neu entstehenden Ort ,,Morschenich-Neu`` umsiedeln.}
+      \field{howpublished}{https://www.gemeinde-merzenich.de/freizeitkultur/Umsiedlung.php}
+      \field{journaltitle}{Gemeinde Merzenich}
+      \field{langid}{de}
+      \field{title}{{Umsiedlung Morschenich}}
     \endentry
     \entry{VictronEnergyLithium2018}{misc}{}
       \field{sortinit}{V}
@@ -2548,8 +2585,6 @@
   \enddatalist
   \missing{JuMPJlModeling2019}
   \missing{chenowethRiseUniversityMicrogrids2018}
-  \missing{gemeindemerzenichUmsiedlungMorschenich}
-  \missing{rwepowerRahmendatenMorschenichGemeinde2018}
 \endrefsection
 \endinput
 
