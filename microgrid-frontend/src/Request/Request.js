@@ -6,15 +6,15 @@ import { sendRequest, setRequestString, updateRequest } from '../store/action'
 
 class Request extends React.Component {
   handleCalculate = () => {
-    this.props.history.push('/result')
     this.props.updateRequest()
+    this.props.history.push('/result')
     this.props.requestModel()
   }
   switchToResults = () => {
     this.props.history.push('/result')
   }
   handleTyping = () => {
-    const str = document.getElementById('jsonEditor').innerText
+    const str = document.getElementById('jsonEditor').value
     this.props.setRequestString(str)
   }
 
