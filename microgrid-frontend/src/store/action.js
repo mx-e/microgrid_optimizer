@@ -1,35 +1,10 @@
 export const TYPE = Object.freeze({
-  ADD_HOUSEHOLD: String('ADD_HOUSEHOLD'),
-  DEL_HOUSEHOLD: String('DEL_HOUSEHOLD'),
-  EDIT_HOUSEHOLD: String('EDIT_HOUSEHOLD'),
-  SAVE_HOUSEHOLD: String('SAVE_HOUSEHOLD'),
   SEND_REQUEST: String('SEND_REQUEST'),
   UPDATE_DATA: String('UPDATE_DATA'),
   DATA_REQUEST_PENDING: String('DATA_REQUEST_PENDING'),
-  ABORT_PENDING: String('DATA_PENDING')
-})
-
-export const addVanillaHousehold = () => {
-  return {
-    type: TYPE.ADD_HOUSEHOLD
-  }
-}
-
-export const deleteHousehold = (id) => {
-  return {
-    type: TYPE.DEL_HOUSEHOLD,
-    id: id
-  }
-}
-
-export const editHousehold = (id) => ({
-  type: TYPE.EDIT_HOUSEHOLD,
-  payload: id
-})
-
-export const saveHousehold = (household) => ({
-  type: TYPE.SAVE_HOUSEHOLD,
-  payload: household
+  ABORT_PENDING: String('DATA_PENDING'),
+  SET_REQUEST_STRING: String('SET_REQUEST_STRING'),
+  UPDATE_REQUEST: String('UPDATE_REQUEST')
 })
 
 export const sendRequest = () => ({
@@ -48,3 +23,13 @@ export const dataRequestPending = () => ({
 export const abortPending = () => ({
   type: TYPE.ABORT_PENDING
 })
+
+export const setRequestString = (str) => ({
+  type: TYPE.SET_REQUEST_STRING,
+  payload: str
+})
+
+export const updateRequest = () => ({
+  type: TYPE.UPDATE_REQUEST
+})
+

@@ -1,5 +1,20 @@
-[0] Config.pm:302> INFO - This is Biber 2.11
-[0] Config.pm:305> INFO - Logfile is '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.blg'
-[36] biber-darwin:313> INFO - === Thu Feb  7, 2019, 04:19:26
-[56] Utils.pm:209> ERROR - /Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.bcf is malformed, last biblatex run probably failed. Deleted /Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.bbl
-[56] Biber.pm:114> INFO - ERRORS: 1
+[1] Config.pm:302> INFO - This is Biber 2.11
+[2] Config.pm:305> INFO - Logfile is '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.blg'
+[39] biber-darwin:313> INFO - === Thu Feb  7, 2019, 05:30:51
+[63] Biber.pm:371> INFO - Reading '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.bcf'
+[190] Biber.pm:857> INFO - Found 81 citekeys in bib section 0
+[202] Biber.pm:3976> INFO - Processing section 0
+[213] Biber.pm:4136> INFO - Looking for bibtex format file '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/microgrid_literature.bib' for section 0
+[221] bibtex.pm:1500> INFO - LaTeX decoding ...
+[387] bibtex.pm:1316> INFO - Found BibTeX data source '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/microgrid_literature.bib'
+[639] Biber.pm:4136> INFO - Looking for bibtex format file '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/extra_literature.bib' for section 0
+[642] bibtex.pm:1500> INFO - LaTeX decoding ...
+[695] bibtex.pm:1316> INFO - Found BibTeX data source '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/extra_literature.bib'
+[808] Utils.pm:193> WARN - I didn't find a database entry for 'crockfordIntroducingJSON' (section 0)
+[893] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[893] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[893] Biber.pm:3804> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[893] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[965] bbl.pm:617> INFO - Writing '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.bbl' with encoding 'UTF-8'
+[997] bbl.pm:720> INFO - Output to /Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.bbl
+[998] Biber.pm:110> INFO - WARNINGS: 1

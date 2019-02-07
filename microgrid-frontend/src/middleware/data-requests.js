@@ -18,9 +18,12 @@ const dataRequests = store => next => action => {
 const requestModelData = (state, dispatch) => {
   console.log('sending request...')
   dispatch(dataRequestPending())
-  requestInstance.get('/modelrequest',
+  const requestData = state.request
+  console.log(requestData)
+  requestInstance.post('/modelrequest',
     {
-  })
+      reqData: requestData
+    })
     .then(function (response) {
       dispatch(updateData(response.data))
     })

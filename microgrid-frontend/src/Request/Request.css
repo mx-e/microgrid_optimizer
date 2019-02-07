@@ -4,17 +4,8 @@
 .Request {
     position: relative;
 }
-
-.TopBar {
-    position: relative;
-    background: #b0b0b0;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 .Subheader {
-    display: flex;
+    display: block;
     justify-content: space-between;
     align-items: center;
 
@@ -28,17 +19,6 @@
     border: 1px black solid;
 }
 
-.Request button {
-    position: absolute;
-}
-
-.HouseholdsWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-
 .BottomBar {
     position: relative;
     display: flex;
@@ -50,4 +30,63 @@
     position: absolute;
     top: 50%;
     transform: translate(0, -50%)
+}
+
+
+
+
+
+
+.header {
+    position: relative;
+    background: darkgrey;
+    height: 100px;
+    width: 100vw;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gridWrapper{
+    width:86vw;
+    margin-left: 7vw;
+}
+
+.generalResults{
+    margin-top: 3vh;
+    background-color: lightgray;
+    width: 80vw;
+    margin-left: 10vw;
+    padding-bottom: 20px;
+    padding-top: 30px;
+    position: relative;
+}
+
+.boxHeader{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.requestButton, .editButton{
+    position: absolute;
+    border-radius: 0px;
+    height: 30px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    font-size: 14px;
+}
+
+.requestButton{
+    top: 37px;
+    right: 40px;
+}
+
+.editButton{
+    top: 37px;
+    right: 160px;
 }

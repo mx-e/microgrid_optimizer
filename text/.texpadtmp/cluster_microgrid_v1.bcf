@@ -2884,3 +2884,75 @@
     <bcf:citekey order="118">oeiWeichenstellungKohlekonsensKohlevorraete2019</bcf:citekey>
     <bcf:citekey order="119">bauerAbgrundtief2018</bcf:citekey>
     <bcf:citekey order="120">pfenningerLongtermPatternsEuropean2016</bcf:citekey>
+    <bcf:citekey order="121">wirthAktuelleFaktenZur2018</bcf:citekey>
+    <bcf:citekey order="122">SolarmoduleEBay2018</bcf:citekey>
+    <bcf:citekey order="123">ModulePriceIndex2018</bcf:citekey>
+    <bcf:citekey order="124">wirthAktuelleFaktenZur2018</bcf:citekey>
+    <bcf:citekey order="125">wirthAktuelleFaktenZur2018</bcf:citekey>
+    <bcf:citekey order="126">LAUINGER201624</bcf:citekey>
+    <bcf:citekey order="127">LAUINGER201624</bcf:citekey>
+    <bcf:citekey order="128">NaturalGasPrices2018</bcf:citekey>
+    <bcf:citekey order="129">LAUINGER201624</bcf:citekey>
+    <bcf:citekey order="130">BlueGENWorldsMost2018</bcf:citekey>
+    <bcf:citekey order="131">PowerwallTesla2018</bcf:citekey>
+    <bcf:citekey order="132">PowerwallTesla2018</bcf:citekey>
+    <bcf:citekey order="133">PowerwallTesla2018</bcf:citekey>
+    <bcf:citekey order="134">PowerwallTesla2018</bcf:citekey>
+    <bcf:citekey order="135">PowerwallTesla2018</bcf:citekey>
+    <bcf:citekey order="136">PowerwallTesla2018</bcf:citekey>
+    <bcf:citekey order="137">LithiumIonenHEHigh2018</bcf:citekey>
+    <bcf:citekey order="138">VictronEnergyLithium2018</bcf:citekey>
+    <bcf:citekey order="139">LithiumIonenHEHigh2018</bcf:citekey>
+    <bcf:citekey order="140">LAUINGER201624</bcf:citekey>
+    <bcf:citekey order="141">LithiumIonenHEHigh2018</bcf:citekey>
+    <bcf:citekey order="142">LithiumIonenHEHigh2018</bcf:citekey>
+    <bcf:citekey order="143">ReferenzlastprofileUndMehrfamilien2008</bcf:citekey>
+    <bcf:citekey order="144">fuenfgeldAnwendungRepraesentativenVDEWLastprofile2000</bcf:citekey>
+    <bcf:citekey order="145">StandardlastprofileStrom2017</bcf:citekey>
+    <bcf:citekey order="146">Monitoringbericht20182018</bcf:citekey>
+    <bcf:citekey order="147">ReferenzlastprofileUndMehrfamilien2008</bcf:citekey>
+    <bcf:citekey order="148">Monitoringbericht20182018</bcf:citekey>
+    <bcf:citekey order="149">Monitoringbericht20182018</bcf:citekey>
+    <bcf:citekey order="150">Monitoringbericht20182018</bcf:citekey>
+    <bcf:citekey order="151">kuechlerIndustriestrompreiseDeutschlandUnd2014</bcf:citekey>
+  </bcf:section>
+  <!-- SORTING TEMPLATES -->
+  <bcf:sortingtemplate name="nyt">
+    <bcf:sort order="1">
+      <bcf:sortitem order="1">presort</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="2" final="1">
+      <bcf:sortitem order="1">sortkey</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="3">
+      <bcf:sortitem order="1">sortname</bcf:sortitem>
+      <bcf:sortitem order="2">author</bcf:sortitem>
+      <bcf:sortitem order="3">editor</bcf:sortitem>
+      <bcf:sortitem order="4">translator</bcf:sortitem>
+      <bcf:sortitem order="5">sorttitle</bcf:sortitem>
+      <bcf:sortitem order="6">title</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="4">
+      <bcf:sortitem order="1">sortyear</bcf:sortitem>
+      <bcf:sortitem order="2">year</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="5">
+      <bcf:sortitem order="1">sorttitle</bcf:sortitem>
+      <bcf:sortitem order="2">title</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="6">
+      <bcf:sortitem order="1">volume</bcf:sortitem>
+      <bcf:sortitem order="2">0</bcf:sortitem>
+    </bcf:sort>
+  </bcf:sortingtemplate>
+  <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="nyt/global//global/global"
+                type="entry"
+                sortingtemplatename="nyt"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global">
+  </bcf:datalist>
+</bcf:controlfile>

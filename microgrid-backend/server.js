@@ -23,7 +23,10 @@ app.listen(port, () => {
   console.log('We are live on ' + port);
 })
 
-app.get('/modelrequest', (req, res) => {
+app.post('/modelrequest', (req, res) => {
+  console.log(req.body.reqData)
+  fs.writeFileSync('input.json', JSON.stringify(req.body.reqData));
+  console.log('Input Data Written!')
   const dir = __dirname
 
   console.log('Starting Shell Script...')

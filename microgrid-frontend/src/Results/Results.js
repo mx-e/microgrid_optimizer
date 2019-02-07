@@ -6,11 +6,16 @@ import GridLayout from 'react-grid-layout';
 import EntityResultsContainer from './EntityResultsContainer'
 
 import './Results.css'
-import {sendRequest} from "../store/action";
+import {sendRequest, updateRequest} from "../store/action";
 
 class Results extends React.Component{
   handleCalculate = () => {
+    this.props.updateRequest()
     this.props.requestModel()
+  }
+
+  switchToRequest = () => {
+    this.props.history.push('/request')
   }
 
   render(){
@@ -104,6 +109,7 @@ class Results extends React.Component{
           <div className="header">
             <h2>Results</h2>
             <button className="requestButton" onClick={this.handleCalculate}>CALCULATE</button>
+            <button className="editButton" onClick={this.switchToRequest}>EDIT</button>
           </div>
           </div>
           {generalResults}
@@ -126,7 +132,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    requestModel: () => dispatch(sendRequest())
+    requestModel: () => dispatch(sendRequest()),
+    updateRequest: () => dispatch(updateRequest())
   }
 }
 

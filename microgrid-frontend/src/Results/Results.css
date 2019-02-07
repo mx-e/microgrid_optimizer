@@ -75,15 +75,22 @@
     font-weight: bold;
 }
 
-.requestButton{
+.requestButton, .editButton{
     position: absolute;
-    top: 37px;
-    right: 40px;
     border-radius: 0px;
     height: 30px;
     width: 100px;
     background-color: black;
     color: white;
     font-size: 14px;
+}
 
+.requestButton{
+    top: 37px;
+    right: 40px;
+}
+
+.editButton{
+    top: 37px;
+    right: 160px;
 }

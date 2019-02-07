@@ -11,7 +11,6 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import Result from './Results/Results'
 import NewRequest from './Request/Request'
-import NewHousehold from './NewHousehold/NewHousehold'
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
@@ -28,7 +27,6 @@ ReactDOM.render(
       <Switch>
         <Route exact path={'/result'} component={Result}/>
         <Route exact path={'/request'} component={NewRequest}/>
-        <Route exact path={'/newHousehold'} component={NewHousehold}/>
       </Switch>
     </Provider>
   </BrowserRouter>

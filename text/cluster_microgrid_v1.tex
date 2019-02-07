@@ -140,7 +140,6 @@
 \addbibresource{extra_literature.bib}
 \usepackage{breakcites}
 \usepackage{makecell}
-\usepackage{tabulary}
 
 \DeclareNameAlias{author}{last-first}				
 
@@ -533,8 +532,91 @@ Open source tools seem scarcely available. A search of `microgrid optimization' 
 \newpage
 \chead{\textit{Mathematical Formulation}}	
 \section{Mathematical Formulation}
-\todo{references for all equations}
-\todo{all parameters, variables table}
+
+
+\begin{table}[H]
+	\centering
+	\caption{Overview of Parameters}
+	\begin{tabular}{llp{8cm}}
+		\hline
+		\textbf{Name}			& \textbf{Shape}  & \textbf{Description}	\\ 
+		\hline
+		$S$ & $\in \mathbb{N}$ & number of discontinuous sets of time-steps \\
+		$T$ & $\in \mathbb{N}$ & number of time-steps per discontinuous set \\
+		$U$ & $\in \mathbb{N}$ & number of households \\
+		$K$ & $\in \mathbb{N}$ & number of linear generation investment options \\
+		$L$ & $\in \mathbb{N}$ & number of linear storage investment options \\
+		$M$ & $\in \mathbb{N}$ & number of discrete generation investment options \\
+		$N$ & $\in \mathbb{N}$ & number of discrete storage investment options \\
+		$H \hookrightarrow DEM$ & $\geq 0, \in \mathbb{R}^{S\times T \times 3}$ & demand series of a household \\
+		$H \hookrightarrow shiftP$ & $\geq 0$ & demand shift `price' of a household \\
+		$H \hookrightarrow curtP$ & $\geq 0$ & curtailment `price' of a household \\
+		$GEN \hookrightarrow C_{Cap}$ & $\geq 0$ & investment cost of a linear generation option \\
+		$GEN \hookrightarrow C_{OpFix}$ & $\geq 0$ & yearly operation cost of a linear generation option \\
+		$GEN \hookrightarrow C_{OpVar}$ & $\geq 0$ & marginal operation cost of a linear generation option\\
+		$GEN \hookrightarrow T_{Life}$ & $\geq 0$ & life expectancy of a linear generation option \\
+		$GEN \hookrightarrow EFF_{el}$ & $\geq 0$ & electrical efficiency of a linear generation option \\
+		$GEN \hookrightarrow PR$ & $\geq 0$ & performance ratio of a linear generation option \\
+		$GEN \hookrightarrow maxFl$ & $\geq 0, \in \mathbb{R}^{S\times T}$ & maximal available input flow series of a linear generation option\\
+		$dGEN \hookrightarrow CAP$ & $\in \mathbb{N}$ & capacity of a discrete generation option \\
+		$dGEN \hookrightarrow C_{Cap}$ & $\geq 0$ & investment cost of a discrete generation option \\
+		$dGEN \hookrightarrow C_{OpFix}$ & $\geq 0$ & yearly operation cost of a discrete generation option \\
+		$dGEN \hookrightarrow C_{OpVar}$ & $\geq 0$ & marginal operation cost of a discrete generation option \\
+		$dGEN \hookrightarrow T_{Life}$ & $\geq 0$ & life expectancy of a discrete generation option \\
+		$dGEN \hookrightarrow EFF_{el}$ & $\geq 0$ & electrical efficiency of a discrete generation option \\
+		$dGEN \hookrightarrow PR$ & $\geq 0$ & performance ratio of a discrete generation option \\
+		$dGEN \hookrightarrow maxFl$ & $\geq 0, \in \mathbb{R}^{S\times T}$ & maximal available input flow series of a discrete generation option \\
+		$ST \hookrightarrow C_{Cap}$ & $\geq 0$ & investment cost of a linear storage option \\
+		$ST \hookrightarrow T_{Life}$ & $\geq 0$ & life expectancy of a discrete generation option \\
+		$ST \hookrightarrow EFF_{+-}$ & $\geq 0$ & roundtrip efficiency of a linear storage option \\
+		$ST \hookrightarrow maxP_+$ & $\geq 0$ & maximum charging power of a linear storage option \\
+		$ST \hookrightarrow maxP_-$ & $\geq 0$ & maximum discharging power of a linear storage option \\
+		$dST \hookrightarrow CAP$ & $\in \mathbb{N}$ & capacity of a discrete storage option \\
+		$dST \hookrightarrow C_{Cap}$ & $\geq 0$ & investment cost of a discrete storage option \\
+		$dST \hookrightarrow T_{Life}$ & $\geq 0$ & life expectancy of a discrete storage option \\
+		$dST \hookrightarrow EFF_{+-}$ & $\geq 0$ & roundtrip efficiency of a discrete storage option  \\
+		$dST \hookrightarrow maxP_+$ & $\geq 0$ & maximum charging power of a discrete storage option \\
+		$ST \hookrightarrow maxP_-$ & $\geq 0$ & maximum discharging power of a discrete storage option \\
+		$maxS$ & $\geq 0, \in \mathbb{R}^{S\times T}$ & series of maximum available power suppliable by the grid\\
+		$maxD$ & $\geq 0, \in \mathbb{R}^{S\times T}$ & series of maximum power feed-in into the grid \\
+		$gridC$ & $\geq 0, \in \mathbb{R}^{S\times T}$ & series of cost of one unit of electricity from the grid \\
+		$feedC$ & $\geq 0, \in \mathbb{R}^{S\times T}$ & series of value of one unit of electricity fed into the grid \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\caption{Overview of Internal Variables}
+	\begin{tabular}{llp{8cm}}
+		\hline
+		\textbf{Name}			& \textbf{Shape}  & \textbf{Description}	\\ 
+		\hline
+		$toTR$ & $\geq 0, \in \mathbb{R}^{U\times S\times T}$ & power received from the microgrid's internal trading pool \\
+		$fromTR$ & $\geq 0, \in \mathbb{R}^{U\times S\times T}$ & power sent to the microgrid's internal trading pool \\
+		$genS$ & $\geq 0, \in \mathbb{R}^{U\times K \times S\times T}$ & power generated by linear generation \\
+		$dgenS$ & $\geq 0, \in \mathbb{R}^{U\times M \times S\times T}$ & power generated by discrete generation \\
+		$fromST$ & $\geq 0, \in \mathbb{R}^{U\times L \times S\times T}$ & power taken out of linear storage devices \\
+		$toST$ & $\geq 0, \in \mathbb{R}^{U\times L \times S\times T}$ & power sent into linear storage devices \\
+		$fromDST$ & $\geq 0, \in \mathbb{R}^{U\times N \times S\times T}$ & power taken out of discrete storage devices \\
+		$toDST$ & $\geq 0, \in \mathbb{R}^{U\times N \times S\times T}$ & power sent into discrete storage devices \\
+		$fromSC$ & $\geq 0, \in \mathbb{R}^{U \times S\times T}$ & demand shifted in the previous time-step due to be consumed now \\
+		$toSC$ & $\geq 0, \in \mathbb{R}^{U \times S\times T}$ & demand shifted in the current time-step \\
+		$ncS$ & $\geq 0, \in \mathbb{R}^{U \times S\times T}$ & demand curtailed \\
+		$fromGR$ & $\geq 0, \in \mathbb{R}^{U \times S\times T}$ & power imported from main grid \\
+		$toGR$ & $\geq 0, \in \mathbb{R}^{U \times S\times T}$ & power fed into main grid \\
+		$H \hookrightarrow GEN$ & $\geq 0, \in \mathbb{R}^{K}$ & installed linear generation capacity \\
+		$H \hookrightarrow ST$ & $\geq 0, \in \mathbb{R}^{L}$ & installed linear storage capacity \\
+		$H \hookrightarrow dGEN$ & $\in \mathbb{N}^{M}$ & installed discrete generation capacity \\
+		$H \hookrightarrow dST$ & $\in \mathbb{N}^{N}$ & installed discrete storage capacity \\
+
+		
+		
+		\hline
+	\end{tabular}
+\end{table}
+
+
 \subsection{Time}
 The range of scenarios and complexity the model can handle is, among other things, dependent on its implementation of discrete time. More and smaller time-steps and a representative sample of diverse expectable conditions regarding the parameters lead to higher model accuracy. Of course the amount of time-steps is limited by processing power and therefore by model complexity. To enable both diverse and therefore potentially discontinuous parameter sets and a reasonable length for each set, the length of 1 hour is chosen for the basic time-step 
 $t; t \in [1,T]; T \in \mathbb{N} ;$. $T$ denotes the number of hours in each discontinuous set of supply and demand parameters.
@@ -991,24 +1073,24 @@ To test the different implementations of discrete and linear investment options 
 \begin{table}[H]
 	\centering
 	\caption{Parameters describing the generation technologies}
-	\begin{tabulary}{\linewidth}{lllll}
+	\begin{tabular}{llll|p{6cm}}
 		\hline
 		\textbf{Parameter}			& \textbf{Name}			& \textbf{Unit}			& \textbf{Value}	&\textbf{Reference}     \\ \hline
 		\textit{Photovoltaic System} & $GEN_1$ & & &\\
-		Installation Cost           & $C_{Cap}$     		& \euro\ $KW^{-1}$  		& 1200				& estimate based on [\cite{wirthAktuelleFaktenZur2018}, \cite{SolarmoduleEBay2018}, \cite{ModulePriceIndex2018}] \\
+		Installation Cost           & $C_{Cap}$     		& \euro\ $KW^{-1}$  		& 1200				& estimate based on \cite{wirthAktuelleFaktenZur2018}, \cite{SolarmoduleEBay2018}, \cite{ModulePriceIndex2018} \\
 		Maintenance Cost            & $C_{OpFix}$     		& \euro\ $KW^{-1}yr^{-1}$& 50				& estimate \\
 		Fuel	 Cost           			& $C_{OpVar}$     		& \euro\ $kWh^{-1}$   	& 0.0			&   \\
-		Lifetime                    & $T_{Life}$     		& $yr$  				& 25 				& [\cite{wirthAktuelleFaktenZur2018}]   \\
+		Lifetime                    & $T_{Life}$     		& $yr$  				& 25 				& \cite{wirthAktuelleFaktenZur2018}  \\
 		Electric Efficiency         & $EFF_{el}$     		& $\%$  				& 100				& included in $maxFl$      \\
-		Performance Ratio           & $PR$     		& $\%$  				& 85				& [\cite{wirthAktuelleFaktenZur2018}]   \\
-		Maximum Input Flow  			& $maxFl$     		& $KW$ 		 			& see section 5.2				& based on capacity factor   \\
+		Performance Ratio           & $PR$     		& $\%$  				& 85				& \cite{wirthAktuelleFaktenZur2018}  \\
+		Maximum Input Flow  			& $maxFl$     		& $KW$ 		 			& see 5.2				& based on capacity factor   \\
 		\hline
 		\textit{CHP Micro Fuel Cell} & $GEN_2$ & & &\\
-		Installation Cost           & $C_{Cap}$     		& \euro\ $KW^{-1}$  		& 3500 				& estimate based on [\cite{LAUINGER201624}]   \\
-		Maintenance Cost            & $C_{OpFix}$     		& \euro\ $KW^{-1}yr^{-1}$& 175				& estimate based on [\cite{LAUINGER201624}]   \\
-		Fuel	 Cost           			& $C_{OpVar}$     		& \euro\ $KWh^{-1}$   	& 0.0608			& [\cite{NaturalGasPrices2018}]  \\
-		Lifetime                    & $T_{Life}$     		& $yr$  				& 15 				& [\cite{LAUINGER201624}]  \\
-		Electric Efficiency         & $EFF_{el}$       		& $\%$  				& 60				& [\cite{BlueGENWorldsMost2018}]  \\
+		Installation Cost           & $C_{Cap}$     		& \euro\ $KW^{-1}$  		& 3500 				& estimate based on \cite{LAUINGER201624}  \\
+		Maintenance Cost            & $C_{OpFix}$     		& \euro\ $KW^{-1}yr^{-1}$& 175				& estimate based on \cite{LAUINGER201624}  \\
+		Fuel	 Cost           			& $C_{OpVar}$     		& \euro\ $KWh^{-1}$   	& 0.0608			& \cite{NaturalGasPrices2018}  \\
+		Lifetime                    & $T_{Life}$     		& $yr$  				& 15 				& \cite{LAUINGER201624}  \\
+		Electric Efficiency         & $EFF_{el}$       		& $\%$  				& 60				& \cite{BlueGENWorldsMost2018}  \\
 		Performance Ratio           & $PR$     		& $\%$  				& 100				& no additional penalties  \\
 		Maximum Input Flow  			& $maxFl$     		& $KW$ 		 			& 999				& no restrictions  \\
 		\hline
@@ -1020,26 +1102,26 @@ The storage investment options given are two differently sized Lithium Ion batte
 \begin{table}[H]
 	\centering
 	\caption{Parameters describing the storage technologies}
-	\begin{tabulary}{\linewidth}{LLLLL}
+	\begin{tabular}{llll|p{7cm}}
 		\hline
 		\textbf{Parameter}			& \textbf{Name}			& \textbf{Unit}			& \textbf{Value}	&\textbf{Reference}     \\ \hline
 		\textit{Li-Ion Battery 1} & $dST_1$ & & &\textit{Tesla Powerwall} \\
-		Usable Capacity				   & $CAP$ 		& $KWh$ 				& 13.5 				& [\cite{PowerwallTesla2018}] 	\\
-		Installation Cost              & $C_{Cap}$        	& \euro\ 				& 10000				& estimate based on [\cite{PowerwallTesla2018}]  \\
-		Lifetime			               & $T_{Life}$       	& $yr$  				& 10 				& estimate based on [\cite{PowerwallTesla2018}] \\
-		Roundtrip Efficiency           & $EFF_{+-}$     	& $\%$  				& 90				& [\cite{PowerwallTesla2018}]  \\
-		Max. Charging Power            & $maxP_+$    	& $kW$  				& 4.6 				& [\cite{PowerwallTesla2018}]     \\
-		Max. Discharging Power         & $maxP_-$     	& $kW$   				& 4.6 				& [\cite{PowerwallTesla2018}]      \\
+		Usable Capacity				   & $CAP$ 		& $KWh$ 				& 13.5 				& \cite{PowerwallTesla2018} 	\\
+		Installation Cost              & $C_{Cap}$        	& \euro\ 				& 10000				& estimate based on \cite{PowerwallTesla2018}  \\
+		Lifetime			               & $T_{Life}$       	& $yr$  				& 10 				& estimate based on \cite{PowerwallTesla2018} \\
+		Roundtrip Efficiency           & $EFF_{+-}$     	& $\%$  				& 90				& \cite{PowerwallTesla2018}  \\
+		Max. Charging Power            & $maxP_+$    	& $kW$  				& 4.6 				& \cite{PowerwallTesla2018}     \\
+		Max. Discharging Power         & $maxP_-$     	& $kW$   				& 4.6 				& \cite{PowerwallTesla2018}      \\
 		Initial State of Charge        & $-$     	& $\%$  				& 100 				& assumption   \\
 		Terminal State of Charge       & $-$     	& $\%$  				& 100 				& assumption   \\
 		\hline
 		\textit{Li-Ion Battery 2} & $dST_2$ & & & \textit{Victron Energy Lithium HE Batterie} \\
-		Usable Capacity				   & $CAP$ 		& $KWh$ 				& 4 				& based on [\cite{LithiumIonenHEHigh2018}] considering depth of discharge\\
-		Installation Cost              & $C_{Cap}$     	& \euro\  				& 5000				& estimate based on [\cite{VictronEnergyLithium2018}]  \\
-		Lifetime			               & $T_{Life}$     	& $yr$  				& 10 				& estimate based on [\cite{LithiumIonenHEHigh2018}]   \\
-		Roundtrip Efficiency           & $EFF_{+-}$      	& $\%$  				& 92 				& [\cite{LAUINGER201624}]   \\
-		Max. Charging Power            & $maxP_+$    	& $KW$  				& 4.8				& [\cite{LithiumIonenHEHigh2018}]   \\
-		Max. Discharging Power         & $maxP_-$     	& $KW$   				& 7.2				& [\cite{LithiumIonenHEHigh2018}]   \\
+		Usable Capacity				   & $CAP$ 		& $KWh$ 				& 4 				& based on \cite{LithiumIonenHEHigh2018} considering depth of discharge\\
+		Installation Cost              & $C_{Cap}$     	& \euro\  				& 5000				& estimate based on \cite{VictronEnergyLithium2018}  \\
+		Lifetime			               & $T_{Life}$     	& $yr$  				& 10 				& estimate based on \cite{LithiumIonenHEHigh2018}   \\
+		Roundtrip Efficiency           & $EFF_{+-}$      	& $\%$  				& 92 				& \cite{LAUINGER201624}   \\
+		Max. Charging Power            & $maxP_+$    	& $KW$  				& 4.8				& \cite{LithiumIonenHEHigh2018}  \\
+		Max. Discharging Power         & $maxP_-$     	& $KW$   				& 7.2				& \cite{LithiumIonenHEHigh2018}   \\
 		Initial State of Charge        & $-$     	& $\%$  				& 100 				& assumption	   \\
 		Terminal State of Charge       & $-$    	& $\%$  				& 100 				& assumption   \\	
 		\hline
