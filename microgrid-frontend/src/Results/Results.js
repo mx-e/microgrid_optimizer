@@ -105,6 +105,9 @@ class Results extends React.Component{
 
     return (
       <div className="results">
+        {this.props.requestPending &&
+        <div className={"spinnerOverlay"}><Spinner className={"loadSpinner"}/></div>
+        }
         <div className="banner">
           <div className="header">
             <h2>Results</h2>

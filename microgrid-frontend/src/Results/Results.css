@@ -94,3 +94,17 @@
     top: 37px;
     right: 160px;
 }
+
+.spinnerOverlay{
+    position:absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(230, 230, 230, 0.8);
+    z-index: 3;
+}
+
+.loadSpinner{
+    position: absolute;
+    top: 50vh;
+    left:50vw;
+}
