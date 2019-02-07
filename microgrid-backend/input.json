@@ -3,9 +3,9 @@
         "T": 168,
         "S": 3,
         "U": 13,
-        "K": 0,
+        "K": 2,
         "L": 0,
-        "M": 2,
+        "M": 0,
         "N": 2
     },
     "households": [
@@ -64,7 +64,7 @@
             ]
         }
     ],
-    "generationDiscrete": [
+    "generationLinear": [
         {
             "name": "Solar-PV",
             "opts":{
@@ -73,9 +73,8 @@
                 "applyNoise": true,
                 "variance": 0.25
             },
-            "CAP": 5,
-            "cCap": 6000,
-            "cOpFix": 250,
+            "cCap": 1200,
+            "cOpFix": 50,
             "cOpVar": 0.0,
             "tLife": 25,
             "EFFel": 1.0,
@@ -92,9 +91,8 @@
                 "isMaxFlConstant": true,
                 "applyNoise": false
             },
-            "CAP":2.5,
-            "cCap": 8750,
-            "cOpFix": 437.5,
+            "cCap": 3500,
+            "cOpFix": 175,
             "cOpVar": 0.0608,
             "tLife": 15,
             "EFFel": 0.60,
@@ -102,7 +100,7 @@
             "maxFl": 999.0
         }
     ],
-    "generationLinear":[],
+    "generationDiscrete":[],
     "storageLinear":[],
     "storageDiscrete":[
         {
@@ -137,7 +135,7 @@
     },
     "otherParameters": {
         "S_weights": [169,81,115],
-        "tradeC":1000.0
+        "tradeC":0.001
     }
     
 }

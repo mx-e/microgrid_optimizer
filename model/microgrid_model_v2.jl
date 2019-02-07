@@ -185,21 +185,44 @@ end
 @constraint(mod, gridDemandContstr[s=1:S, t=1:T], sum(toGR[u,s,t] - fromGR[u,s,t] for u=1:U) <= GR.maxD[s,t])
 
 #Power Balance
-function conditionalSum(X, var, u, s, t)
-    if X > 0
-        return sum(var[u,x,s,t] for x=1:X)
+function get_genS(u,s,t)
+    if K > 0
+        return sum(genS[u,k,s,t] for k=1:K)
     else
         return 0.0
     end
 end
 
+function get_dgenS(u,s,t)
+    if M > 0
+        return sum(dgenS[u,m,s,t] for m=1:M)
+    else
+        return 0.0
+    end
+end
+
+function get_storage_balance(u,s,t)
+    if L > 0
+        return sum(fromST[u,l,s,t] - toST[u,l,s,t] for l=1:L)
+    else
+        return 0.0
+    end
+end
+
+function get_d_storage_balance(u,s,t)
+    if N > 0
+        return sum(fromDST[u,n,s,t] - toDST[u,n,s,t] for n=1:N)
+    else
+        return 0.0
+    end
+end
 
 @constraint(mod, powerBalanceConstr[u=1:U, s=1:S, t=1:T], H[u].DEM[1,t,s] + H[u].DEM[2,t,s] + H[u].DEM[3,t,s]
 == fromGR[u,s,t] - toGR[u,s,t] + fromTR[u,s,t] - toTR[u,s,t] - fromSC[u,s,t] + toSC[u,s,t]
-#+ conditionalSum(K, genS, u, s, t) 
-+ conditionalSum(M, dgenS, u, s, t) 
-# + conditionalSum(L, fromST, u, s, t) - conditionalSum(L, toST, u, s, t) 
-+ conditionalSum(N, fromDST, u, s, t) - conditionalSum(N, toDST, u, s, t))
++ get_genS(u, s, t) 
++ get_dgenS(u, s, t)
++ get_storage_balance(u, s, t)
++ get_d_storage_balance(u, s, t))
 
 
 #-------------------------------

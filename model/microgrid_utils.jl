@@ -330,23 +330,58 @@ function print_results()
 end
 
 function export_results(input_data)
+    genS_result = []
+    dgenS_result = []
+    fromST_result = []
+    fromDST_result = []
+    toST_result = []
+    toDST_result = []
+    HuDGENm_result = []
+    HuDSTn_result = []
+    HuGENk_result = []
+    HuSTl_result = []
+
+    if K > 0
+        genS_result = getvalue(genS)
+        HuGENk_result = getvalue(HuGENk)
+    end
+    if M > 0
+        dgenS_result = getvalue(dgenS)
+        HuDGENm_result = getvalue(HuDGENm)
+    end
+    if L > 0
+        toST_result = getvalue(toST)
+        fromST_result = getvalue(fromST)
+        HuSTl_result = getvalue(HuSTl)
+    end
+    if N > 0
+        toDST_result = getvalue(toDST)
+        fromDST_result = getvalue(fromDST)
+        HuDSTn_result = getvalue(HuDSTn)
+    end
+
+
     output_data = Dict(
         "objective" => getobjectivevalue(mod),
         "toTR" => getvalue(toTR),
         "fromTR" => getvalue(fromTR),
-        "dgenS" => getvalue(dgenS),
-        "fromDST" => getvalue(fromDST),
-        "toDST" => getvalue(toDST),
+        "genS" => genS_result,
+        "dgenS" => dgenS_result,
+        "toST" => toST_result,
+        "fromST" => fromST_result,
+        "fromDST" => fromDST_result,
+        "toDST" => toDST_result,
         "ncS" => getvalue(ncS),
         "toSC" => getvalue(toSC),
         "fromSC" => getvalue(fromSC),
         "toGR" => getvalue(toGR),
         "fromGR" => getvalue(fromGR),
-        "HuDGENm" => getvalue(HuDGENm),
-        "HuDSTn" => getvalue(HuDSTn),
+        "HuGENk" => HuGENk_result,
+        "HuDGENm" => HuDGENm_result,
+        "HuSTl" => HuSTl_result,
+        "HuDSTn" => HuDSTn_result,
         "parameters" => input_data,
-        "H" => H,
-        "dGEN" => dGEN
+        "H" => H
     )
 
     json_string = JSON.json(output_data)

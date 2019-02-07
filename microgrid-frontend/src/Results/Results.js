@@ -198,7 +198,7 @@ const createStInvestmentTraces = (result) => {
 }
 
 const createInvestmentTrace = (rawData, devices) => {
-  if(!rawData || !devices){return []}
+  if(!rawData || !devices || rawData.length === 0){return []}
   return rawData.map( (device, i) => {
     const multiplier = devices[i].CAP ? devices[i].CAP : 1.0
     return multplTraceWithConst(device, multiplier)
@@ -259,7 +259,7 @@ const getTraceByHousehold = (rawData, householdId) => {
 }
 
 const getDeviceTracesByHousehold = (rawData, householdID) => {
-  if(!rawData){return []}
+  if(!rawData || rawData.length === 0){return []}
   return rawData[0][0].map((device,i) => (
     rawData[i].map((season,j) => 
       rawData.map(timeslice => {

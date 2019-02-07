@@ -1,20 +1,5 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
-[1] Config.pm:305> INFO - Logfile is '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.blg'
-[65] biber-darwin:313> INFO - === Wed Feb  6, 2019, 12:39:12
-[114] Biber.pm:371> INFO - Reading '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.bcf'
-[358] Biber.pm:857> INFO - Found 81 citekeys in bib section 0
-[381] Biber.pm:3976> INFO - Processing section 0
-[400] Biber.pm:4136> INFO - Looking for bibtex format file '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/microgrid_literature.bib' for section 0
-[416] bibtex.pm:1500> INFO - LaTeX decoding ...
-[733] bibtex.pm:1316> INFO - Found BibTeX data source '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/microgrid_literature.bib'
-[1220] Biber.pm:4136> INFO - Looking for bibtex format file '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/extra_literature.bib' for section 0
-[1224] bibtex.pm:1500> INFO - LaTeX decoding ...
-[1328] bibtex.pm:1316> INFO - Found BibTeX data source '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/extra_literature.bib'
-[1536] Utils.pm:193> WARN - I didn't find a database entry for 'crockfordIntroducingJSON' (section 0)
-[1697] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1698] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1698] Biber.pm:3804> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[1698] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
-[1832] bbl.pm:617> INFO - Writing '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.bbl' with encoding 'UTF-8'
-[1889] bbl.pm:720> INFO - Output to /Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.bbl
-[1889] Biber.pm:110> INFO - WARNINGS: 1
+[0] Config.pm:305> INFO - Logfile is '/Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.blg'
+[36] biber-darwin:313> INFO - === Thu Feb  7, 2019, 04:19:26
+[56] Utils.pm:209> ERROR - /Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.bcf is malformed, last biblatex run probably failed. Deleted /Users/maxi/WORKSPACE/WIP/bachelorarbeit-microgrid-modellierung/text/.texpadtmp/cluster_microgrid_v1.bbl
+[56] Biber.pm:114> INFO - ERRORS: 1

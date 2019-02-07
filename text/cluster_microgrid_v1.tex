@@ -139,6 +139,8 @@
 \addbibresource{microgrid_literature.bib}
 \addbibresource{extra_literature.bib}
 \usepackage{breakcites}
+\usepackage{makecell}
+\usepackage{tabulary}
 
 \DeclareNameAlias{author}{last-first}				
 
@@ -486,7 +488,9 @@ After filtering the original dataset of 275 unique publications in the way descr
 	\label{descriptive_anaylsis_results}
 	\flushleft\quad\quad\footnotesize{Source: Own illustration.}
 \end{figure}	
-Looking at the keywords used to describe the publication shows that, unsurprisingly, the most frequently occurring keywords are the ones used in conducting the search: `linear programming', `microgrids' and `optimization'. `Distributed energy generation' and `distributed energy resources' are mentioned 37 times, `batteries' and `energy storage' a total of 28 times, and `renewable energy sources' and `generators' a total of 16 times. This illustrates the focus on decentralized energy sources and storage, more specifically renewables and small scale combined heat and power generation that prevails throughout the literature.
+Looking at the keywords used to describe the publication shows that, unsurprisingly, the most frequently occurring keywords are the ones used in conducting the search: `linear programming', `microgrids' and `optimization'. 
+`Distributed energy generation' and `distributed energy resources' are mentioned 37 times, `batteries' and `energy storage' a total of 28 times, and `renewable energy sources' and `generators' a total of 16 times. 
+This illustrates the focus on decentralized energy sources and storage, more specifically renewables and small scale combined heat and power generation that prevails throughout the literature.
 \\
 The publication chart is not very enlightening. This is due to the fact, that 28 out of 61 publications are conference papers are either classified as unknown or as others because there is only one instance of a paper from that particular conference. From a more general point of view, however, almost all papers are published either by Elsevier or IEEE, with only few exceptions.
 
@@ -535,8 +539,7 @@ Open source tools seem scarcely available. A search of `microgrid optimization' 
 The range of scenarios and complexity the model can handle is, among other things, dependent on its implementation of discrete time. More and smaller time-steps and a representative sample of diverse expectable conditions regarding the parameters lead to higher model accuracy. Of course the amount of time-steps is limited by processing power and therefore by model complexity. To enable both diverse and therefore potentially discontinuous parameter sets and a reasonable length for each set, the length of 1 hour is chosen for the basic time-step 
 $t; t \in [1,T]; T \in \mathbb{N} ;$. $T$ denotes the number of hours in each discontinuous set of supply and demand parameters.
 Furthermore, the ability of including multiple discontinuous sets of supply and demand parameters of the same length in one scenario is gained by introducing a second iterator 
-$s; s \in [1,S]; S \in \mathbb{N} ;$. $S$ denotes the number of discontinuous sets of supply and demand parameters.
-
+$s; s \in [1,S]; S \in \mathbb{N} ;$. $S$ denotes the number of discontinuous sets of supply and demand parameters. In addition a vector $SW \in \mathbb{N}^S$ can be defined, which will be used by the model for weighing the costs incurred in each season $S$ differently. The vector will be normalized to $S$ to not interfere with the scaling of the results. This normalized weight vector is called $SWN$.
 
 
 
@@ -589,25 +592,25 @@ The objective of the model is to find optimal investment, dispatch and trade. Th
 	\begin{equation}
 		genS_{u,k,s,t}, dgenS_{u,m,s,t} \geq 0
 	\end{equation}
-	The generation supply variables $genS_{u,k,s,t}$ and $dgenS_{u,m,s,t}$ describe the amount of energy produced by each linear or discrete generation option respectively. They are defined for each generation option in each household and at each timestep. It is useful to keep in mind, that not every household needs to implement all the generation options. In case of zero instances of the discrete generation option $dGEN_2$ installed in household $H_5$, for example, $dgenS_{5,2,s,t} = 0$ for all $s$ and $t$.
+	The generation supply variables $genS_{u,k,s,t}$ and $dgenS_{u,m,s,t}$ describe the amount of energy produced by each linear or discrete generation option respectively. They are defined for each generation option in each household and at each time-step. It is useful to keep in mind, that not every household needs to implement all the generation options. In case of zero instances of the discrete generation option $dGEN_2$ installed in household $H_5$, for example, $dgenS_{5,2,s,t} = 0$ for all $s$ and $t$.
 	\\\\
 	$\forall u,l,n,s,t$:
 	\begin{equation}
 	fromST_{u,l,s,t}, toST_{u,l,s,t}, fromDST_{u,n,s,t}, toDST_{u,n,s,t} \geq 0
 	\end{equation}
-	The storage supply variables $fromST_{u,l,s,t}$ and $toST_{u,l,s,t}$ indicate the amount of power fed into or withdrawn from a linear storage investment option. They are defined for each linear investment option and each household at each timestep. The variables $fromDST_{u,n,s,t}$ and $toDST_{u,n,s,t}$ have the equivalent function for all discrete storage investment options.	
+	The storage supply variables $fromST_{u,l,s,t}$ and $toST_{u,l,s,t}$ indicate the amount of power fed into or withdrawn from a linear storage investment option. They are defined for each linear investment option and each household at each time-step. The variables $fromDST_{u,n,s,t}$ and $toDST_{u,n,s,t}$ have the equivalent function for all discrete storage investment options.	
 	\\\\
 	$\forall u,s,t$:
 	\begin{equation}
 		toSC_{u,s,t}, fromSC_{u,s,t} ncS_{u,s,t},  \geq 0
 	\end{equation}
-	The shifted consumption supply variable $toSC_{u,s,t}$ represents the amount of power consumption shifted by each household at each timestep.  $fromSC_{u,s,t}$ indicates the amount of power consumption that has previously been shifted and is now consumed. The non-consumption supply variable $ncS_{u,s,t}$ designates the amount of power consumption curtailed for each household at each timestep.
+	The shifted consumption supply variable $toSC_{u,s,t}$ represents the amount of power consumption shifted by each household at each time-step.  $fromSC_{u,s,t}$ indicates the amount of power consumption that has previously been shifted and is now consumed. The non-consumption supply variable $ncS_{u,s,t}$ designates the amount of power consumption curtailed for each household at each time-step.
 	\\\\
 	$\forall u,s,t$:
 	\begin{equation}
 		fromGR_{u,s,t}, toGR_{u,s,t} \geq 0
 	\end{equation}
-	Finally, the grid supply variables $fromGR_{u,s,t}$ and $toGR_{u,s,t}$ denote the amount of power supplied by and to the grid respectively by each household at each timestep. Only power flowing out of and into the microgrid is included in this definition, power traded internally, while using the (micro)grid, is reflected in the trade variables. (see formula (6))
+	Finally, the grid supply variables $fromGR_{u,s,t}$ and $toGR_{u,s,t}$ denote the amount of power supplied by and to the grid respectively by each household at each time-step. Only power flowing out of and into the microgrid is included in this definition, power traded internally, while using the (micro)grid, is reflected in the trade variables. (see formula (6))
 	
 	$\forall u,k$:
 	\begin{equation}
@@ -642,7 +645,7 @@ Therefore, an abstract linear generation device $GEN$ and an abstract discrete g
 	\end{equation}
 	$CAP \geq 0$, which is only required for discrete investments, defines the generation capacity of the discrete investment option.
 	$C_{Cap} \geq 0$ defines the total investment cost for discrete generation devices. For linear generation devices the investment cost is expressed in terms of one unit of capacity.
-	$C_{OpFix} \geq 0$ expresses the fixed maintenance cost per unit of time. In the case of linear generation they are expressed in proportion to capacity, while for discrete generation they express the maintenance cost of one discrete device.
+	$C_{OpFix} \geq 0$ expresses the fixed maintenance cost per year. In the case of linear generation they are expressed in proportion to capacity, while for discrete generation they express the maintenance cost of one discrete device.
 	$C_{OpVar} \geq 0$ expresses the variable maintenance cost per unit of input consumed.
 	$T_{Life} \in \mathbb{N}$ defines the life expectancy of a generation device, i.e. the time before it is replaced. 
 	$EFF_{el} \in [0,1]$ defines the ratio of supplied energy, for example sunlight or gas, to produced electricity.
@@ -655,17 +658,17 @@ Therefore, an abstract linear generation device $GEN$ and an abstract discrete g
 	$\forall u,k,s,t$:
 	\begin{equation}
 		\begin{split}
-		genS_{u,k,s,t} \leq min(\frac{GEN_k \hookrightarrow EFF_{el} * GEN_k \hookrightarrow maxFl_{s,t}}{H_u\hookrightarrow  GEN_k}, 1) \\ * H_u\hookrightarrow  GEN_k * GEN_k \hookrightarrow PR
+		genS_{u,k,s,t} \leq min(GEN_k \hookrightarrow EFF_{el} * GEN_k \hookrightarrow maxFl_{s,t}, 1) \\ * H_u\hookrightarrow  GEN_k * GEN_k \hookrightarrow PR
 		\end{split}
 	\end{equation}
 	\\
 	$\forall u,m,s,t$:
 	\begin{equation}
 		\begin{split}
-		dgenS_{u,m,s,t} \leq min(\frac{GEN_m \hookrightarrow EFF_{el} * GEN_m \hookrightarrow maxFl_{s,t}}{H_u \hookrightarrow  dGEN_m * dGEN_m \hookrightarrow CAP }, 1) \\ * H_u\hookrightarrow  dGEN_m * dGEN_m \hookrightarrow CAP * dGEN_k \hookrightarrow PR
+		dgenS_{u,m,s,t} \leq min(GEN_m \hookrightarrow EFF_{el} * GEN_m \hookrightarrow maxFl_{s,t}, 1) \\ * H_u\hookrightarrow  dGEN_m * dGEN_m \hookrightarrow CAP * dGEN_k \hookrightarrow PR
 		\end{split}
 	\end{equation}
-	The capacity constraints restrict the use of any linear generation device $GEN_k$ or any discrete generation device $dGEN_m$ to its capacity rating and the maximum flow of input energy supplied to it.
+	The capacity constraints (17,18) restrict the use of any linear generation device $GEN_k$ or any discrete generation device $dGEN_m$ to its capacity rating and the maximum flow of input energy supplied to it.
 	The constraints differ due to the capacity of linear generation devices being stored in the household structure directly, while for discrete generation devices the household structure only contains an integer representing the amount implemented. This value is then multiplied with the capacity of one unit of the concerned discrete generation device to compute the total installed capacity. In both cases the result is multiplied with the performance ratio $PR$ of the concerned device, which acts as a penalty to capacity (see above). The minimized term calculates the ratio of maximum output achievable with the available maximum input to the capacity of the device. If the input suffices for running at capacity, the term returns a maximum of 1, not restricting supply further. Otherwise it restricts capacity to the maximum possible under current resource input.
 
 	
@@ -702,16 +705,16 @@ Therefore, an abstract linear storage device $ST$ and an abstract discrete stora
 		fromST_{u,l,s,t} \leq ST_l\hookrightarrow  maxP_{-} * H_u \hookrightarrow ST_l
 	\end{equation}
 	\\
-	The flow constraints for linear storage constrain the maximum in- and outflow for each linear storage device to its maximum in- and outflow rate relative to capacity.
+	The flow constraints for linear storage (21,22) constrain the maximum in- and outflow for each linear storage device to its maximum in- and outflow rate relative to capacity.
 	\\
 	$\forall u,n,s,t$:
 	\begin{equation}
-		toDST_{u,n,s,t} \leq dST_n\hookrightarrow  maxP_{+} * H_u \hookrightarrow dST_n * dST_n \hookrightarrow CAP
+		toDST_{u,n,s,t} \leq dST_n\hookrightarrow  maxP_{+} * H_u \hookrightarrow dST_n
 	\end{equation}
 	\begin{equation}
-		fromDST_{u,n,s,t} \leq dST_n\hookrightarrow  maxP_{-} * H_u \hookrightarrow dST_n * dST_n \hookrightarrow CAP
+		fromDST_{u,n,s,t} \leq dST_n\hookrightarrow  maxP_{-} * H_u \hookrightarrow dST_n
 	\end{equation}
-	The flow constraints for discrete storage work similar to the linear ones, with the slight distinction of how capacity is computed. Rather than being stored directly in the $H_u$ structure, it is stored as an attribute of the discrete storage device structure $dST_n$ and is multiplied by the integer amount of units implemented stored in $H_u$. (see 3.2)
+	The flow constraints for discrete storage (23,24) implement the same functionality as the linear flow constraints for discrete storage devices.
 	\\
 	$\forall u,l,s$:
 	\begin{equation}
@@ -723,7 +726,7 @@ Therefore, an abstract linear storage device $ST$ and an abstract discrete stora
 		\sum_{t=1}^{T}(dST_n \hookrightarrow EFF_{+} * toDST_{u,n,s,t'} - dST_n \hookrightarrow EFF_{-} * fromDST_{u,n,s,t'}) = 0
 	\end{equation}
 	\\
-	The model assumes the storage to be full at the start of each simulated discontinuous period $s$ and requires it to be full at the end of each period. This means inflows minus outflows weighted by the respective efficiencies need to sum up to zero for the entirety of each period $s$.
+	The model assumes the storage to be full at the start of each simulated discontinuous period $s$ and requires it to be full at the end of each period. This means inflows minus outflows weighted by the respective efficiencies need to sum up to zero for the entirety of each period $s$ (25,26).
 	\\
 	$\forall u,l,s,t$:
 	\begin{equation}
@@ -741,7 +744,7 @@ Therefore, an abstract linear storage device $ST$ and an abstract discrete stora
 		\end{split}
 	\end{equation}
 	\\
-	The storage capacity constraints prohibit storage usage beyond the storage device's capacity. The remaining storage capacity at time $(s,t)$ is in theory calculated as the capacity minus current storage level, which is the sum of all inflows and outflows weighted by in- and outflow efficiency. Since the storage at each timestep $(s,0)$ is required to be full, the capacity is subtracted once, which eliminates it and leaves only the sum. The constraint is implemented equivalently for discrete storage. 
+	The storage capacity constraints (27,28) prohibit storage usage beyond the storage device's capacity. The remaining storage capacity at time $(s,t)$ is in theory calculated as the capacity minus current storage level, which is the sum of all inflows and outflows weighted by in- and outflow efficiency. Since the storage at each time-step $(s,0)$ is required to be full, the capacity is subtracted once, which eliminates it and leaves only the sum. The constraint is implemented equivalently for discrete storage. 
 	\\
 	$\forall u,l,s,t$:
 	\begin{equation}
@@ -758,13 +761,13 @@ Therefore, an abstract linear storage device $ST$ and an abstract discrete stora
 		\sum_{t'=1}^{t-1}(dST_n \hookrightarrow EFF_{+} * toDST_{u,n,s,t'} - dST_n \hookrightarrow EFF_{-} * fromDST_{u,n,s,t'})
 	\end{split}
 	\end{equation}
-	Finally, the storage level constraints prohibit the storage level to fall below zero. This means there can be no more power withdrawn, weighted by outflow efficiency, than is currently stored in the device. Because we assume the storage to be full at the start of each period $s$, the current charge amounts to one full charge (storage capacity) plus the sum of all transactions during the current period up to the current timestep $t$. The only distinction for discrete storage devices is the way capacity is calculated (see 3.2).
+	Finally, the storage level constraints (29,30) prohibit the storage level to fall below zero. This means there can be no more power withdrawn, weighted by outflow efficiency, than is currently stored in the device. Because we assume the storage to be full at the start of each period $s$, the current charge amounts to one full charge (storage capacity) plus the sum of all transactions during the current period up to the current time-step $t$. The only distinction for discrete storage devices is the way capacity is calculated (see 3.2).
 
 
 
 
 \subsection{Trade}
-Trade is implemented as an exchange platform, which sums up deposits and withdrawals of power at each timestep and always needs to be balanced. This approach has the advantage of greatly reducing the number of constraints and therefore complexity, although it is not very well suited to handle grid topology constraints, which might be added in the future.\\
+Trade is implemented as an exchange platform, which sums up deposits and withdrawals of power at each time-step and always needs to be balanced (31). This approach has the advantage of greatly reducing the number of constraints and therefore complexity, although it is not very well suited to handle grid topology constraints, which might be added in the future.\\
 The trade constraint is defined as:
 \\
 
@@ -796,14 +799,27 @@ The restrictions on shiftable and curtailable demand are expressed by the follow
 \\
 $\forall u,s,t$:
 \begin{equation}
-	scS_{u,s,t} \leq H_u \hookrightarrow shiftDEM_{s,t}
+	toSC_{u,s,t} \leq H_u \hookrightarrow shiftDEM_{s,t} + fromSC_{u,s,t}
 \end{equation}
 \begin{equation}
 	ncS_{u,s,t} \leq H_u \hookrightarrow curtDEM_{s,t}
 \end{equation}
-
-
-
+\\
+The shifted demand limit constraint (34) restricts the amount of shiftable demand to the shiftable part of household demand for the current time-step. To this the demand shifted in previous time-steps (36), which can be shifted further, is added. The curtailable demand limit constraint (35) restricts the amount of curtailable demand to the curtailable part of household demand for the current time-step.
+\\
+$\forall u,s$; $t \in [2,T]$:
+\begin{equation}
+	fromSC_{u,s,t} = toSC_{u,s,t-1}
+\end{equation}
+\\
+Demand shifted in the previous time-step has to be consumed in the current time-step or shifted further. This is ensured by (36). It does not apply for the first time-step, but the model still does not set $fromSC_{u,s,0}$ to greater than 0, because it would raise cost.
+\\
+$\forall u,s$:
+\begin{equation}
+	toSC_{u,s,T} = 0
+\end{equation}
+\\
+(37) ensures there is no consumption shifted at the last time-step of each season $s$ as it would not have to be consumed at all.
 
 
 \subsection{Grid}
@@ -816,8 +832,8 @@ $maxS,maxD, gridC, feedC \in \mathbb{R}^{S \times T}$\\
 and $\forall s,t$: \\
 $maxS_{s,t}, max_{s,t}, gridC_{s,t}, feedC_{s,t} \geq 0$
 
-$maxS$ describes the maximum amount of power supplied by the grid at each timestep $(s,t)$, while $gridC_{s,t}$ expresses the price at which this power can be bought.
-$maxD$ describes the maximum amount power that can be fed into the the grid at timestep $(s,t)$, while $feedC_{s,t}$ expresses the price at which the grid buys this power. 
+$maxS$ describes the maximum amount of power supplied by the grid at each time-step $(s,t)$, while $gridC_{s,t}$ expresses the price at which this power can be bought.
+$maxD$ describes the maximum amount power that can be fed into the the grid at time-step $(s,t)$, while $feedC_{s,t}$ expresses the price at which the grid buys this power. 
 
 To model the expected behaviour of the grid several sets of constraints need to be introduced:
 \\
@@ -825,16 +841,16 @@ $\forall s,t$:
 \begin{equation}
 	\sum_{u=1}^{U}(fromGR_{u,s,t}-toGR_{u,s,t}) \leq maxS{s,t}
 \end{equation}
-The first grid constraint restricts the sum of each households `trade balance' with the grid to the maximum power the grid can supply at each timestep.
+The first grid constraint (39) restricts the sum of each households `trade balance' with the grid to the maximum power the grid can supply at each time-step.
 \\
 $\forall s,t$
 \begin{equation}
 	\sum_{u=1}^{U}(toGR_{u,s,t}-fromGR_{u,s,t}) \leq maxD{s,t}
 \end{equation}
-The second grid constraint does the reverse, in that it restricts the sum of each households `trade balance' with the grid to the maximum power the microgrid can feed into the grid at each timestep.
+The second grid constraint (40) does the reverse, in that it restricts the sum of each households `trade balance' with the grid to the maximum power the microgrid can feed into the grid at each time-step.
 
 \subsection{Power Balance}
-The power balance constraints describe the need for a balance between supply and demand at each node at each timestep: 
+The power balance constraints describe the need for a balance between supply and demand at each node at each time-step: 
 \\
 $\forall u,s,t$:
 \begin{equation}
@@ -842,13 +858,12 @@ $\forall u,s,t$:
 		H_u\hookrightarrow  critDEM_{s,t} + H_u\hookrightarrow  shiftDEM_{s,t} + H_u\hookrightarrow  curtDEM_{s,t}\\
 		= \\
 		fromGR_{u,s,t} - toGR_{u,s,t} + \sum_{k=1}^K{genS_{u,k,s,t}} + \sum_{m=1}^M{dgenS_{u,m,s,t}} \\ 
-		+ fromTR_{u,s,t} - toTR_{u,s,t} + scS_{u,s,t} - scS_{i,s,t-1} + ncS_{u,s,t} \\
+		+ fromTR_{u,s,t} - toTR_{u,s,t} + toSC_{u,s,t} - fromSC_{u,s,t} + ncS_{u,s,t} \\
 		+ \sum_{l=1}^L{fromST_{u,l,s,t} - toST_{u,l,s,t}} + \sum_{n=1}^N{fromDST_{u,n,s,t}-toDST_{u,n,s,t}}
 	\end{split}
 \end{equation}
-The power balance constraint requires electricity supply and demand to be balanced for each household at each timestep. On the demand side, the three types of demand of the concerned household and the current timestep are summed up. The supply side is made up of several terms: \\
-$fromGR_{u,s,t} - toGR_{u,s,t}$ expresses the momentary trade balance with the grid, while $fromTR_{u,s,t} - toTR_{u,s,t}$ denotes the momentary trade balance with the microgrid's trading pool. $scS_{u,s,t} - scS_{i,s,t-1}$ is the balance of consumption shifted from the current timestep into the future and previously shifted demand realized now. $ncS_{u,s,t}$ reflects loads dropped in the current timestep. Finally, the power generated by all linear and discrete generation devices is summed up, as well as the balance of storage use for all linear and discrete storage devices.
-
+The power balance constraint (41) requires electricity supply and demand to be balanced for each household at each time-step. On the demand side, the three types of demand of the concerned household and the current time-step are summed up. The supply side is made up of several terms: \\
+$fromGR_{u,s,t} - toGR_{u,s,t}$ expresses the momentary trade balance with the grid, while $fromTR_{u,s,t} - toTR_{u,s,t}$ denotes the momentary trade balance with the microgrid's trading pool. $toSC_{u,s,t} - fromSC_{u,s,t}$ is the balance of consumption shifted from the current time-step into the future and previously shifted demand realized now. $ncS_{u,s,t}$ reflects loads dropped in the current time-step. Finally, the power generated by all linear and discrete generation devices is summed up, as well as the balance of storage use for all linear and discrete storage devices. 
 
 
 
@@ -860,32 +875,37 @@ The cost minimization formula calculates the cost of all investment and dispatch
 The total cost can be broken down into investment, operation and dispatch costs. 
 \begin{equation}
 	\begin{split}
-		C_{Investment} = \sum_{u=1}^{U}[\sum_{k=1}^K{(GEN_k\hookrightarrow  C_{Cap} * H_u\hookrightarrow  GEN_k)}\\
-		+ \sum_{l=1}^L{(ST_l\hookrightarrow  C_{Cap} * H_u\hookrightarrow  ST_l)}\\
-		+ \sum_{m=1}^M{(dGEN_m\hookrightarrow  C_{Cap} * H_u\hookrightarrow  dGEN_m)}\\
-		+ \sum_{n=1}^N{(dST_n\hookrightarrow  C_{Cap} * H_u\hookrightarrow  dST_n)}]
+		C_{Investment} = \sum_{u=1}^{U}[\sum_{k=1}^K{\frac{GEN_k\hookrightarrow  C_{Cap} * H_u\hookrightarrow  GEN_k * S * T}
+		{8760*GEN_k\hookrightarrow T_{Life}}}\\
+		+ \sum_{l=1}^L{\frac{ST_l\hookrightarrow  C_{Cap} * H_u\hookrightarrow  ST_l * S * T}
+		{8760*ST_l\hookrightarrow T_{Life}}}\\
+		+ \sum_{m=1}^M{\frac{dGEN_m\hookrightarrow  C_{Cap} * H_u\hookrightarrow  dGEN_m * S * T}
+		{8760*dGEN_m\hookrightarrow T_{Life}}}\\
+		+ \sum_{n=1}^N{\frac{dST_n\hookrightarrow  C_{Cap} * H_u\hookrightarrow  dST_n * S * T}
+		{8760*dST_n\hookrightarrow T_{Life}}}]
 	\end{split}
 \end{equation}
-The investment costs consist of all investment into generation and storage devices throughout the microgrid. In the context of the model, this means that for linear investment options the installed capacity times the costs of capital per unit of capacity and for discrete investment options the costs of capital for a single instance of a device multiplied with the number of instances installed.
+The investment costs consist of all investment into generation and storage devices throughout the microgrid. In the context of the model, this means that for linear investment options the installed capacity times the costs of capital per unit of capacity and for discrete investment options the costs of capital for a single instance of a device multiplied with the number of instances installed. All values are multiplied by the total amount of time-steps $S*T$ and then divided by the entire lifetime of the device in hours. This is inaccurate to some degree as it resembles a leasing model with negligible interest rates rather than an investment, but is vastly easier to compute and very close to the truth for most of Europe and the US.
 
 \begin{equation}
 	\begin{split}
-		C_{Operation} = \sum_{u=1}^{U}[\sum_{k=1}^{K}(GEN_k\hookrightarrow  C_{OpFix} * H_u \hookrightarrow GEN_k * S * T)\\
-	 	+ \sum_{m=1}^{M}(dGEN_m\hookrightarrow  C_{opFix} * H_u \hookrightarrow GEN_m * S * T)]
+		C_{Operation} = \sum_{u=1}^{U}[\sum_{k=1}^{K}\frac{GEN_k\hookrightarrow  C_{OpFix} * H_u \hookrightarrow GEN_k * S * T}{8760}\\
+	 	+ \sum_{m=1}^{M}\frac{dGEN_m\hookrightarrow  C_{opFix} * H_u \hookrightarrow GEN_m * S * T}{8760}]
 	\end{split}
 \end{equation}
-The operation costs are the sum of all fixed operation costs of all generation devices deployed. They are calculated for each investment option in each household by multiplying its fixed operation costs with the installed capacity (or pieces in the case of discrete investment options) and the total number of time-steps. The sum of all of these investment options are the total maintenance costs for generation in the microgrid. Since there is no fixed maintenance cost defined for storage this value is equal to all the maintenance costs incurred.
+The operation costs are the sum of all fixed operation costs of all generation devices deployed. They are calculated for each investment option in each household by multiplying its fixed operation costs with the installed capacity (or pieces in the case of discrete investment options) and the total number of time-steps. This value is then divided by the length of a year in hours to adjust the yearly values to the timespan considered in the conducted optimization. The sum of all of these investment options are the total maintenance costs for generation in the microgrid. Since there is no fixed maintenance cost defined for storage this value is equal to all the maintenance costs incurred.
 
 \begin{equation}
 	\begin{split}
-		C_{Dispatch} = \sum_{s=1}^{S}\sum_{t=1}^{T}\sum_{u=1}^{U}[gridC_{s,t} * fromGR_{u,s,t} - feedC_{s,t} * toGR_{u,s,t}\\
+		C_{Dispatch} = \sum_{s=1}^{S} SWN_s * \sum_{t=1}^{T}\sum_{u=1}^{U}[gridC_{s,t} * fromGR_{u,s,t} - feedC_{s,t} * toGR_{u,s,t}\\
 		+ H_u\hookrightarrow  curtP * ncS_{u,s,t} + H_u\hookrightarrow  shiftP * scS_{u,s,t}\\
 		+ \sum_{k=1}^K(GEN_k\hookrightarrow  C_{OpVar} * genS_{u,k,s,t})\\ 
 		+ \sum_{m=1}^M(dGEN_m\hookrightarrow  C_{OpVar} * dgenS_{u,m,s,t})]
 	\end{split}
 \end{equation}
 
-The dispatch cost consist of the fuel costs (or variable operation costs $C_{OpVar}$) incurred by the use of all deployed generation devices as well as the value of all shifted and curtailed loads. In addition all transactions with the main grid are valued at the power and feed-in rates for their respective timestep and summed up.
+The dispatch cost consist of the fuel costs (or variable operation costs $C_{OpVar}$) incurred by the use of all deployed generation devices as well as the value of all shifted and curtailed loads. In addition all transactions with the main grid are valued at the power and feed-in rates for their respective time-step and summed up. The result in each season is then weighted according the value of the normalized weight vector for that season $SWN_s$ (see 3.1).
+
 
 
 
@@ -971,11 +991,11 @@ To test the different implementations of discrete and linear investment options 
 \begin{table}[H]
 	\centering
 	\caption{Parameters describing the generation technologies}
-	\begin{tabular}{lllll}
+	\begin{tabulary}{\linewidth}{lllll}
 		\hline
 		\textbf{Parameter}			& \textbf{Name}			& \textbf{Unit}			& \textbf{Value}	&\textbf{Reference}     \\ \hline
 		\textit{Photovoltaic System} & $GEN_1$ & & &\\
-		Installation Cost           & $C_{Cap}$     		& \euro\ $KW^{-1}$  		& 1200				& estimate based on [\cite{wirthAktuelleFaktenZur2018}, \cite{SolarmoduleEBay2018}, \cite{ModulePriceIndex2018}]  \\
+		Installation Cost           & $C_{Cap}$     		& \euro\ $KW^{-1}$  		& 1200				& estimate based on [\cite{wirthAktuelleFaktenZur2018}, \cite{SolarmoduleEBay2018}, \cite{ModulePriceIndex2018}] \\
 		Maintenance Cost            & $C_{OpFix}$     		& \euro\ $KW^{-1}yr^{-1}$& 50				& estimate \\
 		Fuel	 Cost           			& $C_{OpVar}$     		& \euro\ $kWh^{-1}$   	& 0.0			&   \\
 		Lifetime                    & $T_{Life}$     		& $yr$  				& 25 				& [\cite{wirthAktuelleFaktenZur2018}]   \\
@@ -984,10 +1004,10 @@ To test the different implementations of discrete and linear investment options 
 		Maximum Input Flow  			& $maxFl$     		& $KW$ 		 			& see section 5.2				& based on capacity factor   \\
 		\hline
 		\textit{CHP Micro Fuel Cell} & $GEN_2$ & & &\\
-		Installation Cost           & $C_{Cap}$     		& \euro\ $KW^{-1}$  		& 3500 				& estimate based on [\cite{LAUINGER201624}]    \\
+		Installation Cost           & $C_{Cap}$     		& \euro\ $KW^{-1}$  		& 3500 				& estimate based on [\cite{LAUINGER201624}]   \\
 		Maintenance Cost            & $C_{OpFix}$     		& \euro\ $KW^{-1}yr^{-1}$& 175				& estimate based on [\cite{LAUINGER201624}]   \\
 		Fuel	 Cost           			& $C_{OpVar}$     		& \euro\ $KWh^{-1}$   	& 0.0608			& [\cite{NaturalGasPrices2018}]  \\
-		Lifetime                    & $T_{Life}$     		& $yr$  				& 15 				& [\cite{LAUINGER201624}]    \\
+		Lifetime                    & $T_{Life}$     		& $yr$  				& 15 				& [\cite{LAUINGER201624}]  \\
 		Electric Efficiency         & $EFF_{el}$       		& $\%$  				& 60				& [\cite{BlueGENWorldsMost2018}]  \\
 		Performance Ratio           & $PR$     		& $\%$  				& 100				& no additional penalties  \\
 		Maximum Input Flow  			& $maxFl$     		& $KW$ 		 			& 999				& no restrictions  \\
@@ -1000,7 +1020,7 @@ The storage investment options given are two differently sized Lithium Ion batte
 \begin{table}[H]
 	\centering
 	\caption{Parameters describing the storage technologies}
-	\begin{tabular}{lllll}
+	\begin{tabulary}{\linewidth}{LLLLL}
 		\hline
 		\textbf{Parameter}			& \textbf{Name}			& \textbf{Unit}			& \textbf{Value}	&\textbf{Reference}     \\ \hline
 		\textit{Li-Ion Battery 1} & $dST_1$ & & &\textit{Tesla Powerwall} \\
@@ -1104,7 +1124,7 @@ Finally, a major weakness of the base cases result is the linear scaling of the 
 	\flushleft\quad\quad\footnotesize{Source: Own Model User Interface}
 \end{figure}	
 
-	While the objective value at approx. 1257 \euro\ does not greatly differ from the base case, the added constraints led to a very different behaviour. Households are now clearly separated into producers and consumers, some generating power with a pv installation, some with a fuel cell (see Figures 9 and 10). This leads to a strong increase in trading activity between the households as the microgrid tries to distribute the now more centralized generation.
+	While the objective value at approx. 1257 \euro\ does not greatly differ from the base case, the added constraints led to a very different behavior. Households are now clearly separated into producers and consumers, some generating power with a pv installation, some with a fuel cell (see Figures 9 and 10). This leads to a strong increase in trading activity between the households as the microgrid tries to distribute the now more centralized generation.
 	
 \begin{figure}[H]
 	\centering
@@ -1133,7 +1153,7 @@ Another weakness is the modeling approach itself. By its very nature LP assumes 
 Any minor inaccuracies aside the model results clearly conclude that a microgrid, as described in the base case, if regulatorily feasible, would be highly profitable with a margin of over 0.13 \euro\ per KWh. The sensitivity analysis further shows that even under significant deterioration of some of the assumptions made the margin still remains higher than 0.10 \euro\ per KWh. There is, however, some uncertainty involved, as being razed by RWE would significantly worsen the profitability of the system. \\
 To the question of the bigger picture of decentralization, the answer is less clear: While clearly profitable in the context of German electricity retail prices, the generation costs of 0.164 \euro\ per KWh are still significantly higher than the current generation costs included in the retail price of 0.067 \euro\ per KWh [\cite{Monitoringbericht20182018}]. This would conclude, that decentralized generation is still far off, when it comes to large scale competitiveness, it however fails to consider some important factors: First, there is an additional cost of 0.0719 \euro\ per KWh incurred by transmission, when buying electricity [\cite{Monitoringbericht20182018}]. 
 In a decentralized scenario of 94 percent autarky, as exhibited in the base results, these costs would most likely be vastly smaller, if at all significant. This brings us to a total of 0.1389 \euro\ per KWh which is significantly closer to the 0.164 \euro\ result of the base case. Secondly, there are another 0.0917 \euro\ of levies (excluding taxes) included in the retail price, the majority of which is used to subsidize renewable generation [\cite{Monitoringbericht20182018}]. Still, the present German electricity mix is much dirtier, than the one used in the microgrid of the base case, which only consists of solar and highly efficient natural gas generation. 
-Taking this `power quality' consideration into account the total price of equivalent electricity delivered by a centralized system is (at least in Germany) closer to 0.2305 \euro\, which is significantly higher than even the results reached in the sensitivity analysis. Furthermore it does not even take into account the heat output of the fuel cells, which can be used without losses for heating water or air.\\
+Taking this `power quality' consideration into account the total price of equivalent electricity delivered by a centralized system is (at least in Germany) closer to 0.2305 \euro, which is significantly higher than even the results reached in the sensitivity analysis. Furthermore it does not even take into account the heat output of the fuel cells, which can be used without losses for heating water or air.\\
 	In addition, it is highly likely that a major uptake of decentralized generation methods would reduce investment costs, especially of fuel cells, further bringing down the estimated price of electricity. \\
 	Of course, a decentralized system would incur other costs, as a rudimentary grid would still be needed and industry would possibly suffer from the loss of access to subsidized electricity [\cite{kuechlerIndustriestrompreiseDeutschlandUnd2014}].
 	But overall, the results arrived at in this case study suggest a bright future for decentralized generation systems, as they close, – or even have already closed – the the cost gap to current centralized systems.
@@ -1141,9 +1161,12 @@ Taking this `power quality' consideration into account the total price of equiva
 \newpage
 \chead{\textit{Conclusion}}	
 \section{Conclusion}
-
-
-
+In this thesis a mathematical modeling tool for microgrid energy systems has been designed, taking the current literature on the subject into account. The modeling tool has then been used for a case study on a village in Northrhine-Westphalia, in which several buildings of the village form a hypothetical microgrid. The investment choices available in the case study consisted of a pv installation and a fuel cell as generation technologies and two different discrete battery investments as energy storage. In addition the participants were able to trade energy within the microgrid as well as shift or curtail some of their demand. There also was the possibility to draw power from the main grid at standard retail rates. Special attention was given to the realism of the demand profiles, as standard profiles used elsewhere are averaged and would have distorted the model's results significantly (see 5.4). \\
+The results showed the clear profitability of the base case at an average electricity cost of about 0.164 \euro\ per kWh. The microgrid had an autarky ratio of 94 percent, while 100 percent self-consumption was reached. This was due to significant investment in fuel cells, which produced the majority of electricity in the base case. There was no need for storage installation. The sensitivity analysis showed the astounding robustness of the base case. An increase in fuel prices of 50 percent lead to the biggest additional cost, with the price per kWh rising to 0.199 \euro. Even a full discretization of all investment options merely resulted in a vast increase of trading activity within the microgrid.\\
+It has been shown clearly, that the base case, if regulatorily feasible, would be highly profitable. Based on these results a microgrid system architecture could even be considered on par with, or superior to the current grid performance excluding taxes and levies: It hardly needs any transmission infrastructure outside microgrid boundaries and the power generated comes exclusively from renewable or highly efficient conventional sources that could also use biofuels or hydrogen in the future (see 6). 
+Considering these results, the concept of a decentralized multi-microgrid energy system should be explored further, e.g. by means of a larger scale pilot project. Furthermore a partially or fully decentralized option should be added to the plans to decarbonize the German electricity system by 2050, as only heavily centralized solutions are currently discussed by planners. Fuel cell technology as a small scale, flexible way of generating power and heat should receive more attention. It has the potential to be a key technology enabling a faster transition to renewable generation without relying on lignite and coal plants.
+The next steps in the development of the modeling tool include improvement of the user interface, including the possibility for users to add their own investment options and demand profiles. Another priority is the publication of a running instance of the tool on the internet, enabling everyone to experiment with the model.\\
+My thesis demonstrated the enormous potential of decentralized microgrid energy systems, especially considering expected price decreases for all the investment options considered. Microgrid energy systems are becoming serious competitors for conventional centralized power systems.
 \newpage
 \chead{\textit{Appendix}}	
 
